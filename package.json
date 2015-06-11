@@ -1,0 +1,72 @@
+{
+  "name": "growcss",
+  "version": "0.0.1",
+  "description": "Todo",
+  "author": {
+    "name": "Daniel Bannert",
+    "email": "d.bannert@anolilab.de"
+  },
+  "homepage": "growcss.de",
+  "main": "library.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/growcss/growcss.git"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "grunt test --verbose"
+  },
+  "bugs": {
+    "url": "https://github.com/growcss/growcss/issues"
+  },
+  "licenses": [{
+      "type": "MIT"
+  }],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.11.0",
+    "grunt-contrib-jade": "^0.12.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-newer": "^1.1.0",
+    "jit-grunt": "^0.9.1",
+    "load-grunt-config": "^0.16.0",
+    "time-grunt": "^1.1.0"
+  },
+  "devDependencies": {
+    "bower": "~1.4.1",
+    "grunt-bump": "^0.3.0",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-contrib-jasmine": "^0.8.1",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-uglify": "~0.5.1",
+    "grunt-jscs": "^0.7.1",
+    "grunt-jsonlint": "^1.0.4",
+    "grunt-jsvalidate": "^0.2.2",
+    "jshint-stylish": "^1.0.2",
+    "jsvalidate": "^0.5.5"
+  },
+  "peerDependencies": {
+    "grunt": ">=0.4.5"
+  },
+  "keywords": [
+    "grunt",
+    "bower",
+    "bin",
+    "front-end",
+    "development",
+    "dev",
+    "build",
+    "generator",
+    "generate",
+    "tool"
+  ]
+}
