@@ -22,7 +22,7 @@
 ## Getting Started:
 
 1. You need to have npm installed (it comes with node)
-2. Clone this repository: `git clone git@github.com:anolilab/skeljs.git`
+2. Clone this repository: `git clone git@github.com:growcss/growcss.git`
 3. Install dependencies: `npm install`
 
 ## Install
@@ -48,11 +48,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email :author_email instead of using the issue tracker.
+If you discover any security related issues, please email d.bannert@anolilab.de instead of using the issue tracker.
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [Daniel Bannert](https://github.com/prisis)
 - [All Contributors](../../contributors)
 
 ## License
