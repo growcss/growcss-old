@@ -2,7 +2,7 @@
 //clean config
 
 module.exports = {
-    dist: [
+    dev: [
         '.tmp/',
         'build/'
     ]

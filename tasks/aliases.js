@@ -7,8 +7,9 @@ module.exports = {
     'default': [
         'newer:jsonlint',
         'newer:jshint',
-        'newer:copy',
         'clean',
+        'newer:copy',
+        'uglify',
         'sass',
         'jade'
     ],

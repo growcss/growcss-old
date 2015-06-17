@@ -2,7 +2,7 @@
 //jade config
 
 module.exports = {
-    dist: {
+    dev: {
         options: {
             pretty: true,
         },

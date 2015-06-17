@@ -1,0 +1,20 @@
+.container {
+    padding-bottom: $growcss-margin-default;
+    padding-top: $growcss-margin-default;
+
+    @include outer-container($small-breakpoint);
+
+    @include media($medium-up) {
+        @include outer-container($medium-breakpoint);
+    }
+    @include media($large-up) {
+        @include outer-container($large-breakpoint);
+    }
+
+    // @include media($xlarge-up) {
+    //     @include outer-container($xlarge-breakpoint);
+    // }
+}
+
+@include maring-no-px();
+@include padding-no-px();
