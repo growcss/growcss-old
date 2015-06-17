@@ -13,7 +13,11 @@ module.exports = {
         },
         files: {
             'build/js/growcss.js' : [
-                'src/js/ui/well/uiWell.js'
+                'bower_components/jquery/dist/jquery.min.js',
+                'bower_components/fastclick/lib/fastclick.js',
+                'src/vendor/fotorama-4.6.3/fotorama.js',
+                'src/js/ui/well/ui.Well.js',
+                'src/js/growcss.js'
             ],
         }
     },

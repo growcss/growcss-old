@@ -24,7 +24,7 @@
     "tests",
     "composer.json"
   ],
-  "dependencies": {
+  "devDependencies": {
     "fotorama": "~4.6.4",
     "jquery": "~2.1.4",
     "fastclick": "~1.0.6",

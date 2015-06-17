@@ -1,9 +1,18 @@
 'use strict';
 //jade config
 
+var placeholdit = function (width, height, placeholder) {
+    var place = (placeholder) ? placeholder : width + '%C3%97' + height;
+
+    return 'https://placeholdit.imgix.net/~text?txtsize=47&txt=' + place + '&w=' + width + '&h=' + height;
+};
+
 module.exports = {
     dev: {
         options: {
+            data: {
+                placeholdit: placeholdit
+            },
             pretty: true,
         },
         files: [{
@@ -17,6 +26,9 @@ module.exports = {
 
     fixtures: {
         options: {
+            data: {
+                placeholdit: placeholdit
+            },
             pretty: true
         },
         files: [{
