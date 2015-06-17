@@ -13,20 +13,18 @@ module.exports = function(config) {
     frameworks: ['jasmine', 'detectBrowsers'],
 
     plugins: [
-      'karma-chrome-launcher',
-      'karma-firefox-launcher',
-      'karma-ie-launcher',
-      'karma-safari-launcher',
-      'karma-opera-launcher',
-      'karma-phantomjs-launcher',
-      'karma-detect-browsers'
+      require('karma-jasmine'),
+      require('karma-detect-browsers'),
+      require('karma-chrome-launcher'),
+      require('karma-firefox-launcher'),
+      require('karma-ie-launcher'),
+      require('karma-safari-launcher'),
+      require('karma-opera-launcher'),
+      require('karma-phantomjs-launcher'),
     ],
-
 
     // list of files / patterns to load in the browser
     files: [
-      'test/**/*Spec.js',
-      'test/**/*sSpec.js',
       'tests/**/*Spec.js'
     ],
 
