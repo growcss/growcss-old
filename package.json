@@ -62,6 +62,7 @@
     "karma-opera-launcher": "^0.1.0",
     "karma-safari-launcher": "^0.1.1",
     "load-grunt-config": "^0.17.1",
+    "sass-true": "^2.0.2",
     "time-grunt": "^1.2.1"
   },
   "peerDependencies": {
