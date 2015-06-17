@@ -10,7 +10,17 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'detectBrowsers'],
+
+    plugins: [
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-ie-launcher',
+      'karma-safari-launcher',
+      'karma-opera-launcher',
+      'karma-phantomjs-launcher',
+      'karma-detect-browsers'
+    ],
 
 
     // list of files / patterns to load in the browser
@@ -57,8 +67,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'IE', 'Opera', 'Safari', 'Firefox'],
-
+    browsers: [],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

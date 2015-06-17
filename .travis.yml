@@ -9,7 +9,7 @@ node_js:
 script: node_modules/karma/bin/karma start my.conf.js --single-run
 
 before_install:
-  - npm install -g grunt-cli bower
+  - npm install -g grunt-cli bower karma
   - gem install bundler
   - bundle install
   - export DISPLAY=:99.0
