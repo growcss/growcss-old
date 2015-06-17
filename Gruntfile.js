@@ -4,7 +4,7 @@
 module.exports = function(grunt) {
     var path    = require('path'),
         modules = [
-            //Add all growcss module names
+            'well'
         ];
 
     // measures the time each task takes
@@ -28,7 +28,9 @@ module.exports = function(grunt) {
         init: true,
 
         // data passed into config. Can use with <%= test %>
-        //data: {},
+        data: {
+            modules: modules
+        },
 
         // can optionally pass options to load-grunt-tasks.
         // If you set to false, it will disable auto loading tasks.

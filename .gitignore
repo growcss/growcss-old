@@ -1,7 +1,7 @@
-node_modules
-.sass-cache
 bower_components
-test/bower_components
+build
 node_modules
 npm-debug.log
+.sass-cache
+test/bower_components
 tmp
