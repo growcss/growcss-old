@@ -1,7 +1,6 @@
 {
   "name": "growcss",
-  "version": "0.0.0",
-  "homepage": "growcss.de",
+  "homepage": "http://growcss.de",
   "authors": [
     "Daniel Bannert <d.bannert@anolilab.de>"
   ],
@@ -22,6 +21,17 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
-  ]
+    "tests",
+    "composer.json"
+  ],
+  "dependencies": {
+    "fotorama": "~4.6.4",
+    "jquery": "~2.1.4",
+    "fastclick": "~1.0.6",
+    "scrollReveal.js": "~2.3.1",
+    "neat": "~1.7.2",
+    "bourbon": "~4.2.3",
+    "bitters": "~1.0.0",
+    "normalize.css": "~3.0.3"
+  }
 }

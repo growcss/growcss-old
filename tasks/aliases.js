@@ -6,9 +6,17 @@ module.exports = {
     ],
     'default': [
         'newer:jsonlint',
-        'newer:jshint'
+        'newer:jshint',
+        'newer:copy',
+        'clean',
+        'sass',
+        'jade'
     ],
     'build': [
-        'newer:lint'
+        'lint',
+        'clean',
+        'sass',
+        'jade',
+        'bump'
     ]
 };
