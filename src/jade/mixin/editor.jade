@@ -1,0 +1,21 @@
+mixin editor(htmlfile, cssfile, jsfile)
+    section.editor
+        .container
+            .header
+                select
+                    option(value=".html") Html
+                    option(value=".css") Css
+                    option(value=".javascript") Javascript
+
+            .content
+                .html
+                    pre
+                        code(class="language-markup")= htmlfile
+
+                .css
+                     pre
+                        code(class="language-css")= cssfile
+
+                .javascript
+                     pre
+                        code(class="language-javascript")= jsfile

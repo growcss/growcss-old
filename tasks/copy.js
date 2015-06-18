@@ -21,4 +21,28 @@ module.exports = {
             dest: 'build/js/'
         }]
     },
+    prismJs: {
+        files: [{
+            expand: true,
+            cwd: 'bower_components/prism/',
+            src: 'prism.js',
+            dest: 'build/js/'
+        }]
+    },
+    prismCss: {
+        files: [{
+            expand: true,
+            cwd: 'bower_components/prism/themes/',
+            src: '*-okaidia.css',
+            dest: 'build/css/'
+        }]
+    },
+    fontAwesome: {
+        files: [{
+            expand: true,
+            cwd: 'bower_components/font-awesome/fonts',
+            src: '*',
+            dest: 'build/fonts/'
+        }]
+    },
 };

@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Frontend Well module</title>
-    <link href="css/growcss.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+    <link href="css/growcss.css" rel="stylesheet" type="text/css">
+    <link href="css/docs.css" rel="stylesheet" type="text/css">
+    <link href="css/prism-okaidia.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
     <script src="js/growcss-ie8.js"></script>
     <![endif]-->
   </head>
@@ -21,6 +23,28 @@
             <p>test</p>
           </div>
         </section>
+            <section class="editor">
+              <div class="container">
+                <div class="header">
+                  <select>
+                    <option value=".html">Html</option>
+                    <option value=".css">Css</option>
+                    <option value=".javascript">Javascript</option>
+                  </select>
+                </div>
+                <div class="content">
+                  <div class="html">
+                    <pre><code class="language-markup">ja</code></pre>
+                  </div>
+                  <div class="css">
+                    <pre><code class="language-css">ja</code></pre>
+                  </div>
+                  <div class="javascript">
+                    <pre><code class="language-javascript">ja</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
         <section class="ui-well blue-grey">
           <div class="container">
             <p>test</p>
@@ -36,5 +60,7 @@
     <script src="js/rem.min.js"></script>
     <![endif]-->
     <script src="js/growcss.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/docs.js"></script>
   </body>
 </html>

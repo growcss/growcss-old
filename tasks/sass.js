@@ -8,12 +8,28 @@ module.exports = {
                 'bower_components/bourbon/app/assets/stylesheets/',
                 'bower_components/bitters/app/assets/stylesheets/',
                 'bower_components/neat/app/assets/stylesheets/',
+                'bower_components/font-awesome/scss',
                 'bower_components/quantum-colors'
             ],
             bundleExec: true
         },
         files: {
             'build/css/growcss.css': 'src/scss/growcss.scss',
+        }
+    },
+    docs: {
+        options: {
+            loadPath: [
+                'bower_components/bourbon/app/assets/stylesheets/',
+                'bower_components/bitters/app/assets/stylesheets/',
+                'bower_components/neat/app/assets/stylesheets/',
+                'bower_components/font-awesome/scss',
+                'bower_components/quantum-colors'
+            ],
+            bundleExec: true
+        },
+        files: {
+            'build/css/docs.css': 'src/scss/docs.scss',
         }
     },
     test: {
@@ -23,6 +39,7 @@ module.exports = {
                 'bower_components/bourbon/app/assets/stylesheets/',
                 'bower_components/bitters/app/assets/stylesheets/',
                 'bower_components/neat/app/assets/stylesheets/',
+                'bower_components/font-awesome/scss',
                 'bower_components/quantum-colors'
             ],
             bundleExec: true,

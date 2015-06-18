@@ -3,7 +3,8 @@
 
 module.exports = {
     dev: {
-        options: {
+        options:
+        {
             sourceMap: true,
             compress: {
                 loops: true,
@@ -21,8 +22,26 @@ module.exports = {
             ],
         }
     },
+    docs: {
+        options:
+        {
+            sourceMap: true,
+            compress: {
+                loops: true,
+                if_return: true
+                //drop_console: true
+            }
+        },
+        files: {
+            'build/js/docs.js' : [
+                'src/js/docs/docs.Editor.js',
+                'src/js/docs.js'
+            ],
+        }
+    },
     // ie: {
-    //     options: {
+    //     options:
+    //     {
     //         sourceMap: true,
     //         compress: {
     //             loops: true,

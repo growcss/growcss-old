@@ -13,6 +13,7 @@ module.exports = {
             data: {
                 placeholdit: placeholdit
             },
+            filters: require('../src/jade/filters/filters.js'),
             pretty: true,
         },
         files: [{
@@ -29,6 +30,7 @@ module.exports = {
             data: {
                 placeholdit: placeholdit
             },
+            filters: require('../src/jade/filters/filters.js'),
             pretty: true
         },
         files: [{

@@ -10,14 +10,20 @@ html
             title Frontend
 
         link(href="css/growcss.css" rel="stylesheet" type="text/css")
+        link(href="css/docs.css" rel="stylesheet" type="text/css")
+        link(href="css/prism-okaidia.css" rel="stylesheet" type="text/css")
 
         <!--[if lt IE 9]>
         <script src="js/growcss-ie8.js"></script>
         <![endif]-->
 
+        block header
+
     body(class=pageclass)
 
         include ../partials/nav.jade
+
+        include ../mixin/editor.jade
 
         main
             article
@@ -28,3 +34,8 @@ html
         <![endif]-->
 
         script(src="js/growcss.js")
+        script(src="js/prism.js")
+
+        block footer
+
+        script(src="js/docs.js")
