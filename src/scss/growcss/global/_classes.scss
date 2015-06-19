@@ -1,3 +1,7 @@
+*:focus {
+    outline: 0;
+}
+
 .container {
     padding-bottom: $growcss-margin-default;
     padding-top: $growcss-margin-default;

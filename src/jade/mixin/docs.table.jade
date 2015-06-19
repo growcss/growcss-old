@@ -1,0 +1,26 @@
+mixin table(node, html, pvalues, desc)
+   .container
+        table.parameters
+            thead
+                tr
+                    th Node
+                    th HTML Attribute
+                    th Possible values
+                    th Description
+            tbody
+                tr
+                    each val in node
+                        td!= val
+
+                tr
+                    each val in html
+                        td!= val
+
+                tr
+                    each val in pvalues
+                        td!= val
+
+                tr
+                    each val in desc
+                        td!= val
+

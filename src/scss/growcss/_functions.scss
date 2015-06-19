@@ -35,3 +35,15 @@
         .padding-no-right { padding-right: 0; }
     }
 }
+
+@mixin box-shadow($top, $left, $blur, $radius, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow:inset $top $left $blur $radius $color;
+        -moz-box-shadow:inset $top $left $blur $radius $color;
+        box-shadow:inset $top $left $blur $radius $color;
+    } @else {
+        -webkit-box-shadow: $top $left $blur $radius $color;
+        -moz-box-shadow: $top $left $blur $radius $color;
+        box-shadow: $top $left $blur $radius $color;
+    }
+}
