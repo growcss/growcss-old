@@ -20,6 +20,7 @@
      */
 
     map['section.ui-well'] = ui.Well;
+    map['header.ui-menu']  = ui.Menu;
 
     /*!
      * Auto initialize instances by CSS classname
