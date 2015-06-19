@@ -1,7 +1,7 @@
 var jadefilters = module.exports = {};
 
 jadefilters.htmlmarkup = function(block) {
-    block = this.jade.compileFile(block, {pretty: true});
+    block = this.jade.render(block, {pretty: true});
 
     if (block.substring(0, 1) !== '<') {
         block = block.substring(1); // remove first line break

@@ -10,6 +10,15 @@ block content
 
     include ./fixtures/ui/well/index.jade
 
-    +editor('ja', 'ja', 'ja')
+    +header('test', 'test2', 'section')
+
+    +table(
+        ['test', 'test', 'test', 'test'],
+        ['<code>t</code>', 'test', '', 'test'],
+        ['test', 'test', 'test', 'test'],
+        ['test', 'test', 'test', 'test']
+    )
+
+    +editor(+editor, 'ja', 'ja')
 
     include ./fixtures/ui/well/index-grey.jade
