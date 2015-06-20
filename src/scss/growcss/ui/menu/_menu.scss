@@ -1,0 +1,110 @@
+header.ui-menu[data-type='top-bar'] {
+    &[data-position='centered'] {
+        nav {
+            background: $ui-menu-second-background-color;
+
+            ul {
+                @include outer-container($small-breakpoint);
+
+                @include media($medium-up) {
+                    @include outer-container($medium-breakpoint);
+                }
+
+                @include media($large-up) {
+                    @include outer-container($large-breakpoint);
+                }
+            }
+        }
+    }
+
+    &[data-position='right'] {
+        nav {
+            float: left;
+            width: 100%;
+            @include outer-container(100%);
+            background: $ui-menu-second-background-color;
+
+            ul {
+                float: right;
+                background: $ui-menu-second-background-color;
+
+                li {
+                    &:hover > ul {
+                          display: inline-block;
+                          width: 100%;
+                    }
+
+                    // level 2
+                    ul {
+                        li {
+                            // level 3 - 4
+                            ul {
+                                position: relative;
+                                left: -100%;
+                                display: none;
+                                top: -$ui-menu-height;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    nav {
+        width: 100%;
+
+        ul {
+            height: $ui-menu-height;
+            position: relative;
+            @include outer-container(100%);
+            background: $ui-menu-second-background-color;
+
+            li {
+                float: left;
+                text-align: center;
+                position: relative;
+
+                a, div {
+                    width: 100%;
+                    line-height: $ui-menu-link-line-height;
+                    @include pad($ui-menu-link-padding);
+                    display: block;
+                    cursor: pointer;
+                    color: $ui-menu-link-color;
+
+                    &:hover, &:link, &:focus {
+                        color: $ui-menu-link-hover-color;
+                    }
+                }
+
+                &:hover > ul {
+                    display: inline-block;
+                    width: 100%;
+                    position: absolute;
+                    z-index: 1;
+                }
+
+                // level 2
+                ul {
+                    height: auto;
+                    display: none;
+                    left: 0;
+
+                    li {
+                        width: 100%;
+                        height: $ui-menu-height;
+
+                        // level 3 - 4
+                        ul {
+                            position: relative;
+                            left: 100%;
+                            display: none;
+                            top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

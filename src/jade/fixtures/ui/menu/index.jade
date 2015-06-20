@@ -1,4 +1,44 @@
-header.ui-menu(data-opt="main")
+header.ui-menu(data-type="top-bar" data-opt="sticky")
+    nav
+        ul
+            li
+                a(href="") test
+
+            li
+                div Dropdown
+                ul
+                    li
+                        a(href="") test
+
+            li
+                a(href="") link Dropdown
+                ul
+                    li
+                        a(href="") test
+                    li
+                        a(href="") test 2
+                        ul
+                            li
+                                a(href="") test 2
+
+            li
+                div Dropdown some level down
+                ul
+                    li
+                        a(href="") test 2
+                        ul
+                            li
+                                a(href="") test 3
+                                ul
+                                    li
+                                        a(href="") test 4
+                    li
+                        a(href="") test 2
+                        ul
+                            li
+                                a(href="") test 2
+
+header.ui-menu(data-type="top-bar" data-position="centered" data-opt="sticky")
     nav
         ul
             li
@@ -30,3 +70,38 @@ header.ui-menu(data-opt="main")
                                         ul
                                             li
                                                 a(href="") test
+
+header.ui-menu(data-type="top-bar" data-position="right" data-opt="sticky")
+    nav
+        ul
+            li
+                a(href="") test
+
+            li
+                div Dropdown
+                ul
+                    li
+                        a(href="") test
+
+            li
+                a(href="") link Dropdown
+                ul
+                    li
+                        a(href="") test
+
+            li
+                div Dropdown some level down
+                ul
+                    li
+                        a(href="") test 2
+                        ul
+                            li
+                                a(href="") test 3
+                                ul
+                                    li
+                                        a(href="") test 4
+                    li
+                        a(href="") test 2
+                        ul
+                            li
+                                a(href="") test 2

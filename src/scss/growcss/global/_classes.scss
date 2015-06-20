@@ -7,6 +7,7 @@
     @include media($medium-up) {
         @include outer-container($medium-breakpoint);
     }
+
     @include media($large-up) {
         @include outer-container($large-breakpoint);
     }
