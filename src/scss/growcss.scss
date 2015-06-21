@@ -6,6 +6,9 @@
 // http://necolas.github.io/normalize.css/
 @import "normalize.scss";
 
+// A dot-syntax configuration (Map) library for Sass.
+@import "config.scss";
+
 // Here are all the growCss functions.
 @import "growcss/functions.scss";
 
