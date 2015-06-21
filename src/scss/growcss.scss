@@ -10,6 +10,9 @@
 // https://github.com/nickpfisterer/quantum-colors
 @import "quantum-colors.scss";
 
+// A dot-syntax configuration (Map) library for Sass.
+@import "config.scss";
+
 // Here are all the growCss functions.
 @import "growcss/functions.scss";
 

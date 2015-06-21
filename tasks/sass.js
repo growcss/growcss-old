@@ -8,6 +8,7 @@ module.exports = {
                 'bower_components/bourbon/app/assets/stylesheets/',
                 'bower_components/bitters/app/assets/stylesheets/',
                 'bower_components/neat/app/assets/stylesheets/',
+                'bower_components/crossass-config/scss',
                 'bower_components/quantum-colors'
             ],
             bundleExec: true
@@ -23,6 +24,7 @@ module.exports = {
                 'bower_components/bourbon/app/assets/stylesheets/',
                 'bower_components/bitters/app/assets/stylesheets/',
                 'bower_components/neat/app/assets/stylesheets/',
+                'bower_components/crossass-config/scss',
                 'bower_components/quantum-colors'
             ],
             bundleExec: true,
