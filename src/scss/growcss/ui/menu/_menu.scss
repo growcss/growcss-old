@@ -78,11 +78,19 @@ header.ui-menu[data-type='top-bar'] {
                     }
                 }
 
-                &:hover > ul {
-                    display: inline-block;
-                    width: 100%;
-                    position: absolute;
-                    z-index: 1;
+                &:hover {
+                    background: $ui-menu-hover-background-color;
+
+                    & > a, & > div {
+                        color: $ui-menu-dropdown-link-hover-color;
+                    }
+
+                    & > ul {
+                        display: inline-block;
+                        width: 100%;
+                        position: absolute;
+                        z-index: 1;
+                    }
                 }
 
                 // level 2
@@ -90,10 +98,16 @@ header.ui-menu[data-type='top-bar'] {
                     height: auto;
                     display: none;
                     left: 0;
+                    background: $ui-menu-hover-background-color;
 
                     li {
                         width: 100%;
                         height: $ui-menu-height;
+                        text-align: left;
+
+                        a {
+                            color: $ui-menu-link-color;
+                        }
 
                         // level 3 - 4
                         ul {

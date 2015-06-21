@@ -698,18 +698,26 @@ header.ui-menu[data-type='top-bar'] nav {
         color: #ffffff; }
         header.ui-menu[data-type='top-bar'] nav ul li a:hover, header.ui-menu[data-type='top-bar'] nav ul li a:link, header.ui-menu[data-type='top-bar'] nav ul li a:focus, header.ui-menu[data-type='top-bar'] nav ul li div:hover, header.ui-menu[data-type='top-bar'] nav ul li div:link, header.ui-menu[data-type='top-bar'] nav ul li div:focus {
           color: #03a9f4; }
-      header.ui-menu[data-type='top-bar'] nav ul li:hover > ul {
-        display: inline-block;
-        width: 100%;
-        position: absolute;
-        z-index: 1; }
+      header.ui-menu[data-type='top-bar'] nav ul li:hover {
+        background: #9e9e9e; }
+        header.ui-menu[data-type='top-bar'] nav ul li:hover > a, header.ui-menu[data-type='top-bar'] nav ul li:hover > div {
+          color: #000000; }
+        header.ui-menu[data-type='top-bar'] nav ul li:hover > ul {
+          display: inline-block;
+          width: 100%;
+          position: absolute;
+          z-index: 1; }
       header.ui-menu[data-type='top-bar'] nav ul li ul {
         height: auto;
         display: none;
-        left: 0; }
+        left: 0;
+        background: #9e9e9e; }
         header.ui-menu[data-type='top-bar'] nav ul li ul li {
           width: 100%;
-          height: 3.25rem; }
+          height: 3.25rem;
+          text-align: left; }
+          header.ui-menu[data-type='top-bar'] nav ul li ul li a {
+            color: #ffffff; }
           header.ui-menu[data-type='top-bar'] nav ul li ul li ul {
             position: relative;
             left: 100%;
