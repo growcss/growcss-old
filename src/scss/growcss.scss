@@ -6,7 +6,12 @@
 // http://necolas.github.io/normalize.css/
 @import "normalize.scss";
 
+// Use the color palette from Google's Material Design spec in your Sass projects.
+// https://github.com/nickpfisterer/quantum-colors
+@import "quantum-colors.scss";
+
 // A dot-syntax configuration (Map) library for Sass.
+// https://github.com/whizark/crossass-config
 @import "config.scss";
 
 // Here are all the growCss functions.
@@ -26,10 +31,6 @@
 // Scaffold styles, variables and structure for Bourbon projects.
 // http://bitters.bourbon.io/
 @import "base.scss";
-
-// Use the color palette from Google's Material Design spec in your Sass projects.
-// https://github.com/nickpfisterer/quantum-colors
-@import "quantum-colors.scss";
 
 // Here are all the growCss global classes.
 @import "growcss/global/classes.scss";
