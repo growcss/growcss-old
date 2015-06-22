@@ -1,16 +1,16 @@
 'use strict';
-//jshint config
+//jscs config
 
 module.exports = {
     test: {
-        options: {
-            jshintrc: '.jshintrc',
-            reporter: require('jshint-stylish')
-        },
         src: [
             'Gruntfile.js',
             'src/**/*.js',
             'test/**/*.js'
-        ]
+        ],
+        options: {
+            config: '.jscsrc',
+            fix: true
+        },
     }
 };

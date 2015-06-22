@@ -21,4 +21,12 @@ module.exports = {
             dest: 'build/js/'
         }]
     },
+    releaseRemIe: {
+        files: [{
+            expand: true,
+            cwd: 'bower_components/REM-unit-polyfill/js/',
+            src: '*.min.js',
+            dest: 'release/js/'
+        }]
+    }
 };
