@@ -1,15 +1,15 @@
-(function($, window, document, undefined) {
+(function ($, window, document, undefined) {
     'use strict';
 
-    var cssClass,
+    var CssClass,
         map = [],
-        loader  = function(jq, uiClass) {
-            if (!uiClass) {
+        loader  = function (jq, UiClass) {
+            if (!UiClass) {
                 return;
             }
 
-            jq.each(function() {
-                new uiClass($(this)).init();
+            jq.each(function () {
+                new UiClass($(this)).init();
             });
         };
 
@@ -24,15 +24,15 @@
     /**!
          * Auto initialize instances by CSS classname
          */
-    for (cssClass in map) {
-        loader($(cssClass), map[cssClass]);
+    for (CssClass in map) {
+        loader($(CssClass), map[CssClass]);
     }
 
     /**
          * Fast click
          */
     if (typeof FastClick !== 'undefined') {
-        $(function() {
+        $(function () {
             if (typeof document.body !== 'undefined') {
                 FastClick.attach(document.body);
             }
