@@ -23,7 +23,6 @@ module.exports = {
             ext: '.html'
         }]
     },
-
     fixtures: {
         options: {
             data: {
@@ -36,6 +35,21 @@ module.exports = {
             expand: true,
             src: '**/*.jade',
             dest: 'tests/fixtures',
+            ext: '.html'
+        }]
+    },
+    release: {
+        options: {
+            data: {
+                placeholdit: placeholdit
+            },
+            pretty: true,
+        },
+        files: [{
+            cwd: 'src/jade',
+            expand: true,
+            src: '*.jade',
+            dest: 'release',
             ext: '.html'
         }]
     }
