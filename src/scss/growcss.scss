@@ -6,34 +6,43 @@
 
 // A collection of HTML element and attribute style-normalizations
 // http://necolas.github.io/normalize.css/
-@import "normalize.scss";
+@import "vendors/normalize";
 
 // Use the color palette from Google's Material Design spec in your Sass projects.
 // https://github.com/nickpfisterer/quantum-colors
-@import "quantum-colors.scss";
-
-// Here are all the growCss functions.
-@import "growcss/functions.scss";
+@import "quantum-colors";
 
 // A simple and lightweight mixin library for Sass.
 // http://bourbon.io/
-@import "bourbon.scss";
+@import "bourbon";
+
+// A dot-syntax configuration (Map) library for Sass.
+// https://github.com/whizark/crossass-config
+@import "config.scss";
+
+// Here are all the growCss settings.
+@import "settings/base";
+
+// Here are all the growCss functions, helpers, mixins and variables.
+@import "utils/variables",
+        "utils/functions",
+        "utils/helpers",
+        "utils/mixins";
 
 // A lightweight semantic grid framework for Sass and Bourbon.
 // http://neat.bourbon.io/
-@import "neat.scss";
-
-// Here are all the growCss settings.
-@import "growcss/settings.scss";
+@import "neat";
 
 // Scaffold styles, variables and structure for Bourbon projects.
 // http://bitters.bourbon.io/
-@import "base.scss";
+@import "base";
 
-// Here are all the growCss global classes.
-@import "growcss/global/classes.scss";
+//
+@import "base/breakpoint",
+        "base/typography",
+        "base/base";
 
-// Behold, here are all the growCss modules.
-@import "growcss/ui/well/well.scss";
-@import "growcss/ui/menu/menu.scss";
-@import "growcss/ui/menu/side-menu.scss";
+// Behold, here are all the growCss components.
+@import "components/well",
+        "components/menu",
+        "components/side-menu";

@@ -1,6 +1,8 @@
 // Sass Functions
-//
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
 // RANGES
+//
 // We use these functions to define ranges for various things, like media queries.
 @function lower-bound($range) {
     @if length($range) <= 0 {

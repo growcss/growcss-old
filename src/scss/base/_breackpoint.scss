@@ -1,38 +1,4 @@
-// growCss by Anolilab
-// http://growcss.com
-// Licensed under MIT Open Source
-
-// A dot-syntax configuration (Map) library for Sass.
-// https://github.com/whizark/crossass-config
-@import "config.scss";
-
-// Base config.
-@import "settings/base.config.scss";
-@import "settings/media-query.config.scss";
-
-// Ui config
-@import "settings/ui/ui.well.config.scss";
-@import "settings/ui/ui.menu.config.scss";
-
-
-
-// growCss Settings
-//
-// 1.  Base
-// 2.  Media Query Ranges
-// 3.  Typography
-// 4.  UI
-// 4.1  Well
-
-// 1. Base
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-$growcss-margin-default: rem(25);
-
-// This is the default html and body font-size for the base rem value.
-// $em-base: 16px;
-
-// 2. Media Query Ranges
+// Media Query Ranges
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 $small-breakpoint:  em(640);
@@ -71,26 +37,3 @@ $small: $medium-up;
 $medium: $medium-up;
 $large: $large-up;
 $xlarge: $xlarge-up;
-
-// 3. Typography
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-// 4. UI
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-// 4.1 UI Well
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-$ui-well-min-height: rem(150) !default;
-
-// 4.1 UI Menu
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-$ui-menu-height: rem(52);
-$ui-menu-hover-background-color: $grey-500;
-$ui-menu-first-background-color: $grey-500;
-$ui-menu-second-background-color: $grey-900;
-$ui-menu-link-line-height: rem(42);
-$ui-menu-link-padding: rem(5) rem(13) rem(5) rem(13);
-$ui-menu-link-color: $white;
-$ui-menu-link-hover-color: $light-blue-500;
-$ui-menu-dropdown-link-hover-color: $black;

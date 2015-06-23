@@ -1,9 +1,13 @@
 // Sass Mixins
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 
-/// Responsive manager.
-/// @access public
-/// @param {String} $breakpoint - Breakpoint
-/// @requires $breakpoints
+// Responsive manager.
+//
+// @access public
+//
+// @param {String} $breakpoint - Breakpoint
+//
+// @requires $breakpoints
 @mixin respond-to($breakpoint) {
     $raw-query: false;
 
