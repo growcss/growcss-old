@@ -2,6 +2,8 @@
 // http://growcss.com
 // Licensed under MIT Open Source
 
+@charset 'utf-8';
+
 // A collection of HTML element and attribute style-normalizations
 // http://necolas.github.io/normalize.css/
 @import "normalize.scss";
@@ -9,10 +11,6 @@
 // Use the color palette from Google's Material Design spec in your Sass projects.
 // https://github.com/nickpfisterer/quantum-colors
 @import "quantum-colors.scss";
-
-// A dot-syntax configuration (Map) library for Sass.
-// https://github.com/whizark/crossass-config
-@import "config.scss";
 
 // Here are all the growCss functions.
 @import "growcss/functions.scss";

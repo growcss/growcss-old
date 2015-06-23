@@ -10,7 +10,9 @@ module.exports = function (grunt) {
     // measures the time each task takes
     require('time-grunt')(grunt);
 
-    require('jit-grunt')(grunt, {});
+    require('jit-grunt')(grunt, {
+        scsslint: 'grunt-scss-lint'
+    });
 
     // load grunt config
     require('load-grunt-config')(grunt, {

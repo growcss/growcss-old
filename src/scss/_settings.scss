@@ -2,6 +2,20 @@
 // http://growcss.com
 // Licensed under MIT Open Source
 
+// A dot-syntax configuration (Map) library for Sass.
+// https://github.com/whizark/crossass-config
+@import "config.scss";
+
+// Base config.
+@import "settings/base.config.scss";
+@import "settings/media-query.config.scss";
+
+// Ui config
+@import "settings/ui/ui.well.config.scss";
+@import "settings/ui/ui.menu.config.scss";
+
+
+
 // growCss Settings
 //
 // 1.  Base
