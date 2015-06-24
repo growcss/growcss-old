@@ -1,16 +1,16 @@
-(function(root, factory) {
+(function (root, factory) {
     'use strict';
     // GLOBAL: Register to ui
     root.ui = typeof root.ui === 'undefined' ? {} : root.ui;
     root.ui.Well = factory(jQuery);
 
-}(this, function($) {
+}(this, function ($) {
     'use strict';
 
     /**
      * @constructor
      */
-    function Well() {
+    function Well(jq) {
         var
 
         /**
@@ -22,13 +22,15 @@
         /**
          * @method init
          */
-        _interface.init = function() {
+        _interface.init = function () {
 
         };
 
         /*!*/
         return _interface;
+
     }
 
     return Well;
+
 }));
