@@ -4,7 +4,7 @@
 section.ui-well {
     background: $grey-900;
     color: $white;
-    min-height: $ui-well-min-height;
+    min-height: x-config-get('ui.well-min-height');
     margin-bottom: $growcss-margin-default;
     margin-top: $growcss-margin-default;
     box-shadow: 0 0 rem(28) 0 rgba(102, 102, 102, 0.19) inset;

@@ -1,4 +1,4 @@
 // Well config
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$ui-well-min-height: rem(150) !default;
+@include x-config-set('ui.well-min-height', rem(150), true);

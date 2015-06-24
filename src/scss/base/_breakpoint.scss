@@ -6,6 +6,11 @@ $medium-breakpoint: em(1024);
 $large-breakpoint:  em(1440);
 $xlarge-breakpoint: em(1920);
 
+@include x-config-set('breakpoint.small', em(640), true);
+@include x-config-set('breakpoint.medium', em(1024), true);
+@include x-config-set('breakpoint.large', em(1440), true);
+@include x-config-set('breakpoint.xlarge', em(1920), true);
+
 $small-range:   (0, $small-breakpoint);
 $medium-range:  ($small-breakpoint  + em(1), $medium-breakpoint);
 $large-range:   ($medium-breakpoint + em(1), $large-breakpoint);

@@ -23,26 +23,26 @@
 // Here are all the growCss settings.
 @import "settings/base";
 
-// Here are all the growCss functions, helpers, mixins and variables.
-@import "utils/variables",
-        "utils/functions",
-        "utils/helpers",
-        "utils/mixins";
-
 // A lightweight semantic grid framework for Sass and Bourbon.
 // http://neat.bourbon.io/
 @import "neat";
 
-// Scaffold styles, variables and structure for Bourbon projects.
-// http://bitters.bourbon.io/
-@import "base";
+// Typographic is responsive typography made easy.
+// https://github.com/corysimmons/typographic
+@import "typographic";
 
 //
 @import "base/breakpoint",
         "base/typography",
         "base/base";
 
+// Here are all the growCss functions, helpers, mixins and variables.
+@import "utils/variables",
+        "utils/functions",
+        "utils/helpers",
+        "utils/mixins";
+
 // Behold, here are all the growCss components.
-@import "components/well",
-        "components/menu",
-        "components/side-menu";
+@import "components/well/well",
+        "components/menu/menu",
+        "components/menu/side-menu";
