@@ -46,9 +46,6 @@
 }
 
 .container {
-    padding-bottom: $growcss-margin-default;
-    padding-top: $growcss-margin-default;
-
     @include outer-container($small-breakpoint);
 
     @include media($medium-up) {
@@ -58,6 +55,9 @@
     @include media($large-up) {
         @include outer-container($large-breakpoint);
     }
+
+    padding-bottom: $growcss-margin-default;
+    padding-top: $growcss-margin-default;
 
     // @include media($xlarge-up) {
     //     @include outer-container($xlarge-breakpoint);

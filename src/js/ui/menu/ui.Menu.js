@@ -17,7 +17,7 @@
          * @property {jQuery} _jq
          * @private
          */
-        _jq = jq,
+        // _jq = jq,
 
         /**
          * @property {Object} _interface

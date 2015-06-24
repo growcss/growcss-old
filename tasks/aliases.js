@@ -6,7 +6,7 @@ module.exports = {
         'scsslint'
     ],
     'test' : [
-        // 'cs-test',
+        'cs-test',
         'karma'
     ],
     'default': [
