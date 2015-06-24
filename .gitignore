@@ -1,8 +1,9 @@
 bower_components
 build
+.grunt/
+.grunt
 node_modules
 npm-debug.log
 .sass-cache
 test/bower_components
-tmp
-.grunt/
+tmp/
