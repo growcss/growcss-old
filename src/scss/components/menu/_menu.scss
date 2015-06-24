@@ -68,10 +68,11 @@ header.ui-menu[data-type='top-bar'] {
                 text-align: center;
                 position: relative;
 
-                a, div {
+                a,
+                div {
+                    @include pad($ui-menu-link-padding);
                     width: 100%;
                     line-height: $ui-menu-link-line-height;
-                    @include pad($ui-menu-link-padding);
                     display: block;
                     cursor: pointer;
                     color: $ui-menu-link-color;

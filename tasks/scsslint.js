@@ -2,7 +2,7 @@
 //scsslint config
 
 module.exports = {
-    allFiles: [
+    dev: [
         'src/scss/**/*.scss',
     ],
     options: {

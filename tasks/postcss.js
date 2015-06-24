@@ -1,6 +1,8 @@
 'use strict';
 //postcss config
 
+var autoprefixer = require('autoprefixer-core');
+
 module.exports = {
     options: {
       processors: [

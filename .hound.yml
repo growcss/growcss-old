@@ -3,3 +3,6 @@ scss:
 
 ruby:
     enabled: false
+
+javascript:
+    config_file: .jshintrc

@@ -2,59 +2,71 @@
 // https://github.com/airbnb/javascript/blob/master/linters/jshintrc
 // Note: All _formatting_ guidelines have moved to .jscsrc
 {
-  // Define globals exposed by modern browsers.
-  "browser": true,
+    // Define globals exposed by modern browsers.
+    "browser": true,
 
-  // Define globals exposed by jQuery.
-  "jquery": true,
+    // Define globals exposed by jQuery.
+    "jquery": true,
 
-  // Define globals exposed by Node.js
-  "node": true,
+    // Define globals exposed by Node.js
+    "node": true,
 
-  // Custom globals
-  "globals": {
-    "define": true,
-    "require": true,
-    "ui": true,
-    "FastClick": true
-  },
+    // Custom globals
+    "globals": {
+        "define": true,
+        "require": true,
+        "ui": true,
+        "FastClick": true
+    },
 
-  // Unfortunate overkill, but necessary for preceding || and &&.
-  // See https://github.com/jshint/jshint/issues/735.
-  "laxbreak": true,
+    // Unfortunate overkill, but necessary for preceding || and &&.
+    // See https://github.com/jshint/jshint/issues/735.
+    "laxbreak": true,
 
-  // Prohibit use of == and != in favor of === and !==.
-  "eqeqeq": true,
+    // Prohibit use of == and != in favor of === and !==.
+    "eqeqeq": true,
 
-  // Suppress warnings about == null comparisons.
-  "eqnull": true,
+    // Suppress warnings about == null comparisons.
+    "eqnull": true,
 
-  // Prohibit use of a variable before it is defined.
-  "latedef": true,
+    // Prohibit use of a variable before it is defined.
+    "latedef": true,
 
-  // Prohibit use of explicitly undeclared variables.
-  "undef": true,
+    // Prohibit use of explicitly undeclared variables.
+    "undef": true,
 
-  // Warn when variables are defined but never used.
-  "unused": "vars",
+    // Warn when variables are defined but never used.
+    "unused": "vars",
 
-  // Avoid long function definitions
-  "maxparams": 4,
+    // Avoid long function definitions
+    "maxparams": 4,
 
-  // Prevent deep nesting
-  "maxdepth": 2,
+    // Prevent deep nesting
+    "maxdepth": 2,
 
-  // Concise functions
-  "maxstatements": 15,
+    // Concise functions
+    "maxstatements": 15,
 
-  // Prevent excessive branching
-  "maxcomplexity": 6,
+    // Prevent excessive branching
+    "maxcomplexity": 6,
 
-  "strict": true,
+    "strict": true,
 
-  "quotmark": "single",
+    "quotmark": "single",
 
-  "indent": 4,
+    "indent": 4,
 
-  "nonbsp": true
+    "nonbsp": true,
+
+    "asi": false,
+
+    "bitwise": true,
+
+    "camelcase": true,
+
+    "curly": true,
+
+    "immed": true,
+
+    "newcap": true
 }
