@@ -1,0 +1,5 @@
+scss:
+    config_file: .scss-style.yml
+
+ruby:
+    enabled: false

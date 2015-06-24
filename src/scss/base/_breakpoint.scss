@@ -1,30 +1,15 @@
-// growCss by Anolilab
-// http://growcss.com
-// Licensed under MIT Open Source
-
-// growCss Settings
-//
-// 1.  Base
-// 2.  Media Query Ranges
-// 3.  Typography
-// 4.  UI
-// 4.1  Well
-
-// 1. Base
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-$growcss-margin-default: rem(25);
-
-// This is the default html and body font-size for the base rem value.
-// $em-base: 16px;
-
-// 2. Media Query Ranges
+// Media Query Ranges
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 $small-breakpoint:  em(640);
 $medium-breakpoint: em(1024);
 $large-breakpoint:  em(1440);
 $xlarge-breakpoint: em(1920);
+
+@include x-config-set('breakpoint.small', em(640), true);
+@include x-config-set('breakpoint.medium', em(1024), true);
+@include x-config-set('breakpoint.large', em(1440), true);
+@include x-config-set('breakpoint.xlarge', em(1920), true);
 
 $small-range:   (0, $small-breakpoint);
 $medium-range:  ($small-breakpoint  + em(1), $medium-breakpoint);
@@ -57,14 +42,3 @@ $small: $medium-up;
 $medium: $medium-up;
 $large: $large-up;
 $xlarge: $xlarge-up;
-
-// 3. Typography
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-// 4. UI
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-// 4.1 UI Well
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-$ui-well-min-height: rem(150) !default;

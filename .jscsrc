@@ -1,119 +1,72 @@
+// Derived from AirBnB + LinkedIn Idiomatic + Crockford
+// https://github.com/airbnb/javascript
+// https://github.com/linkedin/idiomatic.js (Idiomatic fork with Crockford inner spacing)
+// http://javascript.crockford.com/code.html
 {
-  "requireCurlyBraces": [
-    "if",
-    "else",
-    "for",
-    "while",
-    "do",
-    "try",
-    "catch"
-  ],
-  "requireSpaceAfterKeywords": [
-    "if",
-    "else",
-    "for",
-    "while",
-    "do",
-    "switch",
-    "return",
-    "try",
-    "catch"
-  ],
-  "requireSpaceBeforeBlockStatements": true,
+  // Keywords
+  "requireSpaceAfterKeywords": ["if", "else", "for", "while", "do", "switch", "return", "try", "catch"],
+  "disallowKeywords": ["with", "eval"],
+
+  // Functions
   "requireParenthesesAroundIIFE": true,
+  "disallowSpacesInNamedFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+  },
+  "requireSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+  },
+
+  // Blocks
+  "disallowEmptyBlocks": true,
+  "disallowNewlineBeforeBlockStatements": true,
+  "requireSpaceBeforeBlockStatements": true,
+
+  // Curlies, brackets, parens
+  "disallowSpaceAfterObjectKeys": true,
+  "requireSpacesInsideObjectBrackets": "allButNested",
+  "disallowSpacesInsideArrayBrackets": true,
+  "disallowSpacesInsideParentheses": true,
+
+  // Line breaking
+  "requireCommaBeforeLineBreak": true,
+  "requireOperatorBeforeLineBreak": ["+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<="],
+  "disallowMultipleLineBreaks": true,
+
+  // Unary operators
+  "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~", "!"],
+  "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
+
+  // Binary operators
+  "disallowSpaceBeforeBinaryOperators": [","],
+  "requireSpaceBeforeBinaryOperators": ["?", "+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<=", "&&", "||"],
+  "requireSpaceAfterBinaryOperators": [",", "?", "+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<=", "&&", "||"],
+
+  // Ternary operator
   "requireSpacesInConditionalExpression": {
     "afterTest": true,
     "beforeConsequent": true,
     "afterConsequent": true,
     "beforeAlternate": true
   },
-  "requireSpacesInFunctionExpression": {
-    "beforeOpeningCurlyBrace": true
-  },
-  "disallowSpacesInFunctionExpression": {
-    "beforeOpeningRoundBrace": true
-  },
-  "requireSpacesInFunctionDeclaration": {
-    "beforeOpeningCurlyBrace": true
-  },
-  "disallowSpacesInFunctionDeclaration": {
-    "beforeOpeningRoundBrace": true
-  },
-  "requireMultipleVarDecl": true,
-  "requireBlocksOnNewline": true,
-  "disallowEmptyBlocks": true,
-  "disallowSpacesInsideObjectBrackets": true,
-  "disallowSpaceAfterObjectKeys": true,
-  "requireCommaBeforeLineBreak": true,
-  "requireOperatorBeforeLineBreak": [
-    "?",
-    "+",
-    "-",
-    "/",
-    "*",
-    "=",
-    "==",
-    "===",
-    "!=",
-    "!==",
-    ">",
-    ">=",
-    "<",
-    "<="
-  ],
-  "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~", "!"],
-  "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
-  "requireSpaceBeforeBinaryOperators": [
-    "=",
-    "+",
-    "-",
-    "/",
-    "*",
-    "==",
-    "===",
-    "!=",
-    "!==",
-    "&",
-    "|",
-    "^"
-  ],
-  "requireSpaceAfterBinaryOperators": [
-    "=",
-    "+",
-    "-",
-    "/",
-    "*",
-    "==",
-    "===",
-    "!=",
-    "!==",
-    "&",
-    "|",
-    "^"
-  ],
-  "disallowMultipleLineStrings": true,
-  "disallowMultipleLineBreaks": true,
-  "validateQuoteMarks": { "mark": "'", "escape": true },
-  "validateIndentation": "\t",
-  "disallowMixedSpacesAndTabs": true,
+
+  // Per-line whitespace
+  "validateIndentation": 4,
   "disallowTrailingWhitespace": true,
-  "disallowKeywordsOnNewLine": ["else"],
   "requireLineFeedAtFileEnd": true,
+
+  // Do not allow reassignment of "this" (prefer bind instead)
+  "safeContextKeyword": "bind",
+
+  // Misc
+  "disallowMultipleLineStrings": true,
   "requireDotNotation": true,
-  "validateJSDoc": {
-    "checkParamNames": true,
-    "checkRedundantParams": true,
-    "requireParamTypes": true
-  },
-  "curly": true,
-  "eqeqeq": true,
-  "immed": true,
-  "latedef": true,
-  "newcap": true,
-  "noarg": true,
-  "sub": true,
-  "undef": true,
-  "boss": true,
-  "eqnull": true,
-  "node": true
+  "requireSpaceAfterLineComment": true,
+  "disallowYodaConditions": true,
+  "disallowTrailingComma": true,
+
+  // JSHint formatting
+  "requireCapitalizedConstructors": true,
+  "maximumLineLength": 100,
+  "validateQuoteMarks": { "mark": "'", "escape": true },
+  "requireCamelCaseOrUpperCaseIdentifiers": true
 }

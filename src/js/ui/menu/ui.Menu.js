@@ -2,7 +2,7 @@
     'use strict';
     // GLOBAL: Register to ui
     root.ui = typeof root.ui === 'undefined' ? {} : root.ui;
-    root.ui.Well = factory(jQuery);
+    root.ui.Menu = factory(jQuery);
 
 }(this, function ($) {
     'use strict';
@@ -10,8 +10,14 @@
     /**
      * @constructor
      */
-    function Well(jq) {
+    function Menu(jq) {
         var
+
+        /**
+         * @property {jQuery} _jq
+         * @private
+         */
+        _jq = jq,
 
         /**
          * @property {Object} _interface
@@ -28,9 +34,7 @@
 
         /*!*/
         return _interface;
-
     }
 
-    return Well;
-
+    return Menu;
 }));
