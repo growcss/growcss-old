@@ -14,4 +14,4 @@ module.exports = {
             'dist/': 'css/*.css'
         }
     }
-}
+};
