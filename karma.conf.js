@@ -2,7 +2,9 @@
 // Generated on Mon Jun 15 2015 21:08:55 GMT+0200 (Mitteleuropäische Sommerzeit)
 
 module.exports = function(config) {
-  config.set({
+  'use strict';
+
+  var configuration = {
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '/',
@@ -27,6 +29,13 @@ module.exports = function(config) {
       'tests/src/js/**/*.spec.js',
       'tests/src/scss/**/*.tests.js'
     ],
+
+    customLaunchers: {
+      ChromeTravisCi: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
 
     // list of files to exclude
     exclude: [
@@ -55,12 +64,37 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
-    // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: [],
+    // Start these browsers, currently available:
+    // - Chrome
+    // - ChromeCanary
+    // - Firefox
+    // - Opera
+    // - Safari (only Mac)
+    // - PhantomJS
+    // - IE (only Windows)
+    // CLI --browsers Chrome,Firefox,Safari
+    browsers: [process.env.TRAVIS ? 'Firefox' : 'Chrome'],
+
+    detectBrowsers : {
+      postDetection: function(browsers) {
+        var index = browsers.indexOf('Chrome');
+
+        if(index !== -1) {
+          browsers[index] = 'ChromeTravisCi';
+        }
+
+        return browsers;
+      }
+    },
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true
-  });
+  };
+
+  if (process.env.TRAVIS) {
+      configuration.browsers = ['ChromeTravisCi'];
+  }
+
+  config.set(configuration);
 };
