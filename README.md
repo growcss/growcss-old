@@ -2,16 +2,16 @@
 
 [![Author](http://img.shields.io/badge/author-@anolilab-blue.svg?style=flat-square)](https://twitter.com/anolilab)
 [![npm](https://img.shields.io/npm/v/growcss.svg?style=flat-square)](https://www.npmjs.com/package/growcss)
-[![David](https://img.shields.io/david/growcss/growcss.svg?style=flat-square)](https://github.com/growcss/growcss)
+[![David](https://img.shields.io/david/growcss/growcss.svg?style=flat-square)](https://david-dm.org/growcss/growcss#info=dependencies&view=table)
 [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/growcss)
 [![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?style=flat-square)](https://github.com/growcss/growcss/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 ## Master
-[![Build Status](https://img.shields.io/travis/growcss/growcss/master.svg?style=flat-square)](https://travis-ci.org/growcss/growcss)
+[![Build Status](https://img.shields.io/travis/growcss/growcss.svg?branch=develop&style=flat-square)](https://travis-ci.org/growcss/growcss)
 
 ## Develop
-[![Build Status](https://img.shields.io/travis/growcss/growcss/master.svg?style=flat-square)](https://travis-ci.org/growcss/growcss)
+[![Build Status](https://img.shields.io/travis/growcss/growcss.svg?branch=develop&style=flat-square)](https://travis-ci.org/growcss/growcss)
 
 ### Bits and Pieces:
 * [npm:](https://npmjs.org/) Well... it's a Node.js package manager
