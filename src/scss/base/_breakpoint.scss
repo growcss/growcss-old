@@ -1,36 +1,36 @@
 // Media Query Ranges
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-@include x-config-set('breakpoint.small', em(640), true);
-@include x-config-set('breakpoint.medium', em(1024), true);
-@include x-config-set('breakpoint.large', em(1440), true);
-@include x-config-set('breakpoint.xlarge', em(1920), true);
+@include config-set('breakpoint.small', em(640), true);
+@include config-set('breakpoint.medium', em(1024), true);
+@include config-set('breakpoint.large', em(1440), true);
+@include config-set('breakpoint.xlarge', em(1920), true);
 
-@include x-config-set('breakpoint.small-range', (0, x-config-get('breakpoint.small')));
-@include x-config-set('breakpoint.medium-range', (x-config-get('breakpoint.small') + em(1), x-config-get('breakpoint.medium')));
-@include x-config-set('breakpoint.large-range', (x-config-get('breakpoint.medium') + em(1), x-config-get('breakpoint.large')));
-@include x-config-set('breakpoint.xlarge-range', (x-config-get('breakpoint.large') + em(1), x-config-get('breakpoint.xlarge')));
-@include x-config-set('breakpoint.xxlarge-range', (x-config-get('breakpoint.xlarge') + em(1), em(99999999)));
+@include config-set('breakpoint.small-range', (0, config-get('breakpoint.small')), true);
+@include config-set('breakpoint.medium-range', (config-get('breakpoint.small') + em(1), config-get('breakpoint.medium')), true);
+@include config-set('breakpoint.large-range', (config-get('breakpoint.medium') + em(1), config-get('breakpoint.large')), true);
+@include config-set('breakpoint.xlarge-range', (config-get('breakpoint.large') + em(1), config-get('breakpoint.xlarge')), true);
+@include config-set('breakpoint.xxlarge-range', (config-get('breakpoint.xlarge') + em(1), em(99999999)), true);
 
-@include x-config-set('breakpoint.screen', 'only screen');
+@include config-set('breakpoint.screen', 'only screen', true);
 
-@include x-config-set('breakpoint.landscape', new-breakpoint('orientation: landscape'));
-@include x-config-set('breakpoint.portrait', new-breakpoint('orientation: portrait'));
+@include config-set('breakpoint.landscape', new-breakpoint('orientation: landscape'), true);
+@include config-set('breakpoint.portrait', new-breakpoint('orientation: portrait'), true);
 
-$small-up: x-config-get('breakpoint.screen');
-$small-only: new-breakpoint(max-width #{upper-bound($small-range)});
+$small-up: config-get('breakpoint.screen');
+$small-only: new-breakpoint(max-width #{upper-bound(config-get('breakpoint.small-range'))});
 
-$medium-up: new-breakpoint(#{lower-bound(x-config-get('breakpoint.medium-range'))});
-$medium-only: new-breakpoint(min-width #{lower-bound(x-config-get('breakpoint.medium-range'))} and max-width #{upper-bound(x-config-get('breakpoint.medium-range'))});
+$medium-up: new-breakpoint(#{lower-bound(config-get('breakpoint.medium-range'))});
+$medium-only: new-breakpoint(min-width #{lower-bound(config-get('breakpoint.medium-range'))} and mawidth #{upper-bound(config-get('breakpoint.medium-range'))});
 
-$large-up: new-breakpoint(#{lower-bound(x-config-get('breakpoint.large-range'))});
-$large-only: new-breakpoint(min-width #{lower-bound(x-config-get('breakpoint.large-range'))} and max-width #{upper-bound(x-config-get('breakpoint.large-range'))});
+$large-up: new-breakpoint(#{lower-bound(config-get('breakpoint.large-range'))});
+$large-only: new-breakpoint(min-width #{lower-bound(config-get('breakpoint.large-range'))} and mawidth #{upper-bound(config-get('breakpoint.large-range'))});
 
-$xlarge-up: new-breakpoint(#{lower-bound(x-config-get('breakpoint.xxlarge-range'))});
-$xlarge-only: new-breakpoint(min-width #{lower-bound(x-config-get('breakpoint.xxlarge-range'))} and max-width #{upper-bound(x-config-get('breakpoint.xxlarge-range'))});
+$xlarge-up: new-breakpoint(#{lower-bound(config-get('breakpoint.xlarge-range'))});
+$xlarge-only: new-breakpoint(min-width #{lower-bound(config-get('breakpoint.xlarge-range'))} and mawidth #{upper-bound(config-get('breakpoint.xlarge-range'))});
 
-$xxlarge-up: new-breakpoint(#{lower-bound(x-config-get('breakpoint.xxlarge-range'))});
-$xxlarge-only: new-breakpoint(min-width #{lower-bound(x-config-get('breakpoint.xxlarge-range'))} and max-width #{upper-bound(x-config-get('breakpoint.xxlarge-range'))});
+$xxlarge-up: new-breakpoint(#{lower-bound(config-get('breakpoint.xxlarge-range'))});
+$xxlarge-only: new-breakpoint(min-width #{lower-bound(config-get('breakpoint.xxlarge-range'))} and mawidth #{upper-bound(config-get('breakpoint.xxlarge-range'))});
 
 // Legacy
 $small: $medium-up;

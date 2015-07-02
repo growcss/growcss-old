@@ -4,27 +4,19 @@
 header.ui-menu[data-type='top-bar'] {
   &[data-position='centered'] {
     nav {
-        background: $ui-menu-second-background-color;
+      background: $ui-menu-second-background-color;
 
       ul {
-          @include outer-container($small-breakpoint);
-
-          @include media($medium-up) {
-              @include outer-container($medium-breakpoint);
-          }
-
-          @include media($large-up) {
-            @include outer-container($large-breakpoint);
-          }
+        // @include container();
       }
     }
   }
 
   &[data-position='right'] {
     nav {
+      @include outer-container(100%);
       float: left;
       width: 100%;
-      @include outer-container(100%);
       background: $ui-menu-second-background-color;
 
       ul {
@@ -58,9 +50,9 @@ header.ui-menu[data-type='top-bar'] {
     width: 100%;
 
     ul {
+      @include outer-container(100%);
       height: $ui-menu-height;
       position: relative;
-      @include outer-container(100%);
       background: $ui-menu-second-background-color;
 
       li {
@@ -77,7 +69,9 @@ header.ui-menu[data-type='top-bar'] {
           cursor: pointer;
           color: $ui-menu-link-color;
 
-          &:hover, &:link, &:focus {
+          &:hover,
+          &:link,
+          &:focus {
             color: $ui-menu-link-hover-color;
           }
         }
@@ -85,11 +79,12 @@ header.ui-menu[data-type='top-bar'] {
         &:hover {
           background: $ui-menu-hover-background-color;
 
-          & > a, & > div {
+          > a,
+          > div {
             color: $ui-menu-dropdown-link-hover-color;
           }
 
-          & > ul {
+          > ul {
             display: inline-block;
             width: 100%;
             position: absolute;

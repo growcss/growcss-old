@@ -20,3 +20,22 @@
 //         @error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
 //     }
 // }
+
+@mixin container() {
+  @include outer-container(config-get('breakpoint.small'));
+
+  padding-bottom: $growcss-margin-default;
+  padding-top: $growcss-margin-default;
+
+  @include media($medium-up) {
+    @include outer-container(config-get('breakpoint.medium'));
+  }
+
+  @include media($large-up) {
+    @include outer-container(config-get('breakpoint.large'));
+  }
+
+  // @include media($xlarge-up) {
+  //   @include outer-container(config-get('breakpoint.xlarge'));
+  // }
+}

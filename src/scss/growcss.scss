@@ -17,8 +17,8 @@
 @import 'bourbon';
 
 // A dot-syntax configuration (Map) library for Sass.
-// https://github.com/whizark/crossass-config
-@import 'config';
+// https://github.com/growcss/sass-config-manager
+@import 'config-manager';
 
 // Here are all the growCss settings.
 @import 'settings/base';
@@ -41,8 +41,8 @@
 @import
 'utils/variables',
 'utils/functions',
-'utils/helpers',
-'utils/mixins';
+'utils/mixins',
+'utils/helpers';
 
 // Behold, here are all the growCss components.
 @import
