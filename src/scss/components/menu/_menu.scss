@@ -1,46 +1,54 @@
 // Menu
+// scss-lint:disable SelectorDepth NestingDepth
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-header.ui-menu[data-type='top-bar'] {
-  &[data-position='centered'] {
-    nav {
-      background: $ui-menu-second-background-color;
+.ui-menu[data-type="top-bar"] {
+  nav,
+  nav a,
+  nav ul,
+  nav li,
+  nav div,
+  nav form,
+  nav input {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+  }
 
-      ul {
-        // @include container();
-      }
+  nav a {
+    text-decoration: none;
+  }
+
+  nav li {
+    list-style: none;
+  }
+
+  &[data-position="centered"] {
+    nav > ul {
+      @include container(false);
     }
   }
 
-  &[data-position='right'] {
+  &[data-position="right"] {
     nav {
       @include outer-container(100%);
       float: left;
       width: 100%;
-      background: $ui-menu-second-background-color;
 
       ul {
         float: right;
-        background: $ui-menu-second-background-color;
 
-        li {
-          &:hover > ul {
-            display: inline-block;
-            width: 100%;
-          }
+        li:hover > ul {
+          display: inline-block;
+          width: 100%;
+        }
 
-        // level 2
-          ul {
-            li {
-              // level 3 - 4
-              ul {
-                position: relative;
-                left: -100%;
-                display: none;
-                top: -$ui-menu-height;
-              }
-            }
-          }
+        li > ul > li > ul {
+          display: none;
+          left: -100%;
+          position: relative;
+          top: -$ui-menu-height;
         }
       }
     }
@@ -48,26 +56,26 @@ header.ui-menu[data-type='top-bar'] {
 
   nav {
     width: 100%;
+    background: $ui-menu-second-background-color;
 
     ul {
       @include outer-container(100%);
       height: $ui-menu-height;
       position: relative;
-      background: $ui-menu-second-background-color;
 
       li {
-        float: left;
+        display: inline-block;
         text-align: center;
         position: relative;
 
         a,
         div {
           @include pad($ui-menu-link-padding);
-          width: 100%;
-          line-height: $ui-menu-link-line-height;
-          display: block;
-          cursor: pointer;
           color: $ui-menu-link-color;
+          cursor: pointer;
+          display: block;
+          line-height: $ui-menu-link-line-height;
+          width: 100%;
 
           &:hover,
           &:link,
@@ -86,8 +94,8 @@ header.ui-menu[data-type='top-bar'] {
 
           > ul {
             display: inline-block;
-            width: 100%;
             position: absolute;
+            width: 100%;
             z-index: 1;
           }
         }
@@ -100,9 +108,9 @@ header.ui-menu[data-type='top-bar'] {
           background: $ui-menu-hover-background-color;
 
           li {
-            width: 100%;
             height: $ui-menu-height;
             text-align: left;
+            width: 100%;
 
             a {
               color: $ui-menu-link-color;
@@ -110,9 +118,9 @@ header.ui-menu[data-type='top-bar'] {
 
             // level 3 - 4
             ul {
-              position: relative;
-              left: 100%;
               display: none;
+              left: 100%;
+              position: relative;
               top: 0;
             }
           }
