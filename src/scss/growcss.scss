@@ -23,6 +23,10 @@
 // Here are all the growCss settings.
 @import "settings/base";
 
+// Simple, elegant and maintainable media queries in Sass
+// https://github.com/eduardoboucas/include-media
+@import "include-media";
+
 // A lightweight semantic grid framework for Sass and Bourbon.
 // http://neat.bourbon.io/
 @import "neat";
