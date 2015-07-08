@@ -1,8 +1,7 @@
+@charset "UTF-8";
 // growCss by Anolilab
 // http://growcss.com
 // Licensed under MIT Open Source
-
-@charset "utf-8";
 
 // A collection of HTML element and attribute style-normalizations
 // http://necolas.github.io/normalize.css/
@@ -23,23 +22,23 @@
 // Here are all the growCss settings.
 @import "settings/base";
 
-// Simple, elegant and maintainable media queries in Sass
-// https://github.com/eduardoboucas/include-media
-@import "include-media";
+// Typographic is responsive typography made easy.
+// https://github.com/corysimmons/typographic
+@import "typographic";
+
+// Base settings
+@import
+"base/breakpoint",
+"base/typography",
+"base/base";
 
 // A lightweight semantic grid framework for Sass and Bourbon.
 // http://neat.bourbon.io/
 @import "neat";
 
-// Typographic is responsive typography made easy.
-// https://github.com/corysimmons/typographic
-@import "typographic";
-
-//
-@import
-"base/breakpoint",
-"base/typography",
-"base/base";
+// Simple, elegant and maintainable media queries in Sass
+// https://github.com/eduardoboucas/include-media
+@import "include-media";
 
 // Here are all the growCss functions, helpers, mixins and variables.
 @import

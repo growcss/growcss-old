@@ -1,12 +1,13 @@
+@charset "UTF-8";
 // Well
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .ui-well {
+  @include marg(default 0 default 0);
+  @include pad(default 0 default 0);
   background: $grey-900;
   box-shadow: 0 0 rem(28) 0 rgba(102, 102, 102, 0.19) inset;
   color: $white;
-  margin-bottom: $growcss-margin-default;
-  margin-top: $growcss-margin-default;
   min-height: config-get("ui.well-min-height");
 
   &.inverse {

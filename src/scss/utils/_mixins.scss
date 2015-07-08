@@ -1,5 +1,8 @@
+@charset "UTF-8";
 // Sass Mixins
 // - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@charset "UTF-8";
 
 // Responsive manager.
 //
@@ -29,19 +32,42 @@
   @include outer-container(config-get("breakpoint.small"));
 
   @if $padding == true {
-    padding-bottom: $growcss-margin-default;
-    padding-top: $growcss-margin-default;
+    @include pad(0 default 0 default);
   }
 
-  @include media($medium-up) {
+  @include media(">medium") {
     @include outer-container(config-get("breakpoint.medium"));
   }
 
-  @include media($large-up) {
+  @include media(">large") {
     @include outer-container(config-get("breakpoint.large"));
   }
 
-  // @include media($xlarge-up) {
-  //   @include outer-container(config-get("breakpoint.xlarge"));
-  // }
+  @include media(">xlarge") {
+    @include outer-container(config-get("breakpoint.xlarge"));
+  }
+}
+
+/// Adds margin to the element.
+///
+/// @param {list} $margin [flex-gutter()]
+///   A list of margin value(s) to use. Passing `default` in the list will result in using the gutter width as a margin value.
+///
+/// @example scss - Usage
+///   .element {
+///     @include marg(30px -20px 10px default);
+///   }
+///
+/// @example css - CSS Output
+///   .element {
+///     margin: 30px -20px 10px 2.35765%;
+///   }
+
+@mixin marg($margin: flex-gutter()) {
+  $margin-list: null;
+  @each $value in $margin {
+    $value: if($value == 'default', flex-gutter(), $value);
+    $margin-list: join($margin-list, $value);
+  }
+  margin: $margin-list;
 }
