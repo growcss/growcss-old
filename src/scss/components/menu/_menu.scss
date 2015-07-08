@@ -1,128 +1,128 @@
 // Menu
+// scss-lint:disable SelectorDepth NestingDepth
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-header.ui-menu[data-type='top-bar'] {
-    &[data-position='centered'] {
-        nav {
-            background: $ui-menu-second-background-color;
+.ui-menu[data-type="top-bar"] {
+  nav,
+  nav a,
+  nav ul,
+  nav li,
+  nav div,
+  nav form,
+  nav input {
+    border: 0;
+    margin: 0;
+    outline: none;
+    padding: 0;
+  }
 
-            ul {
-                @include outer-container($small-breakpoint);
-
-                @include media($medium-up) {
-                    @include outer-container($medium-breakpoint);
-                }
-
-                @include media($large-up) {
-                    @include outer-container($large-breakpoint);
-                }
-            }
-        }
+  &[data-position="centered"] {
+    nav > ul {
+      @include container(false);
     }
+  }
 
-    &[data-position='right'] {
-        nav {
-            float: left;
-            width: 100%;
-            @include outer-container(100%);
-            background: $ui-menu-second-background-color;
-
-            ul {
-                float: right;
-                background: $ui-menu-second-background-color;
-
-                li {
-                    &:hover > ul {
-                          display: inline-block;
-                          width: 100%;
-                    }
-
-                    // level 2
-                    ul {
-                        li {
-                            // level 3 - 4
-                            ul {
-                                position: relative;
-                                left: -100%;
-                                display: none;
-                                top: -$ui-menu-height;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
+  &[data-position="right"] {
     nav {
-        width: 100%;
+      @include outer-container(100%);
+      float: left;
+      width: 100%;
 
-        ul {
-            height: $ui-menu-height;
-            position: relative;
-            @include outer-container(100%);
-            background: $ui-menu-second-background-color;
+      ul {
+        float: right;
 
-            li {
-                float: left;
-                text-align: center;
-                position: relative;
-
-                a,
-                div {
-                    @include pad($ui-menu-link-padding);
-                    width: 100%;
-                    line-height: $ui-menu-link-line-height;
-                    display: block;
-                    cursor: pointer;
-                    color: $ui-menu-link-color;
-
-                    &:hover, &:link, &:focus {
-                        color: $ui-menu-link-hover-color;
-                    }
-                }
-
-                &:hover {
-                    background: $ui-menu-hover-background-color;
-
-                    & > a, & > div {
-                        color: $ui-menu-dropdown-link-hover-color;
-                    }
-
-                    & > ul {
-                        display: inline-block;
-                        width: 100%;
-                        position: absolute;
-                        z-index: 1;
-                    }
-                }
-
-                // level 2
-                ul {
-                    height: auto;
-                    display: none;
-                    left: 0;
-                    background: $ui-menu-hover-background-color;
-
-                    li {
-                        width: 100%;
-                        height: $ui-menu-height;
-                        text-align: left;
-
-                        a {
-                            color: $ui-menu-link-color;
-                        }
-
-                        // level 3 - 4
-                        ul {
-                            position: relative;
-                            left: 100%;
-                            display: none;
-                            top: 0;
-                        }
-                    }
-                }
-            }
+        li:hover > ul {
+          display: inline-block;
+          width: 100%;
         }
+
+        li > ul > li > ul {
+          display: none;
+          left: -100%;
+          position: relative;
+          top: -$ui-menu-height;
+        }
+      }
     }
+  }
+
+  nav {
+    background: $ui-menu-second-background-color;
+    width: 100%;
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      @include outer-container(100%);
+      height: $ui-menu-height;
+      position: relative;
+
+      li {
+        display: inline-block;
+        list-style: none;
+        text-align: center;
+        position: relative;
+
+        a,
+        div {
+          @include pad($ui-menu-link-padding);
+          color: $ui-menu-link-color;
+          cursor: pointer;
+          display: block;
+          line-height: $ui-menu-link-line-height;
+          width: 100%;
+
+          &:hover,
+          &:link,
+          &:focus {
+            color: $ui-menu-link-hover-color;
+          }
+        }
+
+        &:hover {
+          background: $ui-menu-hover-background-color;
+
+          > a,
+          > div {
+            color: $ui-menu-dropdown-link-hover-color;
+          }
+
+          > ul {
+            display: inline-block;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+          }
+        }
+
+        // level 2
+        ul {
+          background: $ui-menu-hover-background-color;
+          display: none;
+          height: auto;
+          left: 0;
+
+          li {
+            height: $ui-menu-height;
+            text-align: left;
+            width: 100%;
+
+            a {
+              color: $ui-menu-link-color;
+            }
+
+            // level 3 - 4
+            ul {
+              display: none;
+              left: 100%;
+              position: relative;
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
 }

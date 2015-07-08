@@ -5,8 +5,9 @@ var
     scss = [
         'bower_components/bourbon/app/assets/stylesheets/',
         'bower_components/bitters/app/assets/stylesheets/',
+        'bower_components/sass-config-manager/src/scss/',
         'bower_components/neat/app/assets/stylesheets/',
-        'bower_components/crossass-config/scss',
+        'bower_components/include-media/dist',
         'bower_components/typographic/scss',
         'bower_components/quantum-colors'
     ],

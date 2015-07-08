@@ -9,6 +9,7 @@ module.exports = {
         bundleExec: false,
         colorizeOutput: true,
         config: '.scss-lint.yml',
-        reporterOutput: null
+        reporterOutput: null,
+        exclude: ['src/scss/vendors/normalize.scss']
     },
 };

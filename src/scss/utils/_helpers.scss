@@ -2,64 +2,49 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .padding {
-    &.no {
-        padding: 0;
-    }
+  &.no {
+    padding: 0;
+  }
 
-    &.no-top {
-        padding-top: 0;
-    }
+  &.no-top {
+    padding-top: 0;
+  }
 
-    &.no-bottom {
-        padding-bottom: 0;
-    }
+  &.no-bottom {
+    padding-bottom: 0;
+  }
 
-    &.no-left {
-        padding-left: 0;
-    }
+  &.no-left {
+    padding-left: 0;
+  }
 
-    &.no-right {
-        padding-right: 0;
-    }
+  &.no-right {
+    padding-right: 0;
+  }
 }
 
 .margin {
-    &.no {
-        margin: 0;
-    }
+  &.no {
+    margin: 0;
+  }
 
-    &.no-top {
-        margin-top: 0;
-    }
+  &.no-top {
+    margin-top: 0;
+  }
 
-    &.no-bottom {
-        margin-bottom: 0;
-    }
+  &.no-bottom {
+    margin-bottom: 0;
+  }
 
-    &.no-left {
-        margin-left: 0;
-    }
+  &.no-left {
+    margin-left: 0;
+  }
 
-    &.no-right {
-        margin-right: 0;
-    }
+  &.no-right {
+    margin-right: 0;
+  }
 }
 
 .container {
-    @include outer-container($small-breakpoint);
-
-    padding-bottom: $growcss-margin-default;
-    padding-top: $growcss-margin-default;
-
-    @include media($medium-up) {
-        @include outer-container($medium-breakpoint);
-    }
-
-    @include media($large-up) {
-        @include outer-container($large-breakpoint);
-    }
-
-    // @include media($xlarge-up) {
-    //     @include outer-container($xlarge-breakpoint);
-    // }
+  @include container();
 }

@@ -17,6 +17,31 @@
 //             @content;
 //         }
 //     } @else {
-//         @error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+//         @error "No value found for `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoints` map.";
 //     }
 // }
+
+// Responsive container mixin
+//
+// @param {boolean} $padding
+//
+@mixin container($padding: true) {
+  @include outer-container(config-get("breakpoint.small"));
+
+  @if $padding == true {
+    padding-bottom: $growcss-margin-default;
+    padding-top: $growcss-margin-default;
+  }
+
+  @include media($medium-up) {
+    @include outer-container(config-get("breakpoint.medium"));
+  }
+
+  @include media($large-up) {
+    @include outer-container(config-get("breakpoint.large"));
+  }
+
+  // @include media($xlarge-up) {
+  //   @include outer-container(config-get("breakpoint.xlarge"));
+  // }
+}

@@ -11,7 +11,8 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     require('jit-grunt')(grunt, {
-        scsslint: 'grunt-scss-lint'
+        scsslint: 'grunt-scss-lint',
+        mochacli: 'grunt-mocha-cli'
     });
 
     // load grunt config
