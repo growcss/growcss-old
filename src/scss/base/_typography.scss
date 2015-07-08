@@ -6,11 +6,11 @@
 
 @include config-set("body-font", $helvetica, true);
 @include config-set("body-font-weight", 300, true);
-@include config-set("body-color", #666, true);
+@include config-set("body-color", $green-600, true);
 
 @include config-set("header-font", $helvetica, true);
 @include config-set("header-font-weight", 500, true);
-@include config-set("header-color", #111, true);
+@include config-set("header-color", $green-100, true);
 @include config-set("header-ratio", $golden, true);
 
 @include config-set("min-font", 12px, true);

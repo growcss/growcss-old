@@ -50,9 +50,9 @@
   }
 
   nav {
-    background: $ui-menu-second-background-color;
     @include outer-container(100%);
     @include pad(0 default 0 default);
+    background: $ui-menu-second-background-color;
 
     a {
       text-decoration: none;
@@ -85,8 +85,7 @@
           }
         }
 
-        a.title,
-        div.title {
+        .title {
           text-transform: uppercase;
         }
 
@@ -136,10 +135,10 @@
   }
 }
 
-ui-menu[data-sticky="top"] {
+// .ui-menu[data-sticky="top"] {
 
-}
+// }
 
-ui-menu[data-sticky="bottom"] {
+// .ui-menu[data-sticky="bottom"] {
 
-}
+// }
