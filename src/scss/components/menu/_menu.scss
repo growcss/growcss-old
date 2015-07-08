@@ -10,18 +10,10 @@
   nav div,
   nav form,
   nav input {
-    margin: 0;
-    padding: 0;
     border: 0;
+    margin: 0;
     outline: none;
-  }
-
-  nav a {
-    text-decoration: none;
-  }
-
-  nav li {
-    list-style: none;
+    padding: 0;
   }
 
   &[data-position="centered"] {
@@ -55,8 +47,12 @@
   }
 
   nav {
-    width: 100%;
     background: $ui-menu-second-background-color;
+    width: 100%;
+
+    a {
+      text-decoration: none;
+    }
 
     ul {
       @include outer-container(100%);
@@ -65,8 +61,9 @@
 
       li {
         display: inline-block;
-        text-align: center;
         position: relative;
+        text-align: center;
+        list-style: none;
 
         a,
         div {
@@ -102,10 +99,10 @@
 
         // level 2
         ul {
-          height: auto;
-          display: none;
-          left: 0;
           background: $ui-menu-hover-background-color;
+          display: none;
+          height: auto;
+          left: 0;
 
           li {
             height: $ui-menu-height;
