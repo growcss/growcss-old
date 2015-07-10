@@ -1,23 +1,33 @@
 module.exports = {
-    'dev:test' : [
-        'newer:jsonlint:dev',
-        //'newer:jshint:dev',
-        'newer:jsvalidate:dev'
+    'cs-test' : [
+        'jsonlint',
+        'jscs',
+        'jshint',
+        'scsslint'
+    ],
+    'test' : [
+        'cs-test',
+        'mochacli',
+        'karma'
     ],
     'default': [
-        'newer:jsonlint',
-        'newer:jshint',
-        'clean',
-        'newer:copy',
-        'uglify',
-        'sass',
-        'jade'
+        'cs-test',
+        'clean:dev',
+        'newer:copy:normalize',
+        'copy:remIe',
+        'uglify:dev',
+        'sass:dev',
+        'jade:dev',
     ],
     'build': [
-        'lint',
-        'clean',
-        'sass',
-        'jade',
+        'cs-test',
+        'clean:release',
+        'copy:releaseRemIe',
+        'uglify:release',
+        'sass:precompiled',
+        'jade:release',
+        'cssmin:precompiled',
+        'clean:precompiled',
         'bump'
     ]
 };

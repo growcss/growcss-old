@@ -7,7 +7,7 @@ module.exports = {
             expand: true,
             cwd: 'bower_components/normalize.css/',
             src: '**/*.css',
-            dest: 'src/scss/',
+            dest: 'src/scss/vendors/',
             rename: function(dest, src) {
                 return dest + src.replace(/\.css$/, ".scss");
             }
@@ -21,4 +21,12 @@ module.exports = {
             dest: 'build/js/'
         }]
     },
+    releaseRemIe: {
+        files: [{
+            expand: true,
+            cwd: 'bower_components/REM-unit-polyfill/js/',
+            src: '*.min.js',
+            dest: 'release/js/'
+        }]
+    }
 };
