@@ -1,3 +1,4 @@
+@charset "UTF-8";
 // Menu
 // scss-lint:disable SelectorDepth NestingDepth
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -9,7 +10,8 @@
   nav li,
   nav div,
   nav form,
-  nav input {
+  nav input,
+  nav h2 {
     border: 0;
     margin: 0;
     outline: none;
@@ -25,6 +27,7 @@
   &[data-position="right"] {
     nav {
       @include outer-container(100%);
+      @include pad(0 default 0 default);
       float: left;
       width: 100%;
 
@@ -47,8 +50,9 @@
   }
 
   nav {
+    @include outer-container(100%);
+    @include pad(0 default 0 default);
     background: $ui-menu-second-background-color;
-    width: 100%;
 
     a {
       text-decoration: none;
@@ -79,6 +83,10 @@
           &:focus {
             color: $ui-menu-link-hover-color;
           }
+        }
+
+        .title {
+          text-transform: uppercase;
         }
 
         &:hover {
@@ -126,3 +134,11 @@
     }
   }
 }
+
+// .ui-menu[data-sticky="top"] {
+
+// }
+
+// .ui-menu[data-sticky="bottom"] {
+
+// }

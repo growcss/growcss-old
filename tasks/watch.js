@@ -11,7 +11,7 @@ module.exports = {
     },
     sass: {
         files: ['src/scss/**/*.scss'],
-        tasks: ['sass'],
+        tasks: ['sass:dev'],
         options: {
             spawn: false
         }
