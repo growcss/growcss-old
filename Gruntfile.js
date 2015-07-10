@@ -19,9 +19,7 @@ module.exports = function (grunt) {
     require('load-grunt-config')(grunt, {
 
         // path to task.js files, defaults to grunt dir
-        configPath: [
-            path.join(process.cwd(), 'tasks')
-        ],
+        configPath: path.join(process.cwd(), 'tasks'),
 
         // There are certain scenarios where you might have a base config for your team,
         // and you want to be able to override some of the config based on your personal setup.
