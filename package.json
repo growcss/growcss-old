@@ -25,6 +25,13 @@
   "engines": {
     "node": ">= 0.10.0"
   },
+  "jspm": {
+    "main":"release/growcss.min.css!",
+    "format":"global",
+    "directories": {
+      "lib":"./src"
+    }
+  },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "bower": "~1.4.1",

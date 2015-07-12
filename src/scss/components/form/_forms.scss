@@ -1,0 +1,28 @@
+@charset "UTF-8";
+// Forms
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
+  // so we reset that to ensure it behaves more like a standard block element.
+  min-width: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  @include marg(0 0 default 0);
+  color: config-get("legend-color");
+  border: 0;
+  border-bottom: 1px solid config-get("legend-border-color");
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  @include marg(0 0 default 0);
+  font-weight: bold;
+}
