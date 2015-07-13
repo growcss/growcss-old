@@ -1,12 +1,14 @@
 # growcss
 
 [![Author](http://img.shields.io/badge/author-@anolilab-blue.svg?style=flat-square)](https://twitter.com/anolilab)
-[![npm](https://img.shields.io/npm/v/growcss.svg?style=flat-square)](https://www.npmjs.com/package/growcss)
 [![devDependency Status](https://david-dm.org/growcss/growcss/dev-status.svg?style=flat-square)](https://david-dm.org/growcss/growcss#info=devDependencies)
 [![npm](https://img.shields.io/npm/v/growcss.svg?style=flat-square)](https://www.npmjs.com/package/growcss)
 [![Bower](https://img.shields.io/bower/v/growcss.svg?style=flat-square)](https://github.com/growcss/growcss)
 [![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?style=flat-square)](https://github.com/growcss/growcss/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+
+## Chat Room on Gitter
+[![Join the chat at https://gitter.im/growcss/growcss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/growcss/growcss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Master
 [![Build Status](https://img.shields.io/travis/growcss/growcss.svg?branch=develop&style=flat-square)](https://travis-ci.org/growcss/growcss)
