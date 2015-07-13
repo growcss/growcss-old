@@ -2,35 +2,20 @@
 // Sass Mixins
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// Responsive manager.
-//
-// @access public
-//
-// @param {String} $breakpoint - Breakpoint
-//
-// @requires $breakpoints
-// @mixin respond-to($breakpoint) {
-//     $raw-query: false;
-
-//     @if $raw-query {
-
-//         @media  {
-//             @content;
-//         }
-//     } @else {
-//         @error "No value found for `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoints` map.";
-//     }
-// }
-
 // Responsive container mixin
 //
 // @param {boolean} $padding
-//
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 @mixin container($padding: true) {
-  @include outer-container(config-get("breakpoint.small"));
 
   @if $padding == true {
     @include pad(0 default 0 default);
+  }
+
+  @include outer-container(config-get("breakpoint.tiny"));
+
+  @include media(">small") {
+    @include outer-container(config-get("breakpoint.small"));
   }
 
   @include media(">medium") {
@@ -46,21 +31,21 @@
   }
 }
 
-/// Adds margin to the element.
-///
-/// @param {list} $margin [flex-gutter()]
-///   A list of margin value(s) to use. Passing `default` in the list will result in using the gutter width as a margin value.
-///
-/// @example scss - Usage
-///   .element {
-///     @include marg(30px -20px 10px default);
-///   }
-///
-/// @example css - CSS Output
-///   .element {
-///     margin: 30px -20px 10px 2.35765%;
-///   }
-
+// Adds margin to the element.
+//
+// @param {list} $margin [flex-gutter()] A list of margin value(s) to use.
+//                                       Passing `default` in the list will result in using the gutter width as a margin value.
+//
+// @example scss - Usage
+//  .element {
+//    @include marg(30px -20px 10px default);
+//  }
+//
+// @example css - CSS Output
+//  .element {
+//    margin: 30px -20px 10px 2.35765%;
+//  }
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 @mixin marg($margin: flex-gutter()) {
   $margin-list: null;
   @each $value in $margin {
