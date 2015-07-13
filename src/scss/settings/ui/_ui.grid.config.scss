@@ -1,0 +1,15 @@
+@charset "UTF-8";
+// Grid config
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Sets the max-width property of the element that includes outer-container().
+$max-width: config-get("breakpoint.xlarge") !default;
+
+// Displays the visual grid when set to true.
+$visual-grid: false !default;
+
+// Sets the visual grid color.
+$visual-grid-color: #eee !default;
+
+// Sets the z-index property of the visual grid. Can be back (behind content) or front (in front of content).
+$visual-grid-index: back !default;
