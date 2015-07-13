@@ -12,17 +12,60 @@ fieldset {
 }
 
 legend {
+  @include marg(0 0 default 0);
   display: block;
   width: 100%;
-  @include marg(0 0 default 0);
   color: config-get("legend-color");
   border: 0;
   border-bottom: 1px solid config-get("legend-border-color");
 }
 
 label {
+  @include marg(0 0 default 0);
   display: inline-block;
   max-width: 100%;
-  @include marg(0 0 default 0);
   font-weight: bold;
 }
+
+#{$all-text-inputs} {
+  @include pad(rem(10) rem(10) rem(10) rem(10));
+  @include marg(0 0 default 0);
+  width: 100%;
+  display: block;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  transition: all 0.3s;
+}
+
+// Apply same disabled cursor tweak as for inputs
+// Some special care is needed because <label>s don't inherit their parent's `cursor`.
+//
+// Note: Neither radios nor checkboxes can be readonly.
+input[type="radio"],
+input[type="checkbox"] {
+  &[disabled],
+  &.disabled,
+  fieldset[disabled] {
+    cursor: none;
+  }
+}
+
+// Placeholder
+// #{$all-text-inputs} {
+//   &::-webkit-input-placeholder {
+//     color: config-get("placeholder-color");
+//   }
+
+//   &:-moz-placeholder {
+//     color: config-get("placeholder-color");
+//   }
+
+//   &::-moz-placeholder {
+//     color: config-get("placeholder-color");
+//   }
+
+//   &:-ms-input-placeholder {
+//     color: config-get("placeholder-color");
+//   }
+// }
