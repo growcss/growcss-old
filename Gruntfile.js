@@ -10,11 +10,6 @@ module.exports = function (grunt) {
     // measures the time each task takes
     require('time-grunt')(grunt);
 
-    require('jit-grunt')(grunt, {
-        scsslint: 'grunt-scss-lint',
-        mochacli: 'grunt-mocha-cli'
-    });
-
     // load grunt config
     require('load-grunt-config')(grunt, {
 
@@ -31,12 +26,6 @@ module.exports = function (grunt) {
         // data passed into config. Can use with <%= test %>
         data: {
             modules: modules
-        },
-
-        // can optionally pass options to load-grunt-tasks.
-        // If you set to false, it will disable auto loading tasks.
-        jitGrunt: {
-            customTasksDir: 'tasks'
         }
 
         // can post process config object before it gets passed to grunt

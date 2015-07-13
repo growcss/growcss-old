@@ -1,9 +1,10 @@
-header.ui-menu(data-type="top-bar" data-sticky="top")
-  nav(role="navigation")
+header.ui-menu(data-type="top-bar" data-position="left")
+  nav(role="navigation" data-logo-position="right")
     h2.logo
       a(href="#" title="growcss")
         span growcss
-    ul
+
+    ul.main
       li
         a.title(href="") test
 
@@ -48,5 +49,5 @@ header.ui-menu(data-type="top-bar" data-sticky="top")
     ul.secondary
       li.search
         form
-          input(type="text" placeholder="Search...")
+          input(type="search" placeholder="Search...")
           input(type="submit" value="search")

@@ -2,20 +2,26 @@
 // Menu
 // scss-lint:disable SelectorDepth NestingDepth
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-
 .ui-menu[data-type="top-bar"] {
   nav,
-  nav a,
-  nav ul,
-  nav li,
-  nav div,
-  nav form,
-  nav input,
-  nav h2 {
+  nav > ul,
+  nav > h2 {
     border: 0;
     margin: 0;
     outline: none;
     padding: 0;
+  }
+
+  &[data-sticky="top"] {
+    top: 0;
+    width: 100%;
+    position: fixed;
+  }
+
+  &[data-sticky="bottom"] {
+    bottom: 0;
+    width: 100%;
+    position: fixed;
   }
 
   &[data-position="centered"] {
@@ -49,17 +55,39 @@
     }
   }
 
-  nav {
-    @include outer-container(100%);
-    @include pad(0 default 0 default);
-    background: $ui-menu-second-background-color;
-
-    a {
-      text-decoration: none;
+  nav[role="navigation"][data-logo-position="left"] {
+    h2.logo {
+      @include span-columns(2);
     }
 
-    ul {
-      @include outer-container(100%);
+    ul.main {
+      @include span-columns(10);
+      @include omega;
+    }
+  }
+
+  nav[role="navigation"][data-logo-position="right"] {
+    @include row();
+
+    @include direction-context(right-to-left) {
+      h2.logo {
+        @include span-columns(2);
+      }
+
+      ul.main {
+        @include span-columns(10);
+        @include omega;
+      }
+    }
+  }
+
+  nav[role="navigation"] {
+    @include pad(0 default 0 default);
+    @include row();
+    @include outer-container(100%);
+    background: $ui-menu-second-background-color;
+
+    ul.main {
       height: $ui-menu-height;
       position: relative;
 
@@ -77,6 +105,7 @@
           display: block;
           line-height: $ui-menu-link-line-height;
           width: 100%;
+          text-decoration: none;
 
           &:hover,
           &:link,
@@ -129,6 +158,28 @@
               top: 0;
             }
           }
+        }
+      }
+    }
+
+    .secondary {
+      @include row();
+      @include span-columns(12);
+
+      li {
+        list-style: none;
+      }
+
+      li.search {
+        form {
+          @include span-columns(12);
+        }
+
+        input[type="search"] {
+          background-color: transparent;
+          border: 0;
+          border-bottom: 1px solid $white;
+          color: $white;
         }
       }
     }

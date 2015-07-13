@@ -21,7 +21,6 @@ module.exports = function(config) {
       require('karma-firefox-launcher'),
       require('karma-ie-launcher'),
       require('karma-safari-launcher'),
-      require('karma-opera-launcher'),
       require('karma-phantomjs-launcher'),
     ],
 
