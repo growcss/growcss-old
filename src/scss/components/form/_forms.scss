@@ -28,8 +28,7 @@ label {
 }
 
 #{$all-text-inputs} {
-  @include pad(rem(10) rem(10) rem(10) rem(10));
-  @include marg(0 0 default 0);
+  @include pad(rem(10) 0 rem(10) 0);
   width: 100%;
   display: block;
   border-radius: 0;
@@ -52,20 +51,8 @@ input[type="checkbox"] {
 }
 
 // Placeholder
-// #{$all-text-inputs} {
-//   &::-webkit-input-placeholder {
-//     color: config-get("placeholder-color");
-//   }
-
-//   &:-moz-placeholder {
-//     color: config-get("placeholder-color");
-//   }
-
-//   &::-moz-placeholder {
-//     color: config-get("placeholder-color");
-//   }
-
-//   &:-ms-input-placeholder {
-//     color: config-get("placeholder-color");
-//   }
-// }
+#{$all-text-inputs} {
+  @include placeholder {
+    color: config-get("placeholder-color");
+  }
+}

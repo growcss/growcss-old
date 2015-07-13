@@ -163,11 +163,24 @@
     }
 
     .secondary {
-      @include clearfix();
+      @include row();
       @include span-columns(12);
 
       li {
         list-style: none;
+      }
+
+      li.search {
+        form {
+          @include span-columns(12);
+        }
+
+        input[type="search"] {
+          background-color: transparent;
+          border: 0;
+          border-bottom: 1px solid $white;
+          color: $white;
+        }
       }
     }
   }
