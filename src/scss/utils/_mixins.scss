@@ -48,9 +48,25 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 @mixin marg($margin: flex-gutter()) {
   $margin-list: null;
+
   @each $value in $margin {
     $value: if($value == 'default', flex-gutter(), $value);
     $margin-list: join($margin-list, $value);
   }
+
   margin: $margin-list;
+}
+
+// Responsive grid mixin
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin build-grid(){
+  @each $name, $width in $breakpoints {
+    @media (min-width: $width){
+      @for $i from 1 through $grid-columns {
+        // span-columns() is a neat.bourbon.io function to generate grid width
+        .#{$name}-#{$i} { @include span-columns($i); }
+      }
+    }
+  }
 }

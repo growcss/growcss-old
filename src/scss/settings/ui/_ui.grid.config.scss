@@ -13,3 +13,6 @@ $visual-grid-color: #eee !default;
 
 // Sets the z-index property of the visual grid. Can be back (behind content) or front (in front of content).
 $visual-grid-index: back !default;
+
+// Sets the total number of columns in the grid.
+$grid-columns: 12 !default;
