@@ -57,15 +57,74 @@
   margin: $margin-list;
 }
 
+// Module export mixin
+// This mixin helps making sure a module is imported once and only once.
+//
+// @access public
+//
+// @param $name {string} Name of exported module
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin exports($name) {
+  @if (index($imported-modules, $name) == null) {
+    $imported-modules: append($imported-modules, $name) !global;
+    @content;
+  } @else if (index($imported-modules, $name) == false) {
+
+  } @else {
+    @warn "Module `#{$name}` has already been imported.";
+  }
+}
+
+// For creating container, nested, and collapsed rows.
+//
+// @param {boolean|string} $display - Any special behavior for this row? Default: false. Options: block, table, flex.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin build-row($display: false) {
+  @if $display == block {
+    @include row($display);
+    @include pad(0 default 0 default);
+    @include outer-container(100%);
+  } @else if $display == table {
+    @include row($display);
+    @include pad(0 default 0 default);
+    @include outer-container(100%);
+  } @else if $display == flex {
+    @include pad(0 default 0 default);
+    @include outer-container(100%);
+    @include display(flex);
+    @include flex-direction(row);
+  } @else {
+    @include row();
+    @include pad(0 default 0 default);
+    @include outer-container(100%);
+  }
+
+  // Clearfix for all rows
+  @include clearfix();
+}
+
 // Responsive grid mixin
 //
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-@mixin build-grid(){
+@mixin build-grid($grid: false) {
   @each $name, $width in $breakpoints {
     @media (min-width: $width){
+      // $grid-columns is a neat.bourbon.io variable
       @for $i from 1 through $grid-columns {
-        // span-columns() is a neat.bourbon.io function to generate grid width
-        .#{$name}-#{$i} { @include span-columns($i); }
+        @if $grid == block {
+          .#{$name}-#{$i} {
+
+          }
+        } @else if $grid == flex {
+          .#{$name}-#{$i} {
+            @include flex(1);
+          }
+        } @else {
+          // span-columns() is a neat.bourbon.io function to generate grid width
+          .#{$name}-#{$i} {
+            @include span-columns($i);
+          }
+        }
       }
     }
   }
