@@ -1,13 +1,13 @@
 @import "block";
-@import "flexbox";
+// @import "flexbox";
 @import "waffle";
 @import "vertical";
 
 @include exports("grid.default") {
-  .row {
-    // @include build-row();
-  }
+  //build grid classes
+  @include build-grid();
 
-  // build grid classes
-  // @include build-grid();
+  .row {
+    @include build-row();
+  }
 }
