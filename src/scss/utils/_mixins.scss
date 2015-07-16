@@ -2,35 +2,6 @@
 // Sass Mixins
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// Responsive container mixin
-//
-// @param {boolean} $padding
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-@mixin container($padding: true) {
-
-  @if $padding == true {
-    @include pad(0 default 0 default);
-  }
-
-  @include outer-container(config-get("breakpoint.tiny"));
-
-  @include media(">small") {
-    @include outer-container(config-get("breakpoint.small"));
-  }
-
-  @include media(">medium") {
-    @include outer-container(config-get("breakpoint.medium"));
-  }
-
-  @include media(">large") {
-    @include outer-container(config-get("breakpoint.large"));
-  }
-
-  @include media(">xlarge") {
-    @include outer-container(config-get("breakpoint.xlarge"));
-  }
-}
-
 // Adds margin to the element.
 //
 // @param {list} $margin [flex-gutter()] A list of margin value(s) to use.
@@ -77,60 +48,115 @@
 
 // For creating container, nested, and collapsed rows.
 //
-// @param {boolean|string} $display - Any special behavior for this row? Default: false. Options: block, table, flex.
+// @param {boolean|string} $display Any special behavior for this row? Default: false. Options: block, table, flex.
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 @mixin build-row($display: false) {
   @if $display == block {
-    @include row($display);
-    @include pad(0 default 0 default);
+    @include row(block);
     @include outer-container(100%);
+    // Select all child elements of .row recursively
+    * {
+      @include pad(0 default 0 default);
+      position: relative;
+    }
+
   } @else if $display == table {
-    @include row($display);
-    @include fill-parent();
-    @include pad(0 default 0 default);
-    @include outer-container(100%);
+    @include row(table);
   } @else if $display == flex {
-    @include pad(0 default 0 default);
     @include outer-container(100%);
     @include display(flex);
     @include flex-direction(row);
   } @else {
     @include row();
-    @include pad(0 default 0 default);
     @include outer-container(100%);
   }
 
   // Clearfix for all rows
   @include clearfix();
+  margin: auto;
+  max-width: config-get("breakpoint.xlarge");
 }
 
 // Responsive grid mixin
 //
+// @param {boolean|string} $grid
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 @mixin build-grid($grid: false) {
-  @each $name, $width in $breakpoints {
-    @media (min-width: $width){
-      // $grid-columns is a neat.bourbon.io variable
-      @for $i from 1 through $grid-columns {
-        @if $grid == block {
-          .#{$name}-#{$i} {
+  @include build-columns('tiny', $grid);
 
-          }
-        } @else if $grid == flex {
-          .#{$name}-#{$i} {
-            @include flex(1);
-          }
-        } @else if $grid == table {
-          .#{$name}-#{$i} {
-            @include span-columns($i);
-            @include pad();
-          }
-        } @else {
-          // span-columns() is a neat.bourbon.io function to generate grid width
-          .#{$name}-#{$i} {
-            @include span-columns($i);
-          }
+  @each $name, $width in $breakpoints {
+    @if $width != "tiny" and $name != "tiny" {
+      @include media('>#{$width}') {
+        @include build-columns($name, $grid);
+      }
+    }
+  }
+}
+
+@mixin build-columns($name, $grid: false) {
+  // $grid-columns is a neat.bourbon.io variable
+  @for $i from 1 through $grid-columns {
+    @if $grid == block {
+      .#{$name}-#{$i} {
+        @include span-columns($i, block-collapse)
+      }
+    } @else if $grid == flex {
+      .#{$name}-#{$i} {
+        @include flex(1);
+      }
+    } @else if $grid == table {
+      .#{$name}-#{$i} {
+        @include span-columns($i, table);
+      }
+    } @else {
+      // span-columns() is a neat.bourbon.io function to generate grid width
+      .#{$name}-#{$i} {
+        @include span-columns($i);
+      }
+    }
+  }
+}
+
+@mixin debug($type: false) {
+  @if config-get("debug.breakpoint") and $type == breakpoint and config-get("debug.grid") == false {
+    body {
+      @include media(">small") {
+        &:before {
+          background: $pink-500;
+          content: "Small #{config-get("size.small")}";
         }
+      }
+
+      @include media(">medium") {
+        &:before {
+          background: $purple-500;
+          content: "medium #{config-get("size.medium")}";
+        }
+      }
+
+      @include media(">large") {
+        &:before {
+          background: $deep-purple-500;
+          content: "Large #{config-get("size.large")}";
+        }
+      }
+
+      @include media(">xlarge") {
+        &:before {
+          background: $indigo-500;
+          content: "xLarge #{config-get("size.xlarge")}";
+        }
+      }
+
+      &:before {
+        @include fill-parent;
+        background: $red-500;
+        content: "tiny #{config-get("size.tiny")}";
+        color: $white;
+        text-align: center;
+        display: block;
+        height: rem(50);
+        line-height: rem(50);
       }
     }
   }

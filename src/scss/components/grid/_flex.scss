@@ -1,0 +1,11 @@
+@charset "UTF-8";
+// Flexbox grid
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@include exports("grid.flex") {
+  .row-flex {
+    @include build-row(flex);
+
+    //build grid classes
+    @include build-grid(flex);
+  }
+}

@@ -1,3 +1,9 @@
-@include exports("grid.block") {
+@charset "UTF-8";
+// Block grid
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 
+@include exports("grid.block") {
+  .row-block {
+    width: 100%;
+  }
 }

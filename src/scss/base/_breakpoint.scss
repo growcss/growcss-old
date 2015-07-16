@@ -3,11 +3,16 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // All used growcss breakpoints.
+// Smartphones >480px <768px
 @include config-set("size.tiny", 480, true);
+// Tablets, iPads >768px <992px
 @include config-set("size.small", 768, true);
-@include config-set("size.medium", 960, true);
-@include config-set("size.large", 1280, true);
-@include config-set("size.xlarge", 1330, true);
+// Tablet landscape >992px <1200px
+@include config-set("size.medium", 992, true);
+// Desktops and laptops >1200px <1600px
+@include config-set("size.large", 1200, true);
+// Large screens >1600px <...
+@include config-set("size.xlarge", 1600, true);
 
 @include config-set("breakpoint.tiny", em(config-get("size.tiny")), true);
 @include config-set("breakpoint.small", em(config-get("size.small")), true);

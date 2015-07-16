@@ -2,6 +2,9 @@
 // Base config
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+@include config-set("debug.breakpoint", true, true);
+@include config-set("debug.grid", false, true);
+
 // Autoloaded plugins
 //
 // The plugin listed here will be automatically loaded.
@@ -9,6 +12,7 @@
 @include config-set("imported-modules.well", null, true);
 @include config-set("imported-modules.menu", null, true);
 @include config-set("imported-modules.forms", null, true);
+@include config-set("imported-modules.grid", null, true);
 
 // All growcss components settings
 // - - - - - - - - - - - - - - - - - - - - - - - - -
