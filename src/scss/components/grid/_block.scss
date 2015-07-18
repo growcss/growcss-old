@@ -4,6 +4,9 @@
 
 @include exports("grid.block") {
   .row-block {
-    width: 100%;
+    @include build-row(block);
+
+    //build grid classes
+    @include build-grid(block);
   }
 }

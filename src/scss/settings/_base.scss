@@ -2,8 +2,8 @@
 // Base config
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-@include config-set("debug.breakpoint", true, true);
-@include config-set("debug.grid", false, true);
+@include config-set("debug.breakpoint", false, true);
+@include config-set("debug.grid", true, true);
 
 // Autoloaded plugins
 //
