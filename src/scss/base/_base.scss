@@ -4,4 +4,4 @@
 
 // Sets the layout direction. Can be LTR (left-to-right) or RTL (right-to-left).
 @include config-set("default-layout-direction", LTR, true);
-$default-layout-direction: config-get("default-layout-direction") !default;
+$default-layout-direction: config-get("default-layout-direction");

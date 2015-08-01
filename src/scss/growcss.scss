@@ -19,9 +19,6 @@
 // https://github.com/growcss/sass-config-manager
 @import "config-manager";
 
-// Here are all the growCss settings.
-@import "settings/base";
-
 // Typographic is responsive typography made easy.
 // https://github.com/corysimmons/typographic
 @import "typographic";
@@ -31,6 +28,9 @@
 "base/breakpoint",
 "base/typography",
 "base/base";
+
+// Here are all the growCss settings.
+@import "settings/base";
 
 // A lightweight semantic grid framework for Sass and Bourbon.
 // http://neat.bourbon.io/
@@ -52,4 +52,5 @@
 "components/well/well",
 "components/menu/menu",
 "components/menu/side-menu",
-"components/form/forms";
+"components/form/forms",
+"components/grid/grid";

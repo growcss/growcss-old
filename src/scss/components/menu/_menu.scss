@@ -26,7 +26,7 @@
 
   &[data-position="centered"] {
     nav > ul {
-      @include container(false);
+      @include build-row();
     }
   }
 

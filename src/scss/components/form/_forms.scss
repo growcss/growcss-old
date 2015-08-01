@@ -51,8 +51,8 @@ input[type="checkbox"] {
 }
 
 // Placeholder
-#{$all-text-inputs} {
-  @include placeholder {
-    color: config-get("placeholder-color");
-  }
-}
+// #{$all-text-inputs} {
+//   @include placeholder {
+//     color: config-get("placeholder-color");
+//   }
+// }

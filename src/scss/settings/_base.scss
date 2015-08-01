@@ -2,16 +2,21 @@
 // Base config
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+@include config-set("debug.breakpoint", false, true);
+@include config-set("debug.grid", true, true);
+
 // Autoloaded plugins
 //
 // The plugin listed here will be automatically loaded.
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-@include config-set("include-css.well", "true", true);
-@include config-set("include-css.menu", "true", true);
-@include config-set("include-css.forms", "true", true);
+@include config-set("imported-modules.well", null, true);
+@include config-set("imported-modules.menu", null, true);
+@include config-set("imported-modules.forms", null, true);
+@include config-set("imported-modules.grid", null, true);
 
 // All growcss components settings
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 @import "ui/ui.well.config";
 @import "ui/ui.menu.config";
 @import "ui/ui.forms.config";
+@import "ui/ui.grid.config";

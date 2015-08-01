@@ -1,0 +1,26 @@
+@charset "UTF-8";
+// Grid config
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Sets the max-width property of the element that includes outer-container().
+$max-width: config-get("breakpoint.xlarge");
+
+// Displays the visual grid when set to true.
+$visual-grid: config-get("debug.grid");
+
+// Sets the visual grid color.
+$visual-grid-color: #eee !default;
+
+// Sets the z-index property of the visual grid. Can be back (behind content) or front (in front of content).
+$visual-grid-index: back !default;
+
+// Sets the total number of columns in the grid.
+$grid-columns: 12 !default;
+
+@include config-set("imported-modules.grid.block", null, true);
+@include config-set("imported-modules.grid.flex", null, true);
+@include config-set("imported-modules.grid.table", null, true);
+@include config-set("imported-modules.grid.vertical", null, true);
+@include config-set("imported-modules.grid.waffle", null, true);
+
+@include config-set("default.grid", false, true);

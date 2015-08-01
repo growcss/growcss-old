@@ -1,0 +1,12 @@
+@charset "UTF-8";
+// Block grid
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@include exports("grid.block") {
+  .row-block {
+    @include build-row(block);
+
+    //build grid classes
+    @include build-grid(block);
+  }
+}

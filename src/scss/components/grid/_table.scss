@@ -1,0 +1,12 @@
+@charset "UTF-8";
+// Table grid
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@include exports("grid.table") {
+  .row-table {
+    @include build-row(table);
+
+    //build grid classes
+    @include build-grid(table);
+  }
+}

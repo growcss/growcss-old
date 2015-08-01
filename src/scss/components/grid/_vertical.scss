@@ -1,0 +1,12 @@
+@charset "UTF-8";
+// Vertical grid
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@include exports("grid.vertical") {
+  .row-vertical {
+    @include build-row(table);
+
+    //build grid classes
+    @include build-grid(table);
+  }
+}

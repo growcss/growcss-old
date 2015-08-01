@@ -1,0 +1,14 @@
+@import "block";
+@import "flex";
+@import "waffle";
+@import "vertical";
+@import "table";
+
+@include exports("grid") {
+  .row {
+    @include build-row(config-get("default.grid"));
+
+    //build grid classes
+    @include build-grid(config-get("default.grid"));
+  }
+}

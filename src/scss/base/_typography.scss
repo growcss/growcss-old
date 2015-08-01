@@ -33,8 +33,8 @@ $header-ratio       : config-get("header-ratio");
 $min-font           : config-get("min-font");
 $max-font           : config-get("max-font");
 
-$min-width          : config-get("small-size") * 1px;
-$max-width          : config-get("xlarge-size") * 1px;
+$min-width          : config-get("size.small") * 1px;
+$max-width          : config-get("size.xlarge") * 1px;
 
 $vertical-rhythm    : true;
 
