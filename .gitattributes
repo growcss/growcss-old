@@ -14,8 +14,7 @@
 
 # source code
 *.css text
-*.sass text
-*.scss text
+*.styl text
 *.js text
 *.json text
 *.htm text
