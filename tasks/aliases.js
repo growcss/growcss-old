@@ -6,7 +6,7 @@ module.exports = {
     ],
     'test' : [
         'cs-test',
-        'mochacli',
+        // 'mochacli',
         'karma'
     ],
     'default': [
