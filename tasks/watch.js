@@ -9,13 +9,6 @@ module.exports = {
             spawn: false
         }
     },
-    sass: {
-        files: ['src/scss/**/*.scss'],
-        tasks: ['sass:dev'],
-        options: {
-            spawn: false
-        }
-    },
     js: {
         files: ['src/js/**/*.js'],
         tasks: ['uglify'],

@@ -5,6 +5,5 @@ build
 node_modules
 npm-debug.log
 precompiled/
-.sass-cache
 test/bower_components
 tmp/
