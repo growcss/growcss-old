@@ -4,7 +4,7 @@
   "authors": [
     "Daniel Bannert <d.bannert@anolilab.de>"
   ],
-  "description": "Todo",
+  "description": "GrowCss is a simple and fully customizable UI framework powerd by stylus and node.",
   "moduleType": [
     "amd",
     "node"

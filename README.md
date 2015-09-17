@@ -1,4 +1,4 @@
-# growcss
+# GrowCss is a simple and fully customizable UI framework powerd by stylus and node.
 
 [![Author](http://img.shields.io/badge/author-@anolilab-blue.svg?style=flat-square)](https://twitter.com/anolilab)
 [![devDependency Status](https://david-dm.org/growcss/growcss/dev-status.svg?style=flat-square)](https://david-dm.org/growcss/growcss#info=devDependencies)
@@ -33,6 +33,7 @@
 
 ~~~
 npm install
+bower install
 grunt
 ~~~
 

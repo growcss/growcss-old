@@ -1,0 +1,17 @@
+@charset "UTF-8";
+// Base config
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Autoloaded plugins
+//
+// The plugin listed here will be automatically loaded.
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@include config-set("include-css.well", "true", true);
+@include config-set("include-css.menu", "true", true);
+@include config-set("include-css.forms", "true", true);
+
+// All growcss components settings
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+@import "ui/ui.well.config";
+@import "ui/ui.menu.config";
+@import "ui/ui.forms.config";

@@ -7,18 +7,6 @@
 // http://necolas.github.io/normalize.css/
 @import "vendors/normalize";
 
-// Use the color palette from Google"s Material Design spec in your Sass projects.
-// https://github.com/nickpfisterer/quantum-colors
-@import "quantum-colors";
-
-// A simple and lightweight mixin library for Sass.
-// http://bourbon.io/
-@import "bourbon";
-
-// A dot-syntax configuration (Map) library for Sass.
-// https://github.com/growcss/sass-config-manager
-@import "config-manager";
-
 // Here are all the growCss settings.
 @import "settings/base";
 
@@ -31,14 +19,6 @@
 "base/breakpoint",
 "base/typography",
 "base/base";
-
-// A lightweight semantic grid framework for Sass and Bourbon.
-// http://neat.bourbon.io/
-@import "neat";
-
-// Simple, elegant and maintainable media queries in Sass
-// https://github.com/eduardoboucas/include-media
-@import "include-media";
 
 // Here are all the growCss functions, helpers, mixins and variables.
 @import

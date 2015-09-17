@@ -1,0 +1,25 @@
+@charset "UTF-8";
+// Media Query Ranges
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// All used growcss breakpoints.
+@include config-set("tiny-size", 480, true);
+@include config-set("small-size", 768, true);
+@include config-set("medium-size", 960, true);
+@include config-set("large-size", 1280, true);
+@include config-set("xlarge-size", 1330, true);
+
+@include config-set("breakpoint.tiny", em(config-get("tiny-size")), true);
+@include config-set("breakpoint.small", em(config-get("small-size")), true);
+@include config-set("breakpoint.medium", em(config-get("medium-size")), true);
+@include config-set("breakpoint.large", em(config-get("large-size")), true);
+@include config-set("breakpoint.xlarge", em(config-get("xlarge-size")), true);
+
+// Creates a list of global breakpoints
+$breakpoints: (
+  'tiny': config-get("breakpoint.small"),
+  'small': config-get("breakpoint.small"),
+  'medium': config-get("breakpoint.medium"),
+  'large': config-get("breakpoint.large"),
+  'xlarge': config-get("breakpoint.xlarge")
+) !default;
