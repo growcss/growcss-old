@@ -4,17 +4,17 @@
 [![devDependency Status](https://david-dm.org/growcss/growcss/dev-status.svg?style=flat-square)](https://david-dm.org/growcss/growcss#info=devDependencies)
 [![npm](https://img.shields.io/npm/v/growcss.svg?style=flat-square)](https://www.npmjs.com/package/growcss)
 [![Bower](https://img.shields.io/bower/v/growcss.svg?style=flat-square)](https://github.com/growcss/growcss)
-[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?style=flat-square)](https://github.com/growcss/growcss/releases)
+[![GitHub release](https://img.shields.io/github/release/growcss/growcss.svg?style=flat-square)](https://github.com/growcss/growcss/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 ## Chat Room on Gitter
 [![Join the chat at https://gitter.im/growcss/growcss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/growcss/growcss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Master
-[![Build Status](https://img.shields.io/travis/growcss/growcss.svg?branch=develop&style=flat-square)](https://travis-ci.org/growcss/growcss)
+[![Build Status](https://img.shields.io/travis/growcss/growcss/master.svg?style=flat-square)](https://travis-ci.org/growcss/growcss)
 
 ## Develop
-[![Build Status](https://img.shields.io/travis/growcss/growcss.svg?branch=develop&style=flat-square)](https://travis-ci.org/growcss/growcss)
+[![Build Status](https://img.shields.io/travis/growcss/growcss/develop.svg?style=flat-square))](https://travis-ci.org/growcss/growcss)
 
 ### Bits and Pieces:
 * [npm:](https://npmjs.org/) Well... it's a Node.js package manager
