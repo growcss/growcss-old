@@ -2,9 +2,9 @@
 //jsonlint config
 
 module.exports = {
-    test: {
-        src: [
-            '*.json'
-        ]
-    }
+  dev: {
+    src: [
+      '*.json'
+    ]
+  }
 };
