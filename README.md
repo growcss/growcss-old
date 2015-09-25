@@ -1,11 +1,14 @@
 # growcss
 
 [![Author](http://img.shields.io/badge/author-@anolilab-blue.svg?style=flat-square)](https://twitter.com/anolilab)
+[![Issue Stats](http://issuestats.com/github/growcss/growcss/badge/issue?style=flat-square)](http://issuestats.com/github/growcss/growcss)
+[![ZenHub] (https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://zenhub.io)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+
+## Releases
 [![npm](https://img.shields.io/npm/v/growcss.svg?style=flat-square)](https://www.npmjs.com/package/growcss)
 [![Bower](https://img.shields.io/bower/v/growcss.svg?style=flat-square)](https://github.com/growcss/growcss)
 [![GitHub release](https://img.shields.io/github/release/growcss/growcss.svg?style=flat-square)](https://github.com/growcss/growcss/releases)
-[![ZenHub] (https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://zenhub.io)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 ## Chat Room on Gitter
 [![Join the chat at https://gitter.im/growcss/growcss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/growcss/growcss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
