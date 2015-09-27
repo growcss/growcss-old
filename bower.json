@@ -30,6 +30,6 @@
     "jquery": "~2.1.4",
     "fastclick": "~1.0.6",
     "scrollReveal.js": "~2.3.1",
-    "normalize.css": "~3.0.3",
+    "normalize.styl": "~3.0.3"
   }
 }
