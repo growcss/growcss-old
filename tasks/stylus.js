@@ -2,20 +2,25 @@
 //stylus config
 
 var autoprefixer = require('autoprefixer'),
-  poststylusAutoprefixer = function () {
-    return require('poststylus')([
-      autoprefixer({ browsers: ['ie 7', 'ie 8'] }),
-    ]);
-  };
+  poststylus = require('poststylus');
 
 module.exports = {
   dist: {
     compile: {
       options: {
-        use: [poststylusAutoprefixer, 'cssnano', 'pixrem', 'reporter']
+        use: [
+          poststylus([
+            autoprefixer({
+              browsers: ['ie 8', 'last 2 versions']
+            }),
+            'cssnano',
+            'pixrem',
+            'postcss-reporter'
+          ])
+        ]
       },
       files: {
-        'dist/style.css': 'src/main.styl'
+        'dist/css/growcss.css': 'src/stylus/growcss.styl'
       }
     }
   }

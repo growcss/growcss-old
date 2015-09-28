@@ -2,7 +2,7 @@
 'use strict';
 
 module.exports = function (grunt) {
-    var path = require('path'),
+    var path = require('path');
 
     // measures the time each task takes
     require('time-grunt')(grunt);
@@ -14,6 +14,6 @@ module.exports = function (grunt) {
         configPath: path.join(process.cwd(), 'tasks'),
 
         // auto grunt.initConfig
-        init: true,
+        init: true
     });
 };

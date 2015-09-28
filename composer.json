@@ -45,6 +45,6 @@
     }
   },
   "replace": {
-    "twitter/bootstrap": "self.version"
+    "growcss/growcss": "self.version"
   }
 }
