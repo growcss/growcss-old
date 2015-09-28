@@ -11,11 +11,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine-jquery', 'jasmine', 'detectBrowsers'],
+    frameworks: ['detectBrowsers', 'mocha', 'chai'],
 
     plugins: [
-      require('karma-jasmine'),
-      require('karma-jasmine-jquery'),
+      require('mocha'),
+      require('chai'),
+      require('sinon'),
       require('karma-detect-browsers'),
       require('karma-chrome-launcher'),
       require('karma-firefox-launcher'),
@@ -27,7 +28,6 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'bower_components/jquery/dist/jquery.js',
-      'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       'bower_components/fastclick/lib/fastclick.js',
       'tests/specs/**/*.spec.js'
     ],
@@ -40,9 +40,7 @@ module.exports = function(config) {
     },
 
     // list of files to exclude
-    exclude: [
-      'tests/specs/sass.mocha.spec.js'
-    ],
+    exclude: [],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor

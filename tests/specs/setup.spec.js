@@ -1,11 +1,11 @@
 /**
- * This is a simple test to see if jasmine is working as expected.
+ * This is a simple test to see if mocha is working as expected.
  */
 describe('The setup test', function() {
     'use strict';
 
     // 3rd party libs
-    it('expects jasmine to be working', function() {
+    it('expects mocha to be working', function() {
         expect(true).toBe(true);
     });
 
