@@ -23,14 +23,23 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 0.10.1"
   },
+  "style": "dist/css/growcss.css",
+  "main": "./dist/js/npm",
   "jspm": {
-    "main": "dist/growcss.min.css",
-    "format": "global",
-    "directories": {
-      "lib": "./src"
-    }
+    "main": "dist/js/growcss",
+    "shim": {
+      "dist/js/growcss": {
+        "deps": "jquery",
+        "exports": "$"
+      }
+    },
+    "files": [
+      "css",
+      "fonts",
+      "js"
+    ]
   },
   "devDependencies": {
     "autoprefixer": "^6.0.2",
@@ -67,6 +76,7 @@
     "karma-safari-launcher": "^0.1.1",
     "load-grunt-config": "^0.17.2",
     "load-grunt-tasks": "^3.2.0",
+    "npm-shrinkwrap": "^5.4.0",
     "phantomjs": "^1.9.17",
     "pixrem": "^2.0.0",
     "postcss": "^5.0.4",
@@ -75,6 +85,13 @@
     "time-grunt": "^1.2.1"
   },
   "keywords": [
+    "css",
+    "js",
+    "stylus",
+    "mobile-first",
+    "responsive",
+    "framework",
+    "web",
     "babel",
     "grunt",
     "bower",
@@ -93,5 +110,13 @@
     "autoprefixer",
     "cssnano",
     "stylint"
-  ]
+  ],
+  "files": [
+    "dist",
+    "tasks",
+    "src/js/**/*.js",
+    "src/stylus/**/*.styl",
+    "Gruntfile.js",
+    "LICENSE"
+  ],
 }

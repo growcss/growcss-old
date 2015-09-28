@@ -1,14 +1,6 @@
 {
-  "name": "growcss",
-  "homepage": "http://growcss.de",
-  "authors": [
-    "Daniel Bannert <d.bannert@anolilab.de>"
-  ],
+  "name": "growcss/growcss",
   "description": "GrowCss is a simple and fully customizable UI framework powerd by stylus and node.",
-  "moduleType": [
-    "amd",
-    "node"
-  ],
   "keywords": [
     "css",
     "js",
@@ -36,21 +28,23 @@
     "cssnano",
     "stylint"
   ],
-  "main": [],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests",
-    "composer.json"
+  "homepage": "http://growcss.de",
+  "authors": [
+    {
+      "name": "Daniel Bannert",
+      "email": "d.bannert@anolilab.de"
+    }
   ],
-  "devDependencies": {
-    "fotorama": "~4.6.4",
-    "jquery": "~2.1.4",
-    "fastclick": "~1.0.6",
-    "scrollReveal.js": "~2.3.1",
-    "normalize.styl": "~3.0.3"
+  "support": {
+    "issues": "https://github.com/growcss/growcss/issues"
+  },
+  "license": "MIT",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  },
+  "replace": {
+    "twitter/bootstrap": "self.version"
   }
 }
