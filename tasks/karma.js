@@ -1,5 +1,5 @@
 'use strict';
-//clean config
+//karma config
 
 module.exports = {
     unit: {

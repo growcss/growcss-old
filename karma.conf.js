@@ -23,6 +23,7 @@ module.exports = function(config) {
       require('karma-ie-launcher'),
       require('karma-safari-launcher'),
       require('karma-phantomjs-launcher'),
+      require('karma-mocha-reporter'),
     ],
 
     // list of files / patterns to load in the browser
@@ -48,9 +49,9 @@ module.exports = function(config) {
     },
 
     // test results reporter to use
-    // possible values: 'dots', 'progress'
+    // possible values: 'dots', 'progress', 'mocha'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['mocha'],
 
     // web server port
     port: 9876,

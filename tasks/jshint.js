@@ -1,5 +1,5 @@
 'use strict';
-// jshint config
+//jshint config
 
 module.exports = {
   dev: {

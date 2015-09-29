@@ -1,7 +1,7 @@
 {
   "name": "growcss",
   "version": "0.0.1",
-  "description": "GrowCss is a simple and fully customizable UI framework powerd by stylus and node.",
+  "description": "GrowCss is a simple and fully customizable UI framework powerd by stylus, postcss and node.",
   "author": {
     "name": "Daniel Bannert",
     "email": "d.bannert@anolilab.de"
@@ -60,6 +60,7 @@
     "grunt-contrib-stylus": "^0.22.0",
     "grunt-contrib-uglify": "~0.9.1",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-exec": "^0.4.6",
     "grunt-jscs": "^1.8.0",
     "grunt-jsonlint": "^1.0.4",
     "grunt-karma": "^0.11.2",
@@ -67,11 +68,13 @@
     "grunt-stylint": "^0.1.2",
     "jshint-stylish": "^2.0.1",
     "karma": "^0.12.37",
+    "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.2.0",
     "karma-detect-browsers": "^2.0.1",
     "karma-firefox-launcher": "^0.1.6",
     "karma-ie-launcher": "^0.2.0",
     "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.1.1",
     "karma-phantomjs-launcher": "^0.2.0",
     "karma-safari-launcher": "^0.1.1",
     "karma-sinon": "^1.0.4",
@@ -98,21 +101,13 @@
     "babel",
     "grunt",
     "bower",
-    "bin",
     "front-end",
     "development",
-    "dev",
     "build",
-    "generator",
-    "generate",
-    "tool",
     "ivory",
     "stylus",
     "medve",
-    "postcss",
-    "autoprefixer",
-    "cssnano",
-    "stylint"
+    "postcss"
   ],
   "files": [
     "dist",

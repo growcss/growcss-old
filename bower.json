@@ -4,7 +4,7 @@
   "authors": [
     "Daniel Bannert <d.bannert@anolilab.de>"
   ],
-  "description": "GrowCss is a simple and fully customizable UI framework powerd by stylus and node.",
+  "description": "GrowCss is a simple and fully customizable UI framework powerd by stylus, postcss and node.",
   "moduleType": [
     "amd",
     "node"
@@ -20,21 +20,13 @@
     "babel",
     "grunt",
     "bower",
-    "bin",
     "front-end",
     "development",
-    "dev",
     "build",
-    "generator",
-    "generate",
-    "tool",
     "ivory",
     "stylus",
     "medve",
-    "postcss",
-    "autoprefixer",
-    "cssnano",
-    "stylint"
+    "postcss"
   ],
   "main": [],
   "license": "MIT",

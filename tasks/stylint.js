@@ -1,5 +1,5 @@
 'use strict';
-//uglify stylint
+//stylint config
 
 module.exports = {
   dist: {
