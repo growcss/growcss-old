@@ -3,6 +3,8 @@
 module.exports = function(config) {
   'use strict';
 
+  var isTravis = require('is-travis');
+
   var configuration = {
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -16,6 +18,7 @@ module.exports = function(config) {
       require('karma-chrome-launcher'),
       require('karma-firefox-launcher'),
       require('karma-ie-launcher'),
+      require('karma-opera-launcher'),
       require('karma-safari-launcher'),
       require('karma-phantomjs-launcher'),
       require('karma-mocha-reporter')
@@ -36,6 +39,10 @@ module.exports = function(config) {
       ChromeTravisCi: {
         base: 'Chrome',
         flags: ['--no-sandbox']
+      },
+      IE9: {
+        base: 'IE',
+        'x-ua-compatible': 'IE=EmulateIE9'
       }
     },
 
@@ -79,14 +86,27 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     // CLI --browsers Chrome,Firefox,Safari
-    browsers: [process.env.TRAVIS ? 'Firefox' : 'Chrome'],
-
     detectBrowsers : {
       postDetection: function(browsers) {
-        var index = browsers.indexOf('Chrome');
+        var i;
 
-        if (index !== -1) {
-          browsers[index] = 'ChromeTravisCi';
+        i = browsers.indexOf('Chrome');
+
+        if (i !== -1 && isTravis) {
+          browsers[i] = 'ChromeTravisCi';
+        }
+
+        if (browsers.indexOf('IE') > -1) {
+          browsers[i] = 'IE9';
+        }
+
+        //Remove PhantomJS if another browser has been detected
+        if (browsers.length > 1 && browsers.indexOf('PhantomJS') > -1) {
+          i = browsers.indexOf('PhantomJS');
+
+          if (i !== -1) {
+            browsers.splice(i, 1);
+          }
         }
 
         return browsers;
@@ -97,10 +117,6 @@ module.exports = function(config) {
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true
   };
-
-  if (process.env.TRAVIS) {
-    configuration.browsers = ['ChromeTravisCi'];
-  }
 
   config.set(configuration);
 };

@@ -6,14 +6,14 @@ describe('The setup test', function() {
 
     // 3rd party libs
     it('expects mocha to be working', function() {
-        expect(true).toBe(true);
+        expect(true).to.be.true;
     });
 
     it('expects jQuery to be available', function() {
-        expect(jQuery).toBeDefined();
+        expect(jQuery).to.not.be.undefined;
     });
 
     it('expects FastClick to be available', function() {
-        expect(FastClick).toBeDefined();
+        expect(FastClick).to.not.be.undefined;
     });
 });
