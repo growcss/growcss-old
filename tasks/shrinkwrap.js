@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         grunt.fail.warn(err);
       }
 
-      var dest = 'tests/infra/npm-shrinkwrap.json';
+      var dest = 'npm-shrinkwrap.json';
 
       fs.renameSync('npm-shrinkwrap.json', dest);
 
@@ -21,6 +21,5 @@ module.exports = function(grunt) {
 
       done();
     });
-
   });
 };
