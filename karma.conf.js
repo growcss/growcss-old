@@ -9,22 +9,22 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-    // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['detectBrowsers', 'mocha', 'chai'],
-
     plugins: [
-      require('mocha'),
-      require('chai'),
-      require('sinon'),
+      require('karma-mocha'),
+      require('karma-chai'),
+      require('karma-sinon'),
       require('karma-detect-browsers'),
       require('karma-chrome-launcher'),
       require('karma-firefox-launcher'),
       require('karma-ie-launcher'),
       require('karma-safari-launcher'),
       require('karma-phantomjs-launcher'),
-      require('karma-mocha-reporter'),
+      require('karma-mocha-reporter')
     ],
+
+    // frameworks to use
+    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    frameworks: ['detectBrowsers', 'mocha', 'chai', 'sinon'],
 
     // list of files / patterns to load in the browser
     files: [
@@ -52,6 +52,11 @@ module.exports = function(config) {
     // possible values: 'dots', 'progress', 'mocha'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['mocha'],
+
+    // reporter options - full, autowatch, minimal
+    mochaReporter: {
+      output: 'full'
+    },
 
     // web server port
     port: 9876,
@@ -81,7 +86,7 @@ module.exports = function(config) {
       postDetection: function(browsers) {
         var index = browsers.indexOf('Chrome');
 
-        if(index !== -1) {
+        if (index !== -1) {
           browsers[index] = 'ChromeTravisCi';
         }
 
@@ -95,7 +100,7 @@ module.exports = function(config) {
   };
 
   if (process.env.TRAVIS) {
-      configuration.browsers = ['ChromeTravisCi'];
+    configuration.browsers = ['ChromeTravisCi'];
   }
 
   config.set(configuration);

@@ -12,13 +12,12 @@ script: grunt test -v --stack -d
 
 before_install:
   - export CHROME_BIN=chromium-browser
-  - npm install -g grunt-cli bower karma
+  - npm install -g grunt-cli bower karma-cli
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 
 before_script:
   - npm install
-  - bower install
 
 matrix:
   fast_finish: true
