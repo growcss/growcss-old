@@ -90,7 +90,8 @@
     "postcss-reporter": "^1.2.1",
     "poststylus": "^0.2.1",
     "sinon": "^1.17.1",
-    "time-grunt": "^1.2.1"
+    "time-grunt": "^1.2.1",
+    "typographic": "^2.9.3"
   },
   "keywords": [
     "css",
