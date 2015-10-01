@@ -1,0 +1,42 @@
+{
+  "name": "growcss/growcss",
+  "description": "GrowCss is a simple and fully customizable UI framework powerd by stylus, postcss and node.",
+  "keywords": [
+    "css",
+    "js",
+    "stylus",
+    "mobile-first",
+    "responsive",
+    "framework",
+    "web",
+    "babel",
+    "grunt",
+    "bower",
+    "front-end",
+    "development",
+    "build",
+    "ivory",
+    "stylus",
+    "medve",
+    "postcss"
+  ],
+  "homepage": "http://growcss.de",
+  "authors": [
+    {
+      "name": "Daniel Bannert",
+      "email": "d.bannert@anolilab.de"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/growcss/growcss/issues"
+  },
+  "license": "MIT",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  },
+  "replace": {
+    "growcss/growcss": "self.version"
+  }
+}

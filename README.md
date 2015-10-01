@@ -1,4 +1,4 @@
-# growcss
+# GrowCss is a simple and fully customizable UI framework powerd by stylus, postcss and node.
 
 [![Author](http://img.shields.io/badge/author-@anolilab-blue.svg?style=flat-square)](https://twitter.com/anolilab)
 [![Issue Stats](http://issuestats.com/github/growcss/growcss/badge/issue?style=flat-square)](http://issuestats.com/github/growcss/growcss)

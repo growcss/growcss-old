@@ -1,33 +1,36 @@
 // Karma configuration
-// Generated on Mon Jun 15 2015 21:08:55 GMT+0200 (Mitteleuropäische Sommerzeit)
 
 module.exports = function(config) {
   'use strict';
+
+  var isTravis = require('is-travis');
 
   var configuration = {
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-    // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine-jquery', 'jasmine', 'detectBrowsers'],
-
     plugins: [
-      require('karma-jasmine'),
-      require('karma-jasmine-jquery'),
+      require('karma-mocha'),
+      require('karma-chai'),
+      require('karma-sinon'),
       require('karma-detect-browsers'),
       require('karma-chrome-launcher'),
       require('karma-firefox-launcher'),
       require('karma-ie-launcher'),
+      require('karma-opera-launcher'),
       require('karma-safari-launcher'),
       require('karma-phantomjs-launcher'),
+      require('karma-mocha-reporter')
     ],
+
+    // frameworks to use
+    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    frameworks: ['detectBrowsers', 'mocha', 'chai', 'sinon'],
 
     // list of files / patterns to load in the browser
     files: [
       'bower_components/jquery/dist/jquery.js',
-      'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       'bower_components/fastclick/lib/fastclick.js',
       'tests/specs/**/*.spec.js'
     ],
@@ -36,13 +39,15 @@ module.exports = function(config) {
       ChromeTravisCi: {
         base: 'Chrome',
         flags: ['--no-sandbox']
+      },
+      IE9: {
+        base: 'IE',
+        'x-ua-compatible': 'IE=EmulateIE9'
       }
     },
 
     // list of files to exclude
-    exclude: [
-      'tests/specs/sass.mocha.spec.js'
-    ],
+    exclude: [],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
@@ -50,9 +55,14 @@ module.exports = function(config) {
     },
 
     // test results reporter to use
-    // possible values: 'dots', 'progress'
+    // possible values: 'dots', 'progress', 'mocha'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['mocha'],
+
+    // reporter options - full, autowatch, minimal
+    mochaReporter: {
+      output: 'full'
+    },
 
     // web server port
     port: 9876,
@@ -76,14 +86,27 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     // CLI --browsers Chrome,Firefox,Safari
-    browsers: [process.env.TRAVIS ? 'Firefox' : 'Chrome'],
-
     detectBrowsers : {
       postDetection: function(browsers) {
-        var index = browsers.indexOf('Chrome');
+        var i;
 
-        if(index !== -1) {
-          browsers[index] = 'ChromeTravisCi';
+        i = browsers.indexOf('Chrome');
+
+        if (i !== -1 && isTravis) {
+          browsers[i] = 'ChromeTravisCi';
+        }
+
+        if (browsers.indexOf('IE') > -1) {
+          browsers[i] = 'IE9';
+        }
+
+        //Remove PhantomJS if another browser has been detected
+        if (browsers.length > 1 && browsers.indexOf('PhantomJS') > -1) {
+          i = browsers.indexOf('PhantomJS');
+
+          if (i !== -1) {
+            browsers.splice(i, 1);
+          }
         }
 
         return browsers;
@@ -94,10 +117,6 @@ module.exports = function(config) {
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true
   };
-
-  if (process.env.TRAVIS) {
-      configuration.browsers = ['ChromeTravisCi'];
-  }
 
   config.set(configuration);
 };

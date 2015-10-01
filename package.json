@@ -1,13 +1,12 @@
 {
   "name": "growcss",
   "version": "0.0.1",
-  "description": "Todo",
+  "description": "GrowCss is a simple and fully customizable UI framework powerd by stylus, postcss and node.",
   "author": {
     "name": "Daniel Bannert",
     "email": "d.bannert@anolilab.de"
   },
   "homepage": "http://growcss.de",
-  "main": "library.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/growcss/growcss.git"
@@ -16,72 +15,109 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "grunt test --verbose"
+    "test": "grunt test -v --stack -d",
+    "install": "bower install"
   },
   "bugs": {
     "url": "https://github.com/growcss/growcss/issues"
   },
   "license": "MIT",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 0.10.1"
   },
+  "style": "dist/css/growcss.css",
+  "main": "./dist/js/npm",
   "jspm": {
-    "main": "release/growcss.min.css!",
-    "format": "global",
-    "directories": {
-      "lib": "./src"
-    }
+    "main": "dist/js/growcss",
+    "shim": {
+      "dist/js/growcss": {
+        "deps": "jquery",
+        "exports": "$"
+      }
+    },
+    "files": [
+      "css",
+      "fonts",
+      "js"
+    ]
+  },
+  "dependencies": {
+    "babel-runtime": "5.8.20"
   },
   "devDependencies": {
-    "bower": "~1.4.1",
+    "autoprefixer": "^6.0.2",
+    "bower": "~1.5.3",
+    "chai": "3.2.0",
+    "cssnano": "^3.0.1",
     "grunt": "^0.4.5",
+    "grunt-babel": "^5.0.1",
     "grunt-bump": "^0.3.1",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-compress": "^0.13.0",
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-jade": "^0.15.0",
-    "grunt-contrib-jasmine": "^0.8.2",
     "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-stylus": "^0.22.0",
     "grunt-contrib-uglify": "~0.9.1",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-exec": "^0.4.6",
     "grunt-jscs": "^1.8.0",
     "grunt-jsonlint": "^1.0.4",
     "grunt-karma": "^0.11.2",
-    "grunt-mocha-cli": "^1.13.1",
     "grunt-newer": "^1.1.1",
-    "jasmine-core": "^2.3.4",
+    "grunt-stylint": "^0.1.2",
+    "is-travis": "^1.0.0",
     "jshint-stylish": "^2.0.1",
     "karma": "^0.12.37",
+    "karma-chai": "https://registry.npmjs.org/karma-chai/-/karma-chai-0.1.0.tgz",
     "karma-chrome-launcher": "^0.2.0",
     "karma-detect-browsers": "^2.0.1",
     "karma-firefox-launcher": "^0.1.6",
     "karma-ie-launcher": "^0.2.0",
-    "karma-jasmine": "^0.3.6",
-    "karma-jasmine-jquery": "^0.1.1",
+    "karma-mocha": "https://registry.npmjs.org/karma-mocha/-/karma-mocha-0.2.0.tgz",
+    "karma-mocha-reporter": "^1.1.1",
+    "karma-opera-launcher": "^0.3.0",
     "karma-phantomjs-launcher": "^0.2.0",
     "karma-safari-launcher": "^0.1.1",
+    "karma-sinon": "https://registry.npmjs.org/karma-sinon/-/karma-sinon-1.0.4.tgz",
     "load-grunt-config": "^0.17.2",
     "load-grunt-tasks": "^3.2.0",
+    "mocha": "^2.3.3",
+    "npm-shrinkwrap": "^5.4.0",
     "phantomjs": "^1.9.17",
-    "time-grunt": "^1.2.1"
-  },
-  "peerDependencies": {
-    "grunt": ">=0.4.5"
+    "pixrem": "^2.0.0",
+    "postcss": "^5.0.4",
+    "postcss-reporter": "^1.2.1",
+    "poststylus": "^0.2.1",
+    "sinon": "^1.17.1",
+    "time-grunt": "^1.2.1",
+    "typographic": "^2.9.3"
   },
   "keywords": [
+    "css",
+    "js",
+    "stylus",
+    "mobile-first",
+    "responsive",
+    "framework",
+    "web",
+    "babel",
     "grunt",
     "bower",
-    "bin",
     "front-end",
     "development",
-    "dev",
     "build",
-    "generator",
-    "generate",
-    "tool",
     "ivory",
     "stylus",
-    "medve"
+    "medve",
+    "postcss"
+  ],
+  "files": [
+    "dist",
+    "tasks",
+    "src/js/**/*.js",
+    "src/stylus/**/*.styl",
+    "Gruntfile.js",
+    "LICENSE"
   ]
 }

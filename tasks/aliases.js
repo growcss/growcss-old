@@ -1,28 +1,31 @@
 module.exports = {
-    'cs-test' : [
+    'cs-test': [
         'jsonlint',
         'jscs',
         'jshint',
     ],
-    'test' : [
+    'test': [
         'cs-test',
-        // 'mochacli',
         'karma'
     ],
     'default': [
         'cs-test',
         'clean:dev',
-        'copy:remIe',
         'uglify:dev',
         'jade:dev',
     ],
     'build': [
         'cs-test',
         'clean:release',
-        'copy:releaseRemIe',
         'uglify:release',
         'jade:release',
         'clean:precompiled',
         'bump'
+    ],
+    // Task for updating the cached npm packages used by the Travis build (which are controlled by test-infra/npm-shrinkwrap.json).
+    // This task should be run and the updated file should be committed whenever GrowCss's dependencies change.
+    'update': [
+      'exec:npmUpdate',
+      'shrinkwrap'
     ]
 };

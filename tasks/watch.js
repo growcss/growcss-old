@@ -1,5 +1,5 @@
 'use strict';
-//notify config
+//watch config
 
 module.exports = {
     jade: {
