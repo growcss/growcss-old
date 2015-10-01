@@ -4638,6 +4638,10 @@
         }
       }
     },
+    "is-travis": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/is-travis/-/is-travis-1.0.0.tgz"
+    },
     "jshint-stylish": {
       "version": "2.0.1",
       "resolved": "https://registry.npmjs.org/jshint-stylish/-/jshint-stylish-2.0.1.tgz",
@@ -5787,6 +5791,10 @@
           }
         }
       }
+    },
+    "karma-opera-launcher": {
+      "version": "0.3.0",
+      "resolved": "https://registry.npmjs.org/karma-opera-launcher/-/karma-opera-launcher-0.3.0.tgz"
     },
     "karma-phantomjs-launcher": {
       "version": "0.2.1",
@@ -7511,6 +7519,10 @@
           "resolved": "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz"
         }
       }
+    },
+    "typographic": {
+      "version": "2.9.3",
+      "resolved": "https://registry.npmjs.org/typographic/-/typographic-2.9.3.tgz"
     }
   }
 }
