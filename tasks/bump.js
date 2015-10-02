@@ -2,19 +2,27 @@
 //bump config
 
 module.exports = {
+  pre: {
     options: {
       files: ['package.json', 'bower.json'],
       updateConfigs: [],
-      commit: true,
-      commitMessage: 'Release v%VERSION%',
-      commitFiles: ['package.json', 'bower.json'],
-      createTag: true,
-      tagName: 'v%VERSION%',
-      tagMessage: 'Version %VERSION%',
+      commit: false,
+      createTag: false,
       push: false,
       gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
       globalReplace: false,
-      prereleaseName: false,
+      prereleaseName: true,
       regExp: false
     }
+  },
+  master: {
+    options: {
+      files: ['package.json', 'bower.json'],
+      updateConfigs: [],
+      commit: false,
+      createTag: false,
+      push: false,
+      gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
+    }
+  }
 };

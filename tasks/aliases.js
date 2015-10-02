@@ -20,7 +20,7 @@ module.exports = {
         'uglify:release',
         'jade:release',
         'clean:precompiled',
-        'bump'
+        'bump:master'
     ],
     // Task for updating the cached npm packages used by the Travis build (which are controlled by test-infra/npm-shrinkwrap.json).
     // This task should be run and the updated file should be committed whenever GrowCss's dependencies change.

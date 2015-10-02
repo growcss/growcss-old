@@ -29,17 +29,19 @@
   "main": "./dist/js/npm",
   "jspm": {
     "main": "dist/js/growcss",
+    "ignore": ["dist/js/npm"],
+    "directories": {
+      "lib": "dist"
+    },
     "shim": {
       "dist/js/growcss": {
-        "deps": "jquery",
+        "deps": ["jquery"],
         "exports": "$"
       }
     },
-    "files": [
-      "css",
-      "fonts",
-      "js"
-    ]
+    "dependencies": {
+      "jquery": "*"
+    }
   },
   "dependencies": {
     "babel-runtime": "5.8.25"
@@ -69,21 +71,21 @@
     "is-travis": "^1.0.0",
     "jshint-stylish": "^2.0.1",
     "karma": "^0.13.10",
-    "karma-chai": "https://registry.npmjs.org/karma-chai/-/karma-chai-0.1.0.tgz",
+    "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.2.0",
     "karma-detect-browsers": "^2.0.1",
     "karma-firefox-launcher": "^0.1.6",
     "karma-ie-launcher": "^0.2.0",
-    "karma-mocha": "https://registry.npmjs.org/karma-mocha/-/karma-mocha-0.2.0.tgz",
+    "karma-mocha": "^0.2.0",
     "karma-mocha-reporter": "^1.1.1",
     "karma-opera-launcher": "^0.3.0",
     "karma-phantomjs-launcher": "^0.2.0",
     "karma-safari-launcher": "^0.1.1",
-    "karma-sinon": "https://registry.npmjs.org/karma-sinon/-/karma-sinon-1.0.4.tgz",
+    "karma-sinon": "^1.0.4",
     "load-grunt-config": "^0.17.2",
     "load-grunt-tasks": "^3.2.0",
     "mocha": "^2.3.3",
-    "npm-shrinkwrap": "^5.4.0",
+    "npm-shrinkwrap": "^200.4.0",
     "phantomjs": "^1.9.17",
     "pixrem": "^3.0.0",
     "postcss": "^5.0.4",

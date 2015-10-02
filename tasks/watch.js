@@ -11,9 +11,16 @@ module.exports = {
     },
     js: {
         files: ['src/js/**/*.js'],
-        tasks: ['uglify'],
+        tasks: ['eslint', 'jscs', 'jshint', 'uglify'],
         options: {
             spawn: false
         }
     },
+    stylus: {
+      files: ['src/stylus/**/*.styl'],
+      tasks: ['stylint', 'stylus'],
+      options: {
+          spawn: false
+      }
+    }
 };
