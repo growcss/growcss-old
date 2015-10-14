@@ -19,6 +19,9 @@ module.exports = {
           ])
         ]
       },
+      use: [
+        require('growcss-ivory')
+      ],
       files: {
         'dist/css/growcss.css': 'src/stylus/growcss.styl'
       }
