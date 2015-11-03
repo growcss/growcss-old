@@ -14,23 +14,23 @@
         };
 
     /**
-         * Map CSS classes to JS classes
-         *
-         * DOM elements with the class on the left will be initialised using the class on the right.
-         */
+     * Map CSS classes to JS classes
+     *
+     * DOM elements with the class on the left will be initialised using the class on the right.
+     */
     map['section.ui-well'] = ui.Well;
     map['header.ui-menu']  = ui.Menu;
 
     /**!
-         * Auto initialize instances by CSS classname
-         */
+     * Auto initialize instances by CSS classname
+     */
     for (CssClass in map) {
         loader($(CssClass), map[CssClass]);
     }
 
     /**
-         * Fast click
-         */
+     * Fast click
+     */
     if (typeof FastClick !== 'undefined') {
         $(function () {
             if (typeof document.body !== 'undefined') {
