@@ -18,7 +18,9 @@
     "ivory",
     "stylus",
     "medve",
-    "postcss"
+    "postcss",
+    "polymer",
+    "web components"
   ],
   "homepage": "http://growcss.de",
   "authors": [

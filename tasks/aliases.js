@@ -6,7 +6,7 @@ module.exports = {
     ],
     'test': [
         'cs-test',
-        'karma'
+        'wct-test:local'
     ],
     'default': [
         'cs-test',
@@ -18,7 +18,6 @@ module.exports = {
         'cs-test',
         'clean:release',
         'uglify:release',
-        'jade:release',
         'clean:precompiled',
         'bump:master'
     ],
