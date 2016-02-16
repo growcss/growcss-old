@@ -25,28 +25,6 @@
   "engines": {
     "node": ">= 0.10.1"
   },
-  "style": "dist/css/growcss.css",
-  "main": "./dist/js/npm",
-  "jspm": {
-    "main": "dist/js/growcss",
-    "ignore": [
-      "dist/js/npm"
-    ],
-    "directories": {
-      "lib": "dist"
-    },
-    "shim": {
-      "dist/js/growcss": {
-        "deps": [
-          "jquery"
-        ],
-        "exports": "$"
-      }
-    },
-    "dependencies": {
-      "jquery": "*"
-    }
-  },
   "devDependencies": {
     "autoprefixer": "^6.3.3",
     "bower": "~1.7.7",
