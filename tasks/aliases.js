@@ -2,24 +2,16 @@ module.exports = {
     'cs-test': [
         'jsonlint',
         'jscs',
-        'jshint',
+        'jshint'
     ],
     'test': [
-        'cs-test',
-        'karma'
+        'cs-test'
     ],
     'default': [
-        'cs-test',
-        'clean:dev',
-        'uglify:dev',
-        'jade:dev',
+        'cs-test'
     ],
     'build': [
         'cs-test',
-        'clean:release',
-        'uglify:release',
-        'jade:release',
-        'clean:precompiled',
         'bump:master'
     ],
     // Task for updating the cached npm packages used by the Travis build (which are controlled by test-infra/npm-shrinkwrap.json).

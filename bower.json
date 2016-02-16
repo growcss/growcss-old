@@ -4,7 +4,7 @@
   "authors": [
     "Daniel Bannert <d.bannert@anolilab.de>"
   ],
-  "description": "GrowCss is a simple and fully customizable UI framework powerd by stylus, postcss and node.",
+  "description": "GrowCss is a simple and fully customizable UI framework powerd by postcss and polymer.",
   "moduleType": [
     "amd",
     "node"
@@ -12,21 +12,18 @@
   "keywords": [
     "css",
     "js",
-    "stylus",
     "mobile-first",
     "responsive",
     "framework",
     "web",
-    "babel",
     "grunt",
     "bower",
     "front-end",
     "development",
     "build",
-    "ivory",
-    "stylus",
-    "medve",
-    "postcss"
+    "postcss",
+    "polymer",
+    "web components"
   ],
   "main": [],
   "license": "MIT",
@@ -38,11 +35,11 @@
     "tests",
     "composer.json"
   ],
+  "dependencies": {
+    "iron-elements": "PolymerElements/iron-elements#1.0.8",
+    "polymer": "Polymer/polymer#1.2.4"
+  },
   "devDependencies": {
-    "fotorama": "~4.6.4",
-    "jquery": "~2.1.4",
-    "fastclick": "~1.0.6",
-    "scrollReveal.js": "~2.3.1",
-    "normalize.styl": "~3.0.3"
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#~1.1.3"
   }
 }

@@ -1,24 +1,21 @@
 {
   "name": "growcss/growcss",
-  "description": "GrowCss is a simple and fully customizable UI framework powerd by stylus, postcss and node.",
+  "description": "GrowCss is a simple and fully customizable UI framework powerd by postcss and polymer.",
   "keywords": [
     "css",
     "js",
-    "stylus",
     "mobile-first",
     "responsive",
     "framework",
     "web",
-    "babel",
     "grunt",
     "bower",
     "front-end",
     "development",
     "build",
-    "ivory",
-    "stylus",
-    "medve",
-    "postcss"
+    "postcss",
+    "polymer",
+    "web components"
   ],
   "homepage": "http://growcss.de",
   "authors": [
