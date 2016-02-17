@@ -5,10 +5,10 @@ I was trying to do [...]
 ### Reproduction steps
 
 1. Go to '...'
-1. Click on '....'
-1. Scroll down to '....'
-1. Refresh the page and wait 5 secs
-1. Finally the error will magically happen, if it is raining
+2. Click on '....'
+3. Scroll down to '....'
+4. Refresh the page and wait 5 secs
+5. Finally the error will magically happen, if it is raining
 
 ### Expected results
 
@@ -25,7 +25,7 @@ Mark with as [x] to select. Leave as [ ] to unselect.
 Desktop:
 - [ ] Chrome
 - [ ] Firefox
-- [ ] Safari
+- [ ] Safari 8
 - [ ] Opera
 - [ ] IE 10+
 - [ ] IE 11
@@ -46,6 +46,9 @@ Please copy paste the backtrace here if available
 ### Image
 
 Add any image that might be helpful to understand the problem
+
+### Version
+- GrowCss: `GrowCss.version`
 
 ### Solution
 
