@@ -1,0 +1,29 @@
+{
+  "name": "@name",
+  "version": "1.0.0",
+  "authors": [
+    "Daniel Bannert <d.bannert@anolilab.de>"
+  ],
+  "description": "",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "@name"
+  ],
+  "main": "@name.html",
+  "license": "MIT",
+  "homepage": "https://github.com/growcss/@name/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "iron-elements": "PolymerElements/iron-elements#1.0.8",
+    "polymer": "Polymer/polymer#1.2.4"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0"
+  }
+}

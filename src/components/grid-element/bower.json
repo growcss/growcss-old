@@ -1,0 +1,29 @@
+{
+  "name": "grid-element",
+  "version": "1.0.0",
+  "authors": [
+    "Daniel Bannert <d.bannert@anolilab.de>"
+  ],
+  "description": "",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "grid-element"
+  ],
+  "main": "grid-element.html",
+  "license": "MIT",
+  "homepage": "https://github.com/growcss/grid-element/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "iron-elements": "PolymerElements/iron-elements#1.0.8",
+    "polymer": "Polymer/polymer#1.2.4"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0"
+  }
+}
