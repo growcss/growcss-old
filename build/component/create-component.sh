@@ -4,6 +4,7 @@
 $sourceDirectory   = __DIR__.'/../../src/components';
 $readmeTemplate    = __DIR__.'/README.md';
 $indexTemplate     = __DIR__.'/index.html';
+$elementTemplate   = __DIR__.'/example-element.html';
 $gitignoreTemplate = __DIR__.'/.gitignore';
 $bowerTemplate     = __DIR__.'/bower.json';
 
@@ -31,26 +32,12 @@ foreach ($dirs as $dir) {
           mkdir($testFolder);
         }
 
-        $assetsFolder = $componentsDir.'/assets';
-        if (!is_dir($assetsFolder)) {
-          mkdir($assetsFolder);
-        }
-
-        $cssFolder = $assetsFolder.'/css';
-        if (!is_dir($cssFolder)) {
-          mkdir($cssFolder);
-        }
-
-        $jsFolder = $assetsFolder.'/js';
-        if (!is_dir($jsFolder)) {
-          mkdir($jsFolder);
-        }
-
         $package = strtolower($vendor.'/'.$name);
 
         // get template
-        $readmeContent = file_get_contents($readmeTemplate);
-        $bowerContent  = file_get_contents($bowerTemplate);
+        $readmeContent          = file_get_contents($readmeTemplate);
+        $bowerContent           = file_get_contents($bowerTemplate);
+        $elementTemplateContent = file_get_contents($elementTemplate);
 
         // replace variables in template
         $replacements = [
@@ -59,16 +46,16 @@ foreach ($dirs as $dir) {
             '@package' => $package,
         ];
 
-        $readmeOutput = str_replace(array_keys($replacements), array_values($replacements), $readmeContent);
-        $bowerOutput  = str_replace(array_keys($replacements), array_values($replacements), $bowerContent);
+        $readmeOutput          = str_replace(array_keys($replacements), array_values($replacements), $readmeContent);
+        $bowerOutput           = str_replace(array_keys($replacements), array_values($replacements), $bowerContent);
+        $elementTemplateOutput = str_replace(array_keys($replacements), array_values($replacements), $elementTemplateContent);
 
         // create readme and bower.json
         file_put_contents($readme, $readmeOutput);
         file_put_contents($componentsDir.'/bower.json', $bowerOutput);
+        file_put_contents($componentsDir.'/'.$name.'-element.html', $elementTemplateOutput);
 
         // create empty files
-        file_put_contents($cssFolder.'/'.$name.'.css', '');
-        file_put_contents($jsFolder.'/'.$name.'.js', '');
         file_put_contents($componentsDir.'/'.$name.'.html', '');
 
         // copy needed files
