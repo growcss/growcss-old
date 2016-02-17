@@ -4,6 +4,8 @@
 $sourceDirectory   = __DIR__.'/../../src/components';
 $readmeTemplate    = __DIR__.'/README.md';
 $indexTemplate     = __DIR__.'/index.html';
+$scriptTemplate    = __DIR__.'/example-script.js';
+$stylusTemplate    = __DIR__.'/example-style.styl';
 $elementTemplate   = __DIR__.'/example-element.html';
 $gitignoreTemplate = __DIR__.'/.gitignore';
 $bowerTemplate     = __DIR__.'/bower.json';
@@ -32,6 +34,11 @@ foreach ($dirs as $dir) {
           mkdir($testFolder);
         }
 
+        $assetsFolder = $componentsDir.'/assets';
+        if (!is_dir($assetsFolder)) {
+          mkdir($assetsFolder);
+        }
+
         $package = strtolower($vendor.'/'.$name);
 
         // get template
@@ -53,15 +60,22 @@ foreach ($dirs as $dir) {
         // create readme and bower.json
         file_put_contents($readme, $readmeOutput);
         file_put_contents($componentsDir.'/bower.json', $bowerOutput);
-        file_put_contents($componentsDir.'/'.$name.'-element.html', $elementTemplateOutput);
-
-        // create empty files
-        file_put_contents($componentsDir.'/'.$name.'.html', '');
+        file_put_contents($componentsDir.'/'.$name.'.html', $elementTemplateOutput);
 
         // copy needed files
         $indexFile = $componentsDir.'/index.html';
         if (!is_file($indexFile)) {
           copy($indexTemplate, $indexFile);
+        }
+
+        $stylusFile = $componentsDir.'/assets/'.$name.'.styl';
+        if (!is_file($stylusFile)) {
+          copy($stylusTemplate, $stylusFile);
+        }
+
+        $jsFile = $componentsDir.'/assets/'.$name.'.js';
+        if (!is_file($jsFile)) {
+          copy($scriptTemplate, $jsFile);
         }
 
         $testIndexFile = $componentsDir.'/test/index.html';
@@ -72,11 +86,6 @@ foreach ($dirs as $dir) {
         $demoIndexFile = $componentsDir.'/demo/index.html';
         if (!is_file($demoIndexFile)) {
           copy($indexTemplate, $demoIndexFile);
-        }
-
-        $gitignoreFile = $componentsDir.'/.gitignore';
-        if (!is_file($gitignoreFile)) {
-          copy($gitignoreTemplate, $gitignoreFile);
         }
 
         echo "Created {$package}\r\n";
