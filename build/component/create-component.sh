@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-$sourceDirectory   = __DIR__.'/../src/components';
+$sourceDirectory   = __DIR__.'/../../src/components';
 $readmeTemplate    = __DIR__.'/README.md';
 $indexTemplate     = __DIR__.'/index.html';
 $gitignoreTemplate = __DIR__.'/.gitignore';
@@ -15,20 +15,43 @@ foreach ($dirs as $dir) {
     // set variables
     list($vendor, $name) = array_slice($parts, - 2);
 
-    $componentsDir = $dir.'/'.$name;
-    $readme  = $componentsDir.'/README.md';
+    $componentsDir = $dir.'/';
+    $readme        = $componentsDir.'/README.md';
 
     if (!file_exists($readme)) {
 
-        // create folder
-        mkdir($componentsDir.'/demo');
-        mkdir($componentsDir.'/test');
-        mkdir($componentsDir.'/css');
-        mkdir($componentsDir.'/js');
+        // create folders
+        $demoFolder = $componentsDir.'/demo';
+        if (!is_dir($demoFolder)) {
+          mkdir($demoFolder);
+        }
+
+        $testFolder = $componentsDir.'/test';
+        if (!is_dir($testFolder)) {
+          mkdir($testFolder);
+        }
+
+        $assetsFolder = $componentsDir.'/assets';
+        if (!is_dir($assetsFolder)) {
+          mkdir($assetsFolder);
+        }
+
+        $cssFolder = $assetsFolder.'/css';
+        if (!is_dir($cssFolder)) {
+          mkdir($cssFolder);
+        }
+
+        $jsFolder = $assetsFolder.'/js';
+        if (!is_dir($jsFolder)) {
+          mkdir($jsFolder);
+        }
 
         $package = strtolower($vendor.'/'.$name);
+
         // get template
-        $content = file_get_contents($readmeTemplate);
+        $readmeContent = file_get_contents($readmeTemplate);
+        $bowerContent  = file_get_contents($bowerTemplate);
+
         // replace variables in template
         $replacements = [
             '@name'    => $name,
@@ -36,15 +59,39 @@ foreach ($dirs as $dir) {
             '@package' => $package,
         ];
 
-        $output = str_replace(array_keys($replacements), array_values($replacements), $content);
+        $readmeOutput = str_replace(array_keys($replacements), array_values($replacements), $readmeContent);
+        $bowerOutput  = str_replace(array_keys($replacements), array_values($replacements), $bowerContent);
 
-        // write package readme
-        file_put_contents($readme, $output);
-        ile_put_contents($bowerTemplate, $output);
+        // create readme and bower.json
+        file_put_contents($readme, $readmeOutput);
+        file_put_contents($componentsDir.'/bower.json', $bowerOutput);
+
+        // create empty files
+        file_put_contents($cssFolder.'/'.$name.'.css', '');
+        file_put_contents($jsFolder.'/'.$name.'.js', '');
+        file_put_contents($componentsDir.'/'.$name.'.html', '');
 
         // copy needed files
-        copy($file, $componentsDir.'/index.html');
+        $indexFile = $componentsDir.'/index.html';
+        if (!is_file($indexFile)) {
+          copy($indexTemplate, $indexFile);
+        }
 
-        echo "Created README.md in {$package}</br>\r\n";
+        $testIndexFile = $componentsDir.'/test/index.html';
+        if (!is_file($testIndexFile)) {
+          copy($indexTemplate, $testIndexFile);
+        }
+
+        $demoIndexFile = $componentsDir.'/demo/index.html';
+        if (!is_file($demoIndexFile)) {
+          copy($indexTemplate, $demoIndexFile);
+        }
+
+        $gitignoreFile = $componentsDir.'/.gitignore';
+        if (!is_file($gitignoreFile)) {
+          copy($gitignoreTemplate, $gitignoreFile);
+        }
+
+        echo "Created {$package}\r\n";
     }
 }

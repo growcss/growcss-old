@@ -1,5 +1,5 @@
 {
-  "name": "@name",
+  "name": "grid-element",
   "version": "1.0.0",
   "authors": [
     "Daniel Bannert <d.bannert@anolilab.de>"
@@ -9,11 +9,11 @@
     "web-component",
     "web-components",
     "polymer",
-    "@name"
+    "grid-element"
   ],
-  "main": "@name.html",
+  "main": "grid-element.html",
   "license": "MIT",
-  "homepage": "https://github.com/growcss/@name/",
+  "homepage": "https://github.com/growcss/grid-element/",
   "ignore": [
     "/.*",
     "/test/",
