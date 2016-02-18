@@ -20,7 +20,6 @@
     "/demo/"
   ],
   "dependencies": {
-    "iron-elements": "PolymerElements/iron-elements#1.0.8",
     "polymer": "Polymer/polymer#1.2.4"
   },
   "devDependencies": {

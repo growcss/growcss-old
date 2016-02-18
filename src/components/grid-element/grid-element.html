@@ -1,4 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-media-query/iron-media-query.html">
+<link rel="import" href="grid-col.html">
 
 <style>
   grid-element {
@@ -9,13 +11,15 @@
 <dom-module id="grid-element">
     <template>
       <style>
-        @style
+        @style-grid-element
       </style>
 
-    <!-- html -->
+      <iron-media-query query="{{mq}}" query-matches="{{match}}"></iron-media-query>
+
+      <content></content>
     </template>
 
     <script>
-        @script
+        @script-grid-element
     </script>
 </dom-module>

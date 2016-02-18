@@ -13,9 +13,5 @@ module.exports = {
     'build': [
         'cs-test',
         'bump:master'
-    ],
-    // This task should be run and the updated file should be committed whenever GrowCss's dependencies change.
-    'update': [
-      'exec:npmUpdate'
     ]
 };
