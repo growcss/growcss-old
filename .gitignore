@@ -1,8 +1,8 @@
 bower_components
-.grunt/
 .grunt
 node_modules
 npm-debug.log
-precompiled/
+precompiled
 test/bower_components
-tmp/
+tmp
+testing

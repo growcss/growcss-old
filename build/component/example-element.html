@@ -1,21 +1,25 @@
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="@path/polymer/polymer.html">
 
-<style>
-  @name {
-    display: none;
-  }
-</style>
+<!--
+    <@name>`element <text>.
+
+    Example:
+        <@name></@name>
+        
+    @element @name
+    @demo demo/index.html
+-->
 
 <dom-module id="@name">
   <template>
     <style>
-      @style-@name
+      include "@name/assets/@name.css"
     </style>
 
     <!-- html -->
   </template>
 
   <script>
-    @script-@name
+    include "@name/assets/@name.js"
   </script>
 </dom-module>

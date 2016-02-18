@@ -1,0 +1,254 @@
+@media $medium-up {
+  .small-centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .small-uncentered,
+  .small-push-0,
+  .small-pull-0 {
+    position: static;
+    margin-left: 0;
+    margin-right: 0;
+    float: left;
+  }
+
+  :host(.small-push-1) {
+    left: 8.333%;
+  }
+  :host(.small-push-2) {
+    left: 16.666%;
+  }
+  :host(.small-push-3) {
+    left: 25%;
+  }
+  :host(.small-push-4) {
+    left: 33.333%;
+  }
+  :host(.small-push-5) {
+    left: 41.667%;
+  }
+  :host(.small-push-6) {
+    left: 50%;
+  }
+  :host(.small-push-7) {
+    left: 58.333%;
+  }
+  :host(.small-push-8) {
+    left: 66.667%;
+  }
+  :host(.small-push-9) {
+    left: 75%;
+  }
+  :host(.small-push-10) {
+    left: 83.333%;
+  }
+  :host(.small-push-11) {
+    left: 91.667%;
+  }
+
+  :host(.small-pull-1) {
+    left: -8.333%;
+  }
+  :host(.small-pull-2) {
+    left: -16.666%;
+  }
+  :host(.small-pull-3) {
+    left: -25%;
+  }
+  :host(.small-pull-4) {
+    left: -33.333%;
+  }
+  :host(.small-pull-5) {
+    left: -41.667%;
+  }
+  :host(.small-pull-6) {
+    left: -50%;
+  }
+  :host(.small-pull-7) {
+    left: -58.333%;
+  }
+  :host(.small-pull-8) {
+    left: -66.667%;
+  }
+  :host(.small-pull-9) {
+    left: -75%;
+  }
+  :host(.small-pull-10) {
+    left: -83.333%;
+  }
+  :host(.small-pull-11) {
+    left: -91.667%;
+  }
+}
+
+@media $large-up {
+  .medium-centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .medium-uncentered,
+  .medium-push-0,
+  .medium-pull-0 {
+    position: static;
+    margin-left: 0;
+    margin-right: 0;
+    float: left;
+  }
+
+  :host(.medium-push-1) {
+    left: 8.333%;
+  }
+  :host(.medium-push-2) {
+    left: 16.666%;
+  }
+  :host(.medium-push-3) {
+    left: 25%;
+  }
+  :host(.medium-push-4) {
+    left: 33.333%;
+  }
+  :host(.medium-push-5) {
+    left: 41.667%;
+  }
+  :host(.medium-push-6) {
+    left: 50%;
+  }
+  :host(.medium-push-7) {
+    left: 58.333%;
+  }
+  :host(.medium-push-8) {
+    left: 66.667%;
+  }
+  :host(.medium-push-9) {
+    left: 75%;
+  }
+  :host(.medium-push-10) {
+    left: 83.333%;
+  }
+  :host(.medium-push-11) {
+    left: 91.667%;
+  }
+
+  :host(.medium-pull-1) {
+    left: -8.333%;
+  }
+  :host(.medium-pull-2) {
+    left: -16.666%;
+  }
+  :host(.medium-pull-3) {
+    left: -25%;
+  }
+  :host(.medium-pull-4) {
+    left: -33.333%;
+  }
+  :host(.medium-pull-5) {
+    left: -41.667%;
+  }
+  :host(.medium-pull-6) {
+    left: -50%;
+  }
+  :host(.medium-pull-7) {
+    left: -58.333%;
+  }
+  :host(.medium-pull-8) {
+    left: -66.667%;
+  }
+  :host(.medium-pull-9) {
+    left: -75%;
+  }
+  :host(.medium-pull-10) {
+    left: -83.333%;
+  }
+  :host(.medium-pull-11) {
+    left: -91.667%;
+  }
+}
+
+@media $xlarge-up {
+  .large-centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .large-uncentered,
+  .large-push-0,
+  .large-pull-0 {
+    position: static;
+    margin-left: 0;
+    margin-right: 0;
+    float: left;
+  }
+
+  :host(.large-push-1) {
+    left: 8.333%;
+  }
+  :host(.large-push-2) {
+    left: 16.666%;
+  }
+  :host(.large-push-3) {
+    left: 25%;
+  }
+  :host(.large-push-4) {
+    left: 33.333%;
+  }
+  :host(.large-push-5) {
+    left: 41.667%;
+  }
+  :host(.large-push-6) {
+    left: 50%;
+  }
+  :host(.large-push-7) {
+    left: 58.333%;
+  }
+  :host(.large-push-8) {
+    left: 66.667%;
+  }
+  :host(.large-push-9) {
+    left: 75%;
+  }
+  :host(.large-push-10) {
+    left: 83.333%;
+  }
+  :host(.large-push-11) {
+    left: 91.667%;
+  }
+
+  :host(.large-pull-1) {
+    left: -8.333%;
+  }
+  :host(.large-pull-2) {
+    left: -16.666%;
+  }
+  :host(.large-pull-3) {
+    left: -25%;
+  }
+  :host(.large-pull-4) {
+    left: -33.333%;
+  }
+  :host(.large-pull-5) {
+    left: -41.667%;
+  }
+  :host(.large-pull-6) {
+    left: -50%;
+  }
+  :host(.large-pull-7) {
+    left: -58.333%;
+  }
+  :host(.large-pull-8) {
+    left: -66.667%;
+  }
+  :host(.large-pull-9) {
+    left: -75%;
+  }
+  :host(.large-pull-10) {
+    left: -83.333%;
+  }
+  :host(.large-pull-11) {
+    left: -91.667%;
+  }
+}

@@ -1,0 +1,132 @@
+:host {
+  width: 100%;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+}
+
+:host([class*="small-push-"]),
+:host([class*="medium-push-"]),
+:host([class*="large-push-"]),
+:host([class*="small-pull-"]),
+:host([class*="medium-pull-"]),
+:host([class*="large-pull-"]) {
+    position: relative;
+}
+
+@media $medium-up {
+  :host(.small-1) {
+    width: 8.333%;
+  }
+  :host(.small-2) {
+    width: 16.666%;
+  }
+  :host(.small-3) {
+    width: 25%;
+  }
+  :host(.small-4) {
+    width: 33.333%;
+  }
+  :host(.small-5) {
+    width: 41.667%;
+  }
+  :host(.small-6) {
+    width: 50%;
+  }
+  :host(.small-7) {
+    width: 58.333%;
+  }
+  :host(.small-8) {
+    width: 66.667%;
+  }
+  :host(.small-9) {
+    width: 75%;
+  }
+  :host(.small-10) {
+    width: 83.333%;
+  }
+  :host(.small-11) {
+    width: 91.667%;
+  }
+  :host(.small-12) {
+    width: 100%;
+  }
+}
+
+@media $large-up {
+  :host(.medium-1) {
+    width: 8.333%;
+  }
+  :host(.medium-2) {
+    width: 16.666%;
+  }
+  :host(.medium-3) {
+    width: 25%;
+  }
+  :host(.medium-4) {
+    width: 33.333%;
+  }
+  :host(.medium-5) {
+    width: 41.667%;
+  }
+  :host(.medium-6) {
+    width: 50%;
+  }
+  :host(.medium-7) {
+    width: 58.333%;
+  }
+  :host(.medium-8) {
+    width: 66.667%;
+  }
+  :host(.medium-9) {
+    width: 75%;
+  }
+  :host(.medium-10) {
+    width: 83.333%;
+  }
+  :host(.medium-11) {
+    width: 91.667%;
+  }
+  :host(.medium-12) {
+    width: 100%;
+  }
+}
+
+@media $xlarge-up {
+  :host(.large-1) {
+    width: 8.333%;
+  }
+  :host(.large-2) {
+    width: 16.666%;
+  }
+  :host(.large-3) {
+    width: 25%;
+  }
+  :host(.large-4) {
+    width: 33.333%;
+  }
+  :host(.large-5) {
+    width: 41.667%;
+  }
+  :host(.large-6) {
+    width: 50%;
+  }
+  :host(.large-7) {
+    width: 58.333%;
+  }
+  :host(.large-8) {
+    width: 66.667%;
+  }
+  :host(.large-9) {
+    width: 75%;
+  }
+  :host(.large-10) {
+    width: 83.333%;
+  }
+  :host(.large-11) {
+    width: 91.667%;
+  }
+  :host(.large-12) {
+    width: 100%;
+  }
+}

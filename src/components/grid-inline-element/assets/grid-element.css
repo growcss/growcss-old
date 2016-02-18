@@ -1,0 +1,36 @@
+:host(.middle) > .row-wrap > .row > ::content > grid-col {
+  vertical-align: middle;
+}
+
+:host(.reverse) > .row-wrap {
+  direction: rtl;
+}
+
+:host(.reverse) > .row-wrap > .row > ::content > grid-col {
+  direction: ltr;
+}
+
+:host > .row-wrap > .row {
+  font-size: 0;
+}
+
+:host > .row-wrap > .row:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+:host > .row-wrap > .row > ::content > grid-col {
+  display: inline-block;
+  vertical-align: top;
+  font-size: var(--inline-grid-font, 14px);
+}
+
+:host > .row-wrap > .row > ::content > grid-col.end:last-child:last-child {
+  float: left;
+}
+
+:host > .row-wrap > .row > ::content > grid-col:last-child:not(:first-child) {
+  float: right;
+}

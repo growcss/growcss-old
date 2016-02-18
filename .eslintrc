@@ -1,0 +1,13 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0
+  },
+
+  "globals": {
+    "root": true,
+    "config": true,
+    "describe": true,
+    "it": true
+  }
+}

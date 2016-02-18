@@ -1,0 +1,29 @@
+{
+  "name": "grid-col",
+  "version": "1.0.0",
+  "authors": [
+    "Daniel Bannert <d.bannert@anolilab.de>"
+  ],
+  "description": "",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "grid-col"
+  ],
+  "main": "grid-col.html",
+  "license": "MIT",
+  "homepage": "https://github.com/growcss/grid-col/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "iron-resizable-behavior": "PolymerElements/iron-resizable-behavior#^1.0.3",
+    "polymer": "Polymer/polymer#1.3"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0"
+  }
+}
