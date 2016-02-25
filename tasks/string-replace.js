@@ -32,13 +32,13 @@ module.exports = {
     options: {
       replacements: [{
         pattern: /(@path)/g,
-        replacement: '../../'
+        replacement: '../..'
       }, {
         pattern: /(@demo-path)/g,
-        replacement: '../../../'
+        replacement: '../../..'
       }, {
         pattern: /(@test-path)/g,
-        replacement: '../../../'
+        replacement: '../../..'
       }]
     }
   }

@@ -27,7 +27,6 @@
 * [npm:](https://npmjs.org/) Well... it's a Node.js package manager
 * [Grunt:](http://gruntjs.com/) Automates common tasks: test, build, clean
 * [Bower:](http://bower.io/) Package manager for browser dependencies
-* [Jasmine:](http://pivotal.github.io/jasmine/) Behavior-driven test framework
 * [Babel:](https://github.com/babel/babel/) Use next generation JavaScript, today.
 
 ## Getting Started:
@@ -43,9 +42,13 @@ npm install
 grunt
 ~~~
 
-## Change log
+## Playing with GrowCss
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+~~~
+grunt exec:serve
+~~~
+
+Once running, you can preview your element at http://localhost:8080/components/growcss/testing/, where testing is the name of the directory containing all components.
 
 ## Testing
 
@@ -53,13 +56,13 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 grunt test
 ~~~
 
+## Change log
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security
-
-If you discover any security related issues, please email d.bannert@anolilab.de instead of using the issue tracker.
 
 ## Credits
 

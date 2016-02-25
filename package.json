@@ -25,6 +25,12 @@
   "engines": {
     "node": ">= 0.10.1"
   },
+  "ignore": [
+    "/.*",
+    "Gruntfile.js",
+    "CODE_OF_CONDUCT.md",
+    "CHANGELOG.md"
+  ],
   "devDependencies": {
     "autoprefixer": "^6.3.3",
     "babel-eslint": "^5.0.0",

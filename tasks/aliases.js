@@ -2,17 +2,12 @@ module.exports = {
   'js-test': [
     'jsonlint',
     'jscs',
-    'eslint:components',
+    'eslint:components'
   ],
   'css-test': [
-    'stylint',
-  ],
-  'test': [
-    'build',
-    'wct-test',
+    'stylint'
   ],
   'build': [
-    'clean:release',
     'js-test',
     'css-test',
     'postcss:precompiled-shared',
@@ -23,16 +18,28 @@ module.exports = {
     'copy:components',
     'string-replace:release-components',
     'htmlmin:release',
-    // 'clean:precompiled'
-  ],
-  'testing': [
-    'build',
     'clean:testing',
     'includes:testing',
     'string-replace:testing-components',
+    'wct-test',
+    'clean:precompiled',
+    'clean:testing'
+  ],
+  'test': [
+    'js-test',
+    'css-test',
+    'postcss:precompiled-shared',
+    'postcss:precompiled',
+    'babel',
+    'uglify:precompiled',
+    'clean:testing',
+    'includes:testing',
+    'string-replace:testing-components',
+    'wct-test',
+    'clean:precompiled',
+    'clean:testing'
   ],
   'default': [
-    'build',
-    'test',
+    'build'
   ]
 };

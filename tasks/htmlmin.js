@@ -4,7 +4,7 @@
 module.exports = {
   'release': {
     options: {
-      removeComments: true,
+      removeComments: false,
       collapseWhitespace: true
     },
     files: [{

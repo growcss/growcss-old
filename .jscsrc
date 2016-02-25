@@ -68,5 +68,7 @@
   "requireCapitalizedConstructors": true,
   "maximumLineLength": 100,
   "validateQuoteMarks": { "mark": "'", "escape": true },
-  "requireCamelCaseOrUpperCaseIdentifiers": true
+  "requireCamelCaseOrUpperCaseIdentifiers": true,
+
+  "disallowSpacesInAnonymousFunctionExpression": null
 }

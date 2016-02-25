@@ -11,7 +11,7 @@ module.exports = {
   },
   css: {
     files: ['src/components/**/assets/*.css'],
-    tasks: ['postcss', 'includes:testing', 'includes:testing', 'string-replace:testing-components'],
+    tasks: ['postcss', 'includes:testing', 'string-replace:testing-components'],
     options: {
       spawn: false
     }
