@@ -1,0 +1,6 @@
+/*  url: http://cssmojo.com/the-very-latest-clearfix-reloaded/ */
+:host(:after) {
+  content: "";
+  display:block;
+  clear:both;
+}

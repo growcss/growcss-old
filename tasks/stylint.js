@@ -2,12 +2,15 @@
 //stylint config
 
 module.exports = {
-  dist: {
-    options: {
-      config: {
-        colons: 'never'
-      }
-    },
-    src: ['src/**/*.styl']
-  }
+  components: {
+    src: ['src/components/**/assets/*.css']
+  },
+  // shared: {
+  //   options: {
+  //     config: {
+  //       colons: 'never'
+  //     }
+  //   },
+  //   src: ['src/components/**/assets/*.css']
+  // }
 };

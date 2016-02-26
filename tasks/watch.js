@@ -2,25 +2,25 @@
 //watch config
 
 module.exports = {
-    jade: {
-        files: ['src/jade/**/*.jade'],
-        tasks: ['jade'],
-        options: {
-            spawn: false
-        }
-    },
-    js: {
-        files: ['src/js/**/*.js'],
-        tasks: ['eslint', 'jscs', 'jshint', 'uglify'],
-        options: {
-            spawn: false
-        }
-    },
-    stylus: {
-      files: ['src/stylus/**/*.styl'],
-      tasks: ['stylint', 'stylus'],
-      options: {
-          spawn: false
-      }
+  js: {
+    files: ['src/components/**/assets/*.js', 'src/components/**/test/*.js'],
+    tasks: ['jscs', 'eslint:components', 'babel', 'includes:testing', 'string-replace:testing-components'],
+    options: {
+      spawn: false
     }
+  },
+  css: {
+    files: ['src/components/**/assets/*.css'],
+    tasks: ['postcss', 'includes:testing', 'string-replace:testing-components'],
+    options: {
+      spawn: false
+    }
+  },
+  html: {
+    files: ['src/components/**/*.html', 'src/components/**/demo/*.html', 'src/components/**/test/*.html'],
+    tasks: ['includes:testing', 'string-replace:testing-components'],
+    options: {
+      spawn: false
+    }
+  }
 };

@@ -10,6 +10,14 @@ module.exports = function (grunt) {
     // load grunt config
     require('load-grunt-config')(grunt, {
 
+      loadGruntTasks: {
+        pattern: [
+          'web-component-tester',
+          'grunt-*',
+          '@*/grunt-*'
+        ],
+      },
+
         // path to task.js files, defaults to grunt dir
         configPath: path.join(process.cwd(), 'tasks'),
 

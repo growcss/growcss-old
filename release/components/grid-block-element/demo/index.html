@@ -1,0 +1,15 @@
+<!doctype html><html><head><title>grid-block-element demo</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><script src="../../../webcomponentsjs/webcomponents-lite.js"></script><link rel="import" href="../../../iron-demo-helpers/demo-pages-shared-styles.html"><link rel="import" href="../../../iron-demo-helpers/demo-snippet.html"><link rel="import" href="../../../paper-styles/demo-pages.html"><link rel="import" href="../grid-block-element.html"><style type="text/css" media="screen">.row grid-col {
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+    }
+    grid-col {
+      background-color: rgba(255,0,0,.15);
+      line-height: 3;
+      text-align: center;
+    }
+    grid-col:nth-child(odd) {
+      background-color: rgba(255,0,0,.3);
+    }
+    .middle grid-col {
+      height: 200px;
+    }</style></head><body unresolved><h2>Responsive</h2><p>Responsive modifiers enable specifying different column sizes, offsets, alignment and distribution at small, medium, large & xlarge viewport widths.</p><demo-snippet><template><grid-block-element class="small-up-2 medium-up-3 large-up-5"><grid-col></grid-col><grid-col></grid-col><grid-col></grid-col><grid-col></grid-col><grid-col></grid-col><grid-col></grid-col><grid-col></grid-col></grid-block-element></template></demo-snippet><h2>Simple Syntax</h2><p>All you need to remember is grid-block-element and grid-col.</p><demo-snippet><template><grid-block-element><grid-col></grid-col></grid-block-element></template></demo-snippet><h2>Grids with gutters</h2><p>.padded</p><demo-snippet><template><grid-block-element class="small-up-2 medium-up-3 large-up-5 padded"><grid-col>gutters</grid-col><grid-col>gutters</grid-col><grid-col>gutters</grid-col></grid-block-element></template></demo-snippet></body></html>

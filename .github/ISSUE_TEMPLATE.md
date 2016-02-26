@@ -48,7 +48,16 @@ Please copy paste the backtrace here if available
 Add any image that might be helpful to understand the problem
 
 ### Version
-- GrowCss: `GrowCss.version`
+<!--
+`Polymer.version` will show the version for Polymer
+`bower ls` or `npm ls` will show the version of webcomponents.js or webcomponents-lite.js
+-->
+- GrowCss: vX.X.X
+<!--
+ Remove this if you use the same versions as GrowCss
+-->
+- Polymer: vX.X.X
+- webcomponents: vX.X.X
 
 ### Solution
 
