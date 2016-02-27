@@ -50,7 +50,7 @@
   },
 
   // Per-line whitespace
-  "validateIndentation": 4,
+  "validateIndentation": 2,
   "disallowTrailingWhitespace": true,
   "requireLineFeedAtFileEnd": true,
 
@@ -70,5 +70,5 @@
   "validateQuoteMarks": { "mark": "'", "escape": true },
   "requireCamelCaseOrUpperCaseIdentifiers": true,
 
-  "disallowSpacesInAnonymousFunctionExpression": null
+  "disallowSpacesInAnonymousFunctionExpression": false
 }

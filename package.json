@@ -16,7 +16,8 @@
   },
   "scripts": {
     "test": "grunt test -v --stack -d",
-    "install": "bower install"
+    "install": "bower install",
+    "update": "bower update"
   },
   "bugs": {
     "url": "https://github.com/growcss/growcss/issues"
@@ -65,6 +66,7 @@
     "load-grunt-tasks": "^3.4.0",
     "mocha": "^2.4.5",
     "phantomjs-prebuilt": "^2.1.4",
+    "pixrem": "^3.0.0",
     "polyserve": "^0.7.1",
     "postcss": "^5.0.16",
     "postcss-at2x": "^2.0.0",
@@ -93,8 +95,11 @@
     "development",
     "build",
     "postcss",
+    "web-component",
+    "web-components",
     "polymer",
-    "web components"
+    "behavior",
+    "components"
   ],
   "files": [
     "dist",

@@ -1,5 +1,5 @@
 'use strict';
-//jsonlint config
+// jsonlint config
 
 module.exports = {
   dev: {

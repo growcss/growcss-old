@@ -14,8 +14,11 @@
     "development",
     "build",
     "postcss",
+    "web-component",
+    "web-components",
     "polymer",
-    "web components"
+    "behavior",
+    "components"
   ],
   "homepage": "http://growcss.de",
   "authors": [

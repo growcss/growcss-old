@@ -22,8 +22,11 @@
     "development",
     "build",
     "postcss",
+    "web-component",
+    "web-components",
     "polymer",
-    "web components"
+    "behavior",
+    "components"
   ],
   "main": [],
   "license": "MIT",

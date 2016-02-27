@@ -1,5 +1,5 @@
 'use strict';
-//postcss config
+// postcss config
 
 module.exports = {
   options: {
@@ -34,11 +34,11 @@ module.exports = {
           'padding-left',
           'padding-right',
           'padding-top',
-          'padding-bottom',
-        ],
+          'padding-bottom'
+        ]
       }),
       require('postcss-at2x')(),
-      require("postcss-import")(),
+      require('postcss-import')(),
       require('postcss-font-normalize')(),
       require('postcss-flexbugs-fixes')(),
       require('postcss-simple-vars')({
@@ -78,31 +78,31 @@ module.exports = {
           '$margin-small': '1.25rem',
           '$margin-default': '2.5rem',
           '$margin-large': '5rem',
-          '$margin-xlarge': '7.5rem',
+          '$margin-xlarge': '7.5rem'
         }
       }),
-      require("css-mqpacker")(),
+      require('css-mqpacker')(),
       require('css-declaration-sorter')({
         order: 'smacss'
       }),
       require('colorguard')(),
-      require('postcss-reporter')(),
+      require('postcss-reporter')()
     ]
   },
   'precompiled': {
     files: [{
-        expand: true,
-        cwd: 'src/components/',
-        src: ['**/assets/*.css'],
-        dest: 'precompiled/'
+      expand: true,
+      cwd: 'src/components/',
+      src: ['**/assets/*.css'],
+      dest: 'precompiled/'
     }]
   },
   'precompiled-shared': {
     files: [{
-        expand: true,
-        cwd: 'src/shared/',
-        src: ['**/*.css'],
-        dest: 'precompiled/shared/'
+      expand: true,
+      cwd: 'src/shared/',
+      src: ['**/*.css'],
+      dest: 'precompiled/shared/'
     }]
   }
 }

@@ -37,14 +37,14 @@
   position: relative;
 }
 
-:host(.padded) > .row-wrap > .row > ::content > grid-col,
-:host(.padded) > .row-wrap > .row > ::content > grid-flex-col {
+:host > .row-wrap > .row > ::content > grid-col,
+:host > .row-wrap > .row > ::content > grid-flex-col {
   padding: 0 var(--grid-column-gutter-small, $column-gutter-small);
 }
 
 @media $medium-up {
-  :host(.padded) > .row-wrap > .row > ::content > grid-col,
-  :host(.padded) > .row-wrap > .row > ::content > grid-flex-col {
+  :host > .row-wrap > .row > ::content > grid-col,
+  :host > .row-wrap > .row > ::content > grid-flex-col {
   padding: 0 var(--grid-column-gutter-medium, $column-gutter-medium);
   }
 }

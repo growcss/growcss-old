@@ -1,18 +1,11 @@
-class GridCol {
-  beforeRegister () {
+(function () {
+  'use strict';
+  class GridFlexCol {
+    beforeRegister () {
       this.is = 'grid-flex-col';
       this.properties = {};
+    }
   }
 
-  created () {}
-
-  ready () {}
-
-  attached () {}
-
-  detached () {}
-
-  attributeChanged () {}
-}
-
-Polymer(GridCol);
+  Polymer(GridFlexCol);
+})();

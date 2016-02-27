@@ -18,8 +18,9 @@
     grid-table-element {
       margin-bottom: 1rem;
     }
-    .row grid-col {
-      padding: 1rem 0;
+    grid-col {
+      padding-top: 1rem!important;
+      padding-bottom: 1rem!important;
     }
     grid-col {
       background-color: rgba(255,0,0,.15);
@@ -28,9 +29,6 @@
     }
     grid-col:nth-child(odd) {
       background-color: rgba(255,0,0,.3);
-    }
-    .middle grid-col {
-      height: 200px;
     }
   </style>
 
@@ -141,23 +139,11 @@
     </template>
   </demo-snippet>
 
-  <h2>Grids with gutters</h2>
-  <p>.padded</p>
-  <demo-snippet>
-    <template>
-      <grid-table-element class="padded">
-        <grid-col class="small-4">gutters</grid-col>
-        <grid-col class="small-4">gutters</grid-col>
-        <grid-col class="small-4">gutters</grid-col>
-      </grid-table-element>
-    </template>
-  </demo-snippet>
-
   <h2>Reverse column sorting</h2>
   <p>.reverse</p>
   <demo-snippet>
     <template>
-      <grid-table-element class="padded reverse">
+      <grid-table-element class="reverse">
         <grid-col class="small-6">column 1</grid-col>
         <grid-col class="small-6">column 2</grid-col>
       </grid-table-element>

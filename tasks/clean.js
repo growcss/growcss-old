@@ -1,8 +1,8 @@
 'use strict';
-//clean config
+// clean config
 
 module.exports = {
   precompiled: 'precompiled/',
   release: 'release/',
-  testing: 'testing/',
+  testing: 'testing/'
 };

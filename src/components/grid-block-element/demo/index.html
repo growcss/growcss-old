@@ -15,8 +15,9 @@
   <link rel="import" href="../grid-block-element.html">
 
   <style type="text/css" media="screen">
-    .row grid-col {
-      padding: 1rem 0;
+    grid-col {
+      padding-top: 1rem!important;
+      padding-bottom: 1rem!important;
       margin-bottom: 1rem;
     }
     grid-col {
@@ -57,18 +58,6 @@
     <template>
       <grid-block-element>
         <grid-col></grid-col>
-      </grid-block-element>
-    </template>
-  </demo-snippet>
-
-  <h2>Grids with gutters</h2>
-  <p>.padded</p>
-  <demo-snippet>
-    <template>
-      <grid-block-element class="small-up-2 medium-up-3 large-up-5 padded">
-        <grid-col>gutters</grid-col>
-        <grid-col>gutters</grid-col>
-        <grid-col>gutters</grid-col>
       </grid-block-element>
     </template>
   </demo-snippet>

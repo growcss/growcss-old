@@ -1,16 +1,11 @@
 'use strict';
-//stylint config
+// stylint config
 
 module.exports = {
   components: {
-    src: ['src/components/**/assets/*.css']
+    src: 'src/components/**/assets/*.css'
   },
-  // shared: {
-  //   options: {
-  //     config: {
-  //       colons: 'never'
-  //     }
-  //   },
-  //   src: ['src/components/**/assets/*.css']
-  // }
+  shared: {
+    src: 'src/shared/css/*.css'
+  }
 };

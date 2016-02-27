@@ -1,5 +1,5 @@
 'use strict';
-//exec config
+// exec config
 
 module.exports = {
   'serve': {

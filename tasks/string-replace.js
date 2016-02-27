@@ -1,8 +1,8 @@
 'use strict';
-//string-replace config
+// string-replace config
 
 module.exports = {
-  'testing-components': {
+  testing: {
     files: [{
       expand: true,
       cwd: 'testing/',
@@ -19,10 +19,13 @@ module.exports = {
       }, {
         pattern: /(@test-path)/g,
         replacement: '../../../../bower_components'
+      }, {
+        pattern: /(@behavior-path)/g,
+        replacement: '../../behaviors'
       }]
     }
   },
-  'release-components': {
+  release: {
     files: [{
       expand: true,
       cwd: 'release/',
@@ -39,6 +42,9 @@ module.exports = {
       }, {
         pattern: /(@test-path)/g,
         replacement: '../../..'
+      }, {
+        pattern: /(@behavior-path)/g,
+        replacement: '..'
       }]
     }
   }

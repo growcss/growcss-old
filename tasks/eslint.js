@@ -1,17 +1,17 @@
 'use strict';
-//eslint config
+// eslint config
 
 module.exports = {
+  options: {
+    configFile: '.eslintrc'
+  },
   components: {
-    options: {
-      configFile: '.eslintrc'
-    },
     src: ['src/components/**/assets/*.js']
   },
+  behaviors: {
+    src: ['src/behaviors/**/assets/*.js']
+  },
   shared: {
-    options: {
-      configFile: '.eslintrc'
-    },
     src: ['src/shared/js/*.js']
   }
 };

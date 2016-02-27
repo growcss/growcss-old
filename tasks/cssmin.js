@@ -1,5 +1,5 @@
 'use strict';
-//cssmin config
+// cssmin config
 
 module.exports = {
   'precompiled-components': {
@@ -18,4 +18,4 @@ module.exports = {
       dest: 'precompiled/shared'
     }]
   }
-}
+};
