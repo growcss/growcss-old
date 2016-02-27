@@ -86,7 +86,6 @@ module.exports = {
         order: 'smacss'
       }),
       require('colorguard')(),
-      require('cssnano')(),
       require('postcss-reporter')(),
     ]
   },

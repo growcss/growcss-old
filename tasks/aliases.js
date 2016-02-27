@@ -14,6 +14,9 @@ module.exports = {
     'postcss:precompiled',
     'babel',
     'uglify:precompiled',
+    'cssmin:precompiled-components',
+    'cssmin:precompiled-shared',
+    'clean:release',
     'includes:components',
     'copy:components',
     'string-replace:release-components',
@@ -21,8 +24,8 @@ module.exports = {
     'clean:testing',
     'includes:testing',
     'string-replace:testing-components',
-    'wct-test',
     'clean:precompiled',
+    'wct-test',
     'clean:testing'
   ],
   'test': [
@@ -32,12 +35,14 @@ module.exports = {
     'postcss:precompiled',
     'babel',
     'uglify:precompiled',
+    'cssmin:precompiled-components',
+    'cssmin:precompiled-shared',
     'clean:testing',
     'includes:testing',
     'string-replace:testing-components',
-    'wct-test',
     'clean:precompiled',
-    'clean:testing'
+    'wct-test',
+    // 'clean:testing'
   ],
   'default': [
     'build'
