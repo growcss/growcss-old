@@ -9,6 +9,8 @@
     "web-component",
     "web-components",
     "polymer",
+    "behavior",
+    "growcss",
     "@name"
   ],
   "main": "@name.html",
@@ -23,6 +25,8 @@
     "polymer": "Polymer/polymer#1.3"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0"
+    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
+    "test-fixture": "polymerelements/test-fixture#^1.0.0",
+    "web-component-tester": "^4.2.0"
   }
 }

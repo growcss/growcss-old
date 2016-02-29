@@ -1,5 +1,5 @@
 'use strict';
-//uglify config
+// uglify config
 
 module.exports = {
   precompiled: {

@@ -15,8 +15,9 @@
   <link rel="import" href="../grid-flex-element.html">
 
   <style type="text/css" media="screen">
-    .row grid-flex-col {
-      padding: 1rem 0;
+    grid-col {
+      padding-top: 1rem!important;
+      padding-bottom: 1rem!important;
       margin-bottom: 1rem;
     }
     grid-flex-col {
@@ -155,18 +156,6 @@
           </grid-flex-element>
         </grid-flex-col>
         <grid-flex-col class="small-4"></grid-flex-col>
-      </grid-flex-element>
-    </template>
-  </demo-snippet>
-
-  <h2>Grids with gutters</h2>
-  <p>.padded</p>
-  <demo-snippet>
-    <template>
-      <grid-flex-element class="padded">
-        <grid-flex-col class="small-4">gutters</grid-flex-col>
-        <grid-flex-col class="small-4">gutters</grid-flex-col>
-        <grid-flex-col class="small-4">gutters</grid-flex-col>
       </grid-flex-element>
     </template>
   </demo-snippet>

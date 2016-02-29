@@ -9,6 +9,8 @@
     "web-component",
     "web-components",
     "polymer",
+    "growcss",
+    "grid-element",
     "grid-flex-element"
   ],
   "main": "grid-flex-element.html",
@@ -20,9 +22,12 @@
     "/demo/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#1.3"
+    "polymer": "Polymer/polymer#1.3",
+    "screen-size-behavior": "growcss/screen-size-behavior#^1.0.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0"
+    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
+    "test-fixture": "polymerelements/test-fixture#^1.0.0",
+    "web-component-tester": "^4.2.0"
   }
 }

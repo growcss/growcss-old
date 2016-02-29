@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><script src="../../../webcomponentsjs/webcomponents.min.js"></script><script src="../../../web-component-tester/browser.js"></script><script src="../../../test-fixture/test-fixture-mocha.js"></script><link rel="import" href="../../../test-fixture/test-fixture.html"><link rel="import" href="../gc-ui-well.html"></head><body><test-fixture id="gc-ui-well-fixture-img-small"><template><gc-ui-well img-small="http://satyr.io/640x16:9">test</gc-ui-well></template></test-fixture><test-fixture id="gc-ui-well-fixture-img-medium"><template><gc-ui-well img-medium="http://satyr.io/1200x16:9">test</gc-ui-well></template></test-fixture><test-fixture id="gc-ui-well-fixture-img-large"><template><gc-ui-well img-large="http://satyr.io/1440x16:9">test</gc-ui-well></template></test-fixture><test-fixture id="gc-ui-well-fixture-img"><template><gc-ui-well img="http://satyr.io/1440x16:9">test</gc-ui-well></template></test-fixture><test-fixture id="gc-ui-well-fixture-img-img-small"><template><gc-ui-well img="http://satyr.io/1440x16:9" img-small="http://satyr.io/640x16:9">test</gc-ui-well></template></test-fixture><script>suite('<gc-ui-well>', function() {
+      var testFixtureSmallImage;
+      var testFixtureMediumImage;
+      var testFixtureLargeImage;
+      var testFixtureImage;
+
+      setup(function() {
+        testFixtureSmallImage      = fixture('gc-ui-well-fixture-img-small');
+        testFixtureMediumImage     = fixture('gc-ui-well-fixture-img-medium');
+        testFixtureLargeImage      = fixture('gc-ui-well-fixture-img-large');
+        testFixtureImage           = fixture('gc-ui-well-fixture-img');
+        testFixtureImageSmallImage = fixture('gc-ui-well-fixture-img-img-small');
+      });
+
+      test('test setup', function() {
+        expect(document.querySelector('gc-ui-well')).to.be.ok;
+      });
+
+      test('should set background to img-small', function() {
+        expect(testFixtureSmallImage.classList.contains('has-background-image')).to.have.equal(true);
+        expect(testFixtureSmallImage.getAttribute('style')).to.have.string('background-image: url("http://satyr.io/640x16:9")');
+      });
+
+      test('should set background to img-medium', function() {
+        expect(testFixtureMediumImage.classList.contains('has-background-image')).to.have.equal(true);
+        expect(testFixtureMediumImage.getAttribute('style')).to.have.string('background-image: url("http://satyr.io/1200x16:9")');
+      });
+
+      test('should set background to img-large', function() {
+        expect(testFixtureLargeImage.classList.contains('has-background-image')).to.have.equal(true);
+        expect(testFixtureLargeImage.getAttribute('style')).to.have.string('background-image: url("http://satyr.io/1440x16:9")');
+      });
+
+      test('should set background to img', function() {
+        expect(testFixtureImage.classList.contains('has-background-image')).to.have.equal(true);
+        expect(testFixtureImage.getAttribute('style')).to.have.string('background-image: url("http://satyr.io/1440x16:9")');
+      });
+
+      test('should set background to img-small if screen is under 640', function() {
+        expect(testFixtureImageSmallImage.classList.contains('has-background-image')).to.have.equal(true);
+
+        if (window.innerWidth <= 640) {
+          expect(testFixtureImageSmallImage.getAttribute('style')).to.have.string('background-image: url("http://satyr.io/640x16:9")');
+        } else {
+          expect(testFixtureImage.getAttribute('style')).to.have.string('background-image: url("http://satyr.io/1440x16:9")');
+        }
+      });
+    });</script></body></html>

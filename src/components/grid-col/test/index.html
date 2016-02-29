@@ -7,23 +7,23 @@
   <script src="@test-path/web-component-tester/browser.js"></script>
   <script src="@test-path/test-fixture/test-fixture-mocha.js"></script>
 
-  <link rel="import" href="../@name.html">
+  <link rel="import" href="../grid-col.html">
   <link rel="import" href="@test-path/test-fixture/test-fixture.html">
 
 </head>
 <body unresolved>
-  <test-fixture id="test-@name">
+  <test-fixture id="test-grid-col">
     <template>
 
     </template>
   </test-fixture>
 
   <script>
-  describe('<@name>', function() {
+  describe('<grid-col>', function() {
     var testFixture;
 
     beforeEach(function() {
-      testFixture = fixture('test-@name');
+      testFixture = fixture('test-grid-col');
     });
 
     context('common tests', function() {

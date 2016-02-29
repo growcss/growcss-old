@@ -15,8 +15,9 @@
   <link rel="import" href="../grid-inline-element.html">
 
   <style type="text/css" media="screen">
-    .row grid-col {
-      padding: 1rem 0;
+    grid-col {
+      padding-top: 1rem!important;
+      padding-bottom: 1rem!important;
       margin-bottom: 1rem;
     }
     grid-col {
@@ -172,18 +173,6 @@
           </grid-inline-element>
         </grid-col>
         <grid-col class="small-4"></grid-col>
-      </grid-inline-element>
-    </template>
-  </demo-snippet>
-
-  <h2>Grids with gutters</h2>
-  <p>.padded</p>
-  <demo-snippet>
-    <template>
-      <grid-inline-element class="padded">
-        <grid-col class="small-4">gutters</grid-col>
-        <grid-col class="small-4">gutters</grid-col>
-        <grid-col class="small-4">gutters</grid-col>
       </grid-inline-element>
     </template>
   </demo-snippet>

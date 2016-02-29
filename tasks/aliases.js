@@ -1,50 +1,64 @@
 module.exports = {
   'js-test': [
     'jsonlint',
-    'jscs',
-    'eslint:components'
+    'jscs:components',
+    'jscs:behaviors',
+    'jscs:shared',
+    'eslint:components',
+    'eslint:behaviors',
+    // 'eslint:shared'
   ],
   'css-test': [
-    'stylint'
+    'stylint:components',
+    'stylint:shared'
+  ],
+  'compile': [
+    'js-test',
+    'css-test',
+    'postcss:precompiled-shared',
+    'postcss:precompiled',
+    'babel:precompiled-components',
+    'babel:precompiled-behaviors',
+    'uglify:precompiled',
+    'cssmin:precompiled-components',
+    'cssmin:precompiled-shared'
   ],
   'build': [
-    'js-test',
-    'css-test',
-    'postcss:precompiled-shared',
-    'postcss:precompiled',
-    'babel',
-    'uglify:precompiled',
-    'cssmin:precompiled-components',
-    'cssmin:precompiled-shared',
+    'compile',
+    // Testing Start
+    'includes:testing-components',
+    'includes:testing-behaviors',
+    'string-replace:testing',
+    'wct-test',
+    'clean:testing',
+    // Testing End
+
+    // Release Start
     'clean:release',
     'includes:components',
+    'includes:behaviors',
     'copy:components',
-    'string-replace:release-components',
+    'copy:behaviors',
+    'string-replace:release',
     'htmlmin:release',
-    'clean:testing',
-    'includes:testing',
-    'string-replace:testing-components',
-    'clean:precompiled',
-    'wct-test',
-    'clean:testing'
+    'clean:precompiled'
+    // Release End
   ],
   'test': [
-    'js-test',
-    'css-test',
-    'postcss:precompiled-shared',
-    'postcss:precompiled',
-    'babel',
-    'uglify:precompiled',
-    'cssmin:precompiled-components',
-    'cssmin:precompiled-shared',
-    'clean:testing',
-    'includes:testing',
-    'string-replace:testing-components',
+    'compile',
+    // Testing Start
+    'includes:testing-components',
+    'includes:testing-behaviors',
+    'string-replace:testing',
     'clean:precompiled',
-    'wct-test',
+    'wct-test'
     // 'clean:testing'
+    // Testing End
   ],
   'default': [
     'build'
+  ],
+  'serve': [
+    'exec:serve'
   ]
 };

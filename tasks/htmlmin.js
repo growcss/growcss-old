@@ -1,5 +1,5 @@
 'use strict';
-//htmlmin config
+// htmlmin config
 
 module.exports = {
   'release': {
@@ -10,7 +10,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: 'release/',
-      src: '**/*.html',
+      src: '**/**/*.html',
       dest: 'release/'
     }]
   }

@@ -1,0 +1,9 @@
+<link rel="import" href="../../polymer/polymer.html"><link rel="import" href="../../iron-resizable-behavior/iron-resizable-behavior.html"><!--
+    <gc-screen-size-behavior>`element <text>.
+
+    Example:
+        <gc-screen-size-behavior></gc-screen-size-behavior>
+
+    @element gc-screen-size-behavior
+    @demo demo/index.html
+--><script>"use strict";var GrowCss=GrowCss||{};!function(){var a={properties:{log:{type:Boolean,value:!1},small:{type:Number,value:640},medium:{type:Number,value:1024},large:{type:Number,value:1200},xlarge:{type:Number,value:1440},format:{type:String,value:""},width:{type:Number,value:""}},listeners:{"iron-resize":"_onResize"},_onResize:function(a){var b=window.innerWidth,c=this._getScreenFormat(b);this.width=b,this.format=c,this.log&&(console.log("width : "+b),console.log("screenFormat = "+c))},_getScreenFormat:function(a){return a<=this.small?"small":a<=this.medium?"medium":a<=this.large?"large":a<=this.xlarge?"xlarge":"xxlarge"},attached:function(){this.async(this.notifyResize,1)}};GrowCss.ScreenSizeBehavior=[Polymer.IronResizableBehavior,a]}();</script>

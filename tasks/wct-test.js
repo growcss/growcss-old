@@ -1,10 +1,10 @@
 'use strict';
-//web-component-tester config
+// web-component-tester config
 
 module.exports = {
   local: {
     options: {
-      remote: false,
-    },
+      remote: false
+    }
   }
 };

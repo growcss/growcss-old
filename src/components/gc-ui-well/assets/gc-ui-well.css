@@ -1,0 +1,29 @@
+:host {
+  margin: 2.5rem 0;
+  padding: 2.5rem 0;
+  box-shadow: 0 0 1.875rem 0 rgba(102, 102, 102, 0.19) inset;
+  background: var(--well-default-background, #f4f4f4);
+  color: var(--well-default-color, #000);
+  min-height: var(--wall-min-height, 5rem);
+  display: block;
+  width: 100%;
+}
+
+:host + :host {
+  margin-top: -2.5rem;
+}
+
+:host(:last-child) {
+  margin-bottom: 0;
+}
+
+:host(.inverse) {
+  background: var(--well-inverse-background, #333);
+  color: var(--well-inverse-color, #fff);
+}
+
+:host(.has-background-image) {
+  color: var(--well-has-background-image-color, #fff);
+  background-position: 50%;
+  background-size: cover;
+}

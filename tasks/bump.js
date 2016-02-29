@@ -1,5 +1,5 @@
 'use strict';
-//bump config
+// bump config
 
 module.exports = {
   pre: {
