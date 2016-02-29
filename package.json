@@ -66,7 +66,7 @@
     "mocha": "^2.4.5",
     "phantomjs-prebuilt": "^2.1.4",
     "polyserve": "^0.7.1",
-    "postcss": "^5.0.16",
+    "postcss": "^5.0.18",
     "postcss-at2x": "^2.0.0",
     "postcss-flexbugs-fixes": "^2.0.0",
     "postcss-font-normalize": "0.0.0",
