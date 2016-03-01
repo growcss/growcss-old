@@ -18,16 +18,57 @@
   box-sizing: border-box;
 }
 
+:host([class*="xsmall-push-"]),
 :host([class*="small-push-"]),
 :host([class*="medium-push-"]),
 :host([class*="large-push-"]),
+:host([class*="xlarge-push-"]),
+:host([class*="xsmall-pull-"]),
 :host([class*="small-pull-"]),
 :host([class*="medium-pull-"]),
-:host([class*="large-pull-"]) {
+:host([class*="large-pull-"]),
+:host([class*="xlarge-pull-"]) {
     position: relative;
 }
 
-@media $medium-up {
+:host(.xsmall-1) {
+  width: var(--grid-col-1-width);
+}
+:host(.xsmall-2) {
+  width: var(--grid-col-2-width);
+}
+:host(.xsmall-3) {
+  width: var(--grid-col-3-width);
+}
+:host(.xsmall-4) {
+  width: var(--grid-col-4-width);
+}
+:host(.xsmall-5) {
+  width: var(--grid-col-5-width);
+}
+:host(.xsmall-6) {
+  width: var(--grid-col-6-width);
+}
+:host(.xsmall-7) {
+  width: var(--grid-col-7-width);
+}
+:host(.xsmall-8) {
+  width: var(--grid-col-8-width);
+}
+:host(.xsmall-9) {
+  width: var(--grid-col-9-width);
+}
+:host(.xsmall-10) {
+  width: var(--grid-col-10-width);
+}
+:host(.xsmall-11) {
+  width: var(--grid-col-11-width);
+}
+:host(.xsmall-12) {
+  width: var(--grid-col-12-width);
+}
+
+@media $small-up {
   :host(.small-1) {
     width: var(--grid-col-1-width);
   }
@@ -66,8 +107,8 @@
   }
 }
 
-@media $large-up {
-  :host(.medium-1) {
+@media $medium-up {
+  :host(.small-1) {
     width: var(--grid-col-1-width);
   }
   :host(.medium-2) {
@@ -105,7 +146,7 @@
   }
 }
 
-@media $xlarge-up {
+@media $large-up {
   :host(.large-1) {
     width: var(--grid-col-1-width);
   }
@@ -140,6 +181,45 @@
     width: var(--grid-col-11-width);
   }
   :host(.large-12) {
+    width: var(--grid-col-12-width);
+  }
+}
+
+@media $xlarge-up {
+  :host(.xlarge-1) {
+    width: var(--grid-col-1-width);
+  }
+  :host(.xlarge-2) {
+    width: var(--grid-col-2-width);
+  }
+  :host(.xlarge-3) {
+    width: var(--grid-col-3-width);
+  }
+  :host(.xlarge-4) {
+    width: var(--grid-col-4-width);
+  }
+  :host(.xlarge-5) {
+    width: var(--grid-col-5-width);
+  }
+  :host(.xlarge-6) {
+    width: var(--grid-col-6-width);
+  }
+  :host(.xlarge-7) {
+    width: var(--grid-col-7-width);
+  }
+  :host(.xlarge-8) {
+    width: var(--grid-col-8-width);
+  }
+  :host(.xlarge-9) {
+    width: var(--grid-col-9-width);
+  }
+  :host(.xlarge-10) {
+    width: var(--grid-col-10-width);
+  }
+  :host(.xlarge-11) {
+    width: var(--grid-col-11-width);
+  }
+  :host(.xlarge-12) {
     width: var(--grid-col-12-width);
   }
 }

@@ -13,6 +13,10 @@
           type: String,
           value: ''
         },
+        'img-xsmall': {
+          type: String,
+          value: ''
+        },
         'img-small': {
           type: String,
           value: ''
@@ -37,6 +41,7 @@
 
       if (
         this.img !== '' ||
+        this['img-xsmall'] !== '' ||
         this['img-small'] !== '' ||
         this['img-medium'] !== '' ||
         this['img-large'] !== ''
@@ -51,6 +56,8 @@
           background = this['img-medium'];
         } else if (this['img-small'] !== '') {
           background = this['img-small'];
+        } else if (this['img-xsmall'] !== '') {
+          background = this['img-xsmall'];
         }
       } else if (this.img !== '') {
         background = this.img;
@@ -65,7 +72,9 @@
       let newWidth = window.innerWidth;
       let background;
 
-      if (newWidth <= this.small) {
+      if (newWidth <= this.xsmall) {
+        background = this['img-xsmall'];
+      } else if (newWidth <= this.small) {
         background = this['img-small'];
       } else if (newWidth <= this.medium) {
         background = this['img-medium'];

@@ -18,7 +18,7 @@
     grid-col {
       padding-top: 1rem!important;
       padding-bottom: 1rem!important;
-      margin-bottom: 1rem;
+      margin-bottom: 1rem!important;
     }
     grid-col {
       background-color: rgba(255,0,0,.15);
@@ -28,19 +28,16 @@
     grid-col:nth-child(odd) {
       background-color: rgba(255,0,0,.3);
     }
-    .middle grid-col {
-      height: 200px;
-    }
   </style>
 
 </head>
 <body unresolved>
 
   <h2>Responsive</h2>
-  <p>Responsive modifiers enable specifying different column sizes, offsets, alignment and distribution at small, medium, large & xlarge viewport widths.</p>
+  <p>Responsive modifiers enable specifying different column sizes, offsets, alignment and distribution at xsmall, small, medium, large & xlarge viewport widths.</p>
   <demo-snippet>
     <template>
-      <grid-block-element class="small-up-2 medium-up-3 large-up-5">
+      <grid-block-element class="xsmall-up-4 small-up-2 medium-up-3 large-up-5">
         <grid-col></grid-col>
         <grid-col></grid-col>
         <grid-col></grid-col>
@@ -56,7 +53,7 @@
   <p>All you need to remember is grid-block-element and grid-col.</p>
   <demo-snippet>
     <template>
-      <grid-block-element>
+      <grid-block-element class="xsmall-up-1">
         <grid-col></grid-col>
       </grid-block-element>
     </template>
