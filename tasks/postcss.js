@@ -44,16 +44,20 @@ module.exports = {
       require('postcss-simple-vars')({
         variables: {
           // screens
-          '$small-up': 'only screen',
+          '$xsmall-up': 'only screen',
+          // max-width 480px, tiny mobile-only styles, use when QAing mobile issues
+          '$xsmall-only': 'only screen and (max-width: 30em)',
+          // min-width 961px, mobile screens
+          '$small-up': 'only screen and (max-width: 30.063em)',
           // max-width 640px, mobile-only styles, use when QAing mobile issues
-          '$small-only': 'only screen and (max-width: 40em)',
+          '$small-only': 'only screen and (min-width: 30.063em) and (max-width: 40em)',
           // min-width 641px, tablet screens
           '$medium-up': 'only screen and (min-width: 40.063em)',
           // min-width 641px and max-width 1024px, use when QAing tablet-only issues
           '$medium-only': 'only screen and (min-width: 40.063em) and (max-width: 64em)',
           // min-width 1025px, large screens
           '$large-up': 'only screen and (min-width: 64.063em)',
-          // min-width 1024px and max-width 1200px, use when QAing large screen-only issues
+          // min-width 1025px and max-width 1200px, use when QAing large screen-only issues
           '$large-only': 'only screen and (min-width: 64.063em) and (max-width: 75em)',
           // min-width 1201px, xlarge screens
           '$xlarge-up': 'only screen and (min-width: 75.0625em)',
@@ -70,8 +74,10 @@ module.exports = {
           // Retina
           '$retina': 'only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min$moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)',
           // foundation column gutter
+          '$column-gutter-xsmall': '0.6825rem',
           '$column-gutter-small': '0.6825rem',
           '$column-gutter-medium': '0.9375rem',
+          '$column-gutter-large': '0.9375rem',
           // use these for margins and paddings
           '$margin-mini': '0.3125rem',
           '$margin-xsmall': '0.625rem',
