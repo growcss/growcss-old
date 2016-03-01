@@ -48,25 +48,21 @@ module.exports = {
           // max-width 480px, tiny mobile-only styles, use when QAing mobile issues
           '$xsmall-only': 'only screen and (max-width: 30em)',
           // min-width 961px, mobile screens
-          '$small-up': 'only screen and (max-width: 30.063em)',
-          // max-width 640px, mobile-only styles, use when QAing mobile issues
-          '$small-only': 'only screen and (min-width: 30.063em) and (max-width: 40em)',
-          // min-width 641px, tablet screens
-          '$medium-up': 'only screen and (min-width: 40.063em)',
-          // min-width 641px and max-width 1024px, use when QAing tablet-only issues
-          '$medium-only': 'only screen and (min-width: 40.063em) and (max-width: 64em)',
-          // min-width 1025px, large screens
-          '$large-up': 'only screen and (min-width: 64.063em)',
-          // min-width 1025px and max-width 1200px, use when QAing large screen-only issues
-          '$large-only': 'only screen and (min-width: 64.063em) and (max-width: 75em)',
-          // min-width 1201px, xlarge screens
-          '$xlarge-up': 'only screen and (min-width: 75.0625em)',
-          // min-width 1201px and max-width 1440, use when QAing xlarge screen-only issues
-          '$xlarge-only': 'only screen and (min-width: 75.0625em) and (max-width: 90em)',
-          // min-width 1441px, xlarge screens
-          '$xxlarge-up': 'only screen and (min-width: 90.063em)',
-          // min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues
-          '$xxlarge-only': 'only screen and (min-width: 90.063em) and (max-width: 120em)',
+          '$small-up': 'only screen and (min-width: 60.0625em)',
+          // min-width 481px and max-width 960px, mobile-only styles, use when QAing mobile issues
+          '$small-only': 'only screen and (min-width: 30.0625em) and (max-width: 60em)',
+          // min-width 1281px, tablet screens
+          '$medium-up': 'only screen and (min-width: 80.0625em)',
+          // min-width 961px and max-width 1280px, use when QAing tablet-only issues
+          '$medium-only': 'only screen and (min-width: 60.0625em) and (max-width: 80em)',
+          // min-width 1601px, large screens
+          '$large-up': 'only screen and (min-width: 100.0625em)',
+          // min-width 1281px and max-width 1600px, use when QAing large screen-only issues
+          '$large-only': 'only screen and (min-width: 80.0625em) and (max-width: 100em)',
+          // min-width 1921px, xlarge screens
+          '$xlarge-up': 'only screen and (min-width: 120.0625em)',
+          // min-width 1600px and max-width 1920, use when QAing xlarge screen-only issues
+          '$xlarge-only': 'only screen and (min-width: 100.0625em) and (max-width: 120em)',
           // Portrait
           '$portrait': 'screen and (orientation:portrait)',
           // Landscape

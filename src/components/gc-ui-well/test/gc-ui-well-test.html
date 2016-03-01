@@ -12,9 +12,15 @@
 
 </head>
 <body>
+  <test-fixture id="gc-ui-well-fixture-img-xsmall">
+    <template>
+      <gc-ui-well img-xsmall="http://satyr.io/480x16:9">test</gc-ui-well>
+    </template>
+  </test-fixture>
+
   <test-fixture id="gc-ui-well-fixture-img-small">
     <template>
-      <gc-ui-well img-small="http://satyr.io/640x16:9">test</gc-ui-well>
+      <gc-ui-well img-small="http://satyr.io/960x16:9">test</gc-ui-well>
     </template>
   </test-fixture>
 
@@ -44,12 +50,14 @@
 
   <script>
     suite('<gc-ui-well>', function() {
+      var testFixtureXSmallImage;
       var testFixtureSmallImage;
       var testFixtureMediumImage;
       var testFixtureLargeImage;
       var testFixtureImage;
 
       setup(function() {
+        testFixtureXSmallImage      = fixture('gc-ui-well-fixture-img-xsmall');
         testFixtureSmallImage      = fixture('gc-ui-well-fixture-img-small');
         testFixtureMediumImage     = fixture('gc-ui-well-fixture-img-medium');
         testFixtureLargeImage      = fixture('gc-ui-well-fixture-img-large');
@@ -61,9 +69,14 @@
         expect(document.querySelector('gc-ui-well')).to.be.ok;
       });
 
+      test('should set background to img-xsmall', function() {
+        expect(testFixtureXSmallImage.classList.contains('has-background-image')).to.have.equal(true);
+        expect(testFixtureXSmallImage.getAttribute('style')).to.have.string('background-image: url("http://satyr.io/480x16:9")');
+      });
+
       test('should set background to img-small', function() {
         expect(testFixtureSmallImage.classList.contains('has-background-image')).to.have.equal(true);
-        expect(testFixtureSmallImage.getAttribute('style')).to.have.string('background-image: url("http://satyr.io/640x16:9")');
+        expect(testFixtureSmallImage.getAttribute('style')).to.have.string('background-image: url("http://satyr.io/960x16:9")');
       });
 
       test('should set background to img-medium', function() {
@@ -81,10 +94,10 @@
         expect(testFixtureImage.getAttribute('style')).to.have.string('background-image: url("http://satyr.io/1440x16:9")');
       });
 
-      test('should set background to img-small if screen is under 640', function() {
+      test('should set background to img-small if screen is under 960', function() {
         expect(testFixtureImageSmallImage.classList.contains('has-background-image')).to.have.equal(true);
 
-        if (window.innerWidth <= 640) {
+        if (window.innerWidth <= 960) {
           expect(testFixtureImageSmallImage.getAttribute('style')).to.have.string('background-image: url("http://satyr.io/640x16:9")');
         } else {
           expect(testFixtureImage.getAttribute('style')).to.have.string('background-image: url("http://satyr.io/1440x16:9")');

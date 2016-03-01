@@ -32,7 +32,7 @@
 
 :host > .row-wrap > .row {
   width: 100%;
-  max-width: var(--grid-max-width, 90rem);
+  max-width: var(--grid-max-width, 100rem);
   margin: 0 auto;
   position: relative;
 }
@@ -45,6 +45,6 @@
 @media $medium-up {
   :host > .row-wrap > .row > ::content > grid-col,
   :host > .row-wrap > .row > ::content > grid-flex-col {
-  padding: 0 var(--grid-column-gutter-medium, $column-gutter-medium);
+    padding: 0 var(--grid-column-gutter-medium, $column-gutter-medium);
   }
 }

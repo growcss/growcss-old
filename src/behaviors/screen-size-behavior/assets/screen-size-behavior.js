@@ -8,21 +8,25 @@ let GrowCss = GrowCss || {};
         type: Boolean,
         value: false
       },
+      'xsmall': {
+        type: Number,
+        value: 480
+      },
       'small': {
         type: Number,
-        value: 640
+        value: 960
       },
       'medium': {
         type: Number,
-        value: 1024
+        value: 1280
       },
       'large': {
         type: Number,
-        value: 1200
+        value: 1600
       },
       'xlarge': {
         type: Number,
-        value: 1440
+        value: 1920
       },
       'format': {
         type: String,
@@ -52,7 +56,9 @@ let GrowCss = GrowCss || {};
     },
 
     _getScreenFormat: function (newWidth) {
-      if (newWidth <= this.small) {
+      if (newWidth <= this.xsmall) {
+        return 'xsmall';
+      } else if (newWidth <= this.small) {
         return 'small';
       } else if (newWidth <= this.medium) {
         return 'medium';
@@ -61,7 +67,7 @@ let GrowCss = GrowCss || {};
       } else if (newWidth <= this.xlarge) {
         return 'xlarge';
       } else {
-        return 'xxlarge';
+        return 'mega';
       }
     },
 
