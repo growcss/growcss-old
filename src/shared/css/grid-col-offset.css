@@ -1,107 +1,192 @@
-@media $medium-up {
+:host {
+  --grid-col-offset-1-width: 8.33333%;
+  --grid-col-offset-2-width: 16.66667%;
+  --grid-col-offset-3-width: 25%;
+  --grid-col-offset-4-width: 33.33333%;
+  --grid-col-offset-5-width: 41.66667%;
+  --grid-col-offset-6-width: 50%;
+  --grid-col-offset-7-width: 58.33333%;
+  --grid-col-offset-8-width: 66.66667%;
+  --grid-col-offset-9-width: 75%;
+  --grid-col-offset-10-width: 83.33333%;
+  --grid-col-offset-11-width: 91.66667%;
+  --grid-col-offset-12-width: 100%;
+}
+
+:host(.xsmall-offset-1) {
+  margin-left: var(--grid-col-offset-1-width);
+}
+:host(.xsmall-offset-2) {
+  margin-left: var(--grid-col-offset-2-width);
+}
+:host(.xsmall-offset-3) {
+  margin-left: var(--grid-col-offset-3-width);
+}
+:host(.xsmall-offset-4) {
+  margin-left: var(--grid-col-offset-4-width);
+}
+:host(.xsmall-offset-5) {
+  margin-left: var(--grid-col-offset-5-width);
+}
+:host(.xsmall-offset-6) {
+  margin-left: var(--grid-col-offset-6-width);
+}
+:host(.xsmall-offset-7) {
+  margin-left: var(--grid-col-offset-7-width);
+}
+:host(.xsmall-offset-8) {
+  margin-left: var(--grid-col-offset-8-width);
+}
+:host(.xsmall-offset-9) {
+  margin-left: var(--grid-col-offset-9-width);
+}
+:host(.xsmall-offset-10) {
+  margin-left: var(--grid-col-offset-10-width);
+}
+:host(.xsmall-offset-11) {
+  margin-left: var(--grid-col-offset-11-width);
+}
+
+@media $small-up {
   :host(.small-offset-1) {
-    margin-left: 8.333%;
+    margin-left: var(--grid-col-offset-1-width);
   }
   :host(.small-offset-2) {
-    margin-left: 16.666%;
+    margin-left: var(--grid-col-offset-2-width);
   }
   :host(.small-offset-3) {
-    margin-left: 25%;
+    margin-left: var(--grid-col-offset-3-width);
   }
   :host(.small-offset-4) {
-    margin-left: 33.333%;
+    margin-left: var(--grid-col-offset-4-width);
   }
   :host(.small-offset-5) {
-    margin-left: 41.667%;
+    margin-left: var(--grid-col-offset-5-width);
   }
   :host(.small-offset-6) {
-    margin-left: 50%;
+    margin-left: var(--grid-col-offset-6-width);
   }
   :host(.small-offset-7) {
-    margin-left: 58.333%;
+    margin-left: var(--grid-col-offset-7-width);
   }
   :host(.small-offset-8) {
-    margin-left: 66.667%;
+    margin-left: var(--grid-col-offset-8-width);
   }
   :host(.small-offset-9) {
-    margin-left: 75%;
+    margin-left: var(--grid-col-offset-9-width);
   }
   :host(.small-offset-10) {
-    margin-left: 83.333%;
+    margin-left: var(--grid-col-offset-10-width);
   }
   :host(.small-offset-11) {
-    margin-left: 91.667%;
+    margin-left: var(--grid-col-offset-11-width);
+  }
+}
+
+@media $medium-up {
+  :host(.medium-offset-1) {
+    margin-left: var(--grid-col-offset-1-width);
+  }
+  :host(.medium-offset-2) {
+    margin-left: var(--grid-col-offset-2-width);
+  }
+  :host(.medium-offset-3) {
+    margin-left: var(--grid-col-offset-3-width);
+  }
+  :host(.medium-offset-4) {
+    margin-left: var(--grid-col-offset-4-width);
+  }
+  :host(.medium-offset-5) {
+    margin-left: var(--grid-col-offset-5-width);
+  }
+  :host(.medium-offset-6) {
+    margin-left: var(--grid-col-offset-6-width);
+  }
+  :host(.medium-offset-7) {
+    margin-left: var(--grid-col-offset-7-width);
+  }
+  :host(.medium-offset-8) {
+    margin-left: var(--grid-col-offset-8-width);
+  }
+  :host(.medium-offset-9) {
+    margin-left: var(--grid-col-offset-9-width);
+  }
+  :host(.medium-offset-10) {
+    margin-left: var(--grid-col-offset-10-width);
+  }
+  :host(.medium-offset-11) {
+    margin-left: var(--grid-col-offset-11-width);
   }
 }
 
 @media $large-up {
-  :host(.medium-offset-1) {
-    margin-left: 8.333%;
+  :host(.large-offset-1) {
+    margin-left: var(--grid-col-offset-1-width);
   }
-  :host(.medium-offset-2) {
-    margin-left: 16.666%;
+  :host(.large-offset-2) {
+    margin-left: var(--grid-col-offset-2-width);
   }
-  :host(.medium-offset-3) {
-    margin-left: 25%;
+  :host(.large-offset-3) {
+    margin-left: var(--grid-col-offset-3-width);
   }
-  :host(.medium-offset-4) {
-    margin-left: 33.333%;
+  :host(.large-offset-4) {
+    margin-left: var(--grid-col-offset-4-width);
   }
-  :host(.medium-offset-5) {
-    margin-left: 41.667%;
+  :host(.large-offset-5) {
+    margin-left: var(--grid-col-offset-5-width);
   }
-  :host(.medium-offset-6) {
-    margin-left: 50%;
+  :host(.large-offset-6) {
+    margin-left: var(--grid-col-offset-6-width);
   }
-  :host(.medium-offset-7) {
-    margin-left: 58.333%;
+  :host(.large-offset-7) {
+    margin-left: var(--grid-col-offset-7-width);
   }
-  :host(.medium-offset-8) {
-    margin-left: 66.667%;
+  :host(.large-offset-8) {
+    margin-left: var(--grid-col-offset-8-width);
   }
-  :host(.medium-offset-9) {
-    margin-left: 75%;
+  :host(.large-offset-9) {
+    margin-left: var(--grid-col-offset-9-width);
   }
-  :host(.medium-offset-10) {
-    margin-left: 83.333%;
+  :host(.large-offset-10) {
+    margin-left: var(--grid-col-offset-10-width);
   }
-  :host(.medium-offset-11) {
-    margin-left: 91.667%;
+  :host(.large-offset-11) {
+    margin-left: var(--grid-col-offset-11-width);
   }
 }
 
 @media $xlarge-up {
-  :host(.large-offset-1) {
-    margin-left: 8.333%;
+  :host(.xlarge-offset-1) {
+    margin-left: var(--grid-col-offset-1-width);
   }
-  :host(.large-offset-2) {
-    margin-left: 16.666%;
+  :host(.xlarge-offset-2) {
+    margin-left: var(--grid-col-offset-2-width);
   }
-  :host(.large-offset-3) {
-    margin-left: 25%;
+  :host(.xlarge-offset-3) {
+    margin-left: var(--grid-col-offset-3-width);
   }
-  :host(.large-offset-4) {
-    margin-left: 33.333%;
+  :host(.xlarge-offset-4) {
+    margin-left: var(--grid-col-offset-4-width);
   }
-  :host(.large-offset-5) {
-    margin-left: 41.667%;
+  :host(.xlarge-offset-5) {
+    margin-left: var(--grid-col-offset-5-width);
   }
-  :host(.large-offset-6) {
-    margin-left: 50%;
+  :host(.xlarge-offset-6) {
+    margin-left: var(--grid-col-offset-6-width);
   }
-  :host(.large-offset-7) {
-    margin-left: 58.333%;
+  :host(.xlarge-offset-7) {
+    margin-left: var(--grid-col-offset-7-width);
   }
-  :host(.large-offset-8) {
-    margin-left: 66.667%;
+  :host(.xlarge-offset-8) {
+    margin-left: var(--grid-col-offset-8-width);
   }
-  :host(.large-offset-9) {
-    margin-left: 75%;
+  :host(.xlarge-offset-9) {
+    margin-left: var(--grid-col-offset-9-width);
   }
-  :host(.large-offset-10) {
-    margin-left: 83.333%;
+  :host(.xlarge-offset-10) {
+    margin-left: var(--grid-col-offset-10-width);
   }
-  :host(.large-offset-11) {
-    margin-left: 91.667%;
+  :host(.xlarge-offset-11) {
+    margin-left: var(--grid-col-offset-11-width);
   }
 }

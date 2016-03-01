@@ -21,21 +21,29 @@
   box-sizing: border-box;
 }
 
+:host([class*="xsmall-push-"]),
 :host([class*="small-push-"]),
 :host([class*="medium-push-"]),
 :host([class*="large-push-"]),
+:host([class*="xlarge-push-"]),
+:host([class*="xsmall-pull-"]),
 :host([class*="small-pull-"]),
 :host([class*="medium-pull-"]),
-:host([class*="large-pull-"]) {
+:host([class*="large-pull-"]),
+:host([class*="xlarge-pull-"]) {
     position: relative;
 }
 
+:host([class*="xsmall-"]),
 :host([class*="small-"]),
 :host([class*="medium-"]),
 :host([class*="large-"]),
+:host([class*="xlarge-"]),
+:host([class*="xsmall-offset-"]),
 :host([class*="small-offset-"]),
 :host([class*="medium-offset-"]),
-:host([class*="large-offset-"]), {
+:host([class*="large-offset-"]),,
+:host([class*="xlarge-offset-"]), {
   box-sizing: border-box;
   flex: 0 0 auto;
 }
