@@ -1,0 +1,30 @@
+ul li,
+ol li {
+  line-height: 1.5rem;
+  margin-bottom: 0;
+}
+
+ul,
+ol,
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin: 0;
+}
+
+ol ol li {
+  list-style-type: lower-alpha;
+}
+
+ol ol ol li {
+  list-style-type: lower-roman;
+}
+
+dl dd {
+  margin-left: 24px;
+}
+
+dl dt {
+  font-weight: bold;
+}

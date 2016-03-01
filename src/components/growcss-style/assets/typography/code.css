@@ -1,0 +1,64 @@
+pre,
+code,
+kbd,
+samp,
+var,
+output {
+  font-style: normal;
+  font-family: Menlo, Monaco, Consolas, Courier, monospace;
+  margin-bottom: 0;
+}
+
+pre {
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.9);
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 24px;
+  word-wrap: normal;
+}
+
+td pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+mark,
+code,
+samp,
+kbd {
+  padding: 3.2px 6.4px;
+  display: inline-block;
+  line-height: 24px;
+  border-radius: 2px;
+  margin-bottom: 0;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+pre code {
+  border: none;
+  padding: 0;
+  background: none;
+  line-height: 24px;
+}
+
+var {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+samp {
+  background: #46a9fc;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+kbd {
+  background: #202020;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}

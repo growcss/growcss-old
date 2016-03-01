@@ -22,6 +22,9 @@ module.exports = {
       }, {
         pattern: /(@behavior-path)/g,
         replacement: '../../behaviors'
+      }, {
+        pattern: /(@components-path)/g,
+        replacement: '../..'
       }]
     }
   },
@@ -45,6 +48,9 @@ module.exports = {
       }, {
         pattern: /(@behavior-path)/g,
         replacement: '..'
+      }, {
+        pattern: /(@components-path)/g,
+        replacement: '../..'
       }]
     }
   }

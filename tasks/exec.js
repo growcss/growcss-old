@@ -4,5 +4,8 @@
 module.exports = {
   'serve': {
     cmd: 'polyserve -p 9090 -o testing/'
+  },
+  'polylint': {
+    cmd: 'polylint'
   }
 };

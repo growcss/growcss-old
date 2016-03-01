@@ -1,14 +1,15 @@
-(function () {
-  'use strict';
-  class GridInlineElement {
-    get behaviors () {
-      return [...GrowCss.ScreenSizeBehavior];
-    }
+'use strict';
 
-    beforeRegister () {
-      this.is = 'grid-inline-element';
-    }
+class GridInlineElement {
+  get behaviors() {
+    return [...GrowCss.ScreenSizeBehavior];
   }
 
-  Polymer(GridInlineElement);
-})();
+  beforeRegister() {
+    this.is = 'grid-inline-element';
+  }
+}
+
+/*eslint-disable */
+Polymer(GridInlineElement);
+/*eslint-enable */

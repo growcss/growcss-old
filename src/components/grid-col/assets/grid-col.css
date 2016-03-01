@@ -108,7 +108,7 @@
 }
 
 @media $medium-up {
-  :host(.small-1) {
+  :host(.medium-1) {
     width: var(--grid-col-1-width);
   }
   :host(.medium-2) {

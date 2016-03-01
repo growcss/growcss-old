@@ -70,24 +70,20 @@ module.exports = {
           // Retina
           '$retina': 'only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min$moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)',
           // foundation column gutter
-          '$column-gutter-xsmall': '0.6825rem',
-          '$column-gutter-small': '0.6825rem',
-          '$column-gutter-medium': '0.9375rem',
-          '$column-gutter-large': '0.9375rem',
+          '$column-gutter-xsmall': '0.75rem',
+          '$column-gutter-small': '1.5rem',
+          '$column-gutter-medium': '2.25rem',
+          '$column-gutter-large': '3rem',
+          '$column-gutter-xlarge': '3.75rem',
           // use these for margins and paddings
-          '$margin-mini': '0.3125rem',
-          '$margin-xsmall': '0.625rem',
-          '$margin-small': '1.25rem',
+          '$margin-xsmall': '0.75rem',
+          '$margin-small': '1.5rem',
           '$margin-default': '2.5rem',
-          '$margin-large': '5rem',
-          '$margin-xlarge': '7.5rem'
+          '$margin-large': '3rem',
+          '$margin-xlarge': '3.75rem'
         }
       }),
       require('css-mqpacker')(),
-      require('css-declaration-sorter')({
-        order: 'smacss'
-      }),
-      require('colorguard')(),
       require('postcss-reporter')()
     ]
   },
@@ -95,7 +91,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: 'src/components/',
-      src: ['**/assets/*.css'],
+      src: ['**/assets/**/*.css'],
       dest: 'precompiled/'
     }]
   },
@@ -103,7 +99,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: 'src/shared/',
-      src: ['**/*.css'],
+      src: ['**/**/*.css'],
       dest: 'precompiled/shared/'
     }]
   }
