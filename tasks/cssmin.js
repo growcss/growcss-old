@@ -6,7 +6,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: 'precompiled/',
-      src: '**/assets/*.css',
+      src: '**/assets/**/*.css',
       dest: 'precompiled/'
     }]
   },
@@ -14,7 +14,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: 'precompiled/shared',
-      src: '**/*.css',
+      src: '**/**/*.css',
       dest: 'precompiled/shared'
     }]
   }

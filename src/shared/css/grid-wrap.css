@@ -39,12 +39,33 @@
 
 :host > .row-wrap > .row > ::content > grid-col,
 :host > .row-wrap > .row > ::content > grid-flex-col {
-  padding: 0 var(--grid-column-gutter-small, $column-gutter-small);
+  padding: 0 var(--grid-column-gutter-xsmall, $column-gutter-xsmall);
+}
+
+@media $small-up {
+  :host > .row-wrap > .row > ::content > grid-col,
+  :host > .row-wrap > .row > ::content > grid-flex-col {
+    padding: 0 var(--grid-column-gutter-small, $column-gutter-small);
+  }
 }
 
 @media $medium-up {
   :host > .row-wrap > .row > ::content > grid-col,
   :host > .row-wrap > .row > ::content > grid-flex-col {
     padding: 0 var(--grid-column-gutter-medium, $column-gutter-medium);
+  }
+}
+
+@media $large-up {
+  :host > .row-wrap > .row > ::content > grid-col,
+  :host > .row-wrap > .row > ::content > grid-flex-col {
+    padding: 0 var(--grid-column-gutter-large, $column-gutter-large);
+  }
+}
+
+@media $xlarge-up {
+  :host > .row-wrap > .row > ::content > grid-col,
+  :host > .row-wrap > .row > ::content > grid-flex-col {
+    padding: 0 var(--grid-column-gutter-xlarge, $column-gutter-xlarge);
   }
 }

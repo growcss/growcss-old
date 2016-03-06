@@ -2,6 +2,13 @@
 // copy config
 
 module.exports = {
+  normalize: {
+    expand: false,
+    flatten: true,
+    filter: 'isFile',
+    src: 'bower_components/normalize-css/normalize.css',
+    dest: 'src/components/growcss-style/assets/normalize.css'
+  },
   components: {
     files: [{
       expand: true,

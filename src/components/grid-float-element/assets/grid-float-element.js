@@ -1,14 +1,16 @@
-(function () {
-  'use strict';
-  class GridFloatElement {
-    get behaviors () {
-      return [...GrowCss.ScreenSizeBehavior];
-    }
+'use strict';
 
-    beforeRegister () {
-      this.is = 'grid-float-element';
-    }
+class GridFloatElement {
+  get behaviors() {
+    return [...GrowCss.ScreenSizeBehavior];
   }
 
-  Polymer(GridFloatElement);
-})();
+  beforeRegister() {
+    this.is = 'grid-float-element';
+  }
+}
+
+/*eslint-disable */
+Polymer(GridFloatElement);
+/*eslint-enable */
+

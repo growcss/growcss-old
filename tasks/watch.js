@@ -5,12 +5,8 @@ module.exports = {
   components: {
     files: ['src/components/**/assets/*.js', 'src/components/**/test/*.js', 'src/components/**/*.html', 'src/components/**/demo/*.html', 'src/components/**/test/*.html', 'src/components/**/assets/*.css'],
     tasks: [
-      'jsonlint',
-      // 'jscs:components',
-      // 'jscs:behaviors',
-      // 'jscs:shared',
-      'eslint:components',
-      'eslint:behaviors',
+      // 'eslint:components',
+      // 'eslint:behaviors',
       'stylint:components',
       'stylint:shared',
       'postcss:precompiled-shared',
@@ -33,8 +29,6 @@ module.exports = {
       // 'jscs:behaviors',
       'eslint:behaviors',
       'babel:precompiled-behaviors',
-      'uglify:precompiled',
-      'cssmin:precompiled-shared',
       'includes:testing-behaviors',
       'string-replace:testing',
       'clean:precompiled'

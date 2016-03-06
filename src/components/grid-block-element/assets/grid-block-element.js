@@ -1,14 +1,15 @@
-(function () {
-  'use strict';
-  class GridBlockElement {
-    get behaviors () {
-      return [...GrowCss.ScreenSizeBehavior];
-    }
+'use strict';
 
-    beforeRegister () {
-      this.is = 'grid-block-element';
-    }
+class GridBlockElement {
+  get behaviors() {
+    return [...GrowCss.ScreenSizeBehavior];
   }
 
-  Polymer(GridBlockElement);
-})();
+  beforeRegister() {
+    this.is = 'grid-block-element';
+  }
+}
+
+/*eslint-disable */
+Polymer(GridBlockElement);
+/*eslint-enable */

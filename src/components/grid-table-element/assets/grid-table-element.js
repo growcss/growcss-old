@@ -1,14 +1,15 @@
-(function () {
-  'use strict';
-  class GridTableElement {
-    get behaviors () {
-      return [...GrowCss.ScreenSizeBehavior];
-    }
+'use strict';
 
-    beforeRegister () {
-      this.is = 'grid-table-element';
-    }
+class GridTableElement {
+  get behaviors() {
+    return [...GrowCss.ScreenSizeBehavior];
   }
 
-  Polymer(GridTableElement);
-})();
+  beforeRegister() {
+    this.is = 'grid-table-element';
+  }
+}
+
+/*eslint-disable */
+Polymer(GridTableElement);
+/*eslint-enable */

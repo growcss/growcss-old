@@ -1,11 +1,12 @@
-(function () {
-  'use strict';
-  class GridCol {
-    beforeRegister () {
-      this.is = 'grid-col';
-      this.properties = {};
-    }
-  }
+'use strict';
 
-  Polymer(GridCol);
-})();
+class GridCol {
+  beforeRegister() {
+    this.is = 'grid-col';
+    this.properties = {};
+  }
+}
+
+/*eslint-disable */
+Polymer(GridCol);
+/*eslint-enable */

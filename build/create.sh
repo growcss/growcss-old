@@ -33,6 +33,10 @@ function create($argv) {
 
     if (is_array($dirs)) {
       foreach ($dirs as $dir) {
+          if (strpos($dir, 'growcss-style') !== false) {
+            return;
+          }
+
           // extract part of the folder name
           $parts = explode('/', $dir);
           // set variables

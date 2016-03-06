@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>grid-col</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <script src="@test-path/webcomponentsjs/webcomponents.min.js"></script>
+  <script src="@test-path/web-component-tester/browser.js"></script>
+
+  <link rel="import" href="@test-path/test-fixture/test-fixture.html">
+  <link rel="import" href="../grid-col.html">
+
+</head>
+<body unresolved>
+  <test-fixture id="grid-col-fixture">
+    <template>
+      <grid-col class="small-3 medium-2 large-1"></grid-col>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('<grid-col>', function() {
+      var testFixture;
+
+      setup(function() {
+        testFixture = fixture('grid-col-fixture');
+      });
+
+      test('test setup', function() {
+        expect(document.querySelector('grid-col')).to.be.ok;
+      });
+    });
+  </script>
+
+</body>
+</html>

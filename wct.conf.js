@@ -1,7 +1,7 @@
 var path = require('path');
 
 var ret = {
-  'suites': ['testing/components/**/test', 'testing/behaviors/**/test'],
+  'suites': ['!testing/components/growcss-style', 'testing/components/**/test', 'testing/behaviors/**/test'],
   'webserver': {
     'pathMappings': []
   }

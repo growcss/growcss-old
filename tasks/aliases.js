@@ -1,9 +1,5 @@
 module.exports = {
   'js-test': [
-    'jsonlint',
-    'jscs:components',
-    'jscs:behaviors',
-    'jscs:shared',
     'eslint:components',
     'eslint:behaviors',
     // 'eslint:shared'
@@ -15,6 +11,7 @@ module.exports = {
   'compile': [
     'js-test',
     'css-test',
+    'copy:normalize',
     'postcss:precompiled-shared',
     'postcss:precompiled',
     'babel:precompiled-components',

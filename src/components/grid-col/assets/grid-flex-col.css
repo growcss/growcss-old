@@ -48,7 +48,56 @@
   flex: 0 0 auto;
 }
 
-@media $medium-up {
+:host(.xsmall-1) {
+  flex-basis: var(--grid-flex-col-1-width);
+  max-width: var(--grid-flex-col-1-width);
+}
+:host(.xsmall-2) {
+  flex-basis: var(--grid-flex-col-2-width);
+  max-width: var(--grid-flex-col-2-width);
+}
+:host(.xsmall-3) {
+  flex-basis: var(--grid-flex-col-3-width);;
+  max-width: var(--grid-flex-col-3-width);;
+}
+:host(.xsmall-4) {
+  flex-basis: var(--grid-flex-col-4-width);
+  max-width: var(--grid-flex-col-4-width);
+}
+:host(.xsmall-5) {
+  flex-basis: var(--grid-flex-col-5-width);
+  max-width: var(--grid-flex-col-5-width);
+}
+:host(.xsmall-6) {
+  flex-basis: var(--grid-flex-col-6-width);
+  max-width: var(--grid-flex-col-6-width);
+}
+:host(.xsmall-7) {
+  flex-basis: var(--grid-flex-col-7-width);
+  max-width: var(--grid-flex-col-7-width);
+}
+:host(.xsmall-8) {
+  flex-basis: var(--grid-flex-col-8-width);
+  max-width: var(--grid-flex-col-8-width);
+}
+:host(.xsmall-9) {
+  flex-basis: var(--grid-flex-col-9-width);
+  max-width: var(--grid-flex-col-9-width);
+}
+:host(.xsmall-10) {
+  flex-basis: var(--grid-flex-col-10-width);
+  max-width: var(--grid-flex-col-10-width);
+}
+:host(.xsmall-11) {
+  flex-basis: var(--grid-flex-col-11-width);
+  max-width: var(--grid-flex-col-11-width);
+}
+:host(.xsmall-12) {
+  flex-basis: var(--grid-flex-col-12-width);
+  max-width: var(--grid-flex-col-12-width);
+}
+
+@media $small-up {
   :host(.small-1) {
     flex-basis: var(--grid-flex-col-1-width);
     max-width: var(--grid-flex-col-1-width);
@@ -99,7 +148,7 @@
   }
 }
 
-@media $large-up {
+@media $medium-up {
   :host(.medium-1) {
     flex-basis: var(--grid-flex-col-1-width);
     max-width: var(--grid-flex-col-1-width);
@@ -150,7 +199,7 @@
   }
 }
 
-@media $xlarge-up {
+@media $large-up {
   :host(.large-1) {
     flex-basis: var(--grid-flex-col-1-width);
     max-width: var(--grid-flex-col-1-width);
@@ -196,6 +245,57 @@
     max-width: var(--grid-flex-col-11-width);
   }
   :host(.large-12) {
+    flex-basis: var(--grid-flex-col-12-width);
+    max-width: var(--grid-flex-col-12-width);
+  }
+}
+
+@media $xlarge-up {
+  :host(.xlarge-1) {
+    flex-basis: var(--grid-flex-col-1-width);
+    max-width: var(--grid-flex-col-1-width);
+  }
+  :host(.xlarge-2) {
+    flex-basis: var(--grid-flex-col-2-width);
+    max-width: var(--grid-flex-col-2-width);
+  }
+  :host(.xlarge-3) {
+    flex-basis: var(--grid-flex-col-3-width);;
+    max-width: var(--grid-flex-col-3-width);;
+  }
+  :host(.xlarge-4) {
+    flex-basis: var(--grid-flex-col-4-width);
+    max-width: var(--grid-flex-col-4-width);
+  }
+  :host(.xlarge-5) {
+    flex-basis: var(--grid-flex-col-5-width);
+    max-width: var(--grid-flex-col-5-width);
+  }
+  :host(.xlarge-6) {
+    flex-basis: var(--grid-flex-col-6-width);
+    max-width: var(--grid-flex-col-6-width);
+  }
+  :host(.xlarge-7) {
+    flex-basis: var(--grid-flex-col-7-width);
+    max-width: var(--grid-flex-col-7-width);
+  }
+  :host(.xlarge-8) {
+    flex-basis: var(--grid-flex-col-8-width);
+    max-width: var(--grid-flex-col-8-width);
+  }
+  :host(.xlarge-9) {
+    flex-basis: var(--grid-flex-col-9-width);
+    max-width: var(--grid-flex-col-9-width);
+  }
+  :host(.xlarge-10) {
+    flex-basis: var(--grid-flex-col-10-width);
+    max-width: var(--grid-flex-col-10-width);
+  }
+  :host(.xlarge-11) {
+    flex-basis: var(--grid-flex-col-11-width);
+    max-width: var(--grid-flex-col-11-width);
+  }
+  :host(.xlarge-12) {
     flex-basis: var(--grid-flex-col-12-width);
     max-width: var(--grid-flex-col-12-width);
   }

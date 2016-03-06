@@ -1,14 +1,15 @@
-(function () {
-  'use strict';
-  class GridFlexElement {
-    get behaviors () {
-      return [...GrowCss.ScreenSizeBehavior];
-    }
+'use strict';
 
-    beforeRegister () {
-      this.is = 'grid-flex-element';
-    }
+class GridFlexElement {
+  get behaviors() {
+    return [...GrowCss.ScreenSizeBehavior];
   }
 
-  Polymer(GridFlexElement);
-})();
+  beforeRegister() {
+    this.is = 'grid-flex-element';
+  }
+}
+
+/*eslint-disable */
+Polymer(GridFlexElement);
+/*eslint-enable */
