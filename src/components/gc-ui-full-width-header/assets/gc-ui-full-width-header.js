@@ -2,19 +2,19 @@
 
 class Class {
   // Element setup goes here instead of created() callback
-  beforeRegister() {
-    this.is = '@name';
+  beforeRegister () {
+    this.is = 'gc-ui-full-width-header';
     this.properties = {};
   }
 
   // Define other lifecycle methods as you need
-  registered() {}
-  created() {}
-  ready() {}
-  factoryImpl() {}
-  attached() {}
-  detached() {}
-  attributChanged() {}
+  registered () {}
+  created () {}
+  ready () {}
+  factoryImpl () {}
+  attached () {}
+  detached () {}
+  attributChanged () {}
 }
 
 /*eslint-disable */
