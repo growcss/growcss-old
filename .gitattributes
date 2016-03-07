@@ -4,20 +4,10 @@
 # and leave all files detected as binary untouched.
 * text=auto
 
-#
-# The above will handle all files NOT found below
-#
-
-#
-## These files are text and should be normalized (Convert crlf => lf)
-#
-
 # source code
 *.css text
-*.styl text
 *.js text
 *.json text
-*.htm text
 *.html text
 *.xml text
 *.svg text
@@ -25,9 +15,6 @@
 *.ini text
 *.sh text
 *.bat text
-
-# templates
-*.jade text
 
 # server config
 .htaccess text
@@ -37,10 +24,10 @@
 .gitignore text
 
 # code analysis config
-.jshintrc text
+.eslintignore text
+.eslintrc text
 .jscsrc text
-.jshintignore text
-.csslintrc text
+.stylelintrc text
 
 # misc config
 *.yaml text

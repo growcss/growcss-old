@@ -14,8 +14,8 @@
   font-size: 0;
 }
 
-:host > .row-wrap > .row:before {
-  content: '';
+:host > .row-wrap > .row::before {
+  content: "";
   display: inline-block;
   height: 100%;
   vertical-align: middle;

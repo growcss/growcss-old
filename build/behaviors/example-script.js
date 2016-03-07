@@ -1,8 +1,11 @@
-let GrowCss = GrowCss || {};
+'use strict';
 
-(function () {
-  'use strict';
-  let @name = {
-    // Behavior definition
-  };
-})();
+/*eslint-disable */
+const GrowCss = GrowCss || {};
+/*eslint-enable */
+
+const GcClass = {
+  // Behavior definition
+};
+
+GrowCss.GcClass = GcClass;

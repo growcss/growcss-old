@@ -4,21 +4,18 @@ module.exports = {
     'eslint:behaviors',
     // 'eslint:shared'
   ],
-  'css-test': [
-    'stylint:components',
-    'stylint:shared'
-  ],
   'compile': [
     'js-test',
-    'css-test',
     'copy:normalize',
+    'copy:cookies',
+    'copy:event',
     'postcss:precompiled-shared',
     'postcss:precompiled',
     'babel:precompiled-components',
     'babel:precompiled-behaviors',
     'uglify:precompiled',
     'cssmin:precompiled-components',
-    'cssmin:precompiled-shared'
+    'cssmin:precompiled-shared',
   ],
   'build': [
     'compile',
