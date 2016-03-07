@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint",
   "extends": "airbnb/base",
 
   "globals": {
@@ -7,6 +8,10 @@
     "describe": true,
     "it": true,
     "GrowCss": true,
-    "Polymer": true
+    "Polymer": true,
+    "Cookies": true,
+    "$$": true,
+    "Array": true,
+    "EventEmitter": true
   }
 }

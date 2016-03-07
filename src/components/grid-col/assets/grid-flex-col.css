@@ -21,19 +21,6 @@
   box-sizing: border-box;
 }
 
-:host([class*="xsmall-push-"]),
-:host([class*="small-push-"]),
-:host([class*="medium-push-"]),
-:host([class*="large-push-"]),
-:host([class*="xlarge-push-"]),
-:host([class*="xsmall-pull-"]),
-:host([class*="small-pull-"]),
-:host([class*="medium-pull-"]),
-:host([class*="large-pull-"]),
-:host([class*="xlarge-pull-"]) {
-    position: relative;
-}
-
 :host([class*="xsmall-"]),
 :host([class*="small-"]),
 :host([class*="medium-"]),
@@ -42,8 +29,8 @@
 :host([class*="xsmall-offset-"]),
 :host([class*="small-offset-"]),
 :host([class*="medium-offset-"]),
-:host([class*="large-offset-"]),,
-:host([class*="xlarge-offset-"]), {
+:host([class*="large-offset-"]),
+:host([class*="xlarge-offset-"]) {
   box-sizing: border-box;
   flex: 0 0 auto;
 }
@@ -52,46 +39,57 @@
   flex-basis: var(--grid-flex-col-1-width);
   max-width: var(--grid-flex-col-1-width);
 }
+
 :host(.xsmall-2) {
   flex-basis: var(--grid-flex-col-2-width);
   max-width: var(--grid-flex-col-2-width);
 }
+
 :host(.xsmall-3) {
-  flex-basis: var(--grid-flex-col-3-width);;
-  max-width: var(--grid-flex-col-3-width);;
+  flex-basis: var(--grid-flex-col-3-width);
+  max-width: var(--grid-flex-col-3-width);
 }
+
 :host(.xsmall-4) {
   flex-basis: var(--grid-flex-col-4-width);
   max-width: var(--grid-flex-col-4-width);
 }
+
 :host(.xsmall-5) {
   flex-basis: var(--grid-flex-col-5-width);
   max-width: var(--grid-flex-col-5-width);
 }
+
 :host(.xsmall-6) {
   flex-basis: var(--grid-flex-col-6-width);
   max-width: var(--grid-flex-col-6-width);
 }
+
 :host(.xsmall-7) {
   flex-basis: var(--grid-flex-col-7-width);
   max-width: var(--grid-flex-col-7-width);
 }
+
 :host(.xsmall-8) {
   flex-basis: var(--grid-flex-col-8-width);
   max-width: var(--grid-flex-col-8-width);
 }
+
 :host(.xsmall-9) {
   flex-basis: var(--grid-flex-col-9-width);
   max-width: var(--grid-flex-col-9-width);
 }
+
 :host(.xsmall-10) {
   flex-basis: var(--grid-flex-col-10-width);
   max-width: var(--grid-flex-col-10-width);
 }
+
 :host(.xsmall-11) {
   flex-basis: var(--grid-flex-col-11-width);
   max-width: var(--grid-flex-col-11-width);
 }
+
 :host(.xsmall-12) {
   flex-basis: var(--grid-flex-col-12-width);
   max-width: var(--grid-flex-col-12-width);
@@ -102,46 +100,57 @@
     flex-basis: var(--grid-flex-col-1-width);
     max-width: var(--grid-flex-col-1-width);
   }
+
   :host(.small-2) {
     flex-basis: var(--grid-flex-col-2-width);
     max-width: var(--grid-flex-col-2-width);
   }
+
   :host(.small-3) {
-    flex-basis: var(--grid-flex-col-3-width);;
-    max-width: var(--grid-flex-col-3-width);;
+    flex-basis: var(--grid-flex-col-3-width);
+    max-width: var(--grid-flex-col-3-width);
   }
+
   :host(.small-4) {
     flex-basis: var(--grid-flex-col-4-width);
     max-width: var(--grid-flex-col-4-width);
   }
+
   :host(.small-5) {
     flex-basis: var(--grid-flex-col-5-width);
     max-width: var(--grid-flex-col-5-width);
   }
+
   :host(.small-6) {
     flex-basis: var(--grid-flex-col-6-width);
     max-width: var(--grid-flex-col-6-width);
   }
+
   :host(.small-7) {
     flex-basis: var(--grid-flex-col-7-width);
     max-width: var(--grid-flex-col-7-width);
   }
+
   :host(.small-8) {
     flex-basis: var(--grid-flex-col-8-width);
     max-width: var(--grid-flex-col-8-width);
   }
+
   :host(.small-9) {
     flex-basis: var(--grid-flex-col-9-width);
     max-width: var(--grid-flex-col-9-width);
   }
+
   :host(.small-10) {
     flex-basis: var(--grid-flex-col-10-width);
     max-width: var(--grid-flex-col-10-width);
   }
+
   :host(.small-11) {
     flex-basis: var(--grid-flex-col-11-width);
     max-width: var(--grid-flex-col-11-width);
   }
+
   :host(.small-12) {
     flex-basis: var(--grid-flex-col-12-width);
     max-width: var(--grid-flex-col-12-width);
@@ -153,46 +162,57 @@
     flex-basis: var(--grid-flex-col-1-width);
     max-width: var(--grid-flex-col-1-width);
   }
+
   :host(.medium-2) {
     flex-basis: var(--grid-flex-col-2-width);
     max-width: var(--grid-flex-col-2-width);
   }
+
   :host(.medium-3) {
-    flex-basis: var(--grid-flex-col-3-width);;
-    max-width: var(--grid-flex-col-3-width);;
+    flex-basis: var(--grid-flex-col-3-width);
+    max-width: var(--grid-flex-col-3-width);
   }
+
   :host(.medium-4) {
     flex-basis: var(--grid-flex-col-4-width);
     max-width: var(--grid-flex-col-4-width);
   }
+
   :host(.medium-5) {
     flex-basis: var(--grid-flex-col-5-width);
     max-width: var(--grid-flex-col-5-width);
   }
+
   :host(.medium-6) {
     flex-basis: var(--grid-flex-col-6-width);
     max-width: var(--grid-flex-col-6-width);
   }
+
   :host(.medium-7) {
     flex-basis: var(--grid-flex-col-7-width);
     max-width: var(--grid-flex-col-7-width);
   }
+
   :host(.medium-8) {
     flex-basis: var(--grid-flex-col-8-width);
     max-width: var(--grid-flex-col-8-width);
   }
+
   :host(.medium-9) {
     flex-basis: var(--grid-flex-col-9-width);
     max-width: var(--grid-flex-col-9-width);
   }
+
   :host(.medium-10) {
     flex-basis: var(--grid-flex-col-10-width);
     max-width: var(--grid-flex-col-10-width);
   }
+
   :host(.medium-11) {
     flex-basis: var(--grid-flex-col-11-width);
     max-width: var(--grid-flex-col-11-width);
   }
+
   :host(.medium-12) {
     flex-basis: var(--grid-flex-col-12-width);
     max-width: var(--grid-flex-col-12-width);
@@ -204,46 +224,57 @@
     flex-basis: var(--grid-flex-col-1-width);
     max-width: var(--grid-flex-col-1-width);
   }
+
   :host(.large-2) {
     flex-basis: var(--grid-flex-col-2-width);
     max-width: var(--grid-flex-col-2-width);
   }
+
   :host(.large-3) {
-    flex-basis: var(--grid-flex-col-3-width);;
-    max-width: var(--grid-flex-col-3-width);;
+    flex-basis: var(--grid-flex-col-3-width);
+    max-width: var(--grid-flex-col-3-width);
   }
+
   :host(.large-4) {
     flex-basis: var(--grid-flex-col-4-width);
     max-width: var(--grid-flex-col-4-width);
   }
+
   :host(.large-5) {
     flex-basis: var(--grid-flex-col-5-width);
     max-width: var(--grid-flex-col-5-width);
   }
+
   :host(.large-6) {
     flex-basis: var(--grid-flex-col-6-width);
     max-width: var(--grid-flex-col-6-width);
   }
+
   :host(.large-7) {
     flex-basis: var(--grid-flex-col-7-width);
     max-width: var(--grid-flex-col-7-width);
   }
+
   :host(.large-8) {
     flex-basis: var(--grid-flex-col-8-width);
     max-width: var(--grid-flex-col-8-width);
   }
+
   :host(.large-9) {
     flex-basis: var(--grid-flex-col-9-width);
     max-width: var(--grid-flex-col-9-width);
   }
+
   :host(.large-10) {
     flex-basis: var(--grid-flex-col-10-width);
     max-width: var(--grid-flex-col-10-width);
   }
+
   :host(.large-11) {
     flex-basis: var(--grid-flex-col-11-width);
     max-width: var(--grid-flex-col-11-width);
   }
+
   :host(.large-12) {
     flex-basis: var(--grid-flex-col-12-width);
     max-width: var(--grid-flex-col-12-width);
@@ -255,46 +286,57 @@
     flex-basis: var(--grid-flex-col-1-width);
     max-width: var(--grid-flex-col-1-width);
   }
+
   :host(.xlarge-2) {
     flex-basis: var(--grid-flex-col-2-width);
     max-width: var(--grid-flex-col-2-width);
   }
+
   :host(.xlarge-3) {
-    flex-basis: var(--grid-flex-col-3-width);;
-    max-width: var(--grid-flex-col-3-width);;
+    flex-basis: var(--grid-flex-col-3-width);
+    max-width: var(--grid-flex-col-3-width);
   }
+
   :host(.xlarge-4) {
     flex-basis: var(--grid-flex-col-4-width);
     max-width: var(--grid-flex-col-4-width);
   }
+
   :host(.xlarge-5) {
     flex-basis: var(--grid-flex-col-5-width);
     max-width: var(--grid-flex-col-5-width);
   }
+
   :host(.xlarge-6) {
     flex-basis: var(--grid-flex-col-6-width);
     max-width: var(--grid-flex-col-6-width);
   }
+
   :host(.xlarge-7) {
     flex-basis: var(--grid-flex-col-7-width);
     max-width: var(--grid-flex-col-7-width);
   }
+
   :host(.xlarge-8) {
     flex-basis: var(--grid-flex-col-8-width);
     max-width: var(--grid-flex-col-8-width);
   }
+
   :host(.xlarge-9) {
     flex-basis: var(--grid-flex-col-9-width);
     max-width: var(--grid-flex-col-9-width);
   }
+
   :host(.xlarge-10) {
     flex-basis: var(--grid-flex-col-10-width);
     max-width: var(--grid-flex-col-10-width);
   }
+
   :host(.xlarge-11) {
     flex-basis: var(--grid-flex-col-11-width);
     max-width: var(--grid-flex-col-11-width);
   }
+
   :host(.xlarge-12) {
     flex-basis: var(--grid-flex-col-12-width);
     max-width: var(--grid-flex-col-12-width);
