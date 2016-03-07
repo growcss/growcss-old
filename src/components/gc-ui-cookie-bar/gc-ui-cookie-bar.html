@@ -1,0 +1,29 @@
+<link rel="import" href="@path/polymer/polymer.html">
+
+<!--
+    <gc-ui-cookie-bar>`element <text>.
+
+    Example:
+        <gc-ui-cookie-bar></gc-ui-cookie-bar>
+
+    @element gc-ui-cookie-bar
+    @demo demo/index.html
+-->
+
+<dom-module id="gc-ui-cookie-bar">
+  <template>
+    <style>
+      include "gc-ui-cookie-bar/assets/gc-ui-cookie-bar.css"
+    </style>
+
+    <grid-flex-element>
+      <grid-flex-col>
+        <content></content>
+      </grid-flex-col>
+    </grid-flex-element>
+  </template>
+
+  <script>
+    include "gc-ui-cookie-bar/assets/gc-ui-cookie-bar.js"
+  </script>
+</dom-module>
