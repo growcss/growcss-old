@@ -5,8 +5,8 @@ module.exports = {
   components: {
     files: ['src/components/**/assets/*.js', 'src/components/**/test/*.js', 'src/components/**/*.html', 'src/components/**/demo/*.html', 'src/components/**/test/*.html', 'src/components/**/assets/*.css'],
     tasks: [
-      // 'eslint:components',
-      // 'eslint:behaviors',
+      'eslint:components',
+      'eslint:behaviors',
       'stylint:components',
       'stylint:shared',
       'postcss:precompiled-shared',
@@ -26,7 +26,6 @@ module.exports = {
   behaviors: {
     files: ['src/behaviors/**/assets/*.js', 'src/behaviors/**/test/*.js', 'src/behaviors/**/*.html', 'src/behaviors/**/demo/*.html', 'src/behaviors/**/test/*.html'],
     tasks: [
-      // 'jscs:behaviors',
       'eslint:behaviors',
       'babel:precompiled-behaviors',
       'includes:testing-behaviors',
