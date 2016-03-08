@@ -8,7 +8,7 @@
   vertical-align: middle;
 }
 
-:host(.reverse) > .row-wrap{
+:host(.reverse) > .row-wrap {
   direction: rtl;
 }
 

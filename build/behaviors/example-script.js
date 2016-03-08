@@ -1,11 +1,11 @@
 'use strict';
 
 /*eslint-disable */
-let GrowCss = GrowCss || {};
+const GrowCss = GrowCss || {};
 /*eslint-enable */
 
-let @name = {
+const GcClass = {
   // Behavior definition
 };
 
-GrowCss.@name = @name;
+GrowCss.GcClass = GcClass;

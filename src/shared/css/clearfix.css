@@ -1,5 +1,5 @@
 /*  url: http://cssmojo.com/the-very-latest-clearfix-reloaded/ */
-:host(:after) {
+:host(::after) {
   content: "";
   display:block;
   clear:both;
