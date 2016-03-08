@@ -6,6 +6,7 @@ module.exports = {
     map: false, // inline sourcemaps
 
     processors: [
+      require('stylelint')({}),
       require('autoprefixer')({
         browsers: [
           'ie >= 10',
@@ -38,7 +39,6 @@ module.exports = {
         ]
       }),
       require('postcss-at2x')(),
-      require('postcss-import')(),
       require('postcss-font-normalize')(),
       require('postcss-flexbugs-fixes')(),
       require('postcss-simple-vars')({
@@ -84,7 +84,9 @@ module.exports = {
         }
       }),
       require('css-mqpacker')(),
-      require('postcss-reporter')()
+      require('postcss-reporter')({
+        clearMessages: true
+      })
     ]
   },
   'precompiled': {

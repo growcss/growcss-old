@@ -1,0 +1,17 @@
+:root {
+  --gc-ui-cookie-bar-style: {
+    width: 100%;
+    min-height: 70px;
+    background: #464849;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  };
+}
+
+:host > grid-flex-element {
+  @apply(--gc-ui-cookie-bar-style);
+}

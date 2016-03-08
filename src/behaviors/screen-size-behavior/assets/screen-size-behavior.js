@@ -52,8 +52,10 @@ const GcScreenSizeBehavior = {
     this.format = screenFormat;
 
     if (this.log) {
+      /*eslint-disable */
       console.log(`width : ${newWidth}`);
       console.log(`screenFormat = ${screenFormat}`);
+      /*eslint-enable */
     }
   },
 

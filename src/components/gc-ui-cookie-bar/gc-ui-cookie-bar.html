@@ -1,0 +1,32 @@
+<link rel="import" href="@path/polymer/polymer.html">
+<link rel="import" href="@behavior-path/cookies-behavior/cookies-behavior.html">
+<link rel="import" href="../grid-flex-element/grid-flex-element.html">
+
+<!--
+    <gc-ui-cookie-bar>`element <text>.
+
+    Example:
+        <gc-ui-cookie-bar></gc-ui-cookie-bar>
+
+    @element gc-ui-cookie-bar
+    @demo demo/index.html
+-->
+
+<dom-module id="gc-ui-cookie-bar">
+  <template>
+    <style>
+      include "gc-ui-cookie-bar/assets/gc-ui-cookie-bar.css"
+    </style>
+    <template is="dom-if" if={{show}}>
+      <grid-flex-element>
+        <grid-flex-col>
+          <content></content>
+        </grid-flex-col>
+      </grid-flex-element>
+    </template>
+  </template>
+
+  <script>
+    include "gc-ui-cookie-bar/assets/gc-ui-cookie-bar.js"
+  </script>
+</dom-module>
