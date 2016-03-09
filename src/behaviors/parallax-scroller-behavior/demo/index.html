@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>event-emitter-behavior demo</title>
+  <title>parallax-scroller-behavior demo</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
@@ -12,13 +12,17 @@
   <link rel="import" href="@demo-path/iron-demo-helpers/demo-pages-shared-styles.html">
   <link rel="import" href="@demo-path/iron-demo-helpers/demo-snippet.html">
   <link rel="import" href="@demo-path/paper-styles/demo-pages.html">
-  <link rel="import" href="event-emitter.html">
+  <link rel="import" href="parallax-scroller.html">
 
 </head>
 <body unresolved>
   <demo-snippet>
     <template>
-      <!-- element -->
+      <parallax-scroller>
+        <figure>
+          <img class="parallax" data-center="0.8" data-intensity="50" src="http://satyr.io/1440x16:9" />
+        </figure>
+      </parallax-scroller>
     </template>
   </demo-snippet>
 </body>

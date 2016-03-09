@@ -1,0 +1,32 @@
+{
+  "name": "parallax-scroller-behavior",
+  "version": "1.0.0",
+  "authors": [
+    "Daniel Bannert <d.bannert@anolilab.de>"
+  ],
+  "description": "",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "behavior",
+    "growcss",
+    "parallax-scroller-behavior"
+  ],
+  "main": "parallax-scroller-behavior.html",
+  "license": "MIT",
+  "homepage": "https://github.com/growcss/parallax-scroller-behavior/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.3"
+  },
+  "devDependencies": {
+    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
+    "test-fixture": "polymerelements/test-fixture#^1.0.0",
+    "web-component-tester": "^4.2.0"
+  }
+}

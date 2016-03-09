@@ -41,4 +41,4 @@ const GcEventEmitter = {
   },
 };
 
-GrowCss.EventEmitter = GcEventEmitter;
+GrowCss.EventEmitterBehavior = GcEventEmitter;

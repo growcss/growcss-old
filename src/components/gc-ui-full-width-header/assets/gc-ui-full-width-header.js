@@ -1,22 +1,22 @@
 'use strict';
 
-class Class {
+class FullWidthHeader {
   // Element setup goes here instead of created() callback
-  beforeRegister () {
+  beforeRegister() {
     this.is = 'gc-ui-full-width-header';
     this.properties = {};
   }
 
   // Define other lifecycle methods as you need
-  registered () {}
-  created () {}
-  ready () {}
-  factoryImpl () {}
-  attached () {}
-  detached () {}
-  attributChanged () {}
+  registered() {}
+  created() {}
+  ready() {}
+  factoryImpl() {}
+  attached() {}
+  detached() {}
+  attributChanged() {}
 }
 
 /*eslint-disable */
-Polymer(Class);
+Polymer(FullWidthHeader);
 /*eslint-enable */

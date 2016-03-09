@@ -12,6 +12,7 @@
     "Cookies": true,
     "$$": true,
     "Array": true,
-    "EventEmitter": true
+    "EventEmitter": true,
+    "Parallax": true
   }
 }
