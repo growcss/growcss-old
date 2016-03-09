@@ -27,4 +27,9 @@ const GcParallaxScrollerBehavior = {
   },
 };
 
-GrowCss.ParallaxScrollerBehavior = [GcParallaxCanvas, GcParallaxStage, GcParallaxScrollerBehavior];
+GrowCss.ParallaxScrollerBehavior = [
+  GrowCss.EventEmitterBehavior,
+  GrowCss.ParallaxCanvas,
+  GrowCss.ParallaxStage,
+  GcParallaxScrollerBehavior,
+];
