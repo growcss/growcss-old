@@ -30,11 +30,11 @@ const GcScreenSizeBehavior = {
       type: Number,
       value: 1920,
     },
-    format: {
+    'screen-format': {
       type: String,
       value: '',
     },
-    width: {
+    'screen-width': {
       type: Number,
       value: '',
     },
@@ -48,8 +48,8 @@ const GcScreenSizeBehavior = {
     const newWidth = window.innerWidth;
     const screenFormat = this._getScreenFormat(newWidth);
 
-    this.width = newWidth;
-    this.format = screenFormat;
+    this['screen-width'] = newWidth;
+    this['screen-format'] = screenFormat;
 
     if (this.log) {
       /*eslint-disable */

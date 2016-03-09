@@ -5,10 +5,12 @@ module.exports = {
     // 'eslint:shared'
   ],
   'compile': [
+    'clean:testing',
     'js-test',
     'copy:normalize',
     'copy:cookies',
     'copy:event',
+    'copy:video',
     'postcss:precompiled-shared',
     'postcss:precompiled',
     'babel:precompiled-components',
