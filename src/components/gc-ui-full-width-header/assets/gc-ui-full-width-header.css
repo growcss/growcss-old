@@ -1,0 +1,23 @@
+:host {
+  margin: 2.5rem 0;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+:host:first-child {
+  margin-top: 0;
+}
+
+:host:last-child {
+  margin-bottom: 0;
+}
+
+:host > ::content > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}

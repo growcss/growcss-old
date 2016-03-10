@@ -1,20 +1,36 @@
 'use strict';
 
 class FullWidthHeader {
-  // Element setup goes here instead of created() callback
-  beforeRegister() {
-    this.is = 'gc-ui-full-width-header';
-    this.properties = {};
+  get behaviors() {
+    return [...GrowCss.ScreenSizeBehavior];
   }
 
-  // Define other lifecycle methods as you need
+  beforeRegister() {
+    this.is = 'gc-ui-full-width-header';
+    this.properties = {
+      source: {
+        type: String,
+        value: '',
+      },
+    };
+  }
+
   registered() {}
   created() {}
-  ready() {}
-  factoryImpl() {}
-  attached() {}
-  detached() {}
-  attributChanged() {}
+  ready() {
+    // const image = this.source.match('/.jpg/');
+    // const video = '';
+    // const html5video = '';
+  }
+
+  _handleImg() {
+  }
+
+  _handleVideo() {
+  }
+
+  _handleHtml5Video() {
+  }
 }
 
 /*eslint-disable */
