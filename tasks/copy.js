@@ -23,12 +23,12 @@ module.exports = {
     src: 'bower_components/eventEmitter/EventEmitter.min.js',
     dest: 'precompiled/event-emitter-behavior/assets/event-emitter.js'
   },
-  parallax: {
+  'video': {
     expand: false,
     flatten: true,
     filter: 'isFile',
-    src: 'bower_components/scroll-parallax/dist/Parallax.js',
-    dest: 'precompiled/parallax-scroller-behavior/assets/parallax.js'
+    src: 'bower_components/jsVideoUrlParser/dist/jsVideoUrlParser.js',
+    dest: 'precompiled/video-url-parser-behavior/assets/video-url-parser.js'
   },
   components: {
     files: [{

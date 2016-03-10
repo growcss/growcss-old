@@ -1,0 +1,35 @@
+<link rel="import" href="@path/polymer/polymer.html">
+<link rel="import" href="@path/iron-resizable-behavior/iron-resizable-behavior.html">
+<link rel="import" href="@behavior-path/video-url-parser-behavior/video-url-parser-behavior.html">
+
+<!--
+    <gc-ui-video-embed>`element <text>.
+
+    Example:
+        <gc-ui-video-embed></gc-ui-video-embed>
+
+    @element gc-ui-video-embed
+    @demo demo/index.html
+-->
+
+<dom-module id="gc-ui-video-embed">
+  <template>
+    <style>
+      include "gc-ui-video-embed/assets/gc-ui-video-embed.css"
+    </style>
+
+    <template is="dom-if" if={{_html5video}}>
+      <video {{_video-width}} height="{{_video-height}}" controls>
+        <content></content>
+      </video>
+    </template>
+
+    <template is="dom-if" if={{_iframevideo}}>
+      <iframe {{_video-width}} height="{{_video-height}}" src="{{_video-source}}" frameborder="0" allowfullscreen></iframe>
+    </template>
+  </template>
+
+  <script>
+    include "gc-ui-video-embed/assets/gc-ui-video-embed.js"
+  </script>
+</dom-module>

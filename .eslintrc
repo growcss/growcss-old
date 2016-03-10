@@ -13,6 +13,6 @@
     "$$": true,
     "Array": true,
     "EventEmitter": true,
-    "Parallax": true
+    "urlParser": true
   }
 }

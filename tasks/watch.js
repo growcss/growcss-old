@@ -26,6 +26,7 @@ module.exports = {
       'eslint:behaviors',
       'copy:cookies',
       'copy:event',
+      'copy:video',
       'babel:precompiled-behaviors',
       'includes:testing-behaviors',
       'string-replace:testing',
