@@ -23,6 +23,13 @@ module.exports = {
     src: 'bower_components/eventEmitter/EventEmitter.min.js',
     dest: 'precompiled/event-emitter-behavior/assets/event-emitter.js'
   },
+  'video': {
+    expand: false,
+    flatten: true,
+    filter: 'isFile',
+    src: 'bower_components/jsVideoUrlParser/dist/jsVideoUrlParser.js',
+    dest: 'precompiled/video-url-parser-behavior/assets/video-url-parser.js'
+  },
   components: {
     files: [{
       expand: true,

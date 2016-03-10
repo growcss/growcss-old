@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <title>gc-ui-video-embed demo</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <script src="@demo-path/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="@demo-path/iron-demo-helpers/demo-pages-shared-styles.html">
+  <link rel="import" href="@demo-path/iron-demo-helpers/demo-snippet.html">
+  <link rel="import" href="@demo-path/paper-styles/demo-pages.html">
+  <link rel="import" href="../gc-ui-video-embed.html">
+
+</head>
+<body unresolved>
+
+  <h2>Html 5 video</h2>
+
+  <demo-snippet>
+    <template>
+      <gc-ui-video-embed video-width="200">
+        <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+      </gc-ui-video-embed>
+    </template>
+  </demo-snippet>
+
+  <h2>YouTube</h2>
+
+  <demo-snippet>
+    <template>
+      <gc-ui-video-embed source="https://www.youtube.com/watch?v=ZbZSe6N_BXs"></gc-ui-video-embed>
+    </template>
+  </demo-snippet>
+
+  <h2>Vimeo</h2>
+
+  <demo-snippet>
+    <template>
+      <gc-ui-video-embed source="https://vimeo.com/98206456"></gc-ui-video-embed>
+    </template>
+  </demo-snippet>
+
+  <h2>Twitch</h2>
+
+  <demo-snippet>
+    <template>
+      <gc-ui-video-embed source="https://www.twitch.tv/nocopyrightsounds"></gc-ui-video-embed>
+    </template>
+  </demo-snippet>
+
+  <h2>Dailymotion</h2>
+
+  <demo-snippet>
+    <template>
+      <gc-ui-video-embed source="http://www.dailymotion.com/video/x1ogp00_success-in-minutes-because-im-happy_lifestyle"></gc-ui-video-embed>
+    </template>
+  </demo-snippet>
+</body>
+</html>
