@@ -1,0 +1,18 @@
+<link rel="import" href="../video-url-parser-behavior.html"><dom-module id="video-parser"><template><center>Embed url: {{embedurl}}</center></template></dom-module><script>Polymer({
+    is: 'video-parser',
+
+    properties: {
+      embedurl: {
+        type: String,
+        value: '',
+      }
+    },
+
+    behaviors: [
+      GrowCss.VideoUrlParser
+    ],
+
+    ready() {
+      this.embedurl = this.urlParser('http://www.youtube.com/watch?feature=player_embedded&v=HRb7B9fPhfA');
+    },
+  });</script>

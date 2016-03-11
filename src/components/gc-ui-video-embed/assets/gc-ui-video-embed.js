@@ -60,7 +60,12 @@ class Class {
 
     if (htmlvideo.length >= 1) {
       this._html5video = true;
-      this['_video-width'] = width !== '' ? `width="${width}"` : '';
+      this.addEventListener('dom-change', function () {
+        const video = this.querySelector('video');
+        if (video !== null) {
+          video.setAttribute('width', width !== '' ? width : '100%');
+        }
+      });
     } else if (this.source !== '') {
       this._iframevideo = true;
       this['_video-source'] = this.urlParser(this.source);

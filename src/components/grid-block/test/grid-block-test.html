@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <script src="@test-path/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="@test-path/web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../grid-block.html">
+
+  </head>
+  <body>
+    <test-fixture id="grid-block-fixture">
+      <template>
+        <grid-block class="small-up-2 medium-up-3 large-up-5">
+          <grid-col></grid-col>
+          <grid-col></grid-col>
+          <grid-col></grid-col>
+          <grid-col></grid-col>
+          <grid-col></grid-col>
+          <grid-col></grid-col>
+          <grid-col></grid-col>
+        </grid-block>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('<grid-block>', function() {
+          var myEl;
+
+          setup(function() {
+            myEl = fixture('grid-block-fixture');
+          });
+
+          test('test setup', function() {
+            expect(document.querySelector('grid-block')).to.be.ok;
+          });
+
+          test('test if grid has the right sizes', function() {
+
+          });
+      });
+    </script>
+
+  </body>
+</html>

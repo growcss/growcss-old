@@ -1,38 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <title>gc-ui-cookie-bar demo</title>
+  <head>
+    <title>gc-ui-cookie-bar demo</title>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <script src="@demo-path/webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="@demo-path/iron-demo-helpers/demo-pages-shared-styles.html">
-  <link rel="import" href="@demo-path/iron-demo-helpers/demo-snippet.html">
-  <link rel="import" href="@demo-path/paper-styles/demo-pages.html">
-  <link rel="import" href="../gc-ui-cookie-bar.html">
-  <link rel="import" href="../../growcss-style/growcss-style.html">
+    <script src="@demo-path/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="@demo-path/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="@demo-path/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="@demo-path/paper-styles/demo-pages.html">
+    <link rel="import" href="../gc-ui-cookie-bar.html">
+    <link rel="import" href="../../growcss-style/growcss-style.html">
 
-</head>
-<body unresolved>
-  <h2>Cookie bar</h2>
-  <p>This gc-ui-cookie-bar module adds a cookie element which will be hidden, if a element with <code>id="confirm--button"</code> is clicked.</p>
-  <p>The state (gc-ui-cookie-bar-accepted = true) is saved as a cookie.</p>
-  <demo-snippet>
-    <template>
-      <gc-ui-cookie-bar>
-        <grid-flex-element>
-          <grid-flex-col class="small-9">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </grid-flex-col>
-          <grid-flex-col class="small-3">
-            <button id="confirm--button">Accept</button>
-          </grid-flex-col>
-        </grid-flex-element>
-      </gc-ui-cookie-bar>
-    </template>
-  </demo-snippet>
-</body>
+  </head>
+  <body unresolved>
+    <h2>Cookie bar</h2>
+    <p>This gc-ui-cookie-bar module adds a cookie element which will be hidden, if a element with <code>id="confirm--button"</code> is clicked.</p>
+    <p>The state (gc-ui-cookie-bar-accepted = true) is saved in a cookie.</p>
+    <demo-snippet>
+      <template>
+        <gc-ui-cookie-bar>
+          <grid-flex>
+            <grid-flex-col class="small-9">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </grid-flex-col>
+            <grid-flex-col class="small-3">
+              <button id="confirm--button">Accept</button>
+            </grid-flex-col>
+          </grid-flex>
+        </gc-ui-cookie-bar>
+      </template>
+    </demo-snippet>
+  </body>
 </html>

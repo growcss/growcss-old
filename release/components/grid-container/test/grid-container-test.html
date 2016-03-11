@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>grid-container</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><script src="../../../webcomponentsjs/webcomponents.min.js"></script><script src="../../../web-component-tester/browser.js"></script><link rel="import" href="../../../test-fixture/test-fixture.html"><link rel="import" href="../grid-container.html"></head><body unresolved><test-fixture id="grid-container-fixture"><template><grid-container></grid-container></template></test-fixture><script>suite('<grid-container>', function() {
+        var testFixture;
+
+        setup(function() {
+          testFixture = fixture('grid-container-fixture');
+        });
+
+        test('test setup', function() {
+          expect(document.querySelector('grid-container')).to.be.ok;
+        });
+      });</script></body></html>

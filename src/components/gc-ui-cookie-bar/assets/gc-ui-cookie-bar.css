@@ -7,6 +7,6 @@
   };
 }
 
-:host > grid-flex-element {
+:host > grid-flex {
   @apply(--gc-ui-cookie-bar-style);
 }

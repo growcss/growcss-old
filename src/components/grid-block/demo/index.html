@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>grid-block demo</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="@demo-path/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="@demo-path/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="@demo-path/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="@demo-path/paper-styles/demo-pages.html">
+    <link rel="import" href="../grid-block.html">
+
+    <style type="text/css" media="screen">
+      grid-col {
+        padding-top: 1rem!important;
+        padding-bottom: 1rem!important;
+        margin-bottom: 1rem!important;
+      }
+      grid-col {
+        background-color: rgba(255,0,0,.15);
+        line-height: 3;
+        text-align: center;
+      }
+      grid-col:nth-child(odd) {
+        background-color: rgba(255,0,0,.3);
+      }
+    </style>
+
+  </head>
+  <body unresolved>
+
+    <h2>Responsive</h2>
+    <p>Responsive modifiers enable specifying different column sizes, offsets, alignment and distribution at xsmall, small, medium, large & xlarge viewport widths.</p>
+    <demo-snippet>
+      <template>
+        <grid-block class="xsmall-up-4 small-up-2 medium-up-3 large-up-5">
+          <grid-col></grid-col>
+          <grid-col></grid-col>
+          <grid-col></grid-col>
+          <grid-col></grid-col>
+          <grid-col></grid-col>
+          <grid-col></grid-col>
+          <grid-col></grid-col>
+        </grid-block>
+      </template>
+    </demo-snippet>
+
+    <h2>Simple Syntax</h2>
+    <p>All you need to remember is grid-block and grid-col.</p>
+    <demo-snippet>
+      <template>
+        <grid-block class="xsmall-up-1">
+          <grid-col></grid-col>
+        </grid-block>
+      </template>
+    </demo-snippet>
+  </body>
+</html>

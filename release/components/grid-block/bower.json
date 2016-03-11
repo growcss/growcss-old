@@ -1,0 +1,33 @@
+{
+  "name": "grid-block",
+  "version": "1.0.0",
+  "authors": [
+    "Daniel Bannert <d.bannert@anolilab.de>"
+  ],
+  "description": "",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "growcss",
+    "grid",
+    "grid-block"
+  ],
+  "main": "grid-block.html",
+  "license": "MIT",
+  "homepage": "https://github.com/growcss/grid-block/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.3",
+    "screen-size-behavior": "growcss/screen-size-behavior#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
+    "test-fixture": "polymerelements/test-fixture#^1.0.0",
+    "web-component-tester": "^4.2.0"
+  }
+}
