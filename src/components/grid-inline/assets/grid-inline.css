@@ -1,0 +1,37 @@
+:host {
+  font-size: 0;
+  display: block;
+}
+
+:host(::before) {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+:host(.middle) > ::content > grid-col {
+  vertical-align: middle;
+}
+
+:host(.reverse) {
+  direction: rtl;
+}
+
+:host(.reverse) > ::content > grid-col {
+  direction: ltr;
+}
+
+:host > ::content > grid-col {
+  display: inline-block;
+  vertical-align: top;
+  font-size: var(--inline-grid-font, 14px);
+}
+
+:host > ::content > grid-col.end:last-child:last-child {
+  float: left;
+}
+
+:host > ::content > grid-col:last-child:not(:first-child) {
+  float: right;
+}

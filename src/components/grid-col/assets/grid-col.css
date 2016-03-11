@@ -1,4 +1,4 @@
-:host {
+:root {
   --grid-col-1-width: 8.33333%;
   --grid-col-2-width: 16.66667%;
   --grid-col-3-width: 25%;
@@ -11,7 +11,8 @@
   --grid-col-10-width: 83.33333%;
   --grid-col-11-width: 91.66667%;
   --grid-col-12-width: 100%;
-
+}
+:host {
   width: 100%;
   position: relative;
   display: block;
