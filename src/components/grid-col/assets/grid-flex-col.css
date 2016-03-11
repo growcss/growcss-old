@@ -1,4 +1,4 @@
-:host {
+:root {
   --grid-flex-col-1-width: 8.33333%;
   --grid-flex-col-2-width: 16.66667%;
   --grid-flex-col-3-width: 25%;
@@ -11,7 +11,9 @@
   --grid-flex-col-10-width: 83.33333%;
   --grid-flex-col-11-width: 91.66667%;
   --grid-flex-col-12-width: 100%;
+}
 
+:host {
   flex-grow: 1;
   flex-basis: 0;
   max-width: var(--grid-flex-col-12-width);

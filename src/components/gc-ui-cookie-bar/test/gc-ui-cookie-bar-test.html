@@ -1,50 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>gc-ui-cookie-bar</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <title>gc-ui-cookie-bar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <script src="@test-path/webcomponentsjs/webcomponents.min.js"></script>
-  <script src="@test-path/web-component-tester/browser.js"></script>
+    <script src="@test-path/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="@test-path/web-component-tester/browser.js"></script>
 
-  <link rel="import" href="@test-path/test-fixture/test-fixture.html">
-  <link rel="import" href="@test-path/iron-test-helpers/mock-interactions.html">
-  <link rel="import" href="../gc-ui-cookie-bar.html">
+    <link rel="import" href="@test-path/test-fixture/test-fixture.html">
+    <link rel="import" href="@test-path/iron-test-helpers/mock-interactions.html">
+    <link rel="import" href="../gc-ui-cookie-bar.html">
 
-</head>
-<body unresolved>
-  <test-fixture id="gc-ui-cookie-bar-fixture">
-    <template>
-      <gc-ui-cookie-bar>
-        <button id="confirm--button">Accept</button>
-      </gc-ui-cookie-bar>
-    </template>
-  </test-fixture>
+  </head>
+  <body unresolved>
+    <test-fixture id="gc-ui-cookie-bar-fixture">
+      <template>
+        <gc-ui-cookie-bar>
+          <button id="confirm--button">Accept</button>
+        </gc-ui-cookie-bar>
+      </template>
+    </test-fixture>
 
-  <script>
-    suite('<gc-ui-cookie-bar>', function() {
-      var testFixture;
+    <script>
+      suite('<gc-ui-cookie-bar>', function() {
+        var testFixture;
 
-      setup(function() {
-        testFixture = fixture('gc-ui-cookie-bar-fixture');
-      });
-
-      test('test setup', function() {
-        expect(document.querySelector('gc-ui-cookie-bar')).to.be.ok;
-      });
-
-      test('test if #confirm--button is clicked. Cookie is set.', function(done) {
-        var button = Polymer.dom(testFixture).querySelector('#confirm--button');
-        button.addEventListener('click', function() {
-          done();
+        setup(function() {
+          testFixture = fixture('gc-ui-cookie-bar-fixture');
         });
 
-        MockInteractions.tap(button);
-        expect(testFixture.getCookie('gc-ui-cookie-bar-accepted')).to.be.equal('true');
-      });
-    });
-  </script>
+        test('test setup', function() {
+          expect(document.querySelector('gc-ui-cookie-bar')).to.be.ok;
+        });
 
-</body>
+        test('test if #confirm--button is clicked. Cookie is set.', function(done) {
+          var button = Polymer.dom(testFixture).querySelector('#confirm--button');
+          button.addEventListener('click', function() {
+            done();
+          });
+
+          MockInteractions.tap(button);
+          expect(testFixture.getCookie('gc-ui-cookie-bar-accepted')).to.be.equal('true');
+        });
+      });
+    </script>
+
+  </body>
 </html>

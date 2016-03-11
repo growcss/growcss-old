@@ -23,6 +23,8 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#1.3",
+    "grid-container": "growcss/grid-container#^1.0.0",
+    "grid-flex": "growcss/grid-flex#^1.0.0",
     "screen-size-behavior": "growcss/screen-size-behavior#^1.0.0"
   },
   "devDependencies": {
