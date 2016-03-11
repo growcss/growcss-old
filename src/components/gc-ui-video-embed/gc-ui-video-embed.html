@@ -18,14 +18,14 @@
       include "gc-ui-video-embed/assets/gc-ui-video-embed.css"
     </style>
 
-    <template is="dom-if" if={{_html5video}}>
-      <video {{_video-width}} height="{{_video-height}}" controls>
+    <template id="htmlvideo" is="dom-if" if={{_html5video}}>
+      <video id="gc-ui-video-embed-htmlvideo" height="{{_video-height}}" controls>
         <content></content>
       </video>
     </template>
 
     <template is="dom-if" if={{_iframevideo}}>
-      <iframe {{_video-width}} height="{{_video-height}}" src="{{_video-source}}" frameborder="0" allowfullscreen></iframe>
+      <iframe id="gc-ui-video-embed-videoprovider" width="{{_video-width}}" height="{{_video-height}}" src="{{_video-source}}" frameborder="0" allowfullscreen></iframe>
     </template>
   </template>
 

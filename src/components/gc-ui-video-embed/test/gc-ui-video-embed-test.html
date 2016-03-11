@@ -47,18 +47,14 @@
 
       test('test if height and width are set.', function() {
         expect(testFixture['video-width']).to.be.equal('200');
-        expect(testFixture['_video-width']).to.be.equal('width="200"');
         expect(testFixture2['_video-width']).to.be.equal('100%');
 
         expect(testFixture['video-height']).to.be.equal('300');
         expect(testFixture['_video-height']).to.be.equal('300');
       });
 
-      test('test if source is set, _iframevideo should be true.', function() {
+      test('test if source is set to a video provider', function() {
         expect(testFixture2._iframevideo).to.be.true;
-      });
-
-      test('test if source is set, _video-source should be embed source.', function() {
         expect(testFixture2['_video-source']).to.be.equal('//youtube.com/embed/ZbZSe6N_BXs');
       });
     });

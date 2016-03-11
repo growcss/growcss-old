@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><title>gc-ui-video-embed</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><script src="../../../webcomponentsjs/webcomponents.min.js"></script><script src="../../../web-component-tester/browser.js"></script><link rel="import" href="../../../test-fixture/test-fixture.html"><link rel="import" href="../gc-ui-video-embed.html"></head><body unresolved><test-fixture id="gc-ui-video-embed-fixture"><template><gc-ui-video-embed video-width="200" video-height="300"><source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"></gc-ui-video-embed></template></test-fixture><test-fixture id="gc-ui-video-embed-source-fixture"><template><gc-ui-video-embed source="https://www.youtube.com/watch?v=ZbZSe6N_BXs"></gc-ui-video-embed></template></test-fixture><script>suite('<gc-ui-video-embed>', function() {
+      var testFixture;
+      var testFixture2;
+
+      setup(function() {
+        testFixture = fixture('gc-ui-video-embed-fixture');
+        testFixture2 = fixture('gc-ui-video-embed-source-fixture');
+      });
+
+      test('test setup', function() {
+        expect(document.querySelector('gc-ui-video-embed')).to.be.ok;
+      });
+
+      test('test if content has source set, _html5video should be true.', function() {
+        expect(testFixture._html5video).to.be.true;
+      });
+
+      test('test if height and width are set.', function() {
+        expect(testFixture['video-width']).to.be.equal('200');
+        expect(testFixture2['_video-width']).to.be.equal('100%');
+
+        expect(testFixture['video-height']).to.be.equal('300');
+        expect(testFixture['_video-height']).to.be.equal('300');
+      });
+
+      test('test if source is set to a video provider', function() {
+        expect(testFixture2._iframevideo).to.be.true;
+        expect(testFixture2['_video-source']).to.be.equal('//youtube.com/embed/ZbZSe6N_BXs');
+      });
+    });</script></body></html>

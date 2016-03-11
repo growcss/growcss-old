@@ -50,28 +50,34 @@ class Class {
 
   ready() {
     const htmlvideo = Polymer.dom(this).children;
-    const windowWidth = window.innerWidth;
+    const elementWidth = this.offsetWidth;
     const videoHeight = this['video-height'] !== '' ?
         this['video-height'] :
-        Math.round((windowWidth / 16) * 9);
+        Math.round((elementWidth / 16) * 9);
     const width = this['video-width'];
 
     this['_video-height'] = videoHeight;
-    this['_video-width'] = width !== '' ? `width="${width}"` : '100%';
 
     if (htmlvideo.length >= 1) {
       this._html5video = true;
+      this.addEventListener('dom-change', function () {
+        const video = this.querySelector('video');
+        if (video !== null) {
+          video.setAttribute('width', width !== '' ? width : '100%');
+        }
+      });
     } else if (this.source !== '') {
       this._iframevideo = true;
       this['_video-source'] = this.urlParser(this.source);
+      this['_video-width'] = width !== '' ? width : '100%';
     }
   }
 
   _onVideoResize() {
-    const windowWidth = window.innerWidth;
+    const elementWidth = this.offsetWidth;
 
     if (this['video-height'] === '') {
-      this['_video-height'] = Math.round((windowWidth / 16) * 9);
+      this['_video-height'] = Math.round((elementWidth / 16) * 9);
     }
   }
 }
