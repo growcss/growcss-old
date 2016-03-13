@@ -9,13 +9,13 @@
     <script src="@test-path/web-component-tester/browser.js"></script>
 
     <link rel="import" href="@test-path/test-fixture/test-fixture.html">
-    <link rel="import" href="../images-loaded-behavior.html">
+    <link rel="import" href="../demo/images-loaded.html">
 
   </head>
   <body unresolved>
     <test-fixture id="images-loaded-behavior-fixture">
       <template>
-
+        <images-loaded></images-loaded>
       </template>
     </test-fixture>
 
@@ -28,7 +28,7 @@
         });
 
         test('test setup', function() {
-          expect(document.querySelector('images-loaded-behavior')).to.be.ok;
+          expect(document.querySelector('images-loaded')).to.be.ok;
         });
       });
     </script>

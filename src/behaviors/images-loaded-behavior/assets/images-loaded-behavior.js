@@ -6,14 +6,13 @@ const GrowCss = GrowCss || {};
 
 class GrowCssImagesLoaded extends GrowCssEventEmitter {
   constructor(element, options, callback) {
+    super();
     let elem = element;
     let cb = callback;
 
     if (elem === null) {
       return;
     }
-
-    super();
 
     this.options = {};
 

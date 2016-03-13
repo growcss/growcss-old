@@ -9,20 +9,20 @@
   <script src="@test-path/web-component-tester/browser.js"></script>
 
   <link rel="import" href="@test-path/test-fixture/test-fixture.html">
-  <link rel="import" href="../parallax-scroller-behavior.html">
+  <link rel="import" href="../demo/parallax-scroller.html">
 
 </head>
 <body unresolved>
   <test-fixture id="parallax-scroller-behavior-fixture">
     <template>
-
+      <parallax-scroller-behavior></parallax-scroller-behavior>
     </template>
   </test-fixture>
 
   <script>
     suite('<parallax-scroller-behavior>', function() {
       var testFixture;
-
++
       setup(function() {
         testFixture = fixture('parallax-scroller-behavior-fixture');
       });

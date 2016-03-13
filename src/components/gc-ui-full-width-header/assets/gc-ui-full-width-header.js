@@ -39,7 +39,6 @@ class FullWidthHeader {
   }
 
   created() {
-    // console.log(Polymer.dom(this).querySelector('img'));
     this.hasImagesLoaded(
       Polymer.dom(this).querySelector('img'), (instance) => {
         const result = instance.isComplete;
@@ -59,16 +58,6 @@ class FullWidthHeader {
     // const image = this.source.match('/.jpg/');
     // const video = '';
     // const html5video = '';
-  }
-
-  _createImage(src) {
-    const img = new Image();
-
-    img.onload = function () {
-      this.handleImageLoaded();
-    };
-
-    img.src = src;
   }
 
   _handleImg() {
