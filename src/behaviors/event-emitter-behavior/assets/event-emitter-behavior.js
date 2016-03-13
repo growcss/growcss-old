@@ -4,40 +4,36 @@
 const GrowCss = GrowCss || {};
 /*eslint-enable */
 
-const GcEventEmitter = {
-  properties: {
-    eventemitter: {
-      type: Object,
-      value: {},
-    },
-  },
-
-  registered() {
-    this.eventemitter = new EventEmitter();
-  },
-
+class GrowCssEventEmitter extends EventEmitter {
   listen(evt, listeners) {
     if (Array.isArray(listeners)) {
-      return this.eventemitter.addListeners(evt, listeners);
+      return this.addListeners(evt, listeners);
     }
 
-    return this.eventemitter.addListener(evt, listeners);
-  },
+    return this.addListener(evt, listeners);
+  }
 
   fire(evt, args) {
-    return this.eventemitter.emitEvent(evt, args);
-  },
+    return this.emitEvent(evt, args);
+  }
 
   forget(evt, listeners) {
     if (Array.isArray(listeners)) {
-      return this.eventemitter.removeListeners(evt, listeners);
+      return this.removeListeners(evt, listeners);
     }
 
-    return this.eventemitter.removeListener(evt, listeners);
-  },
+    return this.removeListener(evt, listeners);
+  }
 
   listenOnce(evt, listener) {
-    return this.eventemitter.addOnceListener(evt, listener);
+    return this.addOnceListener(evt, listener);
+  }
+}
+
+const GcEventEmitter = {
+  registered() {
+    this['event-emitter'] = new GrowCssEventEmitter();
+    this.ee = this['event-emitter'];
   },
 };
 

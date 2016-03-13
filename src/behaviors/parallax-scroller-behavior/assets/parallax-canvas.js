@@ -6,11 +6,11 @@ const GrowCss = GrowCss || {};
 
 const GcParallaxCanvas = {
   properties: {
-    img: {
+    'parallax-img': {
       type: Object,
       value: {},
     },
-    wrapper: {
+    'parallax-wrapper': {
       type: String,
       value: '',
     },
@@ -34,7 +34,7 @@ const GcParallaxCanvas = {
    * @returns { Object } - Canvas
    */
   load() {
-    const img = this.img;
+    const img = this['parallax-img'];
 
     if (!img.width || !img.height || !img.complete) {
       img.onload = () => this.onImageLoaded();
@@ -51,7 +51,7 @@ const GcParallaxCanvas = {
   onImageLoaded() {
     this.isLoaded = true;
     this.update();
-    this.fire('loaded', this.img);
+    this.fire('loaded', this['parallax-img']);
   },
 
   /**
@@ -60,11 +60,11 @@ const GcParallaxCanvas = {
    * @returns { Object } - Canvas
    */
   update() {
-    const iw = this.img.naturalWidth || this.img.width;
-    const ih = this.img.naturalHeight || this.img.height;
+    const iw = this['parallax-img'].naturalWidth || this['parallax-img'].width;
+    const ih = this['parallax-img'].naturalHeight || this['parallax-img'].height;
     const ratio = iw / ih;
     const size = this.size;
-    const img = this.img;
+    const img = this['parallax-img'];
 
     if (size.width / ratio <= size.height) {
       img.height = size.height;
@@ -85,7 +85,7 @@ const GcParallaxCanvas = {
    */
   draw(stage) {
     const size = this.size;
-    const img = this.img;
+    const img = this['parallax-img'];
 
     // this value will be:
     //  < 0 when the image is on the top
@@ -113,7 +113,7 @@ const GcParallaxCanvas = {
    * @returns { Object } - parent tag bounds properties
    */
   get bounds() {
-    return this.wrapper.getBoundingClientRect();
+    return this['parallax-wrapper'].getBoundingClientRect();
   },
 
   /**
@@ -123,8 +123,8 @@ const GcParallaxCanvas = {
    */
   get offset() {
     return {
-      top: this.wrapper.offsetTop,
-      left: this.wrapper.offsetLeft,
+      top: this['parallax-wrapper'].offsetTop,
+      left: this['parallax-wrapper'].offsetLeft,
     };
   },
 

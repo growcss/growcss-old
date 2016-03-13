@@ -35,7 +35,9 @@ module.exports = {
           'padding-left',
           'padding-right',
           'padding-top',
-          'padding-bottom'
+          'padding-bottom',
+          'height',
+          'width'
         ]
       }),
       require('postcss-at2x')(),

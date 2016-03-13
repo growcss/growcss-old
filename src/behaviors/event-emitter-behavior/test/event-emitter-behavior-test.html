@@ -32,18 +32,18 @@
       });
 
       test('test event emitter listen and fire', function() {
-        expect(typeof testFixture.eventemitter === 'object').to.be.true;
+        expect(typeof testFixture['event-emitter'] === 'object').to.be.true;
 
-        testFixture.listen('testEvent', function() {
+        testFixture['event-emitter'].listen('testEvent', function() {
           testFixture.eventrun = true;
         })
 
-        testFixture.fire('testEvent');
+        testFixture['event-emitter'].fire('testEvent');
         expect(testFixture.eventrun).to.be.true;
       });
 
       test('test event emitter listen and fire with array listeners', function() {
-        expect(typeof testFixture.eventemitter === 'object').to.be.true;
+        expect(typeof testFixture['event-emitter'] === 'object').to.be.true;
 
         func1 = function() {
           testFixture.eventrun = true;
@@ -53,9 +53,9 @@
           console.log('func2 called');
         };
 
-        testFixture.listen('testEvent', [func1, func2])
+        testFixture['event-emitter'].listen('testEvent', [func1, func2])
 
-        testFixture.fire('testEvent');
+        testFixture['event-emitter'].fire('testEvent');
         expect(testFixture.eventrun).to.be.true;
       });
     });

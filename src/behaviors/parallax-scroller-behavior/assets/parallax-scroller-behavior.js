@@ -18,12 +18,22 @@ const GcParallaxScrollerBehavior = {
       type: Object,
       value: {},
     },
+    'parallax-canvases': {
+      type: Array,
+      value: [],
+    },
   },
 
   ready() {
+    if (!this['parallax-canvases'].length) {
+      console.warn(`No images were found with the selector "${this['parallax-class']}"`);
+    } else {
+      this.imagesLoaded = 0;
+      this.bind();
+    }
   },
 
-  parallaxInit() {
+  bind() {
   },
 };
 
