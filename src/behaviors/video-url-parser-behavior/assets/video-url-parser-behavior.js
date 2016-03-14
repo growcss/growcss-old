@@ -5,21 +5,6 @@ const GrowCss = GrowCss || {};
 /*eslint-enable */
 
 const GcVideoUrlParser = {
-  properties: {
-    parser: {
-      type: Object,
-      value: {},
-    },
-    provider: {
-      type: String,
-      value: '',
-    },
-    mediaType: {
-      type: String,
-      value: '',
-    },
-  },
-
   registered() {
     /*eslint-disable */
     this.parser = urlParser;

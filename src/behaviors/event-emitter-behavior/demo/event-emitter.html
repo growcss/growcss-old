@@ -14,11 +14,19 @@
       eventrun: {
         type: Boolean,
         value: false,
-      }
+      },
     },
 
     behaviors: [
-      GrowCss.EventEmitter
+      GrowCss.EventEmitterBehavior
     ],
+
+    ready: function() {
+      this.ee.listen('onload', function() {
+        console.log('event');
+      });
+
+      this.ee.fire('onload');
+    }
   });
 </script>
