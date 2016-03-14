@@ -60,8 +60,11 @@ class Class {
 
     if (htmlvideo.length >= 1) {
       this._html5video = true;
+      this.classList.add('has-html-video');
+
       this.addEventListener('dom-change', function () {
         const video = this.querySelector('video');
+
         if (video !== null) {
           video.setAttribute('width', width !== '' ? width : '100%');
         }
@@ -70,6 +73,8 @@ class Class {
       this._iframevideo = true;
       this['_video-source'] = this.urlParser(this.source);
       this['_video-width'] = width !== '' ? width : '100%';
+
+      this.classList.add(`has-${this.provider}-video`);
     }
   }
 

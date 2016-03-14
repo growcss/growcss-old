@@ -13,6 +13,11 @@
     "$$": true,
     "Array": true,
     "EventEmitter": true,
-    "urlParser": true
+    "GrowCssEventEmitter": true,
+    "urlParser": true,
+    "Image": true,
+    "GrowCssBackground": true,
+    "GrowCssLoadingImage": true,
+    "GrowCssImagesLoaded": true,
   }
 }

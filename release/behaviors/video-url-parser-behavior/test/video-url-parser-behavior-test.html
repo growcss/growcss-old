@@ -10,7 +10,9 @@
       });
 
       test('test if URLParser exist and can be used.', function() {
-        expect(testFixture.provider).to.be.equal('youtube');
-        expect(testFixture.mediaType).to.be.equal('video');
+        testFixture.addEventListener('dom-ready', function () {
+          expect(testFixture.provider).to.be.equal('youtube');
+          expect(testFixture.mediaType).to.be.equal('video');
+        });
       });
     });</script></body></html>

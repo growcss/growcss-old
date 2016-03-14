@@ -5,13 +5,6 @@ let GrowCss = GrowCss || {};
 /*eslint-enable */
 
 const GcCookies = {
-  properties: {
-    cookies: {
-      type: Object,
-      value: {},
-    },
-  },
-
   registered() {
     this.cookies = Cookies;
   },

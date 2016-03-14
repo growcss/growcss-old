@@ -2,10 +2,7 @@
     is: 'video-parser',
 
     properties: {
-      embedurl: {
-        type: String,
-        value: '',
-      }
+      embedurl: String,
     },
 
     behaviors: [
@@ -13,6 +10,8 @@
     ],
 
     ready() {
-      this.embedurl = this.urlParser('http://www.youtube.com/watch?feature=player_embedded&v=HRb7B9fPhfA');
+      const url = this.urlParser('http://www.youtube.com/watch?feature=player_embedded&v=HRb7B9fPhfA');
+
+      this.embedurl = url;
     },
   });</script>
