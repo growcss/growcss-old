@@ -20,5 +20,7 @@
     "GrowCssBackground": true,
     "GrowCssLoadingImage": true,
     "GrowCssImagesLoaded": true,
+    "GrowCssParallaxStage": true,
+    "GrowCssParallaxCanvas": true
   }
 }

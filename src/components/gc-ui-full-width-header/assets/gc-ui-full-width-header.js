@@ -4,7 +4,7 @@ class FullWidthHeader {
   get behaviors() {
     return [
       ...GrowCss.ScreenSizeBehavior,
-      ...GrowCss.ParallaxScrollerBehavior,
+      GrowCss.ParallaxScrollerBehavior,
       GrowCss.ImagesLoaded,
     ];
   }
@@ -40,11 +40,12 @@ class FullWidthHeader {
 
   created() {
     this.hasImagesLoaded(
-      Polymer.dom(this).querySelector('img'), (instance) => {
+      this.querySelector('img'), (instance) => {
         const result = instance.isComplete;
 
         if (result) {
-          return true;
+          const para = this.parallax(this, 'img');
+          para.init();
         }
 
         return false;
