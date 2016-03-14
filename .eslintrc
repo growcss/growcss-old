@@ -19,5 +19,7 @@
     "GrowCssBackground": true,
     "GrowCssLoadingImage": true,
     "GrowCssImagesLoaded": true,
+    "md5": true,
+    "callback": true,
   }
 }

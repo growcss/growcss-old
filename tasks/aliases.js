@@ -11,6 +11,7 @@ module.exports = {
     'copy:cookies',
     'copy:event',
     'copy:video',
+    'copy:hash',
     'postcss:precompiled-shared',
     'postcss:precompiled',
     'babel:precompiled-components',
