@@ -10,7 +10,6 @@ module.exports = {
       'postcss:precompiled-shared',
       'postcss:precompiled',
       'babel:precompiled-components',
-      'uglify:precompiled',
       'cssmin:precompiled-components',
       'cssmin:precompiled-shared',
       'includes:testing-components',
