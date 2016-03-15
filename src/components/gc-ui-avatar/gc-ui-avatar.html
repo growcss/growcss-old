@@ -1,0 +1,28 @@
+<link rel="import" href="@path/polymer/polymer.html">
+
+<!--
+    <gc-ui-avatar>`element <text>.
+
+    Example:
+        <gc-ui-avatar></gc-ui-avatar>
+
+    @element gc-ui-avatar
+    @demo demo/index.html
+-->
+
+<dom-module id="gc-ui-avatar">
+  <template>
+    <style>
+      include "gc-ui-avatar/assets/gc-ui-avatar.css"
+    </style>
+
+    <img id="avatar" src="{{imageSrc}}" height="{{imageSize}}" width="{{imageSize}}" />
+
+    <content></content>
+  </template>
+
+  <script>
+    include "gc-ui-avatar/assets/md5.js"
+    include "gc-ui-avatar/assets/gc-ui-avatar.js"
+  </script>
+</dom-module>

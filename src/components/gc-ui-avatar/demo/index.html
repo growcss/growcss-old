@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>gc-ui-avatar demo</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="@demo-path/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="@demo-path/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="@demo-path/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="@demo-path/paper-styles/demo-pages.html">
+    <link rel="import" href="../gc-ui-avatar.html">
+
+  </head>
+  <body unresolved>
+    <h2>Avatar</h2>
+    <p>Supports Gravatar, Facebook, Google+, Twitter, Skype, normal image path and has a default image.</p>
+    <demo-snippet>
+      <template>
+        <gc-ui-avatar provider="gravatar" user-id="205e460b479e2e5b48aec07710c08d50"></gc-ui-avatar>
+        <gc-ui-avatar provider="google" user-id="113476428183997615012"></gc-ui-avatar>
+        <gc-ui-avatar provider="facebook" user-id="4"></gc-ui-avatar>
+        <gc-ui-avatar provider="skype" user-id="xinaro93"></gc-ui-avatar>
+        <gc-ui-avatar provider="twitter" user-id="anolilab"></gc-ui-avatar>
+      </template>
+    </demo-snippet>
+
+    <h2>Rounded Avatar</h2>
+    <p>A rounded image for displaying user avatars.</p>
+    <demo-snippet>
+      <template>
+        <gc-ui-avatar class="rounded" provider="gravatar" user-id="205e460b479e2e5b48aec07710c08d50"></gc-ui-avatar>
+      </template>
+    </demo-snippet>
+
+    <h2>Circular Avatar</h2>
+    <p>A circular image for displaying user avatars.</p>
+    <demo-snippet>
+      <template>
+        <gc-ui-avatar class="circle" provider="gravatar" user-id="205e460b479e2e5b48aec07710c08d50"></gc-ui-avatar>
+      </template>
+    </demo-snippet>
+
+    <h2>Sized Avatar</h2>
+    <p>Change the size of the avatar with <code>size=""</code>.</p>
+    <p>Sizes for twitter: <br><br> normal: 48px <br> bigger: 73px <br> mini: 24px <br> original: 100%</p>
+    <demo-snippet>
+      <template>
+        <gc-ui-avatar size="200"></gc-ui-avatar>
+        <gc-ui-avatar provider="twitter" user-id="anolilab" size="original"></gc-ui-avatar>
+      </template>
+    </demo-snippet>
+
+    <h2>Avatar</h2>
+    <p>Supports content too.</p>
+    <demo-snippet>
+      <template>
+        <gc-ui-avatar size="100">
+          Test Avatar
+        </gc-ui-avatar>
+      </template>
+    </demo-snippet>
+  </body>
+</html>

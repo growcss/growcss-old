@@ -1,3 +1,8 @@
+figure {
+  /* Ensures the caption's text aligns with the image. */
+  display: inline-block;
+}
+
 figcaption {
   line-height: 24px;
   color: var(--typography-figcaption-color, #222);

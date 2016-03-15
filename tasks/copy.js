@@ -30,6 +30,13 @@ module.exports = {
     src: 'bower_components/jsVideoUrlParser/dist/jsVideoUrlParser.js',
     dest: 'precompiled/video-url-parser-behavior/assets/video-url-parser.js'
   },
+  'hash': {
+    expand: false,
+    flatten: true,
+    filter: 'isFile',
+    src: 'bower_components/JavaScript-MD5/js/md5.js',
+    dest: 'precompiled/gc-ui-avatar/assets/md5.js'
+  },
   components: {
     files: [{
       expand: true,

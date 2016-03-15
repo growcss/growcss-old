@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>gc-ui-avatar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <script src="@test-path/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="@test-path/web-component-tester/browser.js"></script>
+
+    <link rel="import" href="@test-path/test-fixture/test-fixture.html">
+    <link rel="import" href="../gc-ui-avatar.html">
+
+  </head>
+  <body unresolved>
+    <test-fixture id="gc-ui-avatar-no-var-fixture">
+      <template>
+        <gc-ui-avatar></gc-ui-avatar>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="gc-ui-avatar-gravatar-fixture">
+      <template>
+        <gc-ui-avatar provider="gravatar" user-id="205e460b479e2e5b48aec07710c08d50"></gc-ui-avatar>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="gc-ui-avatar-facebook-fixture">
+      <template>
+        <gc-ui-avatar provider="facebook" user-id="4"></gc-ui-avatar>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="gc-ui-avatar-twitter-fixture">
+      <template>
+        <gc-ui-avatar provider="twitter" user-id="anolilab"></gc-ui-avatar>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="gc-ui-avatar-google-fixture">
+      <template>
+        <gc-ui-avatar provider="google" user-id="113476428183997615012"></gc-ui-avatar>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="gc-ui-avatar-skype-fixture">
+      <template>
+        <gc-ui-avatar provider="skype" user-id="xinaro93"></gc-ui-avatar>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('<gc-ui-avatar>', function() {
+        var testFixture;
+        var testFixture2;
+        var testFixture3;
+        var testFixture4;
+        var testFixture5;
+        var testFixture6;
+
+        setup(function() {
+          testFixture = fixture('gc-ui-avatar-no-var-fixture');
+          testFixture2 = fixture('gc-ui-avatar-gravatar-fixture');
+          testFixture3 = fixture('gc-ui-avatar-facebook-fixture');
+          testFixture4 = fixture('gc-ui-avatar-twitter-fixture');
+          testFixture5 = fixture('gc-ui-avatar-google-fixture');
+          testFixture6 = fixture('gc-ui-avatar-skype-fixture');
+        });
+
+        test('test setup', function() {
+          expect(document.querySelector('gc-ui-avatar')).to.be.ok;
+        });
+
+        test('test no variable are set to show default img', function() {
+          var image = testFixture.querySelector('img');
+
+          expect(image.getAttribute('src')).to.be.equal('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABQAFADASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAEGBAUHAgP/xAAtEAABAwIEBAYBBQAAAAAAAAABAAIDBBEFITGBEkFRYQYTQnGRwVIiMqGx8P/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDreSlN03QRzU2TdN0CybL7QUdTOLwwSvb1a0kfOimejqYBeaCVg6uabfOiD4bJsm6boGybJum6AiIgK0YBgrPLbU1jeJzs2MIyA6nutBhcAqcRp4nD9Ln5jsM7fC6H7IAAAAFgAhAIsdFKIK1j2CsdE+po28L25uYBYO9h1VXXTVz3F4BTYlURNyaHZDoDnZBiIiICIiDMwaUQ4rTSO0D7Z8r5fa6DsuYjVXLAMVZVxMhncBUtyzP7+/ug3ibKEQTsqBjkomxape0i3Fw362AH0rLj2LMo4nRQuDqlwtYem/NUs63OpQSiIgbpui9QxvmlZHGCXuNgEH2oKOaun8uAX5ucdArfh2CUtGA4tEs35vGh7DksnC6JlBStiZm7VzralZqBum6Ig1OI4LS1gc4NEUx9bBqe45qoV9HNQz+XOLc2uGhXRFh4pRMr6V0T8natdbQoOf7puvU0b4ZXxyAh7TYheUBb/wAIUvmVMlQ4ZRjhb7nX/d1oFdPCkYZhLXfm9x+Db6QblETZAUKVCCVCnZQgqfi6l4KmOoaMpBwu9xp/H9Kvq5+Ko+PCXOPoe1w3NvtUxB//2Q==');
+          expect(image.getAttribute('height')).to.be.equal('80');
+          expect(image.getAttribute('width')).to.be.equal('80');
+          expect(image.getAttribute('class')).to.be.equal('default');
+        });
+
+        test('test when gravatar is set', function() {
+          var image = testFixture2.querySelector('img');
+
+          expect(image.getAttribute('src')).to.be.equal('//gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50.jpg?size=80&d=mm&r=g');
+          expect(image.getAttribute('height')).to.be.equal('80');
+          expect(image.getAttribute('width')).to.be.equal('80');
+          expect(image.getAttribute('class')).to.be.equal('gravatar');
+        });
+
+        test('test when facebook is set', function(done) {
+          var image = testFixture3.querySelector('img');
+
+          testFixture3.addEventListener('avatar-loaded', function() {
+            expect(image.getAttribute('src')).to.be.equal('https://scontent.xx.fbcdn.net/hprofile-xat1/v/t1.0-1/p80x80/12208495_10102454385528521_4749095086285673716_n.jpg?oh=9d2933ea53e669b45590e7135bfb18e6&oe=5789E324');
+            expect(image.getAttribute('height')).to.be.equal('80');
+            expect(image.getAttribute('width')).to.be.equal('80');
+            expect(image.getAttribute('class')).to.be.equal('facebook');
+
+            done();
+          });
+        });
+
+        test('test when twitter is set', function() {
+          var image = testFixture4.querySelector('img');
+
+          expect(image.getAttribute('src')).to.be.equal('http://twitter.com/anolilab/profile_image?size=bigger');
+          expect(image.getAttribute('height')).to.be.equal('80');
+          expect(image.getAttribute('width')).to.be.equal('80');
+          expect(image.getAttribute('class')).to.be.equal('twitter');
+        });
+
+        test('test when google is set', function(done) {
+          var image = testFixture5.querySelector('img');
+
+          testFixture5.addEventListener('avatar-loaded', function() {
+            expect(image.getAttribute('src')).to.be.equal('https://lh3.googleusercontent.com/-2R1JMAIrLR8/AAAAAAAAAAI/AAAAAAAAAAA/TkuTJtCO2xU/s80-c/113476428183997615012.jpg');
+            expect(image.getAttribute('height')).to.be.equal('80');
+            expect(image.getAttribute('width')).to.be.equal('80');
+            expect(image.getAttribute('class')).to.be.equal('google');
+
+            done();
+          });
+        });
+
+        test('test when skype is set', function() {
+          var image = testFixture6.querySelector('img');
+
+          expect(image.getAttribute('src')).to.be.equal('http://api.skype.com/users/xinaro93/profile/avatar');
+          expect(image.getAttribute('height')).to.be.equal('80');
+          expect(image.getAttribute('width')).to.be.equal('80');
+          expect(image.getAttribute('class')).to.be.equal('skype');
+        });
+      });
+    </script>
+
+  </body>
+</html>
