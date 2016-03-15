@@ -38,6 +38,7 @@
         });
 
         test('test when facebook is set', function(done) {
+          this.timeout(10000);
           var image = testFixture3.querySelector('img');
 
           testFixture3.addEventListener('avatar-loaded', function() {
@@ -60,6 +61,7 @@
         });
 
         test('test when google is set', function(done) {
+          this.timeout(10000);
           var image = testFixture5.querySelector('img');
 
           testFixture5.addEventListener('avatar-loaded', function() {
