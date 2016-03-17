@@ -45,6 +45,7 @@ class GcTabs {
   }
 
   attributChanged() {
+    // just do same thing if any of the arguments change
     this.ready();
   }
 
