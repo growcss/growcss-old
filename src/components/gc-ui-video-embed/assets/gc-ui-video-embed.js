@@ -1,6 +1,6 @@
 'use strict';
 
-class Class {
+class GcVideo {
   get behaviors() {
     return [GrowCss.VideoUrlParser, Polymer.IronResizableBehavior];
   }
@@ -88,5 +88,5 @@ class Class {
 }
 
 /*eslint-disable */
-Polymer(Class);
+Polymer(GcVideo);
 /*eslint-enable */

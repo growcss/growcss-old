@@ -1,6 +1,6 @@
 'use strict';
 
-class GridInlineElement {
+class GcGridInline {
   get behaviors() {
     return [...GrowCss.ScreenSizeBehavior];
   }
@@ -11,5 +11,5 @@ class GridInlineElement {
 }
 
 /*eslint-disable */
-Polymer(GridInlineElement);
+Polymer(GcGridInline);
 /*eslint-enable */

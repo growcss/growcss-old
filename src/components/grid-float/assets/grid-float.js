@@ -1,6 +1,6 @@
 'use strict';
 
-class GridFloatElement {
+class GcGridFloat {
   get behaviors() {
     return [...GrowCss.ScreenSizeBehavior];
   }
@@ -11,6 +11,6 @@ class GridFloatElement {
 }
 
 /*eslint-disable */
-Polymer(GridFloatElement);
+Polymer(GcGridFloat);
 /*eslint-enable */
 

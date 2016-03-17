@@ -1,6 +1,6 @@
 'use strict';
 
-class GridCol {
+class GcGridCol {
   beforeRegister() {
     this.is = 'grid-col';
     this.properties = {};
@@ -8,5 +8,5 @@ class GridCol {
 }
 
 /*eslint-disable */
-Polymer(GridCol);
+Polymer(GcGridCol);
 /*eslint-enable */
