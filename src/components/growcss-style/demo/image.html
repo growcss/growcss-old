@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>growcss-style image demo</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="@demo-path/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="@demo-path/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="@demo-path/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="@demo-path/paper-styles/demo-pages.html">
+    <link rel="import" href="@components-path/grid-block/grid-block.html">
+    <link rel="import" href="../growcss-style.html">
+
+    <style type="text/css" media="screen">
+      grid-col {
+        height: 150px!important;
+      }
+    </style>
+
+  </head>
+  <body unresolved>
+    <h2>Broken image</h2>
+    <p>Broken images are ugly. But they don’t always have to be. We can use CSS to apply styles to the <code>&lt;img&gt;</code> element to provide a better experience than the default.</p>
+    <demo-snippet>
+      <template>
+        <img src="//example.com/broken.jpg" class="broken" alt="Example">
+      </template>
+    </demo-snippet>
+
+    <h2>Image shapes</h2>
+    <p>Add classes to an <code>&lt;img&gt;</code> element to easily style images in any project.</p>
+    <demo-snippet>
+      <template>
+        <img src="http://satyr.io/100x100" class="rounded" alt="Example">
+        <img src="http://satyr.io/100x100" class="circle" alt="Example">
+        <img src="http://satyr.io/100x100" class="thumbnail" alt="Example">
+      </template>
+    </demo-snippet>
+  </body>
+</html>
