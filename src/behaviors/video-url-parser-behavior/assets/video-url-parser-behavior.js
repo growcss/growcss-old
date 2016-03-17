@@ -6,18 +6,8 @@ const GrowCss = GrowCss || {};
 
 const GcVideoUrlParser = {
   properties: {
-    parser: {
-      type: Object,
-      value: {},
-    },
-    provider: {
-      type: String,
-      value: '',
-    },
-    mediaType: {
-      type: String,
-      value: '',
-    },
+    provider: String,
+    mediaType: String,
   },
 
   registered() {
@@ -31,6 +21,8 @@ const GcVideoUrlParser = {
 
     this.provider = videourl.provider;
     this.mediaType = videourl.mediaType;
+
+    this.fire('video-parsed', true);
 
     return this.parser.create({
       videoInfo: videourl,

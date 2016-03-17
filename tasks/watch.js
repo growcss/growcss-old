@@ -6,10 +6,10 @@ module.exports = {
     files: ['src/components/**/assets/*.js', 'src/components/**/test/*.js', 'src/components/**/*.html', 'src/components/**/demo/*.html', 'src/components/**/test/*.html', 'src/components/**/assets/*.css'],
     tasks: [
       'eslint:components',
+      'copy:hash',
       'postcss:precompiled-shared',
       'postcss:precompiled',
       'babel:precompiled-components',
-      'uglify:precompiled',
       'cssmin:precompiled-components',
       'cssmin:precompiled-shared',
       'includes:testing-components',
