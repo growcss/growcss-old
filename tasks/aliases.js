@@ -57,5 +57,5 @@ module.exports = {
   ],
   'serve': [
     'exec:serve'
-  ]
+  ],
 };

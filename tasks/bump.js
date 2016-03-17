@@ -5,24 +5,28 @@ module.exports = {
   pre: {
     options: {
       files: ['package.json', 'bower.json'],
-      updateConfigs: [],
       commit: false,
       createTag: false,
+      commitMessage: 'pre-release: v%VERSION%',
+      commitFiles: ['package.json', 'bower.json'],
       push: false,
-      gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
-      globalReplace: false,
+      tagName: 'v%VERSION%',
+      tagMessage: 'Version %VERSION%',
+      push: false,
       prereleaseName: true,
-      regExp: false
     }
   },
   master: {
     options: {
       files: ['package.json', 'bower.json'],
-      updateConfigs: [],
       commit: false,
       createTag: false,
+      commitMessage: 'release: v%VERSION%',
+      commitFiles: ['package.json', 'bower.json'],
       push: false,
-      gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
+      tagName: 'v%VERSION%',
+      tagMessage: 'Version %VERSION%',
+      push: false,
     }
   }
 };
