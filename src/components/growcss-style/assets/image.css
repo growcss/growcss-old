@@ -1,3 +1,44 @@
+:root {
+  --growcss-responsive-image: {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    display: inline-block;
+  };
+}
+
+img {
+  @apply(--growcss-responsive-image);
+}
+
+img.broken {
+  width: 100%;
+  min-height: 50px;
+}
+
+img.broken::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  height: calc(100% + 10px);
+  width: 100%;
+  background: #fff;
+  border: 1px dotted #c8c8c8;
+}
+
+img.broken::after {
+  content: var(--growcss-broken-img-content, " Image '" attr(alt)) "' is broken. ";
+  display: block;
+  font-size: 16px;
+  position: absolute;
+  top: 16px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
 img.rounded {
   border-radius: 6px;
 }
