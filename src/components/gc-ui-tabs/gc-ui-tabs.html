@@ -21,11 +21,22 @@
       include "gc-ui-tabs/assets/gc-ui-tabs.css"
     </style>
 
-    <template is="dom-if" if={{default}}>
+    <template is="dom-if" if={{_default}}>
       <grid-container>
         <grid-flex>
           <grid-flex-col>
             <dl id="tabs" class="tabs"></dl>
+            <content></content>
+          </grid-flex-col>
+        </grid-flex>
+      </grid-container>
+    </template>
+
+    <template is="dom-if" if={{_thumbnailTabs}}>
+      <grid-container>
+        <grid-flex>
+          <grid-flex-col>
+            <grid-flex id="tabs" class="tabs"></grid-flex>
             <content></content>
           </grid-flex-col>
         </grid-flex>

@@ -1,32 +1,27 @@
-:host > ::content > grid-col,
-:host > ::content > grid-flex-col {
+:host {
   padding: 0 var(--grid-column-gutter-xsmall, $column-gutter-xsmall);
 }
 
 @media $small-up {
-  :host > ::content > grid-col,
-  :host > ::content > grid-flex-col {
+  :host {
     padding: 0 var(--grid-column-gutter-small, $column-gutter-small);
   }
 }
 
 @media $medium-up {
-  :host > ::content > grid-col,
-  :host > ::content > grid-flex-col {
+  :host {
     padding: 0 var(--grid-column-gutter-medium, $column-gutter-medium);
   }
 }
 
 @media $large-up {
-  :host > ::content > grid-col,
-  :host > ::content > grid-flex-col {
+  :host {
     padding: 0 var(--grid-column-gutter-large, $column-gutter-large);
   }
 }
 
 @media $xlarge-up {
-  :host > ::content > grid-col,
-  :host > ::content > grid-flex-col {
+  :host {
     padding: 0 var(--grid-column-gutter-xlarge, $column-gutter-xlarge);
   }
 }

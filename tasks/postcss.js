@@ -73,12 +73,17 @@ module.exports = {
           '$landscape': 'screen and (orientation:landscape)',
           // Retina
           '$retina': 'only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min$moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)',
-          // foundation column gutter
-          '$column-gutter-xsmall': '0.75rem',
-          '$column-gutter-small': '1.5rem',
-          '$column-gutter-medium': '2.25rem',
-          '$column-gutter-large': '3rem',
-          '$column-gutter-xlarge': '3.75rem',
+          // column gutter
+          // 0.75/2rem
+          '$column-gutter-xsmall': '0.375rem',
+          // 1.5/2rem
+          '$column-gutter-small': '0.75rem',
+          // 2.5/2rem
+          '$column-gutter-medium': '1.125rem',
+          // 3/2rem
+          '$column-gutter-large': '1.5rem',
+          // 3.75/2rem
+          '$column-gutter-xlarge': '1.875rem',
           // use these for margins and paddings
           '$margin-xsmall': '0.75rem',
           '$margin-small': '1.5rem',
