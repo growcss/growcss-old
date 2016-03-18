@@ -37,11 +37,12 @@
   margin: auto;
 }
 
-:host ::content .tabs > dd,
+:host ::content .tabs > dd > span,
 :host ::content .accordion-navigation > span {
   padding: 12px 24px;
   cursor: pointer;
   position: relative;
+  display: block;
 }
 
 :host ::content .tabs > dd {
@@ -69,4 +70,37 @@
 
 :host.mode-accordion ::content .accordion-navigation.active > span::after {
   content: "-";
+}
+
+:host.mode-thumbnail ::content .tabs > grid-flex-col {
+  cursor: pointer;
+}
+
+:host.mode-thumbnail ::content .tabs > grid-flex-col > img {
+  display: block;
+  width: 100%;
+}
+
+@media $small-up {
+  :host.mode-thumbnail ::content gc-ui-tab {
+    padding: 24px $column-gutter-small;
+  }
+}
+
+@media $medium-up {
+  :host.mode-thumbnail ::content gc-ui-tab {
+    padding: 24px  $column-gutter-medium;
+  }
+}
+
+@media $large-up {
+  :host.mode-thumbnail ::content gc-ui-tab {
+    padding: 24px $column-gutter-large;
+  }
+}
+
+@media $xlarge-up {
+  :host.mode-thumbnail ::content gc-ui-tab {
+    padding: 24px  $column-gutter-xlarge;
+  }
 }

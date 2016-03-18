@@ -14,11 +14,15 @@ class GcTabs {
         value: false,
       },
       mode: String,
-      default: Boolean,
+      _default: Boolean,
+      _thumbnailTabs: {
+        type: Boolean,
+        value: false,
+      },
     };
 
     this.listeners = {
-      'iron-resize': 'handleResize',
+      'iron-resize': '_handleResize',
     };
   }
 
@@ -27,20 +31,31 @@ class GcTabs {
   }
 
   ready() {
-    this.default = !this.fullwidth;
+    if (this.mode === 'thumbnail') {
+      this._thumbnailTabs = (this.mode === 'thumbnail');
+    } else {
+      this._default = !this.fullwidth;
+    }
 
     this.classList.add('mode-tab');
 
     this.async(() => {
-      this.querySelector('#tabs').innerHTML = this.createTabsList();
-
-      if (this.mode !== 'vertical') {
-        this.createAccordionNavigation();
+      if (this.mode === 'thumbnail') {
+        this.$$('#tabs').innerHTML = this._createFlexTabsList();
+      } else {
+        this.$$('#tabs').innerHTML = this._createTabsList();
       }
 
-      this.setActiveTab();
-      this.clickHandler();
-      this.handleResize();
+      if (this.mode !== 'vertical') {
+        this._createAccordionNavigation();
+      }
+
+      if (this.mode !== 'thumbnail') {
+        this._setActiveTab();
+      }
+
+      this._clickHandler();
+      this._handleResize();
     }, 50);
   }
 
@@ -49,14 +64,24 @@ class GcTabs {
     this.ready();
   }
 
-  handleResize() {
+  _handleResize() {
     if (this.mode === 'accordion') {
-      this.changeToAccordionMode();
+      this._changeToAccordionMode();
       return;
     }
 
     if (this.mode === 'vertical') {
-      this.changeToVerticalAccordionMode();
+      this._changeToVerticalAccordionMode();
+      return;
+    }
+
+    if (this.mode === 'thumbnail') {
+      if (window.innerWidth <= 960) {
+        this._changeToAccordionMode();
+      } else {
+        this._changeToThumbnailTabMode();
+      }
+
       return;
     }
 
@@ -73,13 +98,13 @@ class GcTabs {
     }
 
     if (this.$$('#tabs').offsetWidth < tabswidth) {
-      this.changeToAccordionMode();
+      this._changeToAccordionMode();
     } else {
-      this.changeToTabMode();
+      this._changeToTabMode();
     }
   }
 
-  changeToTabMode() {
+  _changeToTabMode() {
     if (!this.accordionmode) {
       return;
     }
@@ -89,22 +114,40 @@ class GcTabs {
     this.accordionmode = false;
   }
 
-  changeToAccordionMode() {
+  _changeToAccordionMode() {
     if (this.accordionmode) {
       return;
     }
 
     this.classList.add('mode-accordion');
-    this.classList.remove('mode-tab');
+
+    if (this.mode === 'thumbnail') {
+      this.classList.remove('mode-thumbnail');
+      this.classList.remove('mode-tab');
+    } else {
+      this.classList.remove('mode-tab');
+    }
+
     this.accordionmode = true;
   }
 
-  changeToVerticalAccordionMode() {
+  _changeToVerticalAccordionMode() {
     this.classList.add('mode-accordion-vertical');
     this.classList.remove('mode-tab');
   }
 
-  createTabsList() {
+  _changeToThumbnailTabMode() {
+    this.classList.add('mode-thumbnail');
+
+    if (!this.accordionmode) {
+      return;
+    }
+
+    this.classList.remove('mode-accordion');
+    this.accordionmode = false;
+  }
+
+  _createTabsList() {
     let ddList = '';
     let i = 0;
     const tabs = this.querySelectorAll('gc-ui-tab');
@@ -112,13 +155,45 @@ class GcTabs {
     for (; i < tabs.length; i++) {
       const tab = tabs[i].getAttribute('title');
 
-      ddList += `<dd data-index="${i}">${tab}</dd>`;
+      ddList += `<dd data-index="${i}"><span>${tab}</span></dd>`;
     }
 
     return ddList;
   }
 
-  createAccordionNavigation() {
+  _createFlexTabsList() {
+    let blockList = '';
+    let i = 0;
+    const tabs = this.querySelectorAll('gc-ui-tab');
+    const images = this._createImages();
+    const l = tabs.length;
+
+    for (; i < l; i++) {
+      const tab = tabs[i].getAttribute('title');
+      /*eslint-disable */
+      blockList += `<grid-flex-col class="small-${l+1}" data-index="${i}"><span>${tab}</span> ${images[i]}</grid-flex-col>`;
+      /*eslint-enable */
+    }
+
+    return blockList;
+  }
+
+  _createImages() {
+    let i = 0;
+    const images = [];
+    const tabs = this.querySelectorAll('gc-ui-tab');
+
+    for (; i < tabs.length; i++) {
+      const src = tabs[i].getAttribute('thumbnail');
+      const title = tabs[i].getAttribute('title');
+
+      images.push(`<img src="${src}" alt="${title}"/>`);
+    }
+
+    return images;
+  }
+
+  _createAccordionNavigation() {
     let i = 0;
     const tabs = this.querySelectorAll('gc-ui-tab');
 
@@ -137,9 +212,10 @@ class GcTabs {
     }
   }
 
-  activeTabAndContent(index) {
+  _activeTabAndContent(index) {
     const tabsContent = this.querySelectorAll('gc-ui-tab');
-    const tabs = this.querySelectorAll('#tabs dd');
+    const tabs = this._getTabs();
+
     const accordion = this.querySelectorAll('.accordion-navigation');
     let i = 0;
 
@@ -148,6 +224,10 @@ class GcTabs {
 
       if (this.mode !== 'vertical') {
         accordion[i].classList.remove('active');
+      }
+
+      if (this.mode === 'thumbnail') {
+        tabs[i].querySelector('img').setAttribute('style', 'display: none');
       }
 
       tabsContent[i].classList.remove('active');
@@ -164,25 +244,36 @@ class GcTabs {
     this.classList.remove('has-no-active');
   }
 
-  clickHandler() {
-    const tabs = this.querySelectorAll('#tabs dd');
+  _clickHandler() {
+    const tabs = this._getTabs();
+
     const accordion = this.querySelectorAll('.accordion-navigation');
     let i = 0;
 
     for (; i < tabs.length; i++) {
       tabs[i].addEventListener('click', (event) => {
-        this.activeTabAndContent(event.target.getAttribute('data-index'));
+        this._activeTabAndContent(event.currentTarget.getAttribute('data-index'));
       });
 
       if (this.mode !== 'vertical') {
         accordion[i].addEventListener('click', (event) => {
-          this.activeTabAndContent(event.target.parentElement.getAttribute('data-index'));
+          this._activeTabAndContent(event.currentTarget.getAttribute('data-index'));
         });
       }
     }
   }
 
-  getInitialActiveTab() {
+  _setActiveTab() {
+    const active = this._getInitialActiveTab();
+
+    if (!active) {
+      this.classList.add('has-no-active');
+    } else {
+      this._activeTabAndContent(active - 1);
+    }
+  }
+
+  _getInitialActiveTab() {
     const active = this.active;
 
     if (typeof active === 'undefined') {
@@ -192,14 +283,12 @@ class GcTabs {
     return parseInt(active, 10);
   }
 
-  setActiveTab() {
-    const active = this.getInitialActiveTab();
-
-    if (!active) {
-      this.classList.add('has-no-active');
-    } else {
-      this.activeTabAndContent(active - 1);
+  _getTabs() {
+    if (this.mode === 'thumbnail') {
+      return this.querySelectorAll('#tabs grid-flex-col');
     }
+
+    return this.querySelectorAll('#tabs dd');
   }
 }
 

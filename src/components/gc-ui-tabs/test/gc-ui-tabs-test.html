@@ -69,6 +69,16 @@
       </template>
     </test-fixture>
 
+    <test-fixture id="gc-ui-tabs-thumbnail-fixture">
+      <template>
+        <gc-ui-tabs mode="thumbnail">
+          <gc-ui-tab title="Tab 1" thumbnail="http://satyr.io/400x400">
+            <h3>First panel content goes here...</h3>
+          </gc-ui-tab>
+        </gc-ui-tabs>
+      </template>
+    </test-fixture>
+
     <script>
       suite('<gc-ui-tabs>', function() {
         var testFixture;
@@ -76,6 +86,7 @@
         var testFixture3;
         var testFixture4;
         var testFixture5;
+        var testFixture6;
 
         setup(function() {
           testFixture = fixture('gc-ui-tabs-fixture');
@@ -83,26 +94,15 @@
           testFixture3 = fixture('gc-ui-tabs-mode-vertical-fixture');
           testFixture4 = fixture('gc-ui-tabs-active-fixture');
           testFixture5 = fixture('gc-ui-tabs-more-tabs-fixture');
+          testFixture6 = fixture('gc-ui-tabs-thumbnail-fixture');
         });
 
         test('test setup', function(done) {
           expect(document.querySelector('gc-ui-tabs')).to.be.ok;
 
           setTimeout(function () {
-              var tabs = testFixture.$$('#tabs');
-              expect(tabs.querySelectorAll('dd').length).to.be.equal(1);
+              expect(testFixture.querySelectorAll('dd').length).to.be.equal(1);
               expect(testFixture.querySelectorAll('.accordion-navigation').length).to.be.equal(1);
-            done();
-          }, 1000);
-        });
-
-        test('test if more than on tab is created.', function(done) {
-          expect(document.querySelector('gc-ui-tabs')).to.be.ok;
-
-          setTimeout(function () {
-              var tabs = testFixture.$$('#tabs');
-              expect(testFixture5.querySelectorAll('dd').length).to.be.equal(3);
-              expect(testFixture5.querySelectorAll('.accordion-navigation').length).to.be.equal(3);
             done();
           }, 1000);
         });
@@ -124,6 +124,22 @@
             expect(testFixture4.className).to.be.equal('mode-tab has-no-active');
             done();
           }, 1000);
+        });
+
+        test('test if more than on tab is created.', function(done) {
+          expect(document.querySelector('gc-ui-tabs')).to.be.ok;
+
+          setTimeout(function () {
+              var tabs = testFixture5.$$('#tabs');
+              expect(tabs.querySelectorAll('dd').length).to.be.equal(3);
+              expect(testFixture5.querySelectorAll('.accordion-navigation').length).to.be.equal(3);
+            done();
+          }, 1000);
+        });
+
+        test('test if gc-ui-tabs has class "mode-thumbnail".', function() {
+          // if the screen is small then <= 960 show mode-accordion class
+          expect(testFixture6.className).to.be.equal('mode-accordion');
         });
       });
     </script>
