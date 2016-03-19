@@ -1,5 +1,5 @@
 {
-  "name": "@name",
+  "name": "gc-ui-breadcrumb",
   "version": "1.0.0",
   "authors": [
     "Daniel Bannert <d.bannert@anolilab.de>"
@@ -10,11 +10,11 @@
     "web-components",
     "polymer",
     "components"
-    "@name"
+    "gc-ui-breadcrumb"
   ],
-  "main": "@name.html",
+  "main": "gc-ui-breadcrumb.html",
   "license": "MIT",
-  "homepage": "https://github.com/growcss/@name/",
+  "homepage": "https://github.com/growcss/gc-ui-breadcrumb/",
   "ignore": [
     "/.*",
     "/test/",

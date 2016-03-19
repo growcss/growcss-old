@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>gc-ui-tab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <script src="@test-path/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="@test-path/web-component-tester/browser.js"></script>
+
+    <link rel="import" href="@test-path/test-fixture/test-fixture.html">
+    <link rel="import" href="../gc-ui-tab.html">
+
+  </head>
+  <body unresolved>
+    <test-fixture id="gc-ui-tab-fixture">
+      <template>
+        <gc-ui-tab></gc-ui-tab>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('<gc-ui-tab>', function() {
+        var testFixture;
+
+        setup(function() {
+          testFixture = fixture('gc-ui-tab-fixture');
+        });
+
+        test('test setup', function() {
+          expect(document.querySelector('gc-ui-tab')).to.be.ok;
+        });
+      });
+    </script>
+
+  </body>
+</html>

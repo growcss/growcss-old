@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>gc-ui-breadcrumb-step</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><script src="../../../webcomponentsjs/webcomponents.min.js"></script><script src="../../../web-component-tester/browser.js"></script><link rel="import" href="../../../test-fixture/test-fixture.html"><link rel="import" href="../gc-ui-breadcrumb-step.html"></head><body unresolved><test-fixture id="gc-ui-breadcrumb-step-fixture"><template><gc-ui-breadcrumb-step>home</gc-ui-breadcrumb-step></template></test-fixture><script>suite('<gc-ui-breadcrumb-step>', function() {
+        var testFixture;
+
+        setup(function() {
+          testFixture = fixture('gc-ui-breadcrumb-step-fixture');
+        });
+
+        test('test setup', function() {
+          expect(document.querySelector('gc-ui-breadcrumb-step')).to.be.ok;
+          expect(testFixture.classList.contains('breadcrumb-step')).to.be.true;
+        });
+      });</script></body></html>

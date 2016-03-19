@@ -1,0 +1,30 @@
+<link rel="import" href="@path/polymer/polymer.html">
+<link rel="import" href="gc-ui-breadcrumb-step.html">
+
+<!--
+    <gc-ui-breadcrumb>`element <text>.
+
+    Example:
+        <gc-ui-breadcrumb></gc-ui-breadcrumb>
+
+    @element gc-ui-breadcrumb
+    @demo demo/index.html
+-->
+
+<dom-module id="gc-ui-breadcrumb">
+  <template>
+    <style>
+      include "gc-ui-breadcrumb/assets/gc-ui-breadcrumb.css"
+    </style>
+
+    <nav aria-label="{{label}}" role="navigation">
+      <ul class="breadcrumbs">
+        <content></content>
+      </ul>
+    </nav>
+  </template>
+
+  <script>
+    include "gc-ui-breadcrumb/assets/gc-ui-breadcrumb.js"
+  </script>
+</dom-module>
