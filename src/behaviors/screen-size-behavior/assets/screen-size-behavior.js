@@ -51,10 +51,11 @@ const GcScreenSizeBehavior = {
     this['screen-width'] = newWidth;
     this['screen-format'] = screenFormat;
 
+    // this.classList.add(`screen-${screenFormat}`);
+
     if (this.log) {
       /*eslint-disable */
-      console.log(`width : ${newWidth}`);
-      console.log(`screenFormat = ${screenFormat}`);
+      console.log(`width : ${newWidth}`, `screenFormat = ${screenFormat}`);
       /*eslint-enable */
     }
   },
@@ -72,7 +73,11 @@ const GcScreenSizeBehavior = {
       return 'xlarge';
     }
 
-    return 'mega';
+    return 'xlarge';
+  },
+
+  ready() {
+    this._onResize();
   },
 
   attached() {
