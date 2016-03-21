@@ -175,7 +175,7 @@ class GcAvatar {
 
   addImage(image) {
     this.querySelector('img').src = image;
-    this.fire('avatar-loaded', true);
+    this.fire('avatar-iframe-loaded', true);
   }
 }
 

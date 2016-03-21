@@ -93,7 +93,7 @@
           this.timeout(10000);
           var image = testFixture3.querySelector('img');
 
-          testFixture3.addEventListener('avatar-loaded', function() {
+          testFixture3.addEventListener('avatar-iframe-loaded', function() {
             expect(image.getAttribute('src')).to.be.equal('https://scontent.xx.fbcdn.net/hprofile-xat1/v/t1.0-1/p80x80/12208495_10102454385528521_4749095086285673716_n.jpg?oh=9d2933ea53e669b45590e7135bfb18e6&oe=5789E324');
             expect(image.getAttribute('height')).to.be.equal('80');
             expect(image.getAttribute('width')).to.be.equal('80');
@@ -116,7 +116,7 @@
           this.timeout(10000);
           var image = testFixture5.querySelector('img');
 
-          testFixture5.addEventListener('avatar-loaded', function() {
+          testFixture5.addEventListener('avatar-iframe-loaded', function() {
             expect(image.getAttribute('src')).to.be.equal('https://lh3.googleusercontent.com/-2R1JMAIrLR8/AAAAAAAAAAI/AAAAAAAAAAA/TkuTJtCO2xU/s80-c/113476428183997615012.jpg');
             expect(image.getAttribute('height')).to.be.equal('80');
             expect(image.getAttribute('width')).to.be.equal('80');
