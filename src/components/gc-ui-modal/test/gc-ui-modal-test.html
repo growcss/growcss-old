@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>gc-ui-modal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <script src="@test-path/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="@test-path/web-component-tester/browser.js"></script>
+
+    <link rel="import" href="@test-path/test-fixture/test-fixture.html">
+    <link rel="import" href="../gc-ui-modal.html">
+
+  </head>
+  <body unresolved>
+    <test-fixture id="gc-ui-modal-fixture">
+      <template>
+        <gc-ui-modal></gc-ui-modal>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('<gc-ui-modal>', function() {
+        var testFixture;
+
+        setup(function() {
+          testFixture = fixture('gc-ui-modal-fixture');
+        });
+
+        test('test setup', function() {
+          expect(document.querySelector('gc-ui-modal')).to.be.ok;
+        });
+      });
+    </script>
+
+  </body>
+</html>
