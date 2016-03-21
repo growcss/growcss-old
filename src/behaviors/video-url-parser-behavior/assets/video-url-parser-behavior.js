@@ -31,4 +31,4 @@ const GcVideoUrlParser = {
   },
 };
 
-GrowCss.VideoUrlParser = GcVideoUrlParser;
+GrowCss.VideoUrlParserBehavior = GcVideoUrlParser;

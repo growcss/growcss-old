@@ -18,7 +18,7 @@ class GrowCssImagesLoaded extends GrowCssEventEmitter {
 
     // use elem as selector string
     if (typeof elem === 'string') {
-      elem = document.querySelectorAll(elem);
+      elem = this.querySelectorAll(elem);
     }
 
     this.elements = this.createArray(elem);
@@ -207,4 +207,4 @@ const GcImagesLoaded = {
   },
 };
 
-GrowCss.ImagesLoaded = GcImagesLoaded;
+GrowCss.ImagesLoadedBehavior = GcImagesLoaded;
