@@ -43,7 +43,7 @@
     "cookies-js": "Cookies#~1.2.2",
     "eventEmitter": "~4.3.0",
     "jsVideoUrlParser": "js-video-url-parser#~0.1.6",
-    "normalize-css": "normalize.css#~3.0.3",
+    "normalize-css": "normalize.css#~4.0.0",
     "JavaScript-MD5": "blueimp/JavaScript-MD5#^2.3.0"
   },
   "devDependencies": {
