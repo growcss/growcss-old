@@ -1,12 +1,18 @@
 'use strict';
 
-class Class {
-  get behavior() {
-    return [Polymer.IronResizableBehavior, ...GrowCss.ModalBehavior, GrowCss.MidwayBehavior];
+class GcModal {
+  get behaviors() {
+    return [...GrowCss.ScreenSizeBehavior, ...GrowCss.ModalBehavior];
   }
+
   beforeRegister() {
     this.is = 'gc-ui-modal';
-    this.properties = {};
+    this.properties = {
+      'modal-namespace': {
+        type: String,
+        value: 'gc-ui-modal',
+      },
+    };
 
     this.listeners = {
       'iron-resize': '_onResize',
@@ -20,19 +26,19 @@ class Class {
   factoryImpl() {}
 
   attached() {
-    this.center(this);
+    this.getModal(this);
   }
 
   detached() {}
+
   attributChanged() {
 
   }
 
   _onResize() {
-    this.center(this);
   }
 }
 
 /*eslint-disable */
-Polymer(Class);
+Polymer(GcModal);
 /*eslint-enable */

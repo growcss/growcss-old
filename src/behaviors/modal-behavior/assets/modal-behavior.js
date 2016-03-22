@@ -5,6 +5,33 @@ const GrowCss = GrowCss || {};
 /*eslint-enable */
 
 const GcModal = {
+  properties: {
+    hashTracking: {
+      type: Boolean,
+      value: true,
+    },
+    closeOnConfirm: {
+      type: Boolean,
+      value: true,
+    },
+    closeOnCancel: {
+      type: Boolean,
+      value: true,
+    },
+    closeOnEscape: {
+      type: Boolean,
+      value: true,
+    },
+    closeOnOutsideClick: {
+      type: Boolean,
+      value: true,
+    },
+    'modal-namespace': {
+      type: String,
+      value: 'growcss-modal',
+    },
+  },
+
   keyBindings: {
     esc: 'close',
   },
@@ -14,6 +41,7 @@ const GcModal = {
    */
   close() {
     this._shown = false;
+    this.modal.close();
   },
 
   /**
@@ -30,22 +58,15 @@ const GcModal = {
     this._shown = !this._shown;
   },
 
-  /**
-   * change handler which will either call show or close based on the shown value.
-   */
-  // _shownHandler(newVal, oldVal) {
-  //   const func = newVal ? show : close;
-
-  //   if (oldVal === undefined) {
-  //     return;
-  //   }
-
-  //   func.call(this);
-  // },
-
-  attached() {
-
+  getModal(element) {
+    return new GrowCssModal(element, {
+      namespace: this['modal-namespace'],
+    });
   },
 };
 
-GrowCss.ModalBehavior = [Polymer.IronA11yKeysBehavior, GcModal];
+GrowCss.ModalBehavior = [
+  Polymer.IronA11yKeysBehavior,
+  GrowCss.EventEmitterBehavior,
+  GcModal,
+];

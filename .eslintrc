@@ -19,6 +19,8 @@
     "GrowCssBackground": true,
     "GrowCssLoadingImage": true,
     "GrowCssImagesLoaded": true,
+    "GrowCssModal": true,
+    "GrowCssMidway": true,
     "md5": true,
     "callback": true,
   }

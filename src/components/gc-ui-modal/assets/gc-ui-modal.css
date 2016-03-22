@@ -1,0 +1,21 @@
+:host {
+  outline: 0;
+  padding: 25px;
+  background: #fff;
+}
+
+.gc-ui-modal-overlay {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(43,46,56,.9);
+}
+
+:host.gc-ui-modal-is-opened {
+  z-index: 10000;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}

@@ -18,15 +18,22 @@
       var center = this.querySelector('.center-test');
       var vertical = this.querySelector('.vertical-test');
       var horizontal = this.querySelector('.horizontal-test');
+      var centerAll = this.querySelectorAll('.center-all-test');
 
       if (center) {
         this.center(center);
       }
+
       if (vertical) {
         this.centerVertical(vertical);
       }
+
       if (horizontal) {
         this.centerHorizontal(horizontal);
+      }
+
+      if (centerAll) {
+        this.center(centerAll);
       }
     }
   });

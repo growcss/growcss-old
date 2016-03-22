@@ -40,6 +40,16 @@
         display: block;
         z-index: 1;
       }
+
+      .center-all-test {
+        height: 50px;
+        width: 50px;
+        background: red;
+        color: #fff;
+        text-align: center;
+        display: block;
+        z-index: 1;
+      }
     </style>
 
   </head>
@@ -62,16 +72,28 @@
       </template>
     </test-fixture>
 
+    <test-fixture id="midway-position-center-all-fixture">
+      <template>
+        <midway-position>
+          <div class="center-all-test">center all</div>
+          <div class="center-all-test">center all</div>
+          <div class="center-all-test">center all</div>
+        </midway-position>
+      </template>
+    </test-fixture>
+
     <script>
       suite('<midway-position>', function() {
         var testFixture;
         var testFixture2;
         var testFixture3;
+        var testFixture4;
 
         setup(function() {
           testFixture = fixture('midway-position-center-fixture');
           testFixture2 = fixture('midway-position-horizontal-fixture');
           testFixture3 = fixture('midway-position-vertical-fixture');
+          testFixture4 = fixture('midway-position-center-all-fixture');
         });
 
         test('test setup', function() {
@@ -109,6 +131,21 @@
           expect(vertical.style.position).to.be.equal('absolute');
           expect(vertical.style.marginTop).to.be.equal('-100px');
           expect(vertical.style.top).to.be.equal('50%');
+        });
+
+        test('test if elements are centered and have all css style', function() {
+          var all = testFixture4.querySelectorAll('.center-all-test');
+
+          for (var i = all.length - 1; i >= 0; i--) {
+            expect(all[i].classList.contains('midway-position-horizontal')).to.be.true;
+            expect(all[i].classList.contains('midway-position-vertical')).to.be.true;
+            expect(all[i].style.marginLeft).to.be.equal('-25px');
+            expect(all[i].style.display).to.be.equal('inline');
+            expect(all[i].style.position).to.be.equal('absolute');
+            expect(all[i].style.left).to.be.equal('50%');
+            expect(all[i].style.marginTop).to.be.equal('-25px');
+            expect(all[i].style.top).to.be.equal('50%');
+          }
         });
       });
     </script>
