@@ -10,7 +10,6 @@
     "GrowCss": true,
     "Polymer": true,
     "Cookies": true,
-    "$$": true,
     "Array": true,
     "EventEmitter": true,
     "GrowCssEventEmitter": true,

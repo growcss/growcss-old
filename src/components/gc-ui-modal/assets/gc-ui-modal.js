@@ -2,7 +2,7 @@
 
 class GcModal {
   get behaviors() {
-    return [...GrowCss.ScreenSizeBehavior, ...GrowCss.ModalBehavior];
+    return [...GrowCss.ScreenSizeBehavior, ...GrowCss.ModalBehavior, GrowCss.MidwayBehavior];
   }
 
   beforeRegister() {
@@ -15,27 +15,52 @@ class GcModal {
     };
 
     this.listeners = {
-      'iron-resize': '_onResize',
+      'iron-resize': '_onModalResize',
     };
   }
 
   // Define other lifecycle methods as you need
   registered() {}
   created() {}
-  ready() {}
+
+  ready() {
+  }
+
   factoryImpl() {}
 
   attached() {
     this.getModal(this);
+
+    if (this['screen-format'] !== 'xsmall') {
+      this.center(this);
+    }
+
+    this._onModalResize();
   }
 
   detached() {}
 
   attributChanged() {
-
+    this.attached();
   }
 
-  _onResize() {
+  _onModalResize() {
+    if (this['screen-format'] === 'xsmall') {
+      const newWidth = window.innerWidth;
+      const comuted = window.getComputedStyle(this, null);
+      const width = (
+        newWidth -
+        parseInt(comuted.getPropertyValue('padding-right'), 10) -
+        parseInt(comuted.getPropertyValue('padding-left'), 10)
+      );
+
+      this.style.width = `${width}px`;
+      this.style.left = '0px';
+      this.centerVertical(this);
+    } else {
+      this.style.width = null;
+      this.style.left = '50%';
+    }
   }
 }
 

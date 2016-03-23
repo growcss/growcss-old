@@ -6,10 +6,6 @@ const GrowCss = GrowCss || {};
 
 const GcModal = {
   properties: {
-    hashTracking: {
-      type: Boolean,
-      value: true,
-    },
     closeOnConfirm: {
       type: Boolean,
       value: true,
@@ -33,35 +29,28 @@ const GcModal = {
   },
 
   keyBindings: {
-    esc: 'close',
+    esc: '_close',
   },
 
   /**
    * closes the modal
    */
-  close() {
-    this._shown = false;
+  _close() {
     this.modal.close();
   },
 
-  /**
-   * opens the modal
-   */
-  show() {
-    this._shown = true;
-  },
-
-  /**
-   * opens or closes the modal
-   */
-  toggle() {
-    this._shown = !this._shown;
-  },
-
   getModal(element) {
-    return new GrowCssModal(element, {
+    const modal = new GrowCssModal(element, {
       namespace: this['modal-namespace'],
+      closeOnConfirm: this.closeOnConfirm,
+      closeOnCancel: this.closeOnCancel,
+      closeOnEscape: this.closeOnEscape,
+      closeOnOutsideClick: this.closeOnOutsideClick,
     });
+
+    this.modal = modal;
+
+    return modal;
   },
 };
 

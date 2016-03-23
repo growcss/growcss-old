@@ -1,7 +1,10 @@
 :host {
   outline: 0;
-  padding: 25px;
+  padding: 32px;
   background: #fff;
+  width: 400px;
+  height: 200px;
+  display: block;
 }
 
 .gc-ui-modal-overlay {
@@ -18,4 +21,20 @@
   z-index: 10000;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+:host ::content > .gc-ui-modal.close {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  width: 30px;
+  border: 0;
+  background: #000;
+  color: #fff;
+}
+
+:host ::content > button {
+  cursor: pointer;
 }

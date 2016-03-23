@@ -5,7 +5,8 @@ module.exports = {
   options: {
     sourceMap: false,
     presets: [
-      'es2015'
+      'es2015',
+      'stage-0'
     ]
   },
   'precompiled-components': {

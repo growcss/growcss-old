@@ -9,15 +9,27 @@
       var center = this.querySelector('.center-test');
       var vertical = this.querySelector('.vertical-test');
       var horizontal = this.querySelector('.horizontal-test');
+      var centerAll = this.querySelectorAll('.center-all-test');
+      var center2sizes = this.querySelectorAll('.center-2-sizes-test');
 
       if (center) {
         this.center(center);
       }
+
       if (vertical) {
         this.centerVertical(vertical);
       }
+
       if (horizontal) {
         this.centerHorizontal(horizontal);
+      }
+
+      if (centerAll) {
+        this.center(centerAll);
+      }
+
+      if (center2sizes) {
+        this.center(center2sizes);
       }
     }
   });</script>

@@ -1,5 +1,11 @@
 /* eslint-disable no-unused-vars */
 class GrowCssMidway {
+  constructor(base) {
+    this.base = base || 16;
+
+    return this;
+  }
+
 /* eslint-enable no-unused-vars */
   center(element) {
     this.centerHorizontal(element);
@@ -17,8 +23,9 @@ class GrowCssMidway {
 
     for (i = elements.length - 1; i >= 0; i--) {
       const el = elements[i];
+      const number = this._getAbsoluteWidth(el) / 2 / this.base;
       const position = {
-        marginLeft: `${-this._getAbsoluteWidth(el) / 2}px`,
+        marginLeft: `${-number}rem`,
       };
 
       el.classList.add('midway-position-horizontal');
@@ -38,8 +45,9 @@ class GrowCssMidway {
 
     for (i = elements.length - 1; i >= 0; i--) {
       const el = elements[i];
+      const number = this._getAbsoluteHeight(el) / 2 / this.base;
       const position = {
-        marginTop: `${-this._getAbsoluteHeight(el) / 2}px`,
+        marginTop: `${-number}rem`,
       };
 
       el.classList.add('midway-position-vertical');
@@ -59,7 +67,7 @@ class GrowCssMidway {
     const styles = window.getComputedStyle(element);
     const margin = parseFloat(styles.marginLeft) + parseFloat(styles.marginRight);
 
-    return isNaN(margin) ? element.offsetHeight : Math.ceil(element.offsetHeight + margin);
+    return isNaN(margin) ? element.offsetWidth : Math.ceil(element.offsetWidth + margin);
   }
 
   _setStyles(element, styles) {

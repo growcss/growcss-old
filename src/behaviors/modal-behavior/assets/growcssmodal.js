@@ -7,7 +7,7 @@ class GrowCssModal extends GrowCssEventEmitter {
     this.element = element;
     this.options = options;
 
-    let overlay = document.querySelector(this._namespacify('overlay'));
+    let overlay = document.querySelector(`.${this._namespacify('overlay')}`);
 
     if (overlay === null) {
       overlay = this._createOverlay();
@@ -16,11 +16,14 @@ class GrowCssModal extends GrowCssEventEmitter {
 
     this.element.classList.add(this._namespacify('is', 'initialized'));
     this.element.classList.add(this._namespacify('is', 'closed'));
+    this.element.classList.add(this.options.namespace);
+    this.element.setAttribute('aria-hidden', 'true');
     this._setStyles(this.element, {
-      display: 'none',
+      visibility: 'hidden',
     });
     this.element.setAttribute('tabindex', '-1');
 
+    this._createCloseButton();
     this._addModalEventlistners();
     this._addClickListnersOnOpenButtons();
   }
@@ -29,79 +32,105 @@ class GrowCssModal extends GrowCssEventEmitter {
    * Opens a modal window.
    */
   open(id) {
-    const midway = new GrowCssMidway;
     const element = document.getElementById(id);
-    const overlay = document.getElementsByClassName(this._namespacify('overlay'));
+    const overlay = document.querySelector(`.${this._namespacify('overlay')}`);
 
     element.classList.remove(this._namespacify('is', 'closed'));
     element.classList.add(this._namespacify('is', 'opened'));
+    element.setAttribute('aria-hidden', 'false');
     this._setStyles(element, {
+      visibility: 'visible',
+    });
+
+    overlay.classList.remove(this._namespacify('is', 'closed'));
+    overlay.classList.add(this._namespacify('is', 'opened'));
+    this._setStyles(overlay, {
       display: 'block',
     });
 
-    overlay[0].classList.remove(this._namespacify('is', 'closed'));
-    overlay[0].classList.add(this._namespacify('is', 'opened'));
-    this._setStyles(overlay[0], {
-      display: 'block',
-    });
+    element.focus();
+    window.location.hash = id;
 
-    midway.center(element);
+    this.fire(this._namespacify('is', 'opened'));
   }
 
   /**
    * Closes a modal window.
-   * @param {String} reason
    */
-  close() {}
+  close() {
+    const element = document.querySelector(
+      `.${this.options.namespace}.${this._namespacify('is', 'opened')}`
+    );
+    const overlay = document.querySelector(
+      `.${this._namespacify('overlay')}.${this._namespacify('is', 'opened')}`
+    );
+
+    element.classList.remove(this._namespacify('is', 'opened'));
+    element.classList.add(this._namespacify('is', 'closed'));
+    element.setAttribute('aria-hidden', 'true');
+    this._setStyles(element, {
+      visibility: 'hidden',
+    });
+
+    overlay.classList.remove(this._namespacify('is', 'opened'));
+    overlay.classList.add(this._namespacify('is', 'closed'));
+    this._setStyles(overlay, {
+      display: 'none',
+    });
+
+    this.state = 'closed';
+    this.fire(this._namespacify('is', 'closed'));
+  }
 
   /**
    * Destroys a modal.
    */
   destroy() {}
 
-  /**
-   * Returns a current state of a modal.
-   * @returns {String}
-   */
-  getState() {
-    return this.state;
-  }
-
   _addModalEventlistners() {
+    const closeButton = this.element.querySelector(`.${this.options.namespace}.close`);
+    const cancelButton = this.element.querySelector(`.${this.options.namespace}.cancel`);
+    const confirmButton = this.element.querySelector(`.${this.options.namespace}.confirm`);
+    const overlay = document.querySelector(`.${this._namespacify('overlay')}`);
+
     // Add the event listener for the close button
-    this.listen(`click.${this.options.namespace}.close`, (event) => {
+    closeButton.addEventListener('click', (event) => {
       event.preventDefault();
 
       this.close();
     });
 
-    // Add the event listener for the cancel button
-    this.listen(`click.${this.options.namespace}.cancel`, (event) => {
-      event.preventDefault();
+    if (cancelButton) {
+      // Add the event listener for the cancel button
+      cancelButton.addEventListener('click', (event) => {
+        event.preventDefault();
 
-      this.fire('confirmation');
+        this.fire(this._namespacify('confirmation'));
 
-      if (this.options.closeOnCancel) {
-        this.close('confirmation');
-      }
-    });
+        if (this.options.closeOnCancel) {
+          this.close();
+        }
+      });
+    }
 
-    // Add the event listener for the confirm button
-    this.listen(`click.${this.options.namespace}.confirm`, (event) => {
-      event.preventDefault();
+    if (confirmButton) {
+      // Add the event listener for the confirm button
+      confirmButton.addEventListener('click', (event) => {
+        event.preventDefault();
 
-      this.fire('cancellation');
+        this.fire(this._namespacify('cancellation'));
 
-      if (this.options.closeOnConfirm) {
-        this.close('cancellation');
-      }
-    });
+        if (this.options.closeOnConfirm) {
+          this.close();
+        }
+      });
+    }
 
     // Add the event listener for the overlay
-    this.listen(`click.${this.options.namespace}`, (event) => {
+    overlay.addEventListener('click', (event) => {
       const target = event.target;
 
-      if (!target.classList.contains(this._namespacify('overlay'))) {
+      if (!target.classList.contains(this._namespacify('is', 'opened'))) {
         return;
       }
 
@@ -117,7 +146,7 @@ class GrowCssModal extends GrowCssEventEmitter {
     for (let i = openButtons.length - 1; i >= 0; i--) {
       openButtons[i].addEventListener('click', (event) => {
         const target = event.target;
-        const attribut = target.getAttribute(`${this.options.namespace}-traget`);
+        const attribut = target.getAttribute(this._namespacify('traget'));
         let id;
 
         if (attribut !== 'undefined') {
@@ -125,8 +154,23 @@ class GrowCssModal extends GrowCssEventEmitter {
         } else {
           id = target.getAttribute('href');
         }
+
         this.open(id);
       });
+    }
+  }
+
+  _createCloseButton() {
+    const closeButton = this.element.querySelector(`.${this.options.namespace}.close`);
+
+    if (closeButton === null) {
+      const button = document.createElement('button');
+
+      button.classList.add(this.options.namespace);
+      button.classList.add('close');
+      button.innerHTML = 'x';
+
+      this.element.appendChild(button);
     }
   }
 

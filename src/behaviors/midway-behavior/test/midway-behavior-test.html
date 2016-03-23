@@ -11,9 +11,19 @@
     <link rel="import" href="@test-path/test-fixture/test-fixture.html">
     <link rel="import" href="../demo/midway-position.html">
     <style>
-    .center-test {
+      .center-test {
         height: 300px;
         width: 300px;
+        background: #000;
+        color: #fff;
+        text-align: center;
+        display: block;
+        z-index: 1;
+      }
+
+      .center-2-sizes-test {
+        height: 300px;
+        width: 150px;
         background: #000;
         color: #fff;
         text-align: center;
@@ -82,18 +92,26 @@
       </template>
     </test-fixture>
 
+    <test-fixture id="midway-position-center-2-sizes-test-fixture">
+      <template>
+        <midway-position><div class="center-2-sizes-test">center 2 sizes test</div></midway-position>
+      </template>
+    </test-fixture>
+
     <script>
       suite('<midway-position>', function() {
         var testFixture;
         var testFixture2;
         var testFixture3;
         var testFixture4;
+        var testFixture5;
 
         setup(function() {
           testFixture = fixture('midway-position-center-fixture');
           testFixture2 = fixture('midway-position-horizontal-fixture');
           testFixture3 = fixture('midway-position-vertical-fixture');
           testFixture4 = fixture('midway-position-center-all-fixture');
+          testFixture5 = fixture('midway-position-center-2-sizes-test-fixture');
         });
 
         test('test setup', function() {
@@ -105,11 +123,11 @@
 
           expect(center.classList.contains('midway-position-horizontal')).to.be.true;
           expect(center.classList.contains('midway-position-vertical')).to.be.true;
-          expect(center.style.marginLeft).to.be.equal('-150px');
+          expect(center.style.marginLeft).to.be.ok;
           expect(center.style.display).to.be.equal('inline');
           expect(center.style.position).to.be.equal('absolute');
           expect(center.style.left).to.be.equal('50%');
-          expect(center.style.marginTop).to.be.equal('-150px');
+          expect(center.style.marginTop).to.be.ok;
           expect(center.style.top).to.be.equal('50%');
         });
 
@@ -117,7 +135,7 @@
           var horizontal = testFixture2.querySelector('.horizontal-test');
 
           expect(horizontal.classList.contains('midway-position-horizontal')).to.be.true;
-          expect(horizontal.style.marginLeft).to.be.equal('-50px');
+          expect(horizontal.style.marginLeft).to.be.ok;
           expect(horizontal.style.display).to.be.equal('inline');
           expect(horizontal.style.position).to.be.equal('absolute');
           expect(horizontal.style.left).to.be.equal('50%');
@@ -129,7 +147,7 @@
           expect(vertical.classList.contains('midway-position-vertical')).to.be.true;
           expect(vertical.style.display).to.be.equal('inline');
           expect(vertical.style.position).to.be.equal('absolute');
-          expect(vertical.style.marginTop).to.be.equal('-100px');
+          expect(vertical.style.marginTop).to.be.ok;
           expect(vertical.style.top).to.be.equal('50%');
         });
 
@@ -139,13 +157,26 @@
           for (var i = all.length - 1; i >= 0; i--) {
             expect(all[i].classList.contains('midway-position-horizontal')).to.be.true;
             expect(all[i].classList.contains('midway-position-vertical')).to.be.true;
-            expect(all[i].style.marginLeft).to.be.equal('-25px');
+            expect(all[i].style.marginLeft).to.be.ok;
             expect(all[i].style.display).to.be.equal('inline');
             expect(all[i].style.position).to.be.equal('absolute');
             expect(all[i].style.left).to.be.equal('50%');
-            expect(all[i].style.marginTop).to.be.equal('-25px');
+            expect(all[i].style.marginTop).to.be.ok;
             expect(all[i].style.top).to.be.equal('50%');
           }
+        });
+
+        test('test if element is center and has 2 random sizes css style', function() {
+          var center2sizes = testFixture5.querySelector('.center-2-sizes-test');
+          console.log(center2sizes.classList);
+          expect(center2sizes.classList.contains('midway-position-horizontal')).to.be.true;
+          expect(center2sizes.classList.contains('midway-position-vertical')).to.be.true;
+          expect(center2sizes.style.marginLeft).to.be.ok;
+          expect(center2sizes.style.display).to.be.equal('inline');
+          expect(center2sizes.style.position).to.be.equal('absolute');
+          expect(center2sizes.style.left).to.be.equal('50%');
+          expect(center2sizes.style.marginTop).to.be.ok;
+          expect(center2sizes.style.top).to.be.equal('50%');
         });
       });
     </script>

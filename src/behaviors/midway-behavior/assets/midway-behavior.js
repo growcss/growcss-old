@@ -5,16 +5,23 @@ const GrowCss = GrowCss || {};
 /*eslint-enable */
 
 const GcMidway = {
+  properties: {
+    remBase: {
+      type: Number,
+      value: 16,
+    },
+  },
+
   center(element) {
-    GrowCssMidway.center(element);
+    return new GrowCssMidway(this.remBase).center(element);
   },
 
   centerHorizontal(element) {
-    GrowCssMidway.centerHorizontal(element);
+    return new GrowCssMidway(this.remBase).centerHorizontal(element);
   },
 
   centerVertical(element) {
-    GrowCssMidway.centerVertical(element);
+    return new GrowCssMidway(this.remBase).centerVertical(element);
   },
 };
 
