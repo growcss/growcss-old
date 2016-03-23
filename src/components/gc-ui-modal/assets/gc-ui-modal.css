@@ -1,3 +1,17 @@
+:root {
+  --gc-ui-modal-close-button: {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    border: 0;
+    background: #000;
+    color: #fff;
+  };
+}
+
 :host {
   outline: 0;
   padding: 32px;
@@ -7,14 +21,14 @@
   display: block;
 }
 
-.gc-ui-modal-overlay {
+::content .gc-ui-modal-overlay {
   position: fixed;
   z-index: 9999;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(43,46,56,.9);
+  background: var(--gc-ui-modal-overlay-background, rgba(43, 46, 56, 0.9));
 }
 
 :host.gc-ui-modal-is-opened {
@@ -23,18 +37,10 @@
   -webkit-overflow-scrolling: touch;
 }
 
-:host ::content > .gc-ui-modal.close {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 30px;
-  width: 30px;
-  border: 0;
-  background: #000;
-  color: #fff;
-}
-
 :host ::content > button {
   cursor: pointer;
+}
+
+:host ::content > .gc-ui-modal.close {
+  @apply(--gc-ui-modal-close-button);
 }
