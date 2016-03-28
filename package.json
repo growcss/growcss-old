@@ -56,6 +56,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^18.0.0",
     "grunt-exec": "^0.4.6",
+    "grunt-htmlhint": "^0.9.12-fix",
     "grunt-includes": "^0.5.4",
     "grunt-newer": "^1.1.2",
     "grunt-postcss": "^0.8.0",

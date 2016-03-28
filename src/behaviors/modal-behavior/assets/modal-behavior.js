@@ -32,6 +32,11 @@ const GcModal = {
     esc: '_close',
   },
 
+  hostAttributes: {
+    role: 'alertdialog',
+    tabindex: '-1',
+  },
+
   /**
    * closes the modal
    */

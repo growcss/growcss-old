@@ -1,59 +1,82 @@
 /* eslint-disable no-unused-vars */
 class GrowCssMidway {
-  constructor(base) {
-    this.base = base || 16;
+/* eslint-enable no-unused-vars */
+  constructor(options) {
+    this.base = options['base-rem'] || 16;
+    this.unit = options.unit || 'rem';
 
     return this;
   }
 
-/* eslint-enable no-unused-vars */
+  /**
+   * Centers horizontally and vertically. This also sets `position:fixed`.
+   */
   center(element) {
+    element.classList.add('centered');
     this.centerHorizontal(element);
     this.centerVertical(element);
   }
 
+  resetPosition(element, position) {
+    const horizontal = () => {
+      element.classList.remove('horizontally');
+      this._setStyles(element, {
+        left: null,
+        marginLeft: null,
+        display: null,
+        position: null,
+      });
+    };
+    const vertical = () => {
+      element.classList.remove('vertically');
+      this._setStyles(element, {
+        top: null,
+        marginTop: null,
+        display: null,
+        position: null,
+      });
+    };
+
+    element.classList.remove('midway');
+
+    if (position === 'horizontal') {
+      horizontal();
+      return;
+    } else if (position === 'vertical') {
+      vertical();
+      return;
+    }
+
+    element.classList.remove('centered');
+    horizontal();
+    vertical();
+    return;
+  }
+
   centerHorizontal(element) {
-    const elements = this._createArrayObject(element);
     const css = {
       display: 'inline',
-      position: 'absolute',
+      position: 'fixed',
       left: '50%',
+      marginLeft: this._calcWithUnit(this._getAbsoluteWidth(element)),
     };
-    let i;
 
-    for (i = elements.length - 1; i >= 0; i--) {
-      const el = elements[i];
-      const number = this._getAbsoluteWidth(el) / 2 / this.base;
-      const position = {
-        marginLeft: `${-number}rem`,
-      };
-
-      el.classList.add('midway-position-horizontal');
-      this._setStyles(el, position);
-      this._setStyles(el, css);
-    }
+    element.classList.add('midway');
+    element.classList.add('horizontally');
+    this._setStyles(element, css);
   }
 
   centerVertical(element) {
-    const elements = this._createArrayObject(element);
     const css = {
       display: 'inline',
-      position: 'absolute',
+      position: 'fixed',
       top: '50%',
+      marginTop: this._calcWithUnit(this._getAbsoluteHeight(element)),
     };
-    let i;
 
-    for (i = elements.length - 1; i >= 0; i--) {
-      const el = elements[i];
-      const number = this._getAbsoluteHeight(el) / 2 / this.base;
-      const position = {
-        marginTop: `${-number}rem`,
-      };
-
-      el.classList.add('midway-position-vertical');
-      this._setStyles(el, position);
-      this._setStyles(el, css);
-    }
+    element.classList.add('midway');
+    element.classList.add('vertically');
+    this._setStyles(element, css);
   }
 
   _getAbsoluteHeight(element) {
@@ -64,12 +87,19 @@ class GrowCssMidway {
   }
 
   _getAbsoluteWidth(element) {
+    console.log(window.getComputedStyle(element));
     const styles = window.getComputedStyle(element);
     const margin = parseFloat(styles.marginLeft) + parseFloat(styles.marginRight);
 
     return isNaN(margin) ? element.offsetWidth : Math.ceil(element.offsetWidth + margin);
   }
 
+  /**
+   * Set styles to element,
+   *
+   * @param {Element} element
+   * @param {Object} styles
+   */
   _setStyles(element, styles) {
     const el = element;
 
@@ -81,28 +111,19 @@ class GrowCssMidway {
   }
 
   /**
-   * Turns element or nodeList into an array object.
+   * Number with unit.
    *
-   * @param  {Object} object
+   * @param {Number} number
    *
-   * @return {Array}
+   * @return String
    */
-  _createArrayObject(object) {
-    let array = [];
-
-    if (Array.isArray(object)) {
-      // use object if already an array
-      array = object;
-    } else if (typeof object.length === 'number') {
-      // convert nodeList to array
-      for (let i = 0; i < object.length; i++) {
-        array.push(object[i]);
-      }
-    } else {
-      // array of single index
-      array.push(object);
+  _calcWithUnit(number) {
+    if (this.unit === 'px') {
+      const px = number / 2;
+      return `-${px}px`;
     }
 
-    return array;
+    const rem = number / 2 / this.base;
+    return `-${rem}rem`;
   }
 }

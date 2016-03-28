@@ -6,22 +6,37 @@ const GrowCss = GrowCss || {};
 
 const GcMidway = {
   properties: {
-    remBase: {
+    'rem-base': {
       type: Number,
       value: 16,
     },
+    unit: {
+      type: String,
+      value: 'rem',
+    },
+  },
+
+  get midway() {
+    return new GrowCssMidway({
+      'rem-base': this['rem-base'],
+      unit: this.unit,
+    });
   },
 
   center(element) {
-    return new GrowCssMidway(this.remBase).center(element);
+    this.midway.center(element);
   },
 
   centerHorizontal(element) {
-    return new GrowCssMidway(this.remBase).centerHorizontal(element);
+    this.midway.centerHorizontal(element);
   },
 
   centerVertical(element) {
-    return new GrowCssMidway(this.remBase).centerVertical(element);
+    this.midway.centerVertical(element);
+  },
+
+  resetPosition(element, position) {
+    this.midway.resetPosition(element, position);
   },
 };
 

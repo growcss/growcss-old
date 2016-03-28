@@ -7,13 +7,6 @@ class GrowCssModal extends GrowCssEventEmitter {
     this.element = element;
     this.options = options;
 
-    let overlay = document.querySelector(`.${this._namespacify('overlay')}`);
-
-    if (overlay === null) {
-      overlay = this._createOverlay();
-      document.querySelector('body').appendChild(overlay);
-    }
-
     this.element.classList.add(this._namespacify('is', 'initialized'));
     this.element.classList.add(this._namespacify('is', 'closed'));
     this.element.classList.add(this.options.namespace);
@@ -21,7 +14,6 @@ class GrowCssModal extends GrowCssEventEmitter {
     this._setStyles(this.element, {
       visibility: 'hidden',
     });
-    this.element.setAttribute('tabindex', '-1');
 
     this._createCloseButton();
     this._addModalEventlistners();
@@ -33,19 +25,13 @@ class GrowCssModal extends GrowCssEventEmitter {
    */
   open(id) {
     const element = document.getElementById(id);
-    const overlay = document.querySelector(`.${this._namespacify('overlay')}`);
 
     element.classList.remove(this._namespacify('is', 'closed'));
     element.classList.add(this._namespacify('is', 'opened'));
     element.setAttribute('aria-hidden', 'false');
+    element.setAttribute('aria-modal', 'true');
     this._setStyles(element, {
       visibility: 'visible',
-    });
-
-    overlay.classList.remove(this._namespacify('is', 'closed'));
-    overlay.classList.add(this._namespacify('is', 'opened'));
-    this._setStyles(overlay, {
-      display: 'block',
     });
 
     element.focus();
@@ -61,24 +47,15 @@ class GrowCssModal extends GrowCssEventEmitter {
     const element = document.querySelector(
       `.${this.options.namespace}.${this._namespacify('is', 'opened')}`
     );
-    const overlay = document.querySelector(
-      `.${this._namespacify('overlay')}.${this._namespacify('is', 'opened')}`
-    );
 
     element.classList.remove(this._namespacify('is', 'opened'));
     element.classList.add(this._namespacify('is', 'closed'));
     element.setAttribute('aria-hidden', 'true');
+    element.setAttribute('aria-modal', 'false');
     this._setStyles(element, {
       visibility: 'hidden',
     });
 
-    overlay.classList.remove(this._namespacify('is', 'opened'));
-    overlay.classList.add(this._namespacify('is', 'closed'));
-    this._setStyles(overlay, {
-      display: 'none',
-    });
-
-    this.state = 'closed';
     this.fire(this._namespacify('is', 'closed'));
   }
 
@@ -91,13 +68,13 @@ class GrowCssModal extends GrowCssEventEmitter {
     const closeButton = this.element.querySelector(`.${this.options.namespace}.close`);
     const cancelButton = this.element.querySelector(`.${this.options.namespace}.cancel`);
     const confirmButton = this.element.querySelector(`.${this.options.namespace}.confirm`);
-    const overlay = document.querySelector(`.${this._namespacify('overlay')}`);
 
     // Add the event listener for the close button
     closeButton.addEventListener('click', (event) => {
       event.preventDefault();
 
       this.close();
+      event.stopPropagation();
     });
 
     if (cancelButton) {
@@ -109,6 +86,7 @@ class GrowCssModal extends GrowCssEventEmitter {
 
         if (this.options.closeOnCancel) {
           this.close();
+          event.stopPropagation();
         }
       });
     }
@@ -122,22 +100,10 @@ class GrowCssModal extends GrowCssEventEmitter {
 
         if (this.options.closeOnConfirm) {
           this.close();
+          event.stopPropagation();
         }
       });
     }
-
-    // Add the event listener for the overlay
-    overlay.addEventListener('click', (event) => {
-      const target = event.target;
-
-      if (!target.classList.contains(this._namespacify('is', 'opened'))) {
-        return;
-      }
-
-      if (this.options.closeOnOutsideClick) {
-        this.close();
-      }
-    });
   }
 
   _addClickListnersOnOpenButtons() {
@@ -172,20 +138,6 @@ class GrowCssModal extends GrowCssEventEmitter {
 
       this.element.appendChild(button);
     }
-  }
-
-  _createOverlay() {
-    const css = {
-      display: 'none',
-    };
-    const overlay = document.createElement('div');
-
-    this._setStyles(overlay, css);
-    overlay.classList.add(this.options.namespace);
-    overlay.classList.add(this._namespacify('overlay'));
-    overlay.classList.add(this._namespacify('is', 'closed'));
-
-    return overlay;
   }
 
   /**

@@ -12,6 +12,10 @@ class GcModal {
         type: String,
         value: 'gc-ui-modal',
       },
+      unit: {
+        type: String,
+        value: 'px',
+      },
     };
 
     this.listeners = {
@@ -19,26 +23,11 @@ class GcModal {
     };
   }
 
-  // Define other lifecycle methods as you need
-  registered() {}
-  created() {}
-
-  ready() {
-  }
-
-  factoryImpl() {}
-
   attached() {
     this.getModal(this);
 
-    if (this['screen-format'] !== 'xsmall') {
-      this.center(this);
-    }
-
     this._onModalResize();
   }
-
-  detached() {}
 
   attributChanged() {
     this.attached();
@@ -46,20 +35,10 @@ class GcModal {
 
   _onModalResize() {
     if (this['screen-format'] === 'xsmall') {
-      const newWidth = window.innerWidth;
-      const comuted = window.getComputedStyle(this, null);
-      const width = (
-        newWidth -
-        parseInt(comuted.getPropertyValue('padding-right'), 10) -
-        parseInt(comuted.getPropertyValue('padding-left'), 10)
-      );
-
-      this.style.width = `${width}px`;
-      this.style.left = '0px';
+      this.resetPosition(this);
       this.centerVertical(this);
     } else {
-      this.style.width = null;
-      this.style.left = '50%';
+      this.center(this);
     }
   }
 }
