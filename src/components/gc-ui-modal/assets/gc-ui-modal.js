@@ -24,7 +24,23 @@ class GcModal {
   }
 
   attached() {
-    this.getModal(this);
+    this.modalwindow = this.getModal(this);
+
+    this.modalwindow.addEventListener('gc-ui-modal-is-opened', () => {
+      const backdropElement = document.createElement('gc-ui-modal-backdrop');
+      const backdrop = document.querySelector('gc-ui-modal-backdrop');
+
+      if (!backdrop) {
+        backdropElement.setAttribute('opened', 'true');
+        document.querySelector('body').appendChild(backdropElement);
+      }
+    });
+
+    this.modalwindow.addEventListener('gc-ui-modal-is-closed', () => {
+      const backdrop = document.querySelector('gc-ui-modal-backdrop');
+
+      backdrop.remove();
+    });
 
     this._onModalResize();
   }

@@ -12,14 +12,13 @@ class GrowCssMidway {
    * Centers horizontally and vertically. This also sets `position:fixed`.
    */
   center(element) {
-    element.classList.add('centered');
     this.centerHorizontal(element);
     this.centerVertical(element);
   }
 
   resetPosition(element, position) {
     const horizontal = () => {
-      element.classList.remove('horizontally');
+      element.classList.remove('midway-horizontally');
       this._setStyles(element, {
         left: null,
         marginLeft: null,
@@ -28,7 +27,7 @@ class GrowCssMidway {
       });
     };
     const vertical = () => {
-      element.classList.remove('vertically');
+      element.classList.remove('midway-vertically');
       this._setStyles(element, {
         top: null,
         marginTop: null,
@@ -47,7 +46,6 @@ class GrowCssMidway {
       return;
     }
 
-    element.classList.remove('centered');
     horizontal();
     vertical();
     return;
@@ -61,8 +59,7 @@ class GrowCssMidway {
       marginLeft: this._calcWithUnit(this._getAbsoluteWidth(element)),
     };
 
-    element.classList.add('midway');
-    element.classList.add('horizontally');
+    element.classList.add('midway-horizontally');
     this._setStyles(element, css);
   }
 
@@ -74,8 +71,7 @@ class GrowCssMidway {
       marginTop: this._calcWithUnit(this._getAbsoluteHeight(element)),
     };
 
-    element.classList.add('midway');
-    element.classList.add('vertically');
+    element.classList.add('midway-vertically');
     this._setStyles(element, css);
   }
 
@@ -87,7 +83,6 @@ class GrowCssMidway {
   }
 
   _getAbsoluteWidth(element) {
-    console.log(window.getComputedStyle(element));
     const styles = window.getComputedStyle(element);
     const margin = parseFloat(styles.marginLeft) + parseFloat(styles.marginRight);
 

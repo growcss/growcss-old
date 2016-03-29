@@ -10,14 +10,18 @@
     background: #000;
     color: #fff;
   };
+
+  --gc-ui-modal: {
+    outline: 0;
+    background: #fff;
+    min-width: 400px;
+    min-height: 200px;
+    display: block;
+  };
 }
 
 :host {
-  outline: 0;
-  background: #fff;
-  width: 400px;
-  height: 200px;
-  display: block;
+  @apply(--gc-ui-modal);
 }
 
 @media $xsmall-only {
@@ -25,6 +29,10 @@
     width: 100%;
     left: 0;
   }
+}
+
+:host .gc-ui-modal-content {
+  padding: var(--gc-ui-modal-content, 32px);
 }
 
 :host.gc-ui-modal-is-opened {

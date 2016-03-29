@@ -53,9 +53,9 @@ const GcModal = {
       closeOnOutsideClick: this.closeOnOutsideClick,
     });
 
-    this.modal = modal;
+    this.modal = modal.element;
 
-    return modal;
+    return modal.element;
   },
 };
 

@@ -24,7 +24,10 @@ const GcMidway = {
   },
 
   center(element) {
-    this.midway.center(element);
+    return new GrowCssMidway({
+      'rem-base': this['rem-base'],
+      unit: this.unit,
+    }).center(element);
   },
 
   centerHorizontal(element) {

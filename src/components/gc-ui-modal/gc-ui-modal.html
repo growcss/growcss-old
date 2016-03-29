@@ -2,6 +2,7 @@
 <link rel="import" href="@behavior-path/midway-behavior/midway-behavior.html">
 <link rel="import" href="@behavior-path/modal-behavior/modal-behavior.html">
 <link rel="import" href="@behavior-path/screen-size-behavior/screen-size-behavior.html">
+<link rel="import" href="gc-ui-modal-backdrop.html">
 <!--
     <gc-ui-modal>`element <text>.
 
@@ -18,7 +19,9 @@
       include "gc-ui-modal/assets/gc-ui-modal.css"
     </style>
 
-    <content></content>
+    <div class="gc-ui-modal-content">
+      <content></content>
+    </div>
   </template>
 
   <script>

@@ -18,6 +18,8 @@ class GrowCssModal extends GrowCssEventEmitter {
     this._createCloseButton();
     this._addModalEventlistners();
     this._addClickListnersOnOpenButtons();
+
+    return this;
   }
 
   /**
@@ -37,7 +39,7 @@ class GrowCssModal extends GrowCssEventEmitter {
     element.focus();
     window.location.hash = id;
 
-    this.fire(this._namespacify('is', 'opened'));
+    element.fire(this._namespacify('is', 'opened'));
   }
 
   /**
@@ -56,7 +58,7 @@ class GrowCssModal extends GrowCssEventEmitter {
       visibility: 'hidden',
     });
 
-    this.fire(this._namespacify('is', 'closed'));
+    element.fire(this._namespacify('is', 'closed'));
   }
 
   /**
