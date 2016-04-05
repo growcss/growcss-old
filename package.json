@@ -41,7 +41,7 @@
     "css-mqpacker": "^4.0.0",
     "eslint": "2.5.3",
     "eslint-config-airbnb": "^6.1.0",
-    "grunt": "^0.4.5",
+    "grunt": "^1.0.0",
     "grunt-babel": "^6.0.0",
     "grunt-bump": "^0.7.0",
     "grunt-changelog": "^0.3.1",
