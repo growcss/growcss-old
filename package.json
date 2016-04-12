@@ -40,7 +40,7 @@
     "chai": "3.5.0",
     "css-mqpacker": "^4.0.0",
     "eslint": "2.7.0",
-    "eslint-config-airbnb": "^6.1.0",
+    "eslint-config-airbnb": "^7.0.0",
     "grunt": "^1.0.1",
     "grunt-babel": "^6.0.0",
     "grunt-bump": "^0.7.0",
