@@ -52,7 +52,7 @@
     "grunt-contrib-htmlmin": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-eslint": "^18.0.0",
+    "grunt-eslint": "^18.1.0",
     "grunt-exec": "^0.4.6",
     "grunt-includes": "^0.5.4",
     "grunt-newer": "^1.2.0",
