@@ -43,7 +43,7 @@
     "eslint-config-airbnb": "^7.0.0",
     "grunt": "^1.0.1",
     "grunt-babel": "^6.0.0",
-    "grunt-bump": "^0.7.2",
+    "grunt-bump": "^0.7.3",
     "grunt-changelog": "^0.3.2",
     "grunt-cli": "^1.0.0",
     "grunt-contrib-clean": "^1.0.0",
