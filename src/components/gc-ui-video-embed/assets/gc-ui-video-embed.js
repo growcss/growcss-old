@@ -1,5 +1,3 @@
-'use strict';
-
 class GcVideo {
   get behaviors() {
     return [GrowCss.VideoUrlParserBehavior, Polymer.IronResizableBehavior];

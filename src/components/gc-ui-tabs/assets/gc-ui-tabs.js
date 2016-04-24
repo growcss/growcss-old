@@ -1,5 +1,3 @@
-'use strict';
-
 class GcTabs {
   get behaviors() {
     return [Polymer.IronResizableBehavior];

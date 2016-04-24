@@ -1,5 +1,3 @@
-'use strict';
-
 /*eslint-disable */
 const GrowCss = GrowCss || {};
 /*eslint-enable */

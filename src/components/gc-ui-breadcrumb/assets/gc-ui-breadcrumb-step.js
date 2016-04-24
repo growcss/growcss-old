@@ -1,5 +1,3 @@
-'use strict';
-
 class GcBreadcrumb {
   beforeRegister() {
     this.is = 'gc-ui-breadcrumb-step';

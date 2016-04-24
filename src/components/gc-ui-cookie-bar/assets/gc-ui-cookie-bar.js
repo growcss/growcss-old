@@ -1,5 +1,3 @@
-'use strict';
-
 class GcCookieBar {
   get behaviors() {
     return [GrowCss.CookiesBehavior];
