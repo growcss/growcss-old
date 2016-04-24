@@ -18,10 +18,9 @@
 }
 
 :host > ::content > grid-col {
-  display: inline;
+  display: inline-block;
   margin: 0;
   height: auto;
-  float: left;
   list-style: none;
 }
 

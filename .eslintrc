@@ -21,5 +21,10 @@
     "GrowCssImagesLoaded": true,
     "md5": true,
     "callback": true,
+  },
+
+  "rules": {
+    "no-underscore-dangle": 0,
+    no-restricted-syntax: 0,
   }
 }
