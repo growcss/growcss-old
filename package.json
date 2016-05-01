@@ -39,7 +39,7 @@
     "bower": "~1.7.9",
     "chai": "3.5.0",
     "css-mqpacker": "^4.0.1",
-    "eslint": "^2.8.0",
+    "eslint": "^2.9.0",
     "eslint-config-airbnb-base": "^2.0.0",
     "eslint-plugin-import": "^1.6.1",
     "grunt": "^1.0.1",
