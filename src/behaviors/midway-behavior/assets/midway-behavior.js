@@ -68,7 +68,7 @@ const GcMidway = {
     const el = element;
 
     for (const s in styles) {
-      if (styles.hasOwnProperty(s)) {
+      if ({}.hasOwnProperty.call(styles, s)) {
         el.style[s] = styles[s];
       }
     }
