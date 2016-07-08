@@ -8,6 +8,7 @@ module.exports = {
     'clean:testing',
     'js-test',
     'copy:normalize',
+    'copy:sanitize',
     'copy:cookies',
     'copy:event',
     'copy:video',

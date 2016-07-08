@@ -1,6 +1,8 @@
 {
   "extends": "stylelint-config-standard",
 
+  "ignoreFiles": ["src/components/growcss-style/assets/sanitize.css"],
+
   "rules": {
     "selector-pseudo-class-no-unknown": [
       true,
