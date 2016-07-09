@@ -5,11 +5,11 @@ function create($argv) {
   $args = [];
 
   foreach ($argv as $arg) {
-    if (ereg('--([^=]+)=(.*)', $arg, $reg)) {
+    if (preg_match('/--([^=]+)=(.*)/', $arg, $reg)) {
       $args[$reg[1]] = $reg[2];
-    } elseif(ereg('-([a-zA-Z0-9])', $arg, $reg)) {
-          $args[$reg[1]] = 'true';
-      }
+    } else if (preg_match('/-([a-zA-Z0-9])/', $arg, $reg)) {
+      $args[$reg[1]] = 'true';
+    }
   }
 
   if (isset($args['project']) && is_dir(__DIR__.'/'.$args['project'])) {
@@ -139,6 +139,7 @@ function create($argv) {
     }
   } else {
     echo 'The project you like to create was not found.';
+    echo 'Please use --project to choose between "behaviors" or "components".'
   }
 }
 

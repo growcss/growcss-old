@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "screen-size-behavior": "growcss/screen-size-behavior#^1.0.0",
-    "polymer": "Polymer/polymer#1.4"
+    "polymer": "Polymer/polymer#1.6"
   },
   "devDependencies": {
     "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
