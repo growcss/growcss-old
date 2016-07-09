@@ -21,6 +21,13 @@
     "GrowCssLoadingImage": true,
     "GrowCssImagesLoaded": true,
     "GrowCssParallaxStage": true,
-    "GrowCssParallaxCanvas": true
+    "GrowCssParallaxCanvas": true,
+    "md5": true,
+    "callback": true,
+  },
+
+  "rules": {
+    "no-underscore-dangle": 0,
+    no-restricted-syntax: 0,
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "growcss/growcss",
-  "description": "GrowCss is a simple and fully customizable UI framework powerd by postcss and polymer.",
+  "description": "GrowCss is a simple, flexible and extensible modular frontend framework powerd by postcss and polymer.",
   "keywords": [
     "css",
     "js",

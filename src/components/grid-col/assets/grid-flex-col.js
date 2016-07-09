@@ -1,6 +1,4 @@
-'use strict';
-
-class GridFlexCol {
+class GcGridFlexCol {
   beforeRegister() {
     this.is = 'grid-flex-col';
     this.properties = {};
@@ -8,5 +6,5 @@ class GridFlexCol {
 }
 
 /*eslint-disable */
-Polymer(GridFlexCol);
+Polymer(GcGridFlexCol);
 /*eslint-enable */

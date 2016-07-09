@@ -1,6 +1,4 @@
-'use strict';
-
-class GcUiWell {
+class GcWell {
   get behaviors() {
     return [...GrowCss.ScreenSizeBehavior];
   }
@@ -89,5 +87,5 @@ class GcUiWell {
 }
 
 /*eslint-disable */
-Polymer(GcUiWell);
+Polymer(GcWell);
 /*eslint-enable */

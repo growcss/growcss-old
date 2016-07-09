@@ -1,6 +1,4 @@
-'use strict';
-
-class GridContainer {
+class GcGridContainer {
   beforeRegister() {
     this.is = 'grid-container';
     this.properties = {};
@@ -12,5 +10,5 @@ class GridContainer {
 }
 
 /*eslint-disable */
-Polymer(GridContainer);
+Polymer(GcGridContainer);
 /*eslint-enable */

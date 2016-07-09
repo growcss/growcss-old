@@ -1,5 +1,3 @@
-'use strict';
-
 /*eslint-disable */
 const GrowCss = GrowCss || {};
 /*eslint-enable */
@@ -18,7 +16,7 @@ class GrowCssImagesLoaded extends GrowCssEventEmitter {
 
     // use elem as selector string
     if (typeof elem === 'string') {
-      elem = document.querySelectorAll(elem);
+      elem = this.querySelectorAll(elem);
     }
 
     this.elements = this.createArray(elem);
@@ -127,7 +125,7 @@ class GrowCssImagesLoaded extends GrowCssEventEmitter {
   }
 
   check() {
-    const _this = this;
+    const self = this;
     const images = this.images;
 
     this['progressed-count'] = 0;
@@ -142,7 +140,7 @@ class GrowCssImagesLoaded extends GrowCssEventEmitter {
     const onProgress = function (image, elem, message) {
       // HACK - Chrome triggers event before object properties have changed.
       setTimeout(() => {
-        _this.progress(image, elem, message);
+        self.progress(image, elem, message);
       });
     };
 
@@ -207,4 +205,4 @@ const GcImagesLoaded = {
   },
 };
 
-GrowCss.ImagesLoaded = GcImagesLoaded;
+GrowCss.ImagesLoadedBehavior = GcImagesLoaded;

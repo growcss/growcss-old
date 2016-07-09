@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>gc-ui-tabs demo</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="@demo-path/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="@demo-path/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="@demo-path/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="@demo-path/paper-styles/demo-pages.html">
+    <link rel="import" href="../gc-ui-tabs.html">
+
+  </head>
+  <body unresolved>
+    <h2>Tabs</h2>
+    <p>Tabs are elements that help you organize and navigate multiple documents in a single container. They can be used for switching between items in the container.</p>
+
+    <demo-snippet>
+      <template>
+        <gc-ui-tabs>
+          <gc-ui-tab title="Tab 1">
+            <h3>First panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+          <gc-ui-tab title="Tab with longer title 2">
+            <h3>Second panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+          <gc-ui-tab title="Tab 3">
+            <h3>Third panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+            <p>Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+        </gc-ui-tabs>
+      </template>
+    </demo-snippet>
+
+    <h2>No active tab</h2>
+    <p><code>active="0"</code> Means that no tab is active.</p>
+    <p><code>active="2"</code> sets the second tab as initially active, etc.</p>
+
+    <demo-snippet>
+      <template>
+        <gc-ui-tabs active="0">
+          <gc-ui-tab title="Tab 1">
+            <h3>First panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+          <gc-ui-tab title="Tab with longer title 2">
+            <h3>Second panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+          <gc-ui-tab title="Tab 3">
+            <h3>Third panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+            <p>Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+        </gc-ui-tabs>
+      </template>
+    </demo-snippet>
+
+    <h2>Fullwidth Tabs</h2>
+    <p>Tabs are not wrapped in grid-container and grid-flex.</p>
+
+    <demo-snippet>
+      <template>
+        <gc-ui-tabs fullwidth="true">
+          <gc-ui-tab title="Tab 1">
+            <h3>First panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+          <gc-ui-tab title="Tab with longer title 2">
+            <h3>Second panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+          <gc-ui-tab title="Tab 3">
+            <h3>Third panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+            <p>Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+        </gc-ui-tabs>
+      </template>
+    </demo-snippet>
+
+    <h2>Mode</h2>
+    <p><code>mode="accordion"</code> The tabs themselves occupy the full width.</p>
+
+    <demo-snippet>
+      <template>
+        <gc-ui-tabs mode="accordion">
+          <gc-ui-tab title="Tab 1">
+            <h3>First panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+          <gc-ui-tab title="Tab with longer title 2">
+            <h3>Second panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+          <gc-ui-tab title="Tab 3">
+            <h3>Third panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+            <p>Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+        </gc-ui-tabs>
+      </template>
+    </demo-snippet>
+
+    <h2>Mode</h2>
+    <p><code>mode="vertical"</code> The tabs are placed on the left side.</p>
+
+    <demo-snippet>
+      <template>
+        <gc-ui-tabs mode="vertical">
+          <gc-ui-tab title="Tab 1">
+            <h3>First panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+          <gc-ui-tab title="Tab with longer title 2">
+            <h3>Second panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+          <gc-ui-tab title="Tab 3">
+            <h3>Third panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+            <p>Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+        </gc-ui-tabs>
+      </template>
+    </demo-snippet>
+
+    <h2>Mode</h2>
+    <p><code>mode="thumbnail"</code> Responsive thumbnail tabs. Automagically converted to an accordion in the small layout.</p>
+
+    <demo-snippet>
+      <template>
+        <gc-ui-tabs mode="thumbnail">
+          <gc-ui-tab title="Tab 1" thumbnail="http://satyr.io/400x400">
+            <h3>First panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+          <gc-ui-tab title="Tab with longer title 2" thumbnail="http://satyr.io/400x400">
+            <h3>Second panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+          <gc-ui-tab title="Tab 3" thumbnail="http://satyr.io/400x400">
+            <h3>Third panel content goes here...</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+            <p>Ab dicta magni, quisquam. Exercitationem modi tempora ad, dignissimos consectetur ipsa ipsam iste optio inventore. Non, aliquid, ducimus. Voluptates eos esse quae.</p>
+          </gc-ui-tab>
+        </gc-ui-tabs>
+      </template>
+    </demo-snippet>
+  </body>
+</html>

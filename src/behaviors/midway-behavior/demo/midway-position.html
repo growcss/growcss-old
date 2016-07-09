@@ -1,0 +1,33 @@
+<link rel="import" href="../midway-behavior.html">
+
+<dom-module id="midway-position">
+  <template>
+    <content></content>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'midway-position',
+
+    behaviors: [
+      GrowCss.MidwayBehavior
+    ],
+
+    attached: function() {
+      var center = this.querySelector('.center-test');
+      var vertical = this.querySelector('.vertical-test');
+      var horizontal = this.querySelector('.horizontal-test');
+
+      if (center) {
+        this.center(center);
+      }
+      if (vertical) {
+        this.centerVertical(vertical);
+      }
+      if (horizontal) {
+        this.centerHorizontal(horizontal);
+      }
+    }
+  });
+</script>

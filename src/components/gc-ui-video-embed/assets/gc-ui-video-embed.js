@@ -1,8 +1,6 @@
-'use strict';
-
-class Class {
+class GcVideo {
   get behaviors() {
-    return [GrowCss.VideoUrlParser, Polymer.IronResizableBehavior];
+    return [GrowCss.VideoUrlParserBehavior, Polymer.IronResizableBehavior];
   }
 
   // Element setup goes here instead of created() callback
@@ -88,5 +86,5 @@ class Class {
 }
 
 /*eslint-disable */
-Polymer(Class);
+Polymer(GcVideo);
 /*eslint-enable */

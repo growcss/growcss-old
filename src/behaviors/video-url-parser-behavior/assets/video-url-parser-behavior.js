@@ -1,5 +1,3 @@
-'use strict';
-
 /*eslint-disable */
 const GrowCss = GrowCss || {};
 /*eslint-enable */
@@ -17,6 +15,8 @@ const GcVideoUrlParser = {
     this.provider = videourl.provider;
     this.mediaType = videourl.mediaType;
 
+    this.fire('video-parsed', true);
+
     return this.parser.create({
       videoInfo: videourl,
       format: 'embed',
@@ -24,4 +24,4 @@ const GcVideoUrlParser = {
   },
 };
 
-GrowCss.VideoUrlParser = GcVideoUrlParser;
+GrowCss.VideoUrlParserBehavior = GcVideoUrlParser;

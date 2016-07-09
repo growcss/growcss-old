@@ -1,6 +1,4 @@
-'use strict';
-
-class GridFlexElement {
+class GcGridFlex {
   get behaviors() {
     return [...GrowCss.ScreenSizeBehavior];
   }
@@ -11,5 +9,5 @@ class GridFlexElement {
 }
 
 /*eslint-disable */
-Polymer(GridFlexElement);
+Polymer(GcGridFlex);
 /*eslint-enable */

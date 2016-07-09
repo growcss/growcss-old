@@ -1,6 +1,4 @@
-'use strict';
-
-class GridTableElement {
+class GcGridTable {
   get behaviors() {
     return [...GrowCss.ScreenSizeBehavior];
   }
@@ -11,5 +9,5 @@ class GridTableElement {
 }
 
 /*eslint-disable */
-Polymer(GridTableElement);
+Polymer(GcGridTable);
 /*eslint-enable */

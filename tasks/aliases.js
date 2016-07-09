@@ -8,9 +8,11 @@ module.exports = {
     'clean:testing',
     'js-test',
     'copy:normalize',
+    'copy:sanitize',
     'copy:cookies',
     'copy:event',
     'copy:video',
+    'copy:hash',
     'postcss:precompiled-shared',
     'postcss:precompiled',
     'babel:precompiled-components',
@@ -56,5 +58,5 @@ module.exports = {
   ],
   'serve': [
     'exec:serve'
-  ]
+  ],
 };

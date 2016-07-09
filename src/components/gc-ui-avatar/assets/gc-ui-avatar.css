@@ -1,0 +1,17 @@
+:host,
+:host > #avatar {
+  display: inline-block;
+}
+
+:host > #avatar {
+  border: 0;
+  vertical-align: middle;
+}
+
+:host(.rounded) > #avatar {
+  border-radius: 6px;
+}
+
+:host(.circle) > #avatar {
+  border-radius: 50%;
+}

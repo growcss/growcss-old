@@ -22,7 +22,7 @@
     "/demo/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#1.3",
+    "polymer": "Polymer/polymer#1.4",
     "iron-resizable-behavior": "PolymerElements/iron-resizable-behavior#^1.0.3"
   },
   "devDependencies": {

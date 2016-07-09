@@ -1,5 +1,3 @@
-'use strict';
-
 class FullWidthHeader {
   get behaviors() {
     return [

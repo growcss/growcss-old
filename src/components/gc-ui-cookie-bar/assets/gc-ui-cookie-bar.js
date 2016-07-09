@@ -1,6 +1,4 @@
-'use strict';
-
-class CookieBar {
+class GcCookieBar {
   get behaviors() {
     return [GrowCss.CookiesBehavior];
   }
@@ -44,5 +42,5 @@ class CookieBar {
 }
 
 /*eslint-disable */
-Polymer(CookieBar);
+Polymer(GcCookieBar);
 /*eslint-enable */
