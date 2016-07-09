@@ -1,5 +1,3 @@
-'use strict';
-
 class Class {
   // Element setup goes here instead of created() callback
   beforeRegister() {

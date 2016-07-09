@@ -37,6 +37,13 @@ module.exports = {
     src: 'bower_components/jsVideoUrlParser/dist/jsVideoUrlParser.js',
     dest: 'precompiled/video-url-parser-behavior/assets/video-url-parser.js'
   },
+  'waterfall': {
+    expand: false,
+    flatten: true,
+    filter: 'isFile',
+    src: 'bower_components/waterfall/src/waterfall.js',
+    dest: 'precompiled/waterfall-behavior/assets/waterfall.js'
+  },
   'hash': {
     expand: false,
     flatten: true,
