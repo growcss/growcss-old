@@ -42,7 +42,7 @@
           var image = testFixture3.querySelector('img');
 
           testFixture3.addEventListener('avatar-iframe-loaded', function() {
-            expect(image.getAttribute('src')).to.be.equal('https://scontent.xx.fbcdn.net/hprofile-xat1/v/t1.0-1/p80x80/12208495_10102454385528521_4749095086285673716_n.jpg?oh=9d2933ea53e669b45590e7135bfb18e6&oe=5789E324');
+            expect(typeof image.getAttribute('src')).to.be.equal('string');
             expect(image.getAttribute('height')).to.be.equal('80');
             expect(image.getAttribute('width')).to.be.equal('80');
             expect(image.getAttribute('class')).to.be.equal('facebook');

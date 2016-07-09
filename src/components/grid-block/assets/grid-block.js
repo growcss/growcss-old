@@ -1,5 +1,3 @@
-'use strict';
-
 class GcGridBlock {
   get behaviors() {
     return [...GrowCss.ScreenSizeBehavior];

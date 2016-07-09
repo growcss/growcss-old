@@ -1,5 +1,3 @@
-'use strict';
-
 class GcWell {
   get behaviors() {
     return [...GrowCss.ScreenSizeBehavior];

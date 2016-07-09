@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb/base",
+  "extends": "airbnb-base",
 
   "globals": {
     "root": true,
@@ -22,5 +22,10 @@
     "GrowCssMidway": true,
     "md5": true,
     "callback": true,
+  },
+
+  "rules": {
+    "no-underscore-dangle": 0,
+    no-restricted-syntax: 0,
   }
 }

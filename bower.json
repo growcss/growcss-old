@@ -39,11 +39,12 @@
   ],
   "dependencies": {
     "iron-elements": "PolymerElements/iron-elements#1.0.8",
-    "polymer": "Polymer/polymer#1.4",
+    "polymer": "Polymer/polymer#1.6",
     "cookies-js": "Cookies#~1.2.2",
     "eventEmitter": "~4.3.0",
     "jsVideoUrlParser": "js-video-url-parser#~0.1.6",
     "normalize-css": "normalize.css#~4.0.0",
+    "sanitize-css": "^4.1.0",
     "JavaScript-MD5": "blueimp/JavaScript-MD5#^2.3.0"
   },
   "devDependencies": {

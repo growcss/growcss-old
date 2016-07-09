@@ -1,5 +1,3 @@
-'use strict';
-
 class GcTab {
   beforeRegister() {
     this.is = 'gc-ui-tab';

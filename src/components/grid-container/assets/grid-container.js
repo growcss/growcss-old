@@ -1,5 +1,3 @@
-'use strict';
-
 class GcGridContainer {
   beforeRegister() {
     this.is = 'grid-container';

@@ -1,5 +1,3 @@
-'use strict';
-
 class GcGridFlex {
   get behaviors() {
     return [...GrowCss.ScreenSizeBehavior];

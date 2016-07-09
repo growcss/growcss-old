@@ -1,5 +1,3 @@
-'use strict';
-
 /* eslint-disable no-unused-vars */
 class GrowCssBackground extends GrowCssLoadingImage {
   constructor(url, element) {

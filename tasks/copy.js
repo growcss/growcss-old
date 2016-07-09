@@ -9,6 +9,13 @@ module.exports = {
     src: 'bower_components/normalize-css/normalize.css',
     dest: 'src/components/growcss-style/assets/normalize.css'
   },
+  sanitize: {
+    expand: false,
+    flatten: true,
+    filter: 'isFile',
+    src: 'bower_components/sanitize-css/sanitize.css',
+    dest: 'src/components/growcss-style/assets/sanitize.css'
+  },
   'cookies': {
     expand: false,
     flatten: true,

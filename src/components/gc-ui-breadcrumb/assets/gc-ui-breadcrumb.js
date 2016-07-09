@@ -1,5 +1,3 @@
-'use strict';
-
 class GcBreadcrumb {
   get behaviors() {
     return [...GrowCss.ScreenSizeBehavior];

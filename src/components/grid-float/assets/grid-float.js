@@ -1,5 +1,3 @@
-'use strict';
-
 class GcGridFloat {
   get behaviors() {
     return [...GrowCss.ScreenSizeBehavior];

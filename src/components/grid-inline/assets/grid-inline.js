@@ -1,5 +1,3 @@
-'use strict';
-
 class GcGridInline {
   get behaviors() {
     return [...GrowCss.ScreenSizeBehavior];

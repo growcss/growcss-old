@@ -1,5 +1,3 @@
-'use strict';
-
 class GcModal {
   get behaviors() {
     return [...GrowCss.ScreenSizeBehavior, ...GrowCss.ModalBehavior, GrowCss.MidwayBehavior];

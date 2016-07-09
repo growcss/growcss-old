@@ -1,5 +1,3 @@
-'use strict';
-
 class GcGridFlexCol {
   beforeRegister() {
     this.is = 'grid-flex-col';

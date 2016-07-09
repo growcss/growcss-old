@@ -1,3 +1,25 @@
 {
-  "extends": "stylelint-config-standard"
+  "extends": "stylelint-config-standard",
+
+  "ignoreFiles": ["src/components/growcss-style/assets/sanitize.css"],
+
+  "rules": {
+    "selector-pseudo-class-no-unknown": [
+      true,
+      "ignorePseudoClasses": [
+        "host"
+      ]
+    ],
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignoreTypes": [
+          "grid-col",
+          "grid-flex",
+          "grid-flex-col",
+          "gc-ui-tab"
+        ]
+      }
+    ],
+  }
 }

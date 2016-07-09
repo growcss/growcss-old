@@ -1,5 +1,3 @@
-'use strict';
-
 class GcModalBackdrop {
   beforeRegister() {
     this.is = 'gc-ui-modal-backdrop';
