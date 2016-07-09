@@ -8,9 +8,9 @@ const GcVideoUrlParser = {
     mediaType: String,
   },
 
-  registered() {
+  get parser() {
     /*eslint-disable */
-    this.parser = urlParser;
+    return urlParser;
     /*eslint-enable */
   },
 

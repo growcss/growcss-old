@@ -1,0 +1,9 @@
+<link rel="import" href="../../polymer/polymer.html"><!--
+    <gc-ui-modal-backdrop>`element <text>.
+
+    Example:
+        <gc-ui-modal-backdrop></gc-ui-modal-backdrop>
+
+    @element gc-ui-modal-backdrop
+    @demo demo/index.html
+--><dom-module id="gc-ui-modal-backdrop"><template><style>:host{position:fixed;top:0;left:0;width:100vw;height:100vh;background-color:var(--gc-ui-modal-backdrop-background-color,#000);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;transition:opacity .2s;pointer-events:none;@apply(--gc-ui-modal-overlay-backdrop)}:host([opened]){-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";opacity:var(--gc-ui-modal-backdrop-opacity,.6);pointer-events:auto;@apply(--gc-ui-modal-backdrop-opened)}</style><content></content></template><script>"use strict";function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}var _createClass=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}(),GcModalBackdrop=function(){function a(){_classCallCheck(this,a)}return _createClass(a,[{key:"beforeRegister",value:function(){this.is="gc-ui-modal-backdrop",this.properties={}}},{key:"prepare",value:function(){this.parentNode||Polymer.dom(document.body).appendChild(this)}}]),a}();Polymer(GcModalBackdrop);</script></dom-module>

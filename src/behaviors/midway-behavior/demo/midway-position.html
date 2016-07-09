@@ -14,19 +14,33 @@
       GrowCss.MidwayBehavior
     ],
 
+    properties: {
+      unit: {
+        type: String,
+        value: 'px',
+      },
+    },
+
     attached: function() {
       var center = this.querySelector('.center-test');
       var vertical = this.querySelector('.vertical-test');
       var horizontal = this.querySelector('.horizontal-test');
+      var center2sizes = this.querySelector('.center-2-sizes-test');
 
       if (center) {
         this.center(center);
       }
+
       if (vertical) {
         this.centerVertical(vertical);
       }
+
       if (horizontal) {
         this.centerHorizontal(horizontal);
+      }
+
+      if (center2sizes) {
+        this.center(center2sizes);
       }
     }
   });

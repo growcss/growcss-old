@@ -1,0 +1,50 @@
+:root {
+  --gc-ui-modal-close-button: {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    border: 0;
+    background: #000;
+    color: #fff;
+  };
+
+  --gc-ui-modal: {
+    outline: 0;
+    background: #fff;
+    min-width: 400px;
+    min-height: 200px;
+    display: block;
+  };
+}
+
+:host {
+  @apply(--gc-ui-modal);
+}
+
+@media $xsmall-only {
+  :host {
+    width: 100%;
+    left: 0;
+  }
+}
+
+:host .gc-ui-modal-content {
+  padding: var(--gc-ui-modal-content, 32px);
+}
+
+:host.gc-ui-modal-is-opened {
+  z-index: 10000;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+:host ::content > button {
+  cursor: pointer;
+}
+
+:host ::content > .gc-ui-modal.close {
+  @apply(--gc-ui-modal-close-button);
+}

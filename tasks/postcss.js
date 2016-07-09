@@ -26,7 +26,9 @@ module.exports = {
           'top',
           'left',
           'right',
-          'bottom'
+          'bottom',
+          'width',
+          'height',
         ]
       }),
       require('postcss-at2x')(),

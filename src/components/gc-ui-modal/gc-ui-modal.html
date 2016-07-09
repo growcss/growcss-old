@@ -1,0 +1,30 @@
+<link rel="import" href="@path/polymer/polymer.html">
+<link rel="import" href="@behavior-path/midway-behavior/midway-behavior.html">
+<link rel="import" href="@behavior-path/modal-behavior/modal-behavior.html">
+<link rel="import" href="@behavior-path/screen-size-behavior/screen-size-behavior.html">
+<link rel="import" href="gc-ui-modal-backdrop.html">
+<!--
+    <gc-ui-modal>`element <text>.
+
+    Example:
+        <gc-ui-modal></gc-ui-modal>
+
+    @element gc-ui-modal
+    @demo demo/index.html
+-->
+
+<dom-module id="gc-ui-modal">
+  <template>
+    <style>
+      include "gc-ui-modal/assets/gc-ui-modal.css"
+    </style>
+
+    <div class="gc-ui-modal-content">
+      <content></content>
+    </div>
+  </template>
+
+  <script>
+    include "gc-ui-modal/assets/gc-ui-modal.js"
+  </script>
+</dom-module>

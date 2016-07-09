@@ -1,0 +1,20 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--gc-ui-modal-backdrop-background-color, #000);
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+
+  @apply(--gc-ui-modal-overlay-backdrop);
+}
+
+:host([opened]) {
+  opacity: var(--gc-ui-modal-backdrop-opacity, 0.6);
+  pointer-events: auto;
+
+  @apply(--gc-ui-modal-backdrop-opened);
+}

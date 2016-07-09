@@ -8,4 +8,4 @@ const GcClass = {
   // Behavior definition
 };
 
-GrowCss.GcClass = GcClass;
+GrowCss.GcClassBehavior = GcClass;

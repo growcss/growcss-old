@@ -1,5 +1,8 @@
 class GcBreadcrumb {
-  // Element setup goes here instead of created() callback
+  get behaviors() {
+    return [...GrowCss.ScreenSizeBehavior];
+  }
+
   beforeRegister() {
     this.is = 'gc-ui-breadcrumb';
     this.properties = {
