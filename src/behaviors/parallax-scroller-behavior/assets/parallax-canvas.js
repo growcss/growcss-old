@@ -1,5 +1,3 @@
-'use strict';
-
 /* eslint-disable no-unused-vars */
 class GrowCssParallaxCanvas extends GrowCssEventEmitter {
   constructor(dom, img, opt) {
@@ -76,14 +74,15 @@ class GrowCssParallaxCanvas extends GrowCssEventEmitter {
     //  < 0 when the image is on the top
     //  0 when the image is in the center of the screen
     //  > 0 when the image is at the bottom
-    let perc = (
-      this.offset.top + size.height *
-      this.options.center + stage.height /
-      2 - stage.scrollTop) / stage.height - 1;
+    let perc = this.offset.top + size.height;
+    perc *= this.options.center + stage.height;
+    perc /= 2 - stage.scrollTop;
+    perc /= stage.height - 1;
 
     // increase the percentage effect according to the intensity
     // and the current image height
-    perc *= img.height / size.height / 2 * this.options.intensity;
+    perc *= img.height / size.height / 2;
+    perc *= this.options.intensity;
 
     if (this.hasTranslate3D()) {
       this.prefix(img.style, 'transform', `translate3d(0, ${-perc}%, 0)`);

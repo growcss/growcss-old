@@ -1,5 +1,3 @@
-'use strict';
-
 const PARALLAX_RESIZE_DELAY = 20;
 
 /* eslint-disable no-unused-vars */

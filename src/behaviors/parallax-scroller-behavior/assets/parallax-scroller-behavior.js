@@ -1,5 +1,3 @@
-'use strict';
-
 /*eslint-disable */
 const GrowCss = GrowCss || {};
 /*eslint-enable */
@@ -116,7 +114,9 @@ class GrowCssParallaxScroller extends GrowCssEventEmitter {
       const canvas = this.canvases[i];
       const canvasHeight = canvas.size.height;
       const canvasOffset = canvas.offset;
-      const canvasScrollDelta = canvasOffset.top + canvasHeight - stageScrollTop;
+      let canvasScrollDelta = canvasOffset.top + canvasHeight;
+
+      canvasScrollDelta -= stageScrollTop;
 
       if (
         canvas.isLoaded &&
