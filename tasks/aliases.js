@@ -13,6 +13,7 @@ module.exports = {
     'copy:event',
     'copy:video',
     'copy:hash',
+    'copy:waterfall',
     'postcss:precompiled-shared',
     'postcss:precompiled',
     'babel:precompiled-components',
@@ -42,21 +43,25 @@ module.exports = {
     'clean:precompiled'
     // Release End
   ],
-  'test': [
+  'testing': [
     'compile',
     // Testing Start
     'includes:testing-components',
     'includes:testing-behaviors',
     'string-replace:testing',
-    'clean:precompiled',
-    'wct-test'
-    // 'clean:testing'
+    'clean:precompiled'
     // Testing End
+  ],
+  'test': [
+    'testing',
+    'wct-test',
+    'clean:testing'
   ],
   'default': [
     'build'
   ],
   'serve': [
+    'testing',
     'exec:serve'
   ],
 };

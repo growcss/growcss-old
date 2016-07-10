@@ -1,0 +1,25 @@
+<link rel="import" href="../waterfall-behavior.html">
+
+<dom-module id="waterfall-grid-behavior">
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+      }
+    </style>
+    <div class="item">Solid Snake</div>
+    <div class="item">Riou</div>
+    <div class="item">Jack Russel</div>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'waterfall-grid-behavior',
+
+    behaviors: [
+      GrowCss.WaterfallBehavior
+    ],
+  });
+</script>

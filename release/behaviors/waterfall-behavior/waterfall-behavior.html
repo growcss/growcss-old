@@ -1,4 +1,4 @@
-<link rel="import" href="../../polymer/polymer.html"><!--
+<link rel="import" href="../../polymer/polymer.html"><link rel="import" href="../../iron-resizable-behavior/iron-resizable-behavior.html"><!--
     <waterfall-behavior>`element <text>.
 
     Example:
@@ -6,5 +6,5 @@
 
     @element waterfall-behavior
     @demo demo/index.html
---><script>Error including "precompiled\waterfall-behavior\assets\waterfall.js".
-  "use strict";var GrowCss=GrowCss||{},GcWaterfallBehavior={listeners:{"iron-resize":"_onResize"},_onResize:function(){waterfall(Polymer.dom(this).node)},attached:function(){this._onResize()}};GrowCss.WaterfallBehavior=[Polymer.IronResizableBehavior,GcWaterfallBehavior];</script>
+--><script>function waterfall(a){function b(a){return window.getComputedStyle(a)}function c(a,c){return parseFloat(b(c)["margin"+a])||0}function d(a){return a+"px"}function e(a){return parseFloat(a.style.top)}function f(a){return parseFloat(a.style.left)}function g(a){return parseFloat(b(a).width)}function h(a){return parseFloat(b(a).height)}function i(a){return e(a)+h(a)+c("Bottom",a)}function j(a){return f(a)+g(a)+c("Right",a)}function k(a){a=a.sort(function(a,b){var c=i(b)-i(a);return c||f(b)-f(a)})}"string"==typeof a&&(a=document.querySelector(a)),a.style.position="relative";var l=[],m=[].map.call(a.children,function(a){return a.style.position="absolute",a});m.length&&(m[0].style.top="0px",m[0].style.left=d(c("Left",m[0])),l.push(m[0]));for(var n=1;n<m.length;n++){var o=m[n-1],p=m[n],q=j(o)+g(p)<=g(a);if(!q)break;p.style.top=o.style.top,p.style.left=d(j(o)+c("Left",p)),l.push(p)}for(;n<m.length;n++){k(l);var p=m[n],r=l.pop();p.style.top=d(i(r)+c("Top",p)),p.style.left=d(f(r)),l.push(p)}k(l);var s=l[0];a.style.height=d(i(s)+c("Bottom",s))}
+  "use strict";var GrowCss=GrowCss||{},GcWaterfallBehavior={listeners:{"iron-resize":"_onResize"},_onResize:function(){waterfall(Polymer.dom(this).node)},attached:function(){this._onResize(),this.async(this._onResize(),200),this.async(this.notifyResize,1)},created:function(){this.classList.add("opt-waterfall")}};GrowCss.WaterfallBehavior=[Polymer.IronResizableBehavior,GcWaterfallBehavior];</script>

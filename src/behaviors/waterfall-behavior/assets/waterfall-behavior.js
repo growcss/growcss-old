@@ -15,6 +15,13 @@ const GcWaterfallBehavior = {
 
   attached() {
     this._onResize();
+
+    this.async(this._onResize(), 200);
+    this.async(this.notifyResize, 1);
+  },
+
+  created() {
+    this.classList.add('opt-waterfall');
   },
 };
 

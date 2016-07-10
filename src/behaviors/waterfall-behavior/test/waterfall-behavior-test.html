@@ -9,18 +9,18 @@
     <script src="@test-path/web-component-tester/browser.js"></script>
 
     <link rel="import" href="@test-path/test-fixture/test-fixture.html">
-    <link rel="import" href="../waterfall-behavior.html">
+    <link rel="import" href="../demo/waterfall-grid-behavior.html">
 
   </head>
   <body unresolved>
     <test-fixture id="waterfall-behavior-fixture">
       <template>
-        <waterfall-behavior></waterfall-behavior>
+        <waterfall-grid-behavior></waterfall-grid-behavior>
       </template>
     </test-fixture>
 
     <script>
-      suite('<waterfall-behavior>', function() {
+      suite('<waterfall-grid-behavior>', function() {
         var testFixture;
 
         setup(function() {
@@ -28,7 +28,8 @@
         });
 
         test('test setup', function() {
-          expect(document.querySelector('waterfall-behavior')).to.be.ok;
+          expect(testFixture).to.be.ok;
+          expect(testFixture.classList.contains('opt-waterfall')).to.be.true;
         });
       });
     </script>

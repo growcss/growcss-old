@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>waterfall-behavior</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><script src="../../../webcomponentsjs/webcomponents.min.js"></script><script src="../../../web-component-tester/browser.js"></script><link rel="import" href="../../../test-fixture/test-fixture.html"><link rel="import" href="../waterfall-behavior.html"></head><body unresolved><test-fixture id="waterfall-behavior-fixture"><template><waterfall-behavior></waterfall-behavior></template></test-fixture><script>suite('<waterfall-behavior>', function() {
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>waterfall-behavior</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><script src="../../../webcomponentsjs/webcomponents.min.js"></script><script src="../../../web-component-tester/browser.js"></script><link rel="import" href="../../../test-fixture/test-fixture.html"><link rel="import" href="../demo/waterfall-grid-behavior.html"></head><body unresolved><test-fixture id="waterfall-behavior-fixture"><template><waterfall-grid-behavior></waterfall-grid-behavior></template></test-fixture><script>suite('<waterfall-grid-behavior>', function() {
         var testFixture;
 
         setup(function() {
@@ -6,6 +6,7 @@
         });
 
         test('test setup', function() {
-          expect(document.querySelector('waterfall-behavior')).to.be.ok;
+          expect(testFixture).to.be.ok;
+          expect(testFixture.classList.contains('opt-waterfall')).to.be.true;
         });
       });</script></body></html>
