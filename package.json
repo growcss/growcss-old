@@ -65,7 +65,7 @@
     "lodash": "^4.14.1",
     "minimatch": "^3.0.2",
     "mocha": "^2.5.3",
-    "phantomjs-prebuilt": "^2.1.8",
+    "phantomjs-prebuilt": "^2.1.9",
     "pixrem": "^3.0.1",
     "polyserve": "^0.12.0",
     "postcss": "^5.1.1",
