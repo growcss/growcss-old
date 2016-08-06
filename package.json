@@ -68,7 +68,7 @@
     "phantomjs-prebuilt": "^2.1.10",
     "pixrem": "^3.0.1",
     "polyserve": "^0.12.0",
-    "postcss": "^5.1.1",
+    "postcss": "^5.1.2",
     "postcss-at2x": "^2.0.0",
     "postcss-fixes": "^1.4.0",
     "postcss-flexbugs-fixes": "^2.0.0",
