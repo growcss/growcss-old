@@ -75,7 +75,7 @@
     "postcss-font-normalize": "0.0.0",
     "postcss-line-height-px-to-unitless": "^0.2.1",
     "postcss-pxtorem": "^3.3.1",
-    "postcss-reporter": "^1.4.1",
+    "postcss-reporter": "^2.0.0",
     "postcss-simple-vars": "^3.0.0",
     "resolve": "^1.1.7",
     "sinon": "^1.17.5",
