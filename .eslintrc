@@ -16,15 +16,18 @@
     "GrowCssEventEmitter": true,
     "urlParser": true,
     "Image": true,
+    "GrowCssImage": true,
     "GrowCssBackground": true,
     "GrowCssLoadingImage": true,
     "GrowCssImagesLoaded": true,
+    "GrowCssParallaxStage": true,
+    "GrowCssParallaxCanvas": true,
     "md5": true,
     "callback": true,
   },
 
   "rules": {
     "no-underscore-dangle": 0,
-    no-restricted-syntax: 0,
+    "no-restricted-syntax": 0
   }
 }

@@ -1,0 +1,41 @@
+:host {
+  margin: 2.5rem 0;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  height: var(--gc-ui-full-width-header-height, 400px);
+}
+
+:host(.first-header-module) {
+  margin-top: 0;
+  height: var(--gc-ui-full-width-header-first-height, 500px);
+}
+
+@media $medium-up {
+  :host {
+    height: var(--gc-ui-full-width-header-medium-height, 500px);
+  }
+
+  :host(.first-header-module) {
+    height: var(--gc-ui-full-width-header-first-medium-height, 650px);
+  }
+}
+
+@media $large-up {
+  :host(.first-header-module) {
+    height: var(--gc-ui-full-width-header-first-large-height, 850px);
+  }
+}
+
+:host:last-child {
+  margin-bottom: 0;
+}
+
+:host > ::content > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
