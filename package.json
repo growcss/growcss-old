@@ -71,7 +71,7 @@
     "postcss": "^5.1.2",
     "postcss-at2x": "^3.0.0",
     "postcss-fixes": "^1.4.0",
-    "postcss-flexbugs-fixes": "^2.0.0",
+    "postcss-flexbugs-fixes": "^2.1.1",
     "postcss-font-normalize": "0.0.0",
     "postcss-line-height-px-to-unitless": "^0.2.1",
     "postcss-pxtorem": "^3.3.1",
