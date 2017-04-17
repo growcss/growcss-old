@@ -1,5 +1,7 @@
 # growcss
 
+[![Join the chat at https://gitter.im/growcss/growcss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/growcss/growcss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Author](http://img.shields.io/badge/author-@anolilab-blue.svg?style=flat-square)](https://twitter.com/anolilab)
 [![devDependency Status](https://david-dm.org/growcss/growcss/dev-status.svg?style=flat-square)](https://david-dm.org/growcss/growcss#info=devDependencies)
 [![npm](https://img.shields.io/npm/v/growcss.svg?style=flat-square)](https://www.npmjs.com/package/growcss)
