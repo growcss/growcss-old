@@ -1,4 +1,4 @@
-import 'skatejs-web-components';
+import '@skatejs/web-components';
 import * as skate from 'skatejs';
 
 class GcAvatar extends skate.Component {
