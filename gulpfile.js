@@ -1,9 +1,7 @@
-/* eslint-disable global-require */
-/* eslint-env node */
-
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 const postcss = require('gulp-postcss');
+const tslint = require("gulp-tslint");
 
 gulp.task('css', () => {
   const plugins = [
@@ -100,4 +98,10 @@ gulp.task('javascript', () =>
       presets: ['env'],
     }))
     .pipe(gulp.dest('dist')),
+);
+
+gulp.task("tslint", () =>
+  gulp.src("source.ts")
+    .pipe(tslint({}))
+    .pipe(tslint.report())
 );

@@ -1,7 +1,19 @@
-class GcAvatar {
+import 'skatejs-web-components';
+import * as skate from 'skatejs';
+
+class GcAvatar extends skate.Component {
+  static is() { return 'gc-ui-avatar'; }
+
+  static get props() {
+    return {
+      provider: skate.propString(),
+      email: skate.prop.string(),
+      'user-id': skate.prop.string(),
+    };
+  }
+
   // Element setup goes here instead of created() callback
   beforeRegister() {
-    this.is = 'gc-ui-avatar';
     this.properties = {
       provider: String,
       email: String,
@@ -42,7 +54,7 @@ class GcAvatar {
   attached() {
     /*eslint-disable */
     const defaultImage = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABQAFADASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAEGBAUHAgP/xAAtEAABAwIEBAYBBQAAAAAAAAABAAIDBBEFITGBEkFRYQYTQnGRwVIiMqGx8P/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDreSlN03QRzU2TdN0CybL7QUdTOLwwSvb1a0kfOimejqYBeaCVg6uabfOiD4bJsm6boGybJum6AiIgK0YBgrPLbU1jeJzs2MIyA6nutBhcAqcRp4nD9Ln5jsM7fC6H7IAAAAFgAhAIsdFKIK1j2CsdE+po28L25uYBYO9h1VXXTVz3F4BTYlURNyaHZDoDnZBiIiICIiDMwaUQ4rTSO0D7Z8r5fa6DsuYjVXLAMVZVxMhncBUtyzP7+/ug3ibKEQTsqBjkomxape0i3Fw362AH0rLj2LMo4nRQuDqlwtYem/NUs63OpQSiIgbpui9QxvmlZHGCXuNgEH2oKOaun8uAX5ucdArfh2CUtGA4tEs35vGh7DksnC6JlBStiZm7VzralZqBum6Ig1OI4LS1gc4NEUx9bBqe45qoV9HNQz+XOLc2uGhXRFh4pRMr6V0T8natdbQoOf7puvU0b4ZXxyAh7TYheUBb/wAIUvmVMlQ4ZRjhb7nX/d1oFdPCkYZhLXfm9x+Db6QblETZAUKVCCVCnZQgqfi6l4KmOoaMpBwu9xp/H9Kvq5+Ko+PCXOPoe1w3NvtUxB//2Q==';
-    /*eslint-enable */
+    /* eslint-enable */
 
     const image = this.querySelector('img');
 
@@ -86,7 +98,7 @@ class GcAvatar {
 
     /*eslint-disable */
     return `${proxy}gravatar.com/avatar/${hash}.jpg?size=${retina}&d=${imageset}&r=${rating}`;
-    /*eslint-enable */
+    /* eslint-enable */
   }
 
   generateFacebook() {
@@ -177,6 +189,4 @@ class GcAvatar {
   }
 }
 
-/*eslint-disable */
-Polymer(GcAvatar);
-/*eslint-enable */
+customElements.define(GcAvatar.is, GcAvatar);

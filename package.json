@@ -32,6 +32,7 @@
     "autoprefixer": "^7.0.1",
     "babel": "^6.5.2",
     "babel-core": "^6.24.0",
+    "babel-env": "^2.4.1",
     "babel-eslint": "^7.2.2",
     "babel-jest": "^20.0.0",
     "babel-loader": "^7.0.0",
@@ -43,15 +44,12 @@
     "babel-runtime": "^6.11.6",
     "chai": "^4.0.2",
     "css-mqpacker": "^6.0",
-    "eslint": "^4.1.0",
-    "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jest": "^20.0.0",
-    "eslint-plugin-react": "^7.0.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-postcss": "^7.0.0",
     "gulp-size": "^2.1.0",
+    "gulp-tslint": "^8.1.2",
+    "gulp-typescript": "^3.2.2",
     "lit-html": "^0.6.0",
     "mocha": "^3.4.1",
     "pixrem": "^3.0.2",
@@ -70,7 +68,9 @@
     "sinon": "^2.1.0",
     "sinon-chai": "^2.9.0",
     "stylelint": "^7.10.1",
-    "stylelint-config-standard": "^16.0.0"
+    "stylelint-config-standard": "^16.0.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3"
   },
   "keywords": [
     "css",
@@ -98,7 +98,7 @@
     "@skatejs/renderer-preact": "^0.1.0",
     "@skatejs/renderer-react": "^0.0.0",
     "@skatejs/val": "^0.3.1",
-    "babel-env": "^2.4.1",
-    "skatejs": "^5.0.0-beta.3"
+    "skatejs": "^5.0.0-beta.3",
+    "skatejs-web-components": "^0.0.1"
   }
 }

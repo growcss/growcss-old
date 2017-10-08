@@ -22,11 +22,9 @@ before_install:
   - sleep 3
   - yarn install
 
-before_script:
-  - polylint
+#before_script:
 
-script:
-  - grunt test -v --stack -d
+#script:
 
 matrix:
   fast_finish: true
