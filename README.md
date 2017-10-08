@@ -1,74 +1,37 @@
-# GrowCss is a simple, flexible and extensible modular frontend framework powerd by postcss and polymer.
+<p align="center">
+    <a href="https://growcss.com" target="_blank">
+        <img src="">
+    </a>
+    <br>
+    <br>
+    <a href="https://www.npmjs.com/package/growcss"><img src="https://img.shields.io/npm/v/growcss.svg?style=flat-square"></a>
+    <a href="https://gitter.im/growcss/growcss"><img src="https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=flat-square"></a>
+    <a href="http://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
+</p>
 
-[![Author](http://img.shields.io/badge/author-@anolilab-blue.svg?style=flat-square)](https://twitter.com/anolilab)
-[![Issue Stats](http://issuestats.com/github/growcss/growcss/badge/issue?style=flat-square)](http://issuestats.com/github/growcss/growcss)
-[![ZenHub] (https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://zenhub.io)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[GrowCss][1] is a simple, flexible and extensible modular **frontend framework** powerd by postcss and web-components.
 
-## Releases
-[![npm](https://img.shields.io/npm/v/growcss.svg?style=flat-square)](https://www.npmjs.com/package/growcss)
-[![Bower](https://img.shields.io/bower/v/growcss.svg?style=flat-square)](https://github.com/growcss/growcss)
-[![GitHub release](https://img.shields.io/github/release/growcss/growcss.svg?style=flat-square)](https://github.com/growcss/growcss/releases)
+Documentation
+-------------
 
-## Chat Room on Gitter
-[![Join the chat at https://gitter.im/growcss/growcss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/growcss/growcss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Coming soon
 
-## Dependencies
+Branch Status
+------------
+
+[![Build Status](https://img.shields.io/travis/growcss/growcss.svg?branch=master&style=flat-square)](https://travis-ci.org/growcss/growcss)
 [![Dependency Status](https://david-dm.org/growcss/growcss.svg?style=flat-square)](https://david-dm.org/growcss/growcss#info=dependencies&view=table)
-[![devDependency Status](https://david-dm.org/growcss/growcss/dev-status.svg?style=flat-square)](https://david-dm.org/growcss/growcss#info=devDependencies)
 
-## Master
-[![Build Status](https://img.shields.io/travis/growcss/growcss.svg?branch=develop&style=flat-square)](https://travis-ci.org/growcss/growcss)
+Contributing
+------------
 
-## Develop
-[![Build Status](https://img.shields.io/travis/growcss/growcss.svg?branch=develop&style=flat-square)](https://travis-ci.org/growcss/growcss)
+If you would like to help take a look at the [list of issues](http://github.com/growcss/growcss/issues) and check our [Contributing](CONTRIBUTING.md) guild.
 
-### Bits and Pieces:
-* [npm:](https://npmjs.org/) Well... it's a Node.js package manager
-* [Grunt:](http://gruntjs.com/) Automates common tasks: test, build, clean
-* [Bower:](http://bower.io/) Package manager for browser dependencies
-* [Babel:](https://github.com/babel/babel/) Use next generation JavaScript, today.
+> **Note:** Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
 
-## Getting Started:
+License
+---------------
 
-1. You need to have npm installed (it comes with node)
-2. Clone this repository: `git clone git@github.com:growcss/growcss.git`
-3. Install dependencies: `npm install`
+The GrowCss framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
-## Install
-
-~~~
-npm install
-grunt
-~~~
-
-## Playing with GrowCss
-
-~~~
-grunt exec:serve
-~~~
-
-Once running, you can preview your element at http://localhost:8080/components/growcss/testing/, where testing is the name of the directory containing all components.
-
-## Testing
-
-~~~
-grunt test
-~~~
-
-## Change log
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Credits
-
-- [Daniel Bannert](https://github.com/prisis)
-- [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+[1]: https://growcss.com

@@ -1,5 +1,3 @@
-/bower_components
-/.grunt
 /node_modules
 /npm-debug.log
 /precompiled
