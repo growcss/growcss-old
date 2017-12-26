@@ -15,7 +15,7 @@ export default class Sticky extends Component {
     render: PropTypes.func,
     children: PropTypes.oneOfType([
       PropTypes.func,
-      PropTypes.node
+      PropTypes.node,
     ]),
   };
 
@@ -28,25 +28,25 @@ export default class Sticky extends Component {
     bottom: false,
     placeholderStyles: {},
     disableCompensation: false,
-    disableHardwareAcceleration: false
+    disableHardwareAcceleration: false,
   };
 
   static contextTypes = {
     subscribe: PropTypes.func,
     unsubscribe: PropTypes.func,
-    getParent: PropTypes.func
+    getParent: PropTypes.func,
   };
 
   static childContextTypes = {
-    stickyProps: PropTypes.object.isRequired
+    stickyProps: PropTypes.object.isRequired,
   };
 
-  contentRef = content => {
+  contentRef = (content) => {
     this.content = ReactDOM.findDOMNode(content);
   };
 
-  placeholderRef = placeholder => {
-    this.placeholder = placeholder
+  placeholderRef = (placeholder) => {
+    this.placeholder = placeholder;
   };
 
   state = {
@@ -56,13 +56,13 @@ export default class Sticky extends Component {
     style: { },
     placeholderProps: {
       ref: this.placeholderRef,
-      style: { }
-    }
+      style: { },
+    },
   };
 
   getChildContext() {
     return { stickyProps: this.getProps() };
-  };
+  }
 
   getProps() {
     const { style, placeholderProps } = this.state;
@@ -71,22 +71,22 @@ export default class Sticky extends Component {
       style: { ...style },
       placeholderProps: {
         ...placeholderProps,
-        style: { ...placeholderProps.style }
-      }
+        style: { ...placeholderProps.style },
+      },
     };
-  };
+  }
 
   componentWillMount() {
     if (!this.context.subscribe) {
-      throw new TypeError("Expected Sticky to be mounted within StickyContainer");
+      throw new TypeError('Expected Sticky to be mounted within StickyContainer');
     }
 
-    this.context.subscribe(this.handleContainerEvent)
-  };
+    this.context.subscribe(this.handleContainerEvent);
+  }
 
   componentWillUnmount() {
-    this.context.unsubscribe(this.handleContainerEvent)
-  };
+    this.context.unsubscribe(this.handleContainerEvent);
+  }
 
   handleFooter(distanceFromTop, distanceFromBottom, eventSource) {
     const parent = this.context.getParent();
@@ -110,7 +110,7 @@ export default class Sticky extends Component {
       position: 'fixed',
       bottom: topDifference < (window.innerHeight) ? (this.props.relative ? window.innerHeight - (parent.offsetTop + parent.offsetHeight - parent.offsetParent.scrollTop) : this.props.bottomPosition) : (window.innerHeight - topDifference),
       left: placeholderClientRect.left,
-      width: placeholderClientRect.width
+      width: placeholderClientRect.width,
     };
 
     if (!this.props.disableHardwareAcceleration) {
@@ -123,9 +123,9 @@ export default class Sticky extends Component {
       distanceFromTop,
       distanceFromBottom,
       calculatedHeight,
-      style
+      style,
     });
-  };
+  }
 
   handleHeader(distanceFromTop, distanceFromBottom, eventSource) {
     const parent = this.context.getParent();
@@ -133,7 +133,7 @@ export default class Sticky extends Component {
 
     if (this.props.relative) {
       preventingStickyStateChanges = eventSource !== parent;
-      distanceFromTop = -(eventSource.scrollTop + eventSource.offsetTop) + this.placeholder.offsetTop
+      distanceFromTop = -(eventSource.scrollTop + eventSource.offsetTop) + this.placeholder.offsetTop;
     }
 
     const placeholderClientRect = this.placeholder.getBoundingClientRect();
@@ -149,7 +149,7 @@ export default class Sticky extends Component {
       position: 'fixed',
       top: bottomDifference > 0 ? (this.props.relative ? parent.getBoundingClientRect().top - parent.offsetParent.scrollTop : this.props.topPosition) : bottomDifference,
       left: placeholderClientRect.left,
-      width: placeholderClientRect.width
+      width: placeholderClientRect.width,
     };
 
     if (!this.props.disableHardwareAcceleration) {
@@ -162,9 +162,9 @@ export default class Sticky extends Component {
       distanceFromTop,
       distanceFromBottom,
       calculatedHeight,
-      style
+      style,
     });
-  };
+  }
 
   handleContainerEvent = ({ distanceFromTop, distanceFromBottom, eventSource }) => {
     if (this.props.footer) {
