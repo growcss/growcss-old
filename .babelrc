@@ -2,12 +2,16 @@
   "presets": [
     "env",
     "react",
-    "stage-0"
+    "flow"
   ],
   "plugins": [
     "transform-class-properties",
     "transform-decorators",
     "transform-react-constant-elements",
-    "transform-react-inline-elements"
+    "transform-react-inline-elements",
+    "babel-plugin-styled-components",
+    "polished",
+    "syntax-dynamic-import",
+    "react-flow-props-to-prop-types"
   ]
 }
