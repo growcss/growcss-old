@@ -1,0 +1,16 @@
+{
+  "name": "@growcss/button",
+  "version": "0.0.1",
+  "description": "A button component",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "button",
+    "react",
+    "preact"
+  ],
+  "author": "Daniel Bannert",
+  "license": "MIT"
+}
