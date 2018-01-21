@@ -77,6 +77,8 @@ Your structure may look something like this:
 └─ packages
   └─ elements
     └─ button
+      └─ stories
+        └─ index.stories.js ····· A visual story of the element
       └─ src
         ├─ __tests__ ············ Tests for Button.js, index.js, styled.js
         ├─ components············ Directory form of Button.js
@@ -99,7 +101,7 @@ The changelog contains all of the relevant changes of the package, over time, in
 This index.js file exists for Jest so that it can resolve the actual source of the package as opposed to having to build the entire set of packages prior to running tests.
 
 #### LICENSE
-The LICENSE file contains the license for each package. Generally this is just the Apache 2 license.
+The LICENSE file contains the license for each package.
 
 #### package.json
 The package.json file contains all the information and configuration that NPM needs to host our package.
