@@ -1,7 +1,7 @@
 {
-  "name": "@growcss/element-xy-grid",
+  "name": "@growcss/utils-remcalc",
   "version": "0.0.0",
-  "description": "The XY Grid is huge advancement in Grids.",
+  "description": "Converts one or more pixel values into matching rem values.",
   "license": "MIT",
   "author": {
     "name": "Daniel Bannert",
@@ -18,10 +18,9 @@
   "engines": {
     "node": "^9.3.0"
   },
-  "peerDependencies": {
-    "styled-components": "^2"
-  },
+  "peerDependencies": {},
   "dependencies": {
+    "strip-units": "0.0.1"
   },
   "devDependencies": {
     "jest": "^22.0.3"

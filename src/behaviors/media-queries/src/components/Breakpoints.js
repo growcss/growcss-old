@@ -6,10 +6,12 @@ import type { BreakpointsType } from '../types';
  *
  * @type {{small: number, medium: number, large: number, xlarge: number, xxlarge: number}}
  */
-export const breakpoints: BreakpointsType = {
+const breakpoints: BreakpointsType = {
   small: 0,
   medium: 640,
   large: 1024,
   xlarge: 1200,
   xxlarge: 1440,
 };
+
+export default breakpoints;

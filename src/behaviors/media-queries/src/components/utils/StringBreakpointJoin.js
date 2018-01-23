@@ -1,5 +1,5 @@
 //@flow
-import { stripUnit } from './StripUnit';
+const stripUnits = require('strip-units');
 
 /**
  * Return media query string from the given min and/or max limits.
@@ -21,15 +21,15 @@ export const strBreakpointJoin = (
   const delimiter: string = ' and ';
   let str = '';
 
-  if (min !== null && +stripUnit(min) !== 0) {
+  if (min !== null && +stripUnits(min) !== 0) {
     str = `(${minName}: ${min})`;
 
-    if (max !== null && +stripUnit(max) !== 0) {
+    if (max !== null && +stripUnits(max) !== 0) {
       str += delimiter;
     }
   }
 
-  if (max !== null && +stripUnit(max) !== 0) {
+  if (max !== null && +stripUnits(max) !== 0) {
     str += `(${maxName}: ${max})`;
   }
 

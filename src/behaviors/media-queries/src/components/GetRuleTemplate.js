@@ -1,8 +1,10 @@
 //@flow
-import { breakpoints as defaultBreakpoints } from './Breakpoints';
-import { hidpiBreakpoints } from './HidpiBreakpoint';
-import { mapNext, mapNextNumber, stripUnit, toEm, strBreakpointJoin } from './util';
+import DefaultBreakpoints from './Breakpoints';
+import HidpiBreakpoints from './HidpiBreakpoint';
+import { mapNext, mapNextNumber, toEm, strBreakpointJoin } from './utils';
 import type { BreakpointsType, HidpiBreakpointsType } from '../types';
+
+const stripUnits = require('strip-units');
 
 /**
  * Generates a media query for dpi.
@@ -20,8 +22,8 @@ const generateDpiMediaQuery = (
 ): string => {
   // Generate values in DPI instead of DPPX for an IE9-11/Opera mini compatibility.
   // See https://caniuse.com/#feat=css-media-resolution
-  const bpMinDpi = bpMin !== null ? (`${ stripUnit(bpMin) * stdWebDpi }dpi`) : bpMin;
-  const bpMaxDpi = bpMax !== null ? (`${ parseFloat(stripUnit(bpMax) * stdWebDpi).toFixed(0) }dpi`) : bpMax;
+  const bpMinDpi = bpMin !== null ? (`${ stripUnits(bpMin) * stdWebDpi }dpi`) : bpMin;
+  const bpMaxDpi = bpMax !== null ? (`${ parseFloat(stripUnits(bpMax) * stdWebDpi).toFixed(0) }dpi`) : bpMax;
 
   let template = strBreakpointJoin(bpMin, parseFloat(bpMax).toFixed(5), '-webkit-min-device-pixel-ratio', '-webkit-max-device-pixel-ratio');
 
@@ -43,8 +45,8 @@ const generateDpiMediaQuery = (
  */
 const getRuleTemplate = (
   value: string,
-  breakpoints: BreakpointsType = defaultBreakpoints,
-  hidpibreakpoints: HidpiBreakpointsType = hidpiBreakpoints
+  breakpoints: BreakpointsType = DefaultBreakpoints,
+  hidpibreakpoints: HidpiBreakpointsType = HidpiBreakpoints
 ): string | null => {
   const split = value.split(' ');
   // Web standard Pixels per inch. (1ddpx / $std-web-dpi) = 1dpi
@@ -94,7 +96,7 @@ const getRuleTemplate = (
   // Only 'only' and 'up' have a min limit.
   if (direction === 'only' || direction === 'up') {
     if (hidpi === true) {
-      bpMin = stripUnit(bp);
+      bpMin = stripUnits(bp);
     } else {
       bpMin = toEm(bp);
     }
@@ -104,7 +106,7 @@ const getRuleTemplate = (
   if (direction === 'only' || direction === 'down') {
     if (name === null) {
       if (hidpi === true) {
-        bpMax = stripUnit(bp);
+        bpMax = stripUnits(bp);
       } else {
         bpMax = toEm(bp);
       }
@@ -112,7 +114,7 @@ const getRuleTemplate = (
       if (hidpi === true) {
         bpMax = bpNext - (1 / stdWebDpi);
       } else {
-        bpMax = `${ stripUnit(toEm(bpNext)) - (1 / 16) }em`;
+        bpMax = `${ stripUnits(toEm(bpNext)) - (1 / 16) }em`;
       }
     }
   }

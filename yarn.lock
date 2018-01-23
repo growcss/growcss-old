@@ -4843,7 +4843,7 @@ jest-worker@^22.1.0:
   dependencies:
     merge-stream "^1.0.1"
 
-jest@^22.1.4:
+jest@^22.0.3, jest@^22.1.4:
   version "22.1.4"
   resolved "https://registry.yarnpkg.com/jest/-/jest-22.1.4.tgz#9ec71373a38f40ff92a3e5e96ae85687c181bb72"
   dependencies:
@@ -7678,6 +7678,10 @@ strip-indent@^2.0.0:
 strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
+
+strip-units@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/strip-units/-/strip-units-0.0.1.tgz#ed60323f54bc2222823833c72a2746aaa0818c4e"
 
 style-loader@^0.19.1:
   version "0.19.1"

@@ -1,13 +1,7 @@
 {
+  "private": true,
   "name": "growcss",
-  "version": "0.0.1",
-  "description": "GrowCss is a simple, flexible and extensible modular frontend framework.",
-  "author": {
-    "name": "Daniel Bannert",
-    "email": "d.bannert@anolilab.de"
-  },
-  "homepage": "http://growcss.com",
-  "repository": "https://github.com/growcss/growcss.git",
+  "license": "MIT",
   "scripts": {
     "delete": "             yarn run delete:modules && yarn run delete:build",
     "delete:modules": "     rm -rf node_modules **/node_modules",
@@ -21,41 +15,10 @@
     "typecheck": "          flow check",
     "lint": "               eslint --print-config .eslintrc | eslint-config-prettier-check && eslint '**/*.js'"
   },
-  "bugs": {
-    "url": "https://github.com/growcss/growcss/issues"
-  },
-  "license": "MIT",
-  "ignore": [
-    "/.*",
-    "CODE_OF_CONDUCT.md"
-  ],
-  "keywords": [
-    "css",
-    "js",
-    "mobile-first",
-    "responsive",
-    "framework",
-    "web",
-    "front-end",
-    "development",
-    "build",
-    "behavior",
-    "components",
-    "preact",
-    "react"
-  ],
   "engines": {
-    "node": "^9.3.0"
-  },
-  "bolt": {
-    "version": ">=0.17.0",
-    "workspaces": [
-      "packages/behaviors/*",
-      "packages/components/*"
-    ],
-    "releases": {
-      "baseCommitUrl": "https://github.com/growcss/growcss/commits"
-    }
+    "node": "^9.3.0",
+    "npm": "^5",
+    "yarn": ""
   },
   "peerDependencies": {
     "preact": "^8.x",
@@ -142,5 +105,10 @@
       "prettier --write",
       "git add"
     ]
-  }
+  },
+  "workspaces": [
+    "src/behaviors/*",
+    "src/elements/*",
+    "src/utils/*"
+  ]
 }
