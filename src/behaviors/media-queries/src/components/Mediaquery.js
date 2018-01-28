@@ -5,16 +5,32 @@ import HidpiBreakpoints from './HidpiBreakpoint';
 import GetRuleTemplate from './GetRuleTemplate';
 import type { BreakpointsType, HidpiBreakpointsType } from '../types';
 
+/**
+ * Generates a media query matching the input value.
+ *
+ * @param {string}               value
+ * @param {BreakpointsType}      breakpoints
+ * @param {HidpiBreakpointsType} hidpibreakpoints
+ *
+ * @return {function(...[Array<any>])}
+ */
 export default (
   value: string,
   breakpoints: BreakpointsType = DefaultBreakpoints,
-  hidpibreakpoints: HidpiBreakpointsType = HidpiBreakpoints
+  hidpibreakpoints: HidpiBreakpointsType = HidpiBreakpoints,
 ) => {
-  return (...args: Array<string>) => {
-    return css`
-      @media ${GetRuleTemplate(value, breakpoints, hidpibreakpoints)} {
-        ${css(...args)}
-      }
-    `;
+  return (...args: Array<any>) => {
+    const template = GetRuleTemplate(value, breakpoints, hidpibreakpoints);
+    const regex = /\(.*\)/;
+
+    if (regex.exec(template) !== null) {
+      return css`
+        @media ${template} {
+          ${css(...args)};
+        }
+      `;
+    }
+
+    return css(...args);
   };
 };

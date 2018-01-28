@@ -13,7 +13,7 @@ const a11yHelper = {};
  * [axe.a11yCheck](https://github.com/dequelabs/axe-core/blob/master/doc/API.md#options-parameter).
  * @param {function} callback - A callback function to execute when aXe returns.
  */
-a11yHelper.testReactComponent = function (app, config, callback) {
+a11yHelper.testReactComponent = function(app, config, callback) {
   const div = document.createElement('div');
   document.body.appendChild(div);
   this.wrapper = render(app, div);
@@ -23,6 +23,7 @@ a11yHelper.testReactComponent = function (app, config, callback) {
   if (typeof config === 'function') {
     config = {};
   }
+
   this.run(node, config, callback);
 
   document.body.removeChild(div);
@@ -36,8 +37,9 @@ a11yHelper.testReactComponent = function (app, config, callback) {
  * [axe.a11yCheck](https://github.com/dequelabs/axe-core/blob/master/doc/API.md#options-parameter).
  * @param {function} callback - A callback function to execute when aXe returns.
  */
-a11yHelper.testEnzymeComponent = function (app, config, callback) {
+a11yHelper.testEnzymeComponent = function(app, config, callback) {
   const div = document.createElement('div');
+
   document.body.appendChild(div);
 
   const wrapper = mount(app, { attachTo: div });
@@ -59,7 +61,7 @@ a11yHelper.testEnzymeComponent = function (app, config, callback) {
  * @param {object} config - An aXe config or empty object.
  * @param {function} callback - A callback function to execute when aXe returns.
  */
-a11yHelper.run = function (node, config, callback) {
+a11yHelper.run = function(node, config, callback) {
   const oldNode = global.Node;
   global.Node = node.ownerDocument.defaultView.Node;
 
@@ -82,18 +84,22 @@ a11yHelper.run = function (node, config, callback) {
  * @private
  * @param {object} results - The aXe [results object](https://github.com/dequelabs/axe-core/blob/master/doc/API.md#results-object).
  */
-a11yHelper.report = function (results) {
+a11yHelper.report = function(results) {
   // output some useful information
   let failureNotice = '';
+
   if (results.violations.length > 0) {
     failureNotice += 'Accessibility violations:\n';
-    results.violations.forEach((violation) => {
+
+    results.violations.forEach(violation => {
       failureNotice += `${violation.description}\n`;
       failureNotice += 'HTML Nodes: \n';
-      violation.nodes.forEach((node) => {
+
+      violation.nodes.forEach(node => {
         failureNotice += `${node.html}\n`;
       });
     });
+
     console.log(failureNotice);
   }
 };

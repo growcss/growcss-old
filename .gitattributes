@@ -7,6 +7,7 @@
 # source code
 *.css text
 *.js text
+*.jsx text
 *.json text
 *.html text
 *.xml text

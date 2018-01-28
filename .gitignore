@@ -1,5 +1,8 @@
+npm-debug.log
+lerna-debug.log
+yarn-error.log
+
 node_modules
-/npm-debug.log
-/precompiled
-/testing
-/coverage
+coverage
+dist
+bundle-stats.html

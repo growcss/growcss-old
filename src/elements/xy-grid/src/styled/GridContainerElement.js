@@ -1,6 +1,10 @@
 // @flow
 import styled from 'styled-components';
+import { gutters } from '../utils/Gutters';
 
 export const GridContainerElement = styled.div`
-  flex: ${props => props.fluid ? 'palevioletred' : 'white'};
+  max-width: ${props => props.maxWidth};
+  margin: 0 auto;
+
+  ${props => gutters(props.paddingGutter, 'padding')};
 `;

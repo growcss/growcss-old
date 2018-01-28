@@ -1,43 +1,59 @@
 //@flow
-import { css } from 'styled-components';
 import type { GuttersType } from '../types/GuttersType';
-import { gutters as defaultGutters } from '../components/Gutters';
 import mediaquery from '@growcss/behavior-media-queries';
+import remCalc from '@growcss/utils-remcalc';
 
-export const gutter = (
-  gutters: number | GuttersType = defaultGutters,
+const stripUnits = require('strip-units');
+
+/**
+ * Create gutters for a cell/container.
+ *
+ * @param {number | GuttersType} gutters
+ * @param {string}               gutterType
+ * @param {Array<string>}        gutterPosition
+ * @param {boolean}              negative
+ *
+ * @return {Array<string>}
+ */
+export const gutters = (
+  gutters: number | GuttersType,
   gutterType: string = 'margin',
-  gutterPosition: Array<string> =  ['right', 'left'],
+  gutterPosition: Array<string> = ['right', 'left'],
   negative: boolean = false,
-) => {
-  const operator = negative === true ? '-' : '';
+): Array<string> => {
+  let operator = negative === true ? '-' : '';
+  // If the value is already negative, remove the operator and set negative to true.
+  if (typeof gutters === 'number' && gutters < 0) {
+    negative = true;
+    operator = '';
+  }
+
   // If we have declared negative gutters, force type to `margin.
-  const gType = negative === true ? 'margin' : gutterType;
-  let string = '';
+  gutterType = negative === true ? 'margin' : gutterType;
+
+  const strings = [];
 
   // Output our margin gutters.
   if (typeof gutters === 'object') {
     for (const key in gutters) {
-      const gutter = gutters[key] / 2;
+      const gutter = remCalc(stripUnits(gutters[key]) / 2);
       let css = '';
 
       for (const gutterPositionItem of gutterPosition) {
-        css = css + `${gType}-${gutterPositionItem}: ${operator}${gutter}`;
+        css += `${gutterType}-${gutterPositionItem}: ${operator}${gutter};`;
       }
 
-      string = string + mediaquery(key)`${css}`;
+      strings.push(mediaquery(key)`${css}`);
     }
 
-    return string;
+    return strings;
   }
 
-  const gutter = gutters / 2;
+  const gutter = remCalc(stripUnits(gutters) / 2);
 
   for (const gutterPositionItem of gutterPosition) {
-    string = string + css`
-          ${gType}-${gutterPositionItem}: ${operator}${gutter};
-        `;
+    strings.push(`${gutterType}-${gutterPositionItem}: ${operator}${gutter};`);
   }
 
-  return string;
+  return strings;
 };

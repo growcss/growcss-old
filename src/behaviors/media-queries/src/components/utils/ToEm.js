@@ -9,11 +9,14 @@ const stripUnits = require('strip-units');
  * @return {string}
  */
 export const toEm = (value: number | string): string => {
-  const regex = /px+$/gs;
+  const regex = new RegExp('px+$');
 
-  if ((typeof value === 'string' && regex.exec(value) !== null) || isNaN(value) !== true) {
-    return `${ stripUnits(value) / 16 }em`
+  if (
+    (typeof value === 'string' && regex.exec(value) !== null) ||
+    isNaN(value) !== true
+  ) {
+    return `${stripUnits(value) / 16}em`;
   }
 
-  return `${ stripUnits(value) }em`;
+  return `${stripUnits(value)}em`;
 };

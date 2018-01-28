@@ -19,18 +19,18 @@ const toRem = (value: string | number, base: number): string => {
     const output = value.match(regex);
 
     if (Array.isArray(output)) {
-      if (output.shift() === 'em') {
-        rem = stripUnits(value) + 'rem';
-      } else if (output.shift() !== 'rem') {
-        rem = (stripUnits(value) / base) + 'rem';
+      if (output[0] === 'em') {
+        rem = `${stripUnits(value)}rem`;
+      } else if (output[0] !== 'rem') {
+        rem = `${stripUnits(value) / base}rem`;
       }
     }
   } else {
-    rem = (stripUnits(value) / base) + 'rem';
+    rem = `${stripUnits(value) / base}rem`;
   }
 
-  if (rem === '0rem') {
-    rem = '0';
+  if (rem === '0rem' || rem === 'nullrem' || value === '0rem') {
+    return '0';
   }
 
   return rem;
@@ -45,22 +45,24 @@ const toRem = (value: string | number, base: number): string => {
  */
 export default (
   values: string | number | Array<string | number>,
-  base: number | string = 16
+  base: number | string = 16,
 ) => {
-  let baseRem: number;
+  let baseRem: number = stripUnits(base);
 
   if (typeof base === 'string') {
-    // If the base font size is a %, then multiply it by 16px
-    // This is because 100% font size = 16px in most all browsers
-    if (base.match(regex) === '%') {
-      baseRem = ((stripUnits(base) / 100) * 16)
-    } else if (base.match(regex) === 'rem') { // Using rem as base allows correct scaling
-      baseRem = stripUnits(base) * 16
-    } else {
-      baseRem = stripUnits(base);
+    const match = base.match(regex);
+
+    if (Array.isArray(match)) {
+      // If the base font size is a %, then multiply it by 16px
+      // This is because 100% font size = 16px in most all browsers
+      if (match[0] === '%') {
+        baseRem = stripUnits(base) / 100 * 16;
+      } else if (match[0] === 'rem') {
+        // Using rem as base allows correct scaling
+
+        baseRem = stripUnits(base) * 16;
+      }
     }
-  } else {
-    baseRem = stripUnits(base);
   }
 
   if (typeof values === 'string' || typeof values === 'number') {
@@ -69,9 +71,9 @@ export default (
 
   const remValues = [];
 
-  values.forEach(function (value) {
+  values.forEach(value => {
     remValues.push(toRem(value, baseRem));
   });
 
-  return remValues.join(' ')
-}
+  return remValues.join(' ');
+};

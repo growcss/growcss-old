@@ -1,4 +1,5 @@
 //@flow
+import debug from 'debug';
 import DefaultBreakpoints from './Breakpoints';
 import HidpiBreakpoints from './HidpiBreakpoint';
 import { mapNext, mapNextNumber, toEm, strBreakpointJoin } from './utils';
@@ -9,33 +10,45 @@ const stripUnits = require('strip-units');
 /**
  * Generates a media query for dpi.
  *
- * @param {null |  number} bpMin
+ * @param {null | string} bpMin
  * @param {number} stdWebDpi
- * @param {null |  number} bpMax
+ * @param {null | string} bpMax
  *
  * @return {string}
  */
 const generateDpiMediaQuery = (
-  bpMin: null | number,
+  bpMin: null | number | string,
   stdWebDpi: number,
-  bpMax: null | number
+  bpMax: null | number | string,
 ): string => {
   // Generate values in DPI instead of DPPX for an IE9-11/Opera mini compatibility.
   // See https://caniuse.com/#feat=css-media-resolution
-  const bpMinDpi = bpMin !== null ? (`${ stripUnits(bpMin) * stdWebDpi }dpi`) : bpMin;
-  const bpMaxDpi = bpMax !== null ? (`${ parseFloat(stripUnits(bpMax) * stdWebDpi).toFixed(0) }dpi`) : bpMax;
+  const bpMinDpi =
+    bpMin !== null ? `${stripUnits(bpMin) * stdWebDpi}dpi` : bpMin;
+  const bpMaxDpi =
+    bpMax !== null
+      ? `${parseFloat(stripUnits(bpMax) * stdWebDpi).toFixed(0)}dpi`
+      : bpMax;
 
-  let template = strBreakpointJoin(bpMin, parseFloat(bpMax).toFixed(5), '-webkit-min-device-pixel-ratio', '-webkit-max-device-pixel-ratio');
+  let template = strBreakpointJoin(
+    bpMin,
+    parseFloat(bpMax).toFixed(5),
+    '-webkit-min-device-pixel-ratio',
+    '-webkit-max-device-pixel-ratio',
+  );
 
   if (template !== '') {
-    template = template + ', ';
+    template += ', ';
   }
 
-  return template + strBreakpointJoin(bpMinDpi, bpMaxDpi, 'min-resolution', 'max-resolution');
+  return (
+    template +
+    strBreakpointJoin(bpMinDpi, bpMaxDpi, 'min-resolution', 'max-resolution')
+  );
 };
 
 /**
- * Generates a media query string matching the input value.
+ * Generates a media query template string matching the input value.
  *
  * @param {string}               value
  * @param {BreakpointsType}      breakpoints
@@ -46,8 +59,8 @@ const generateDpiMediaQuery = (
 const getRuleTemplate = (
   value: string,
   breakpoints: BreakpointsType = DefaultBreakpoints,
-  hidpibreakpoints: HidpiBreakpointsType = HidpiBreakpoints
-): string | null => {
+  hidpibreakpoints: HidpiBreakpointsType = HidpiBreakpoints,
+): string => {
   const split = value.split(' ');
   // Web standard Pixels per inch. (1ddpx / $std-web-dpi) = 1dpi
   // See https://www.w3.org/TR/css-values-3/#absolute-lengths
@@ -69,7 +82,7 @@ const getRuleTemplate = (
   let hidpi = false;
 
   if (bp === 'landscape' || bp === 'portrait') {
-    return `(orientation: ${ bp })`;
+    return `(orientation: ${bp})`;
   } else if (bp === 'retina') {
     return '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)';
   }
@@ -84,12 +97,18 @@ const getRuleTemplate = (
       bp = hidpibreakpoints[name];
       bpNext = mapNextNumber(hidpibreakpoints, bp);
       hidpi = true;
-    } else {
-      console.warn(`breakpoint: ${value} is not defined in your "breakpoints" or "breakpoints-hidpi" setting.`);
+    } else if (debug.enabled) {
+      const log = debug('growcss.media-queries');
+
+      log(
+        `media-queries: ${value} is not defined in your "breakpoints" or "breakpoints-hidpi" setting.`,
+      );
     }
 
     if (name === null && direction === 'only') {
-      throw new Error('breakpoint: Only named media queries can have an "only" range.');
+      throw new Error(
+        'breakpoint: Only named media queries can have an "only" range.',
+      );
     }
   }
 
@@ -110,11 +129,12 @@ const getRuleTemplate = (
       } else {
         bpMax = toEm(bp);
       }
-    } else if (bpNext !== null) { // If the breakpoint is named, the max limit is the following breakpoint - 1px.
+    } else if (bpNext !== null) {
+      // If the breakpoint is named, the max limit is the following breakpoint - 1px.
       if (hidpi === true) {
-        bpMax = bpNext - (1 / stdWebDpi);
+        bpMax = bpNext - 1 / stdWebDpi;
       } else {
-        bpMax = `${ stripUnits(toEm(bpNext)) - (1 / 16) }em`;
+        bpMax = `${stripUnits(toEm(bpNext)) - 1 / 16}em`;
       }
     }
   }

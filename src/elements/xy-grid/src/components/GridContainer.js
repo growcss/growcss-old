@@ -1,25 +1,43 @@
 //@flow
-import {Component} from "react";
-import PropTypes from 'prop-types';
-import { ThemeProvider, withTheme } from 'styled-components';
+import React, { Component } from 'react';
+import remCalc from '@growcss/utils-remcalc';
+import { gutters as defaultGutters } from './Gutters';
+import { GridContainerElement } from '../styled/GridContainerElement';
+import type { GuttersType } from '../types';
 
-export type GridContainerProps = {
+type GridContainerProps = {
   children?: any,
-  // Fluid: To stretch the content to the full width of the available space.
-  // Full:  To stretch the content to the full width of the available space and remove grid container padding.
-  layout?: fluid | full,
+  layout?: string,
+  width?: string | number,
+  paddingGutter?: GuttersType | number | string,
 };
 
 export default class GridContainer extends Component<GridContainerProps> {
-  props: GridContainerProps;
+  static propTypes: GridContainerProps;
+
+  static defaultProps = {
+    width: remCalc(1200),
+    paddingGutter: defaultGutters,
+  };
 
   render() {
-    const { layout, children } = this.props;
+    const { layout, children, width, paddingGutter } = this.props;
+
+    let maxWidth = width;
+    let gutter = paddingGutter;
+
+    if (layout === 'fluid' || layout === 'full') {
+      maxWidth = '100%';
+    }
+
+    if (layout === 'full') {
+      gutter = '0';
+    }
 
     return (
-        <GridContainerElement {layout}>
-          {children}
-        </GridContainerElement>
+      <GridContainerElement maxWidth={maxWidth} paddingGutter={gutter}>
+        {children}
+      </GridContainerElement>
     );
   }
 }

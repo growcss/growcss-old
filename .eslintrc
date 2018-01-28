@@ -2,10 +2,10 @@
   "extends": [
     "airbnb",
     "prettier",
-    "plugin:flowtype/recommended",
-    "eslint:recommended"
+    "plugin:flowtype/recommended"
   ],
   "plugins": [
+    "compat",
     "flowtype",
     "jest",
     "prettier"
@@ -16,8 +16,6 @@
     "import/prefer-default-export": "off",
 
     "no-restricted-syntax": "off",
-    "no-underscore-dangle": "off",
-    "no-use-before-define": "off",
 
     "arrow-body-style": "off",
 
@@ -43,6 +41,12 @@
     // Rules below are all added to remove conflicts with prettier. DO NOT REMOVE
     "react/jsx-indent": "off",
     "arrow-parens": "off",
+    "flowtype/generic-spacing": "off",
+    "flowtype/space-after-type-colon": "off",
+    "flowtype/space-before-generic-bracket": "off",
+    "flowtype/space-before-type-colon": "off",
+    "flowtype/union-intersection-spacing": "off",
+    "react/jsx-closing-tag-location": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-curly-spacing": "off",
     "react/jsx-equals-spacing": "off",
