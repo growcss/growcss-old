@@ -13,8 +13,6 @@ type GridContainerProps = {
 };
 
 export default class GridContainer extends Component<GridContainerProps> {
-  static propTypes: GridContainerProps;
-
   static defaultProps = {
     width: remCalc(1200),
     paddingGutter: defaultGutters,

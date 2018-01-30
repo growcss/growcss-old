@@ -26,7 +26,7 @@ export default (
     if (regex.exec(template) !== null) {
       return css`
         @media ${template} {
-          ${css(...args)};
+          ${css(...args)}
         }
       `;
     }

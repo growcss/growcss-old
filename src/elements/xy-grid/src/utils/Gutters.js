@@ -5,6 +5,35 @@ import remCalc from '@growcss/utils-remcalc';
 
 const stripUnits = require('strip-units');
 
+const cssBuilder = (
+  gutter: number | string,
+  negative: boolean,
+  gutterType: string,
+  gutterPosition: Array<string>
+): string => {
+  let negativeBoolean = negative;
+  let operator = negativeBoolean === true ? '-' : '';
+
+  const rem = remCalc(stripUnits(gutter) / 2);
+
+  // If the value is already negative, remove the operator and set negative to true.
+  if (typeof gutter === 'number' && gutter < 0) {
+    negativeBoolean = true;
+    operator = '';
+  }
+
+  // If we have declared negative gutters, force type to `margin.
+  const gType = negativeBoolean === true ? 'margin' : gutterType;
+
+  let css = '';
+
+  for (const gutterPositionItem of gutterPosition) {
+    css += `${gType}-${gutterPositionItem}: ${operator}${rem};`;
+  }
+
+  return css;
+};
+
 /**
  * Create gutters for a cell/container.
  *
@@ -15,45 +44,25 @@ const stripUnits = require('strip-units');
  *
  * @return {Array<string>}
  */
-export const gutters = (
+export const Gutters = (
   gutters: number | GuttersType,
   gutterType: string = 'margin',
   gutterPosition: Array<string> = ['right', 'left'],
   negative: boolean = false,
-): Array<string> => {
-  let operator = negative === true ? '-' : '';
-  // If the value is already negative, remove the operator and set negative to true.
-  if (typeof gutters === 'number' && gutters < 0) {
-    negative = true;
-    operator = '';
-  }
-
-  // If we have declared negative gutters, force type to `margin.
-  gutterType = negative === true ? 'margin' : gutterType;
-
-  const strings = [];
+): string | Array<string> => {
 
   // Output our margin gutters.
   if (typeof gutters === 'object') {
+    const strings = [];
+
     for (const key in gutters) {
-      const gutter = remCalc(stripUnits(gutters[key]) / 2);
-      let css = '';
-
-      for (const gutterPositionItem of gutterPosition) {
-        css += `${gutterType}-${gutterPositionItem}: ${operator}${gutter};`;
+      if (typeof gutters[key] === 'number' || typeof gutters[key] === 'string') {
+        strings.push(mediaquery(key)`${cssBuilder(gutters[key], negative, gutterType, gutterPosition)}`);
       }
-
-      strings.push(mediaquery(key)`${css}`);
     }
 
     return strings;
   }
 
-  const gutter = remCalc(stripUnits(gutters) / 2);
-
-  for (const gutterPositionItem of gutterPosition) {
-    strings.push(`${gutterType}-${gutterPositionItem}: ${operator}${gutter};`);
-  }
-
-  return strings;
+  return [cssBuilder(gutters, negative, gutterType, gutterPosition)];
 };

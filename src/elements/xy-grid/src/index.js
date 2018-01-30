@@ -1,3 +1,3 @@
 //@flow
 export { default as GridContainer } from './components/GridContainer';
-export { GridContainerElement } from './styled/GridContainerElement';
+export { default as Cell } from './components/Cell';

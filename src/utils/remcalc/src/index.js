@@ -1,8 +1,6 @@
 //@flow
 const stripUnits = require('strip-units');
 
-const regex = /[^\d.-]+/g;
-
 /**
  * Converts a pixel value to matching rem value. *Any* value passed, regardless of unit, is assumed to be a pixel value.
  * By default, the base pixel value used to calculate the rem value is taken from the `base` variable.
@@ -16,14 +14,10 @@ const toRem = (value: string | number, base: number): string => {
   let rem = '';
 
   if (typeof value === 'string') {
-    const output = value.match(regex);
-
-    if (Array.isArray(output)) {
-      if (output[0] === 'em') {
-        rem = `${stripUnits(value)}rem`;
-      } else if (output[0] !== 'rem') {
-        rem = `${stripUnits(value) / base}rem`;
-      }
+    if (value.includes('em')) {
+      rem = `${stripUnits(value)}rem`;
+    } else if (! value.includes('rem')) {
+      rem = `${stripUnits(value) / base}rem`;
     }
   } else {
     rem = `${stripUnits(value) / base}rem`;
@@ -50,18 +44,13 @@ export default (
   let baseRem: number = stripUnits(base);
 
   if (typeof base === 'string') {
-    const match = base.match(regex);
-
-    if (Array.isArray(match)) {
-      // If the base font size is a %, then multiply it by 16px
-      // This is because 100% font size = 16px in most all browsers
-      if (match[0] === '%') {
-        baseRem = stripUnits(base) / 100 * 16;
-      } else if (match[0] === 'rem') {
-        // Using rem as base allows correct scaling
-
-        baseRem = stripUnits(base) * 16;
-      }
+    // If the base font size is a %, then multiply it by 16px
+    // This is because 100% font size = 16px in most all browsers
+    if (base.includes('%')) {
+      baseRem = stripUnits(base) / 100 * 16;
+    } else if (base.includes('rem')) {
+      // Using rem as base allows correct scaling
+      baseRem = stripUnits(base) * 16;
     }
   }
 
