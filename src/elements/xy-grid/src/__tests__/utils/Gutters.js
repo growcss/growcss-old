@@ -1,10 +1,10 @@
 //@flow
 import { Gutters } from '../../utils/Gutters';
-import { gutters as defaultGutter } from '../../components/Gutters';
+import { Gutters as DefaultGutter } from '../../components/Gutters';
 
 describe('Gutters (margin and padding with breakpoints)', () => {
   it('Converts a gutter named breakpoint to value and a wrapped media-query value', () => {
-    expect(Gutters(defaultGutter)).toEqual([
+    expect(Gutters(DefaultGutter)).toEqual([
       ['margin-right: 0.625rem;margin-left: 0.625rem;'],
       [
         '@media ',
@@ -17,7 +17,7 @@ describe('Gutters (margin and padding with breakpoints)', () => {
   });
 
   it('Converts a gutter named breakpoint to value and a wrapped media-query value with changed gutter type', () => {
-    expect(Gutters(defaultGutter, 'padding')).toEqual([
+    expect(Gutters(DefaultGutter, 'padding')).toEqual([
       ['padding-right: 0.625rem;padding-left: 0.625rem;'],
       [
         '@media ',

@@ -49,8 +49,7 @@ export const Gutters = (
   gutterType: string = 'margin',
   gutterPosition: Array<string> = ['right', 'left'],
   negative: boolean = false,
-): string | Array<string> => {
-
+): Array<string> => {
   // Output our margin gutters.
   if (typeof gutters === 'object') {
     const strings = [];

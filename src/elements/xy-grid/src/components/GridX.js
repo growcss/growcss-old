@@ -1,16 +1,26 @@
 //@flow
-import React,{ Component } from "react";
+import React, { Component } from "react";
 import { XYGridElement } from '../styled/XYGridElement';
+import type { GuttersType } from '../types';
+import { Gutters as DefaultGutters } from './Gutters';
 
 type GridXType = {
-  children?: any
+  children?: any,
+  gutters: string | number | GuttersType
 };
 
 export default class GridX extends Component<GridXType>
 {
-  render() {
-    const { children } = this.props;
+  static defaultProps = {
+    gutters: DefaultGutters,
+  };
 
-    return (<XYGridElement direction='horizontal' wrap>{children}</XYGridElement>);
+  render() {
+    const {
+      children,
+      gutters
+    } = this.props;
+
+    return (<XYGridElement direction='horizontal' gutters={gutters} wrap>{children}</XYGridElement>);
   }
 }

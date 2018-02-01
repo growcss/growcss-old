@@ -1,27 +1,34 @@
 // @flow
 import styled from 'styled-components';
-import { BreakpointCell, CellBase, CellStatic } from '../utils/Cell';
-import { gutters as DefaultGutters } from '../components/Gutters';
+import mediaquery, { DefaultBreakpoints } from '@growcss/behavior-media-queries';
+import { Gutters as DefaultGutters } from '../components/Gutters';
+import { CellStatic } from '../utils/CellStatic';
+import { CellBase } from '../utils/CellBase';
+import { BreakpointCell } from '../utils/BreakpointCell';
 
-const ChooseType = (type: string) => {
-  if (type === 'auto') {
-    return CellStatic('auto', false);
+const BreakpointGutterCss = (props) => {
+  const breakpoints = [];
+  let lastBreakpoint = 'small';
+
+  for(const breakpoint in DefaultBreakpoints) {
+    const breakpointName = DefaultBreakpoints[breakpoint];
+
+    if (DefaultGutters[breakpointName] !== undefined) {
+      lastBreakpoint = breakpointName;
+    }
+
+    if (props[breakpoint] !== undefined) {
+      const cssString = BreakpointCell(props[breakpoint], lastBreakpoint, props.vertical);
+
+      breakpoints.push(mediaquery(breakpoint)`${cssString}`);
+    }
   }
 
-  if  (type === 'shrink') {
-    return CellStatic('shrink', false);
-  }
-
-  return '';
+  return breakpoints;
 };
 
-export const CellElement = styled.div`
-  ${CellBase()}
-  ${props => CellStatic(props.gridColumns, false, DefaultGutters, 'padding')}
-  ${props => ChooseType(props.type)}
-  ${props => BreakpointCell(props.small, 'small', props.vertical)}
-  ${props => BreakpointCell(props.medium, 'medium', props.vertical)}
-  ${props => BreakpointCell(props.large, 'large', props.vertical)}
-  ${props => BreakpointCell(props.xlarge, 'xlarge', props.vertical)}
-  ${props => BreakpointCell(props.xxlarge, 'xxlarge', props.vertical)}
+export const CellElement = styled.div`  
+  ${props => CellBase(props.cellSize || 'full')}
+  ${props => CellStatic((props.cellSize || props.gridColumns), props.gutterType !== undefined, DefaultGutters, (props.gutterType || 'padding'), 'small', props.vertical)}
+  ${props => BreakpointGutterCss(props)}
 `;

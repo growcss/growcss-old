@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cell auto layout 1`] = `
+<CellElement
+  cellSize="auto"
+  gridColumns={12}
+  vertical={false}
+>
+  test
+</CellElement>
+`;
+
+exports[`cell base layout 1`] = `
+<CellElement
+  gridColumns={12}
+  vertical={false}
+>
+  test
+</CellElement>
+`;
+
+exports[`cell shrink layout 1`] = `
+<CellElement
+  cellSize="shrink"
+  gridColumns={12}
+  vertical={false}
+>
+  test
+</CellElement>
+`;
