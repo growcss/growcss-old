@@ -7,12 +7,10 @@ import type { HidpiBreakpointsType } from '../types';
  *
  * @type {{'hidpi-1': number, 'hidpi-1-5': number, 'hidpi-2': number, retina: number, 'hidpi-3': number}}
  */
-const hidpiBreakpoints: HidpiBreakpointsType = {
+export const HidpiBreakpoints: HidpiBreakpointsType = {
   'hidpi-1': 1,
   'hidpi-1-5': 1.5,
   'hidpi-2': 2,
   'retina': 2,
   'hidpi-3': 3,
 };
-
-export default hidpiBreakpoints;

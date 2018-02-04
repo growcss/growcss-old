@@ -4,13 +4,13 @@ import { XYGridElement } from '../styled/XYGridElement';
 import type { GuttersType } from '../types';
 import { Gutters as DefaultGutters } from './Gutters';
 
-type GridXType = {
+type GridYType = {
   children?: any,
   gutterType: string,
   gutters: string | number | GuttersType
 };
 
-export default class GridX extends Component<GridXType>
+export default class GridY extends Component<GridYType>
 {
   static defaultProps = {
     gutters: DefaultGutters,
@@ -34,7 +34,7 @@ export default class GridX extends Component<GridXType>
     });
 
     return (
-      <XYGridElement direction='horizontal' gutters={gutters} wrap>
+      <XYGridElement direction='vertical' gutters={gutters} wrap>
         {cells}
       </XYGridElement>
     );

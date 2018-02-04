@@ -22,7 +22,8 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

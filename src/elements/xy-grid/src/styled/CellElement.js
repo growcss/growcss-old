@@ -1,34 +1,51 @@
 // @flow
 import styled from 'styled-components';
-import mediaquery, { DefaultBreakpoints } from '@growcss/behavior-media-queries';
+import mediaquery, { Breakpoints as DefaultBreakpoints } from '@growcss/behavior-media-queries';
 import { Gutters as DefaultGutters } from '../components/Gutters';
 import { CellStatic } from '../utils/CellStatic';
 import { CellBase } from '../utils/CellBase';
-import { BreakpointCell } from '../utils/BreakpointCell';
+import { CellOffset } from '../utils/CellOffset';
 
 const BreakpointGutterCss = (props) => {
-  const breakpoints = [];
-  let lastBreakpoint = 'small';
+  let breakpoints = [];
 
   for(const breakpoint in DefaultBreakpoints) {
-    const breakpointName = DefaultBreakpoints[breakpoint];
+    if (props[breakpoint] !== undefined &&
+      typeof props[breakpoint] === 'number' &&
+      props[breakpoint] !== 0 &&
+      DefaultGutters[breakpoint] !== undefined
+    ) {
+      const hasGutterType = props.gutterType !== undefined;
 
-    if (DefaultGutters[breakpointName] !== undefined) {
-      lastBreakpoint = breakpointName;
+      breakpoints = breakpoints.concat(
+        mediaquery(breakpoint)`${CellStatic(props[breakpoint], hasGutterType, DefaultGutters, (props.gutterType || 'padding'), breakpoint, props.vertical)}`
+      );
     }
+  }
 
-    if (props[breakpoint] !== undefined) {
-      const cssString = BreakpointCell(props[breakpoint], lastBreakpoint, props.vertical);
-
-      breakpoints.push(mediaquery(breakpoint)`${cssString}`);
-    }
+  if (breakpoints.length !== 0) {
+    breakpoints.push('flex-basis: auto;');
   }
 
   return breakpoints;
 };
 
-export const CellElement = styled.div`  
-  ${props => CellBase(props.cellSize || 'full')}
-  ${props => CellStatic((props.cellSize || props.gridColumns), props.gutterType !== undefined, DefaultGutters, (props.gutterType || 'padding'), 'small', props.vertical)}
+const OffsetCellCss = (props) => {
+  const css = [];
+
+  for(const breakpoint in DefaultBreakpoints) {
+    if (props[breakpoint] !== undefined) {
+      // css = css.concat(CellOffset());
+    }
+  }
+
+  return css;
+};
+
+export const CellElement = styled.div`
+  ${props => CellBase(props.cellType || 'full')}
+  ${props => CellStatic((props.cellType || props.gridColumns), props.gutterType !== undefined, DefaultGutters, (props.gutterType || 'padding'), 'small', props.vertical)}
   ${props => BreakpointGutterCss(props)}
+  ${props => OffsetCellCss(props)}
+  ${props => props.gutterType === 'padding' ? 'box-sizing: border-box;' : ''}
 `;

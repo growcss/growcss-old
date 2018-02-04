@@ -1,7 +1,7 @@
 //@flow
-import type { GuttersType } from '../types/GuttersType';
 import mediaquery from '@growcss/behavior-media-queries';
 import remCalc from '@growcss/utils-remcalc';
+import type { GuttersType } from '../types';
 
 const stripUnits = require('strip-units');
 

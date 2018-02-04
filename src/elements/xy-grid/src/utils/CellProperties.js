@@ -18,9 +18,7 @@ export const CellProperties = (size: string | number, marginGutter: string | num
     const val = (marginGutter === 0 ? '100%' : `calc(100% - ${remCalc(marginGutter)})`);
 
     return `${direction}: ${val};`;
-  } else if (size === 'auto') {
-    return `${direction}: auto;`;
-  } else if (size === 'shrink') {
+  } else if (size === 'auto' || size === 'shrink') {
     return `${direction}: auto;`;
   }
 

@@ -13,10 +13,10 @@ export const mapNextNumber = (breakpoints: BreakpointsType, number: number): nul
   let nextNumber = null;
 
   for (const key in breakpoints) {
-    const value = breakpoints[key];
-
-    if (typeof value === 'number' && value > number && (nextNumber === null || value < nextNumber)) {
-      nextNumber = value;
+    if (typeof breakpoints[key] === 'number') {
+      if (breakpoints[key] > number && (nextNumber === null || breakpoints[key] < nextNumber)) {
+        nextNumber = breakpoints[key];
+      }
     }
   }
 

@@ -1,10 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`cell auto layout 1`] = `
+exports[`cell auto layout with margin gutter 1`] = `
 <CellElement
-  cellSize="auto"
+  cellType="auto"
   gridColumns={12}
-  vertical={false}
+  gutterType="margin"
+>
+  test
+</CellElement>
+`;
+
+exports[`cell auto layout with padding gutter 1`] = `
+<CellElement
+  cellType="auto"
+  gridColumns={12}
+  gutterType="padding"
 >
   test
 </CellElement>
@@ -13,7 +23,6 @@ exports[`cell auto layout 1`] = `
 exports[`cell base layout 1`] = `
 <CellElement
   gridColumns={12}
-  vertical={false}
 >
   test
 </CellElement>
@@ -21,9 +30,17 @@ exports[`cell base layout 1`] = `
 
 exports[`cell shrink layout 1`] = `
 <CellElement
-  cellSize="shrink"
+  cellType="shrink"
   gridColumns={12}
-  vertical={false}
+>
+  test
+</CellElement>
+`;
+
+exports[`cell with 6 small layout 1`] = `
+<CellElement
+  gridColumns={12}
+  small={6}
 >
   test
 </CellElement>

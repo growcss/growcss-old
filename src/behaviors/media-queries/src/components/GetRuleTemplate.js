@@ -1,7 +1,7 @@
 //@flow
 import debug from 'debug';
-import DefaultBreakpoints from './Breakpoints';
-import HidpiBreakpoints from './HidpiBreakpoint';
+import { Breakpoints as DefaultBreakpoints } from './Breakpoints';
+import { HidpiBreakpoints } from './HidpiBreakpoints';
 import { mapNext, mapNextNumber, toEm, strBreakpointJoin } from './utils';
 import type { BreakpointsType, HidpiBreakpointsType } from '../types';
 
@@ -87,7 +87,8 @@ const getRuleTemplate = (
     return '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)';
   }
 
-  if (isNaN(+bp) === true) {
+  // Since NaN is the only JavaScript value that is treated as unequal to itself (DON`T REMOVE the +bp !== +bp check)
+  if (+bp !== +bp) { // eslint-disable-line no-self-compare
     if (bp in breakpoints) {
       name = bp;
       bp = breakpoints[name];
@@ -123,6 +124,7 @@ const getRuleTemplate = (
 
   // Only 'only' and 'down' have a max limit.
   if (direction === 'only' || direction === 'down') {
+
     if (name === null) {
       if (hidpi === true) {
         bpMax = stripUnits(bp);

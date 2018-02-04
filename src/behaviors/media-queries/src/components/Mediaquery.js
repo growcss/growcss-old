@@ -1,7 +1,7 @@
 //@flow
 import { css } from 'styled-components';
-import DefaultBreakpoints from './Breakpoints';
-import HidpiBreakpoints from './HidpiBreakpoint';
+import { Breakpoints as DefaultBreakpoints } from './Breakpoints';
+import { HidpiBreakpoints } from './HidpiBreakpoints';
 import GetRuleTemplate from './GetRuleTemplate';
 import type { BreakpointsType, HidpiBreakpointsType } from '../types';
 

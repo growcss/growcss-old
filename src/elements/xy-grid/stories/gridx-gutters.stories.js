@@ -7,18 +7,13 @@ import GridX from '../src/components/GridX';
 
 setAddon(JSXAddon);
 
-storiesOf('XY-Grid Basics', module).addWithJSX('Full width cell', () => (
-  <GridX>
-    <Cell>full width cell</Cell>
-    <Cell>full width cell</Cell>
+storiesOf('GridX Gutters', module).addWithJSX('Margin gutter', () => (
+  <GridX gutterType='margin'>
+    <Cell medium={6} large={4}>12/6/4 cells</Cell>
+    <Cell medium={6} large={8}>12/6/8 cells</Cell>
   </GridX>
-)).addWithJSX('6 cells', () => (
-  <GridX>
-    <Cell small={6}>6 cells</Cell>
-    <Cell small={6}>6 cells</Cell>
-  </GridX>
-)).addWithJSX('12/6/4 and 12/6/8 cells', () => (
-  <GridX>
+)).addWithJSX('Padding gutter', () => (
+  <GridX gutterType='padding'>
     <Cell medium={6} large={4}>12/6/4 cells</Cell>
     <Cell medium={6} large={8}>12/6/8 cells</Cell>
   </GridX>

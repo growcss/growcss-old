@@ -1,5 +1,5 @@
 //@flow
-import type { GuttersType } from '../types/GuttersType';
+import type { GuttersType } from '../types';
 import { Gutters as DefaultGutters } from '../components/Gutters';
 import { Gutters } from './Gutters';
 import { CellBase } from './CellBase';
@@ -16,7 +16,7 @@ import { CellProperties } from './CellProperties';
  * @param {string}               breakpoint     The name of the breakpoint size in your gutters array to get the size from.
  * @param {boolean}              vertical       Set to true to output vertical (height) styles rather than widths.
  *
- * @return {string}
+ * @return {Array<string>}
  */
 export const Cell = (
   size: string = 'full',
@@ -26,7 +26,7 @@ export const Cell = (
   gutterPosition: Array<string>  = ['right', 'left'],
   breakpoint: string = 'small',
   vertical: boolean = false,
-) => {
+): Array<string> => {
   let gutter;
 
   if (typeof gutters === 'object' && breakpoint in gutters) {
@@ -34,29 +34,21 @@ export const Cell = (
   } else if (typeof gutters === 'number') {
     gutter = gutters;
   } else {
-    throw new Error(`No gutters were found in "${gutters}" for "breakpoint: ${breakpoint}", cell was not generated.`);
+    const value = typeof gutters === 'object' ? JSON.stringify(gutters) : gutters;
+
+    throw new Error(`No gutters were found in "${value}" for "breakpoint: ${breakpoint}", cell was not generated.`);
   }
 
-  let css = '';
-
-  css += CellBase(size);
+  let css = [CellBase(size)];
 
   if (gutterType === 'margin') {
-    css += CellProperties(size, gutter, vertical);
+    css.push(CellProperties(size, gutter, vertical));
   } else {
-    css += CellProperties(size, 0, vertical);
+    css.push(CellProperties(size, 0, vertical));
   }
 
   if (outputGutter === true) {
-    const guttersValue = Gutters(gutter, gutterType, gutterPosition);
-
-    if (Array.isArray(guttersValue)) {
-      for (const value: string in guttersValue) {
-        css += value;
-      }
-    } else {
-      css += guttersValue;
-    }
+    css = css.concat(Gutters(gutter, gutterType, gutterPosition));
   }
 
   return css;

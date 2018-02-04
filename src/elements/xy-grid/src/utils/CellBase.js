@@ -16,7 +16,6 @@ export const CellBase = (size: string = 'full'): string => {
   } else if (size === 'grow') {
     css += 'flex: 1 0 auto;';
   } else {
-    // This is the base style, all others inherit from it
     css += 'flex: 0 0 auto;';
   }
 

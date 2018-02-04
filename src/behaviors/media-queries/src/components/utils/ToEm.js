@@ -11,10 +11,8 @@ const stripUnits = require('strip-units');
 export const toEm = (value: number | string): string => {
   const regex = new RegExp('px+$');
 
-  if (
-    (typeof value === 'string' && regex.exec(value) !== null) ||
-    isNaN(value) !== true
-  ) {
+  // Since NaN is the only JavaScript value that is treated as unequal to itself (DON`T REMOVE the value !== value check)
+  if ((typeof value === 'string' && regex.exec(value) !== null) || !(+value !== +value)) {// eslint-disable-line no-self-compare
     return `${stripUnits(value) / 16}em`;
   }
 

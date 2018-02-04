@@ -1,13 +1,17 @@
 //@flow
-import type { GuttersType } from '../types/GuttersType';
-import mediaquery from '@growcss/behavior-media-queries';
+import mediaquery, { Breakpoints } from '@growcss/behavior-media-queries';
+import type { BreakpointsType } from '@growcss/behavior-media-queries';
 import remCalc from '@growcss/utils-remcalc';
+const stripUnits = require('strip-units');
+import type { GuttersType } from '../types';
+import { Gutters } from '../components/Gutters';
+import { CellSize } from './CellSize';
 
 export const CellOffset = (
-  n: number,
-  gutters: number | GuttersType,
+  n: number | string,
+  gutters: GuttersType = Gutters,
   gutterType: string = 'margin',
-  breackpoints = {},
+  breakpoints: BreakpointsType = Breakpoints,
   vertical: boolean = false,
   rtl: boolean = false
 ) => {
@@ -21,19 +25,21 @@ export const CellOffset = (
     direction = 'left'
   }
 
-  const strings = [];
+  let strings = [];
 
-  for (const key in breackpoints) {
-    let css = '';
+  for (const breakpoint in breakpoints) {
+    if (typeof breakpoint === 'number') {
+      let css = '';
 
-    for (const gutterItem of gutters) {
-      const rem = remCalc(gutterItem / 2);
-      const gutterSize = gutterType === 'margin' ? `calc(${n} + ${rem})` : n;
+      for (const sizeName of gutters) {
+        const gutter = remCalc(stripUnits(gutters[sizeName]) / 2);
+        const gutterSize = gutterType === 'margin' ? `calc(${CellSize(n)} + ${gutter})` : CellSize(n);
 
-      css += `margin-${direction}: ${gutterSize};\n`;
+        css += `margin-${direction}: ${gutterSize};\n`;
+      }
+
+      strings = strings.concat(mediaquery(breakpoint, breakpoints)`${css}`);
     }
-
-    strings.push(mediaquery(key, breackpoints)`${css}`);
   }
 
   return strings;

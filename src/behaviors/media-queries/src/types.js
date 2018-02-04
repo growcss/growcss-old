@@ -1,4 +1,3 @@
 //@flow
-export type BreakpointsType = {[string]: number};
-
-export type HidpiBreakpointsType = {[string]: number};
+export type BreakpointsType = { [string]: number };
+export type HidpiBreakpointsType = { [string]: number };

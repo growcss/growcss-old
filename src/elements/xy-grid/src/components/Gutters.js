@@ -1,5 +1,5 @@
 //@flow
-import type { GuttersType } from '../types/GuttersType';
+import type { GuttersType } from '../types';
 
 export const Gutters: GuttersType = {
   small: '20px',

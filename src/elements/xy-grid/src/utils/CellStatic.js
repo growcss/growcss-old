@@ -25,14 +25,14 @@ export const CellStatic = (
   vertical: boolean = false,
 ): Array<string> => {
   let gutter;
-  let gutterPosition = ['left', 'right'];;
+  let gutterPosition = ['left', 'right'];
 
   if (typeof gutters === 'object' && breakpoint in gutters) {
     gutter = gutters[breakpoint];
   } else if (typeof gutters === 'number') {
     gutter = gutters;
   } else {
-    const value = typeof gutters === 'object' ? gutters.toString() : gutters;
+    const value = typeof gutters === 'object' ? JSON.stringify(gutters) : gutters;
 
     throw new Error(`No gutters were found in "${value}" for "breakpoint: ${breakpoint}", cell was not generated.`);
   }

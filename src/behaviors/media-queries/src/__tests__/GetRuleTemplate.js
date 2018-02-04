@@ -120,6 +120,10 @@ describe('Breakpoint (Value Default/Up Range)', () => {
   it('Converts a rem breakpoint to em', () => {
     expect(GetRuleTemplate('1rem')).toBe(expectedString);
   });
+
+  it('Converts a em breakpoint to em', () => {
+    expect(GetRuleTemplate('1em')).toBe(expectedString);
+  });
 });
 
 describe('Breakpoint (Value Down Range)', () => {

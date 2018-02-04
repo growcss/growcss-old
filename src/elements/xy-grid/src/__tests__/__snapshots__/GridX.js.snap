@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the style output of GridX 1`] = `
+<XYGridElement
+  direction="horizontal"
+  gutters={
+    Object {
+      "medium": "30px",
+      "small": "20px",
+    }
+  }
+  wrap={true}
+>
+  <Cell
+    gridColumns={12}
+    key=".0"
+    vertical={false}
+  >
+    test
+  </Cell>
+</XYGridElement>
+`;

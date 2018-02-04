@@ -6,9 +6,8 @@
  *
  * @return {string}
  */
-export const CellRest = (vertical: boolean = true): string => {
+export const CellReset = (vertical: boolean = true): string => {
   const direction: string = vertical === true ? 'height' : 'width';
 
-  return `${direction}: auto;` +
-    `max-${direction}: none;`
+  return `${direction}: auto;max-${direction}: none;`
 };
