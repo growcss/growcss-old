@@ -6,7 +6,7 @@ import type { GuttersType } from '../types';
 const stripUnits = require('strip-units');
 
 const cssBuilder = (
-  gutter: number | string,
+  gutter: string | number,
   negative: boolean,
   gutterType: string,
   gutterPosition: Array<string>
@@ -37,7 +37,7 @@ const cssBuilder = (
 /**
  * Create gutters for a cell/container.
  *
- * @param {number | GuttersType} gutters
+ * @param {string | number | GuttersType} gutters
  * @param {string}               gutterType
  * @param {Array<string>}        gutterPosition
  * @param {boolean}              negative
@@ -45,7 +45,7 @@ const cssBuilder = (
  * @return {Array<string>}
  */
 export const Gutters = (
-  gutters: number | GuttersType,
+  gutters: string | number | GuttersType,
   gutterType: string = 'margin',
   gutterPosition: Array<string> = ['right', 'left'],
   negative: boolean = false,

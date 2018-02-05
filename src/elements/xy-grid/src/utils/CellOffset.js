@@ -2,14 +2,15 @@
 import mediaquery, { Breakpoints } from '@growcss/behavior-media-queries';
 import type { BreakpointsType } from '@growcss/behavior-media-queries';
 import remCalc from '@growcss/utils-remcalc';
-const stripUnits = require('strip-units');
 import type { GuttersType } from '../types';
-import { Gutters } from '../components/Gutters';
+import { Gutters as DefaultGutters } from '../components/Gutters';
 import { CellSize } from './CellSize';
+
+const stripUnits = require('strip-units');
 
 export const CellOffset = (
   n: number | string,
-  gutters: GuttersType = Gutters,
+  gutters: GuttersType = DefaultGutters,
   gutterType: string = 'margin',
   breakpoints: BreakpointsType = Breakpoints,
   vertical: boolean = false,

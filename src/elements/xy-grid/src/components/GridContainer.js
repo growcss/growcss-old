@@ -9,21 +9,21 @@ type GridContainerProps = {
   children: any,
   type?: string,
   width?: string | number,
-  paddingGutter?: GuttersType | number | string,
+  gutterSizes?: string | number | GuttersType,
 };
 
 export default class GridContainer extends Component<GridContainerProps>
 {
   static defaultProps = {
     width: remCalc(1200),
-    paddingGutter: DefaultGutters,
+    gutterSizes: DefaultGutters,
   };
 
   render() {
-    const { type, children, width, paddingGutter } = this.props;
+    const { type, children, width, gutterSizes } = this.props;
 
     let maxWidth = width;
-    let gutter = paddingGutter;
+    let gutter = gutterSizes;
 
     if (type === 'fluid' || type === 'full') {
       maxWidth = '100%';
@@ -34,7 +34,7 @@ export default class GridContainer extends Component<GridContainerProps>
     }
 
     return (
-      <GridContainerElement maxWidth={maxWidth} paddingGutter={gutter} type={type}>
+      <GridContainerElement maxWidth={maxWidth} gutterSizes={gutter} type={type}>
         {children}
       </GridContainerElement>
     );

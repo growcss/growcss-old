@@ -7,5 +7,5 @@ export const GridContainerElement = styled.div`
   margin: 0 auto;
 
   ${props => (props.type === 'full' ? 'overflow-x: hidden;' : '')}
-  ${props => Gutters(props.paddingGutter, 'padding')};
+  ${props => Gutters(props.gutterSizes, 'padding')};
 `;

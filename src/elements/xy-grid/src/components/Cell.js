@@ -1,12 +1,16 @@
 //@flow
 import React, { Component } from "react";
 import { CellElement } from '../styled/CellElement';
+import type { GuttersType } from '../types';
+import { Gutters as DefaultGutters } from './Gutters';
 
 type CellType = {
   children: any,
   gridColumns: number,
   cellType?: string,
   gutterType?: string,
+  gutterSizes?: string | number | GuttersType,
+  vertical?: boolean,
   small?: number | string,
   smallOffset?: number,
   medium?: number | string,
@@ -17,22 +21,24 @@ type CellType = {
   xlargeOffset?: number,
   xxlarge?: number| string,
   xxlargeOffset?: number,
-  vertical: boolean
 };
 
 export default class Cell extends Component<CellType>
 {
   static defaultProps = {
     gridColumns: 12,
+    gutterSizes: DefaultGutters,
+    vertical: false,
   };
 
   render() {
     const {
       children,
       gridColumns,
-      vertical,
       cellType,
       gutterType,
+      gutterSizes,
+      vertical,
       small,
       smallOffset,
       medium,
@@ -47,6 +53,10 @@ export default class Cell extends Component<CellType>
 
     return (<CellElement
       gridColumns={gridColumns}
+      cellType={cellType}
+      gutterType={gutterType}
+      gutterSizes={gutterSizes}
+      vertical={vertical}
       small={small}
       smallOffset={smallOffset}
       medium={medium}
@@ -57,9 +67,6 @@ export default class Cell extends Component<CellType>
       xlargeOffset={xlargeOffset}
       xxlarge={xxlarge}
       xxlargeOffset={xxlargeOffset}
-      cellType={cellType}
-      gutterType={gutterType}
-      vertical={vertical}
       >
         {children}
       </CellElement>

@@ -6,20 +6,20 @@ import { Gutters as DefaultGutters } from './Gutters';
 
 type GridXType = {
   children?: any,
-  gutterType: string,
-  gutters: string | number | GuttersType
+  gutterType?: string,
+  gutterSizes: string | number | GuttersType
 };
 
 export default class GridX extends Component<GridXType>
 {
   static defaultProps = {
-    gutters: DefaultGutters,
+    gutterSizes: DefaultGutters,
   };
 
   render() {
     const {
       children,
-      gutters,
+      gutterSizes,
       gutterType
     } = this.props;
 
@@ -28,13 +28,14 @@ export default class GridX extends Component<GridXType>
         thisArg,
         {
           vertical: false,
-          gutterType
+          gutterType,
+          gutterSizes
         }
       );
     });
 
     return (
-      <XYGridElement direction='horizontal' gutters={gutters} wrap>
+      <XYGridElement direction='horizontal' gutterSizes={gutterSizes} wrap>
         {cells}
       </XYGridElement>
     );

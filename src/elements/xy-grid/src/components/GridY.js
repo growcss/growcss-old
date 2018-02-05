@@ -7,7 +7,7 @@ import { Gutters as DefaultGutters } from './Gutters';
 type GridYType = {
   children?: any,
   gutterType: string,
-  gutters: string | number | GuttersType
+  gutterSizes: string | number | GuttersType
 };
 
 export default class GridY extends Component<GridYType>
@@ -19,7 +19,7 @@ export default class GridY extends Component<GridYType>
   render() {
     const {
       children,
-      gutters,
+      gutterSizes,
       gutterType
     } = this.props;
 
@@ -28,13 +28,14 @@ export default class GridY extends Component<GridYType>
         thisArg,
         {
           vertical: false,
-          gutterType
+          gutterType,
+          gutterSizes
         }
       );
     });
 
     return (
-      <XYGridElement direction='vertical' gutters={gutters} wrap>
+      <XYGridElement direction='vertical' gutterSizes={gutterSizes} wrap>
         {cells}
       </XYGridElement>
     );
