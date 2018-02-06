@@ -15,10 +15,8 @@ const BreakpointGutterCss = (props) => {
         lastBreakpoint = breakpoint;
       }
 
-      const hasGutterType = props.gutterType !== undefined;
-
       breakpoints = breakpoints.concat(
-        mediaquery(breakpoint)`${CellStatic(props[breakpoint], hasGutterType, props.gutterSizes, (props.gutterType || 'padding'), lastBreakpoint, props.vertical)}`
+        mediaquery(breakpoint)`${CellStatic(props[breakpoint], props.gutterType !== undefined, props.gutterSizes, (props.gutterType || 'padding'), lastBreakpoint, props.vertical)}`
       );
     }
   }
@@ -35,7 +33,7 @@ const CellOffsetCss = (props) => {
 
   for(const breakpoint in DefaultBreakpoints) {
     if (props[`${breakpoint}Offset`] !== undefined) {
-      css = css.concat(CellOffset(props[`${breakpoint}Offset`], props.gutterSizes, (props.gutterType || 'padding'), DefaultBreakpoints, props.vertical));
+      css = css.concat(CellOffset(props[`${breakpoint}Offset`], breakpoint, (props.gutterType || 'padding'), props.vertical, props.gutterSizes));
     }
   }
 
@@ -47,6 +45,9 @@ const ResponsiveCellCss = (props) => {
   const types = ['auto', 'full', 'grow', 'shrink'];
   const hasGutterType = props.gutterType !== undefined;
 
+  css.push(CellBase(props.cellType || 'full'));
+  css = css.concat(CellStatic((props.cellType || props.gridColumns), hasGutterType, props.gutterSizes, (props.gutterType || 'padding'), 'small', props.vertical));
+
   for(const breakpoint in DefaultBreakpoints) {
     if (typeof props[breakpoint] === 'string' && types.includes(props[breakpoint])) {
       css = css.concat(mediaquery(breakpoint)`
@@ -54,11 +55,6 @@ const ResponsiveCellCss = (props) => {
         ${CellStatic(props[breakpoint], hasGutterType, props.gutterSizes, (props.gutterType || 'padding'), 'small', props.vertical)}
       `);
     }
-  }
-
-  if (props.small === undefined) {
-    css.push(CellBase(props.cellType || 'full'));
-    css = css.concat(CellStatic((props.cellType || props.gridColumns), hasGutterType, props.gutterSizes, (props.gutterType || 'padding'), 'small', props.vertical));
   }
 
   return css;

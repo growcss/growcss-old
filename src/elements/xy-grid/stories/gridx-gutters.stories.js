@@ -2,8 +2,7 @@
 import React from 'react';
 import { setAddon, storiesOf } from '@storybook/react';
 import JSXAddon from 'storybook-addon-jsx';
-import { GridContainer, Cell } from '../src/index';
-import GridX from '../src/components/GridX';
+import { Cell, GridX } from '../src/index';
 
 setAddon(JSXAddon);
 

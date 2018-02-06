@@ -13,8 +13,6 @@ export const mapNext = (breakpoints: BreakpointsType, key: string): number | nul
   const keys: string[] = Object.keys(breakpoints);
   const objectCount: string[] = Object.keys(breakpoints);
   let i = 0;
-  // Starts array index from 1
-  keys.unshift('null');
 
   // If the Key Exists, Get the index of the key within the map and add 1 to it for the next breakpoint in the map
   if (key in breakpoints) {
@@ -22,8 +20,7 @@ export const mapNext = (breakpoints: BreakpointsType, key: string): number | nul
   }
 
   // If the key doesn't exist, or it's the last key in the map, return null
-  if (i > objectCount.length || i === 0) {
-
+  if (i >= objectCount.length || i === 0) {
     return null;
   }
 

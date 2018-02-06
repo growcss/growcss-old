@@ -50,7 +50,7 @@ export const CellStatic = (
   }
 
   if (outputGutter === true) {
-    css = css.concat(Gutters(gutter, gutterType, gutterPosition, vertical));
+    css = css.concat(Gutters(gutter, gutterType, gutterPosition));
   }
 
   return css;

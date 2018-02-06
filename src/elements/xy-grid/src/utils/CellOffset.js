@@ -10,11 +10,12 @@ const stripUnits = require('strip-units');
 
 export const CellOffset = (
   n: number | string,
-  gutters: GuttersType = DefaultGutters,
+  breakpoint: string,
   gutterType: string = 'margin',
-  breakpoints: BreakpointsType = Breakpoints,
   vertical: boolean = false,
-  rtl: boolean = false
+  rtl: boolean = false,
+  gutters: GuttersType = DefaultGutters,
+  breakpoints: BreakpointsType = Breakpoints
 ) => {
   let direction;
 
@@ -26,22 +27,21 @@ export const CellOffset = (
     direction = 'left'
   }
 
-  let strings = [];
+  let lastBreakpointName = 'small';
 
-  for (const breakpoint in breakpoints) {
-    if (typeof breakpoint === 'number') {
-      let css = '';
-
-      for (const sizeName of gutters) {
-        const gutter = remCalc(stripUnits(gutters[sizeName]) / 2);
-        const gutterSize = gutterType === 'margin' ? `calc(${CellSize(n)} + ${gutter})` : CellSize(n);
-
-        css += `margin-${direction}: ${gutterSize};\n`;
+  if (gutters[breakpoint] === undefined) {
+    for (const breakpointName in breakpoints) {
+      if (typeof breakpointName === 'string' && gutters[breakpointName] !== undefined) {
+        lastBreakpointName = breakpointName;
       }
-
-      strings = strings.concat(mediaquery(breakpoint, breakpoints)`${css}`);
     }
+  } else {
+    lastBreakpointName = breakpoint;
   }
 
-  return strings;
+  const gutter = remCalc(stripUnits(gutters[lastBreakpointName]) / 2);
+  const gutterSize = gutterType === 'margin' ? `calc(${CellSize(n)} + ${gutter})` : CellSize(n);
+  const css = `margin-${direction}: ${gutterSize};`;
+
+  return mediaquery(breakpoint, breakpoints)`${css}`;
 };

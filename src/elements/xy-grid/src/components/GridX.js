@@ -7,20 +7,25 @@ import { Gutters as DefaultGutters } from './Gutters';
 type GridXType = {
   children?: any,
   gutterType?: string,
-  gutterSizes: string | number | GuttersType
+  gutterSizes: string | number | GuttersType,
+  alignX: string,
+  alignY: string,
 };
 
 export default class GridX extends Component<GridXType>
 {
   static defaultProps = {
     gutterSizes: DefaultGutters,
+    alignX: 'left',
   };
 
   render() {
     const {
       children,
       gutterSizes,
-      gutterType
+      gutterType,
+      alignX,
+      alignY,
     } = this.props;
 
     const cells = React.Children.map(children, (thisArg) => {
@@ -35,7 +40,7 @@ export default class GridX extends Component<GridXType>
     });
 
     return (
-      <XYGridElement direction='horizontal' gutterSizes={gutterSizes} wrap>
+      <XYGridElement direction='horizontal' gutterSizes={gutterSizes} alignX={alignX} alignY={alignY} wrap>
         {cells}
       </XYGridElement>
     );

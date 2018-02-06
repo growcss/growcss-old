@@ -2,8 +2,8 @@
 
 exports[`if the container content is of the full width of the available space 1`] = `
 <GridContainerElement
+  gutterSizes="0"
   maxWidth="100%"
-  paddingGutter="0"
   type="full"
 >
   test
@@ -12,13 +12,13 @@ exports[`if the container content is of the full width of the available space 1`
 
 exports[`if the container is centered and has a max-width of 100% 1`] = `
 <GridContainerElement
-  maxWidth="100%"
-  paddingGutter={
+  gutterSizes={
     Object {
       "medium": "30px",
       "small": "20px",
     }
   }
+  maxWidth="100%"
   type="fluid"
 >
   test
@@ -27,13 +27,13 @@ exports[`if the container is centered and has a max-width of 100% 1`] = `
 
 exports[`if the container is centered and have a max-width of 75rem 1`] = `
 <GridContainerElement
-  maxWidth="75rem"
-  paddingGutter={
+  gutterSizes={
     Object {
       "medium": "30px",
       "small": "20px",
     }
   }
+  maxWidth="75rem"
 >
   test
 </GridContainerElement>

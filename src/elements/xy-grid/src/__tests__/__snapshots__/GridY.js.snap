@@ -3,12 +3,6 @@
 exports[`the style output of GridY 1`] = `
 <XYGridElement
   direction="vertical"
-  gutters={
-    Object {
-      "medium": "30px",
-      "small": "20px",
-    }
-  }
   wrap={true}
 />
 `;

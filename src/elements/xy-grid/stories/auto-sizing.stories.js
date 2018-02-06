@@ -22,4 +22,13 @@ storiesOf('Auto Sizing', module).addWithJSX('Cell will take up the remaining spa
     <Cell cellType='shrink'>Shrink!</Cell>
     <Cell cellType='auto'>Expand!</Cell>
   </GridX>
+)).addWithJSX('To switch back to the auto behavior from a percentage or shrink behavior', () => (
+  <GridX>
+    <Cell large='auto'>One</Cell>
+    <Cell large='auto'>Two</Cell>
+    <Cell large='auto'>Three</Cell>
+    <Cell large='auto'>Four</Cell>
+    <Cell large='auto'>Five</Cell>
+    <Cell large='auto'>Six</Cell>
+  </GridX>
 ));
